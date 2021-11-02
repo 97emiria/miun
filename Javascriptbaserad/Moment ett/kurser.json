@@ -1,0 +1,24 @@
+﻿{
+  "information": [
+    {
+      "info": "Jag heter Mikael Hasselmalm."
+    },
+    {
+      "info":         "Jag arbetar på Mittuniversitetet i Sundsvall."
+    }
+  ],
+  "kurser": [
+    {
+      "kurskod":      "DT057G",
+      "namn":         "Webbutveckling I",
+      "progression":  "A",
+      "kursplan":     "http://www.miun.se/utbildning/kurser/sok-kursplan/kursplan?kursplanid=15472"
+    },
+    {
+      "kurskod":      "DT093G",
+      "namn":         "Webbutveckling II",
+      "progression":  "B",
+      "kursplan":     "http://www.miun.se/utbildning/kurser/sok-kursplan/kursplan?kursplanid=15474"
+    }
+  ]
+}

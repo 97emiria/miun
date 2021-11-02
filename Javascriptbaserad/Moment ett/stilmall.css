@@ -3,10 +3,10 @@
     Fyll i egna CSS-regler här under för att snygga till webbsidan
 */
 body {
-    font-family: georgia, serif;
+    font-family:  Calibri, 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif, serif;
     font-size: 18px;
     line-height: 1.6em;
-    background-color: #ccc;
+    background-color: #fff;
 }
 .container {
     width: 600px;
@@ -15,7 +15,10 @@ body {
     background-color: #fff;
     margin: 0 auto;
 }
-h1 { text-align: center; }
+h1 { 
+    text-align: center; 
+    margin: 1em 0 1.5em;
+}
 p { margin: 2px 0 2px 0; }
 
 thead td { font-weight: bold; }
@@ -27,12 +30,16 @@ footer {
 thead td:nth-child(1) { width: 25%; }
 thead td:nth-child(2) { width: 65%; }
 td:nth-child(3) { width: 10%; text-align: center; }
-tr:nth-child(even) { background-color: #ccc; }
+tr:nth-child(even) { background-color: #eee; }
 
 table {
     border-collapse: collapse;
 }
 
 .kurser {
-    margin: 1em 0 1em 0; }
+    margin: 1em 0 1em 0; 
+}
+
+.kurser td {
+    padding: 0.3em;
 }

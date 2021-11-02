@@ -1,10 +1,13 @@
 ﻿{
   "information": [
     {
-      "info": "Jag heter Mikael Hasselmalm."
+      "info": "Jag heter Emilia Holmström och 24 år. Älskar att sova och fika."
     },
     {
-      "info":         "Jag arbetar på Mittuniversitetet i Sundsvall."
+      "info":         "Jag studerar till Webbutvecklare på Mittuniversitetet i Sundsvall, dock 100% distans. Jag är klar våren 2022."
+    },
+    {
+      "info":         "Jag har inte så mycket mer och säga men jag vill lägga till ett eget stycke; so here we go with a sentence. "
     }
   ],
   "kurser": [
@@ -19,6 +22,66 @@
       "namn":         "Webbutveckling II",
       "progression":  "B",
       "kursplan":     "http://www.miun.se/utbildning/kurser/sok-kursplan/kursplan?kursplanid=15474"
+    },
+    {
+      "kurskod":      "DT003G",
+      "namn":         "Databaser",
+      "progression":  "B",
+      "kursplan":     "https://www.miun.se/utbildning/kursplaner-och-utbildningsplaner/Sok-kursplan/kursplan/?kursplanid=21595"
+    },
+    {
+      "kurskod":      "DT068G",
+      "namn":         "Webbanvändbarhet",
+      "progression":  "B",
+      "kursplan":     "https://www.miun.se/utbildning/kursplaner-och-utbildningsplaner/Sok-kursplan/kursplan/?kursplanid=30563"
+    },
+    {
+      "kurskod":      "DT071G",
+      "namn":         "Programmering i C#.NET",
+      "progression":  "B",
+      "kursplan":     "https://www.miun.se/utbildning/kursplaner-och-utbildningsplaner/Sok-kursplan/kursplan/?kursplanid=25557"
+    },
+    {
+      "kurskod":      "DT084G",
+      "namn":         "Introduktion till programmering i JavaScript",
+      "progression":  "A",
+      "kursplan":     "https://www.miun.se/utbildning/kursplaner-och-utbildningsplaner/Sok-kursplan/kursplan/?kursplanid=30554"
+    },
+    {
+      "kurskod":      "DT102G",
+      "namn":         "ASP.NET med C#",
+      "progression":  "B",
+      "kursplan":     "https://www.miun.se/utbildning/kursplaner-och-utbildningsplaner/Sok-kursplan/kursplan/?kursplanid=22325"
+    },
+    {
+      "kurskod":      "DT152G",
+      "namn":         "Webbdesign för CMS",
+      "progression":  "B",
+      "kursplan":     "https://www.miun.se/utbildning/kursplaner-och-utbildningsplaner/Sok-kursplan/kursplan/?kursplanid=22324"
+    },
+    {
+      "kurskod":      "DT162G",
+      "namn":         "Javascriptbaserad webbutveckling",
+      "progression":  "B",
+      "kursplan":     "https://www.miun.se/utbildning/kursplaner-och-utbildningsplaner/Sok-kursplan/kursplan/?kursplanid=24366"
+    },
+    {
+      "kurskod":      "DT163G",
+      "namn":         "Digital bildbehandling för webb",
+      "progression":  "A",
+      "kursplan":     "https://www.miun.se/utbildning/kursplaner-och-utbildningsplaner/Sok-kursplan/kursplan/?kursplanid=24403"
+    },
+    {
+      "kurskod":      "DT173G",
+      "namn":         "Webbutveckling III",
+      "progression":  "B",
+      "kursplan":     "https://www.miun.se/utbildning/kursplaner-och-utbildningsplaner/Sok-kursplan/kursplan/?kursplanid=22706"
+    },
+    {
+      "kurskod":      "GD008G",
+      "namn":         "Typografi och form för webb",
+      "progression":  "A",
+      "kursplan":     "https://www.miun.se/utbildning/kursplaner-och-utbildningsplaner/Sok-kursplan/kursplan/?kursplanid=24399"
     }
   ]
 }

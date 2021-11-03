@@ -1,0 +1,16 @@
+C:\Users\E-Hol\Desktop\Miun\GitHub\C#.NET\M1\VSC\bin\Debug\net5.0\VSC.exe
+C:\Users\E-Hol\Desktop\Miun\GitHub\C#.NET\M1\VSC\bin\Debug\net5.0\VSC.deps.json
+C:\Users\E-Hol\Desktop\Miun\GitHub\C#.NET\M1\VSC\bin\Debug\net5.0\VSC.runtimeconfig.json
+C:\Users\E-Hol\Desktop\Miun\GitHub\C#.NET\M1\VSC\bin\Debug\net5.0\VSC.runtimeconfig.dev.json
+C:\Users\E-Hol\Desktop\Miun\GitHub\C#.NET\M1\VSC\bin\Debug\net5.0\VSC.dll
+C:\Users\E-Hol\Desktop\Miun\GitHub\C#.NET\M1\VSC\bin\Debug\net5.0\ref\VSC.dll
+C:\Users\E-Hol\Desktop\Miun\GitHub\C#.NET\M1\VSC\bin\Debug\net5.0\VSC.pdb
+C:\Users\E-Hol\Desktop\Miun\GitHub\C#.NET\M1\VSC\obj\Debug\net5.0\VSC.csproj.AssemblyReference.cache
+C:\Users\E-Hol\Desktop\Miun\GitHub\C#.NET\M1\VSC\obj\Debug\net5.0\VSC.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\E-Hol\Desktop\Miun\GitHub\C#.NET\M1\VSC\obj\Debug\net5.0\VSC.AssemblyInfoInputs.cache
+C:\Users\E-Hol\Desktop\Miun\GitHub\C#.NET\M1\VSC\obj\Debug\net5.0\VSC.AssemblyInfo.cs
+C:\Users\E-Hol\Desktop\Miun\GitHub\C#.NET\M1\VSC\obj\Debug\net5.0\VSC.csproj.CoreCompileInputs.cache
+C:\Users\E-Hol\Desktop\Miun\GitHub\C#.NET\M1\VSC\obj\Debug\net5.0\VSC.dll
+C:\Users\E-Hol\Desktop\Miun\GitHub\C#.NET\M1\VSC\obj\Debug\net5.0\ref\VSC.dll
+C:\Users\E-Hol\Desktop\Miun\GitHub\C#.NET\M1\VSC\obj\Debug\net5.0\VSC.pdb
+C:\Users\E-Hol\Desktop\Miun\GitHub\C#.NET\M1\VSC\obj\Debug\net5.0\VSC.genruntimeconfig.cache

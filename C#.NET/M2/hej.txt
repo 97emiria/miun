@@ -1,4 +1,0 @@
-Console.Write("Type birth month: ");
-string month = Console.ReadLine();
-Console.Write("Type birth day: ");
-string date = Console.ReadLine();

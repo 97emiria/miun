@@ -6,59 +6,20 @@ namespace countDay
     {
         static void Main(string[] args)
         {
-            //Convert.ToInt32
 
-            //Get a validated year
-
-          
-
-
+            //theYear return a string so you can divide the centry and year
             string year = theYear();
-            string month = theMonth();
-            string date = theDay();
-
             int c = Convert.ToInt32(year.Substring(0, 2));
             int y = Convert.ToInt32(year.Substring(2, 2));
-            int m = Convert.ToInt32(month);
-            int d = Convert.ToInt32(date);
 
-            Console.WriteLine(c + " Bye " + y);
+            //This function already returning int
+            int m = theMonth();
+            int d = theDay();
 
+            //Send them to function that calculate day
+            string result = calculateDay(c, y, m, d);
 
-            //Formula to calculate day
-            int day = (d + ((13 * (m + 1)) / 5) + y + (y / 4) + (c / 4) + 5 * c) % 7;
-
-            //Sentence to use in answer below
-            string sentence = "You was born on a ";
-
-            //Print out answerd depending on the answer from formula 
-            switch (day)
-            {
-                case 1:
-                    Console.WriteLine(sentence + "Sunday");
-                    break;
-                case 2:
-                    Console.WriteLine(sentence + "Monday");
-                    break;
-                case 3:
-                    Console.WriteLine(sentence + "Tuesday");
-                    break;
-                case 4:
-                    Console.WriteLine(sentence + "Wednesday");
-                    break;
-                case 5:
-                    Console.WriteLine(sentence + "Thursday");
-                    break;
-                case 6:
-                    Console.WriteLine(sentence + "Friday");
-                    break;
-                case 7:
-                    Console.WriteLine(sentence + "Saturday");
-                    break;
-            }
-
-
-
+            Console.WriteLine("The day you were born was a " + result);
         }
 
 
@@ -67,44 +28,43 @@ namespace countDay
             bool validated = false;
             string year = "";
 
+
+
             while (!validated)
             {
                 //Collect value from user
                 Console.Write("Type the year you was born: ");
                 year = Console.ReadLine();
 
+                int num;
+                bool test = Int32.TryParse(year, out num);
 
                 //Check if input is only 4 charchters
                 if (year.Length != 4)
                 {
                     Console.WriteLine("The year need to be 4 numbers");
                 }
+                else if (!test)
+                {
+                    Console.WriteLine("Obviously it need to be numbers, try again!");
+                }
                 else
                 {
-                    int num;
-                    bool test = Int32.TryParse(year, out num);
-
-                    if (!test)
-                    {
-                        Console.WriteLine("Obviously it need to be numbers, try again!");
-                    }
-                    else
-                    {
-                        //Everyyhing has went good so stop loop
-                        validated = true;
-
-                    }
-
+                    //Everyyhing has went good so stop loop
+                    validated = true;
                 }
 
+
+
             }
+
 
             return year;
 
         }
 
 
-        static string theMonth()
+        static int theMonth()
         {
 
             //Creat some needed values
@@ -119,7 +79,8 @@ namespace countDay
                 month = Console.ReadLine();
 
 
-                if (month.Length <= 2 && month.Length >= 0) {
+                if (month.Length <= 2 && month.Length >= 0)
+                {
 
                     int num;
                     bool test = Int32.TryParse(month, out num);
@@ -141,18 +102,21 @@ namespace countDay
                         }
                     }
 
-                } else
+                }
+                else
                 {
-                    Console.WriteLine("Only one or two char is allow");
+                    Console.WriteLine("Only one or two characters is allow");
                 }
 
 
             }
 
-            return month;
+            int theMonth = Convert.ToInt32(month);
+
+            return theMonth;
         }
 
-        static string theDay()
+        static int theDay()
         {
 
             //Creat some needed values
@@ -163,7 +127,7 @@ namespace countDay
             while (!validated)
             {
                 //Collect value from user
-                Console.Write("Type birth month: ");
+                Console.Write("Type birth day: ");
                 day = Console.ReadLine();
 
 
@@ -179,11 +143,12 @@ namespace countDay
                     }
                     else
                     {
-                       if (Convert.ToInt32(day) <= 31 && Convert.ToInt32(day) > 0)
+                        if (Convert.ToInt32(day) <= 31 && Convert.ToInt32(day) > 0)
                         {
                             //Everyyhing has went good so stop loop
                             validated = true;
-                        } else
+                        }
+                        else
                         {
                             Console.WriteLine("Between 1 - 31");
                         }
@@ -192,13 +157,67 @@ namespace countDay
                 }
                 else
                 {
-                    Console.WriteLine("Only one or two char is allow");
+                    Console.WriteLine("Only one or two characters is allow");
                 }
 
 
             }
 
-            return day;
+            int theDay = Convert.ToInt32(day);
+            return theDay;
+        }
+
+
+        public static string calculateDay(int c, int y, int m, int d)
+        {
+
+            //Formula to calculate day
+            int answerd = (d + ((13 * (m + 1)) / 5) + y + (y / 4) + (c / 4) + 5 * c) % 7;
+
+            //String to return
+            string theDay = "";
+
+            //Print out answerd depending on the answer from formula 
+            switch (answerd)
+            {
+                case 1:
+
+                    theDay = "Sunday";
+                    return theDay;
+
+                case 2:
+
+                    theDay = "Monday";
+                    return theDay;
+
+                case 3:
+
+                    theDay = "Tuesday";
+                    return theDay;
+
+                case 4:
+
+                    theDay = "Wednesday";
+                    return theDay;
+
+                case 5:
+
+                    theDay = "Thursday";
+                    return theDay;
+
+                case 6:
+
+                    theDay = "Friday";
+                    return theDay;
+
+                case 7:
+
+                    theDay = "Saturday";
+                    return theDay;
+
+            }
+
+            return theDay;
         }
 
 

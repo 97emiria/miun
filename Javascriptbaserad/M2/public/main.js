@@ -2,21 +2,22 @@ let t = new Date();
 document.getElementById('timestamp').innerHTML = t.getUTCHours()+1 + ":" + t.getUTCMinutes() + ":" + t.getUTCSeconds() + ", " + t.getUTCDate() + "/" + (t.getUTCMonth() + 1) + "/" + t.getUTCFullYear();
 
 
+//Get elements
+let coursesList = document.getElementById('coursesList');
+let message = document.getElementById('message');
+
+
 let getCourses = () => {
     
     fetch('http://localhost:3000/courses/')
 
     .then(response => {
 
-        console.log(response.status);
-
         response.json().then(data => {
-
-            //console.log( data.find( c => c.id == parseInt( 1 ) ) )
 
             data.forEach(data => {
 
-                document.getElementById('indexList').innerHTML += 
+                coursesList.innerHTML += 
                 `
                     <li> 
                         ${data.namn} 
@@ -48,19 +49,47 @@ let deleteCourse = id => {
             let string = JSON.stringify(data);
             let parse = JSON.parse(string);
 
-            //Print out objekt message fom Rest
+            //if http status is okey, update list and show message
             if(response.ok) {
-                console.log(parse.message);
 
+                //Remove all elements in ul-list
+                while (coursesList.firstChild) {
+                    coursesList.removeChild(coursesList.firstChild);
+                }
+                
+                setTimeout(() => {getCourses(); }, 1000);
+
+                //Print out message from server
+                message.innerHTML = parse.message;
+                message.classList.add("success");
+
+                //Remove message after 3s
+                clearMessage();
+
+
+            //If http status not okey, print out message from server   
             } else {
-                console.log(parse.message);
+                message.innerHTML = parse.message;
+                message.classList.add("error");
+
+                //Remove message after 3s
+                clearMessage();
             }
             
         });
 
     });
 
-    console.log(id)
+}
+
+
+let clearMessage = () => {
+    
+    setTimeout(() => {
+        message.innerHTML = ""; 
+        message.removeAttribute('class');
+    }, 3000);
+
 }
 
 

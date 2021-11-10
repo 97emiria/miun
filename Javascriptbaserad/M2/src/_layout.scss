@@ -1,0 +1,110 @@
+body {
+    position: relative;
+    min-height: 100vh;
+    font-family: $bodyFont;
+}
+
+header {
+    max-width: 600px;
+    width: 90%;
+    margin: 0 auto;
+    padding-top: 2em;
+
+    h1 {
+        font-family: $headerFont;
+        letter-spacing: 1px;
+        color: $darkGrey;
+    }
+}
+
+main {
+    max-width: 600px;
+    width: 90%;
+    margin: 0 auto;
+    box-shadow: 7.5px 7.5px $lightGreyTwo;
+    border: 2px solid $lightGrey;
+
+    min-height: 300px;
+    box-sizing: border-box;
+    padding: 3em 2em;
+
+   p {
+        font-family: $bodyFont;
+        font-size: 1em;
+        line-height: 1.5em;
+    }
+    
+}
+
+aside {
+    height: 100px;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: $lightGrey;
+    text-align: right;
+    padding: 0.5em;
+}
+
+
+
+
+
+.coursesList {
+    list-style: none;
+
+    li {
+        padding: 1em;
+        padding-left: 0;
+        height: 30px;
+        &:hover {
+            background-color: $lightGreyTwo;
+        }
+
+        &:before {
+            content: '\01F732';
+        }
+    }
+
+    button {
+        float: right;
+        width: 30px;
+        height: 30px;
+        border: 1px solid white;
+        border-radius: 0.5em;
+        background-color: white;
+    
+        align-items: center;
+        vertical-align: middle;
+
+
+        &:hover {
+            cursor: pointer;
+            transform: scale(0.9);
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+
+
+//Message styles
+.message {
+    padding: 0.3em;
+    font-weight: bold;
+}
+.error {
+    @extend .message;
+    background-color: $error;
+}
+.success {
+    @extend .message;
+    background-color: $error;
+}

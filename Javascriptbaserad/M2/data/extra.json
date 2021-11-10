@@ -1,0 +1,76 @@
+﻿{
+  "kurser": [
+    {
+      "kurskod":      "DT057G",
+      "namn":         "Webbutveckling I",
+      "progression":  "A",
+      "kursplan":     "http://www.miun.se/utbildning/kurser/sok-kursplan/kursplan?kursplanid=15472"
+    },
+    {
+      "kurskod":      "DT093G",
+      "namn":         "Webbutveckling II",
+      "progression":  "B",
+      "kursplan":     "http://www.miun.se/utbildning/kurser/sok-kursplan/kursplan?kursplanid=15474"
+    },
+    {
+      "kurskod":      "DT003G",
+      "namn":         "Databaser",
+      "progression":  "B",
+      "kursplan":     "https://www.miun.se/utbildning/kursplaner-och-utbildningsplaner/Sok-kursplan/kursplan/?kursplanid=21595"
+    },
+    {
+      "kurskod":      "DT068G",
+      "namn":         "Webbanvändbarhet",
+      "progression":  "B",
+      "kursplan":     "https://www.miun.se/utbildning/kursplaner-och-utbildningsplaner/Sok-kursplan/kursplan/?kursplanid=30563"
+    },
+    {
+      "kurskod":      "DT071G",
+      "namn":         "Programmering i C#.NET",
+      "progression":  "B",
+      "kursplan":     "https://www.miun.se/utbildning/kursplaner-och-utbildningsplaner/Sok-kursplan/kursplan/?kursplanid=25557"
+    },
+    {
+      "kurskod":      "DT084G",
+      "namn":         "Introduktion till programmering i JavaScript",
+      "progression":  "A",
+      "kursplan":     "https://www.miun.se/utbildning/kursplaner-och-utbildningsplaner/Sok-kursplan/kursplan/?kursplanid=30554"
+    },
+    {
+      "kurskod":      "DT102G",
+      "namn":         "ASP.NET med C#",
+      "progression":  "B",
+      "kursplan":     "https://www.miun.se/utbildning/kursplaner-och-utbildningsplaner/Sok-kursplan/kursplan/?kursplanid=22325"
+    },
+    {
+      "kurskod":      "DT152G",
+      "namn":         "Webbdesign för CMS",
+      "progression":  "B",
+      "kursplan":     "https://www.miun.se/utbildning/kursplaner-och-utbildningsplaner/Sok-kursplan/kursplan/?kursplanid=22324"
+    },
+    {
+      "kurskod":      "DT162G",
+      "namn":         "Javascriptbaserad webbutveckling",
+      "progression":  "B",
+      "kursplan":     "https://www.miun.se/utbildning/kursplaner-och-utbildningsplaner/Sok-kursplan/kursplan/?kursplanid=24366"
+    },
+    {
+      "kurskod":      "DT163G",
+      "namn":         "Digital bildbehandling för webb",
+      "progression":  "A",
+      "kursplan":     "https://www.miun.se/utbildning/kursplaner-och-utbildningsplaner/Sok-kursplan/kursplan/?kursplanid=24403"
+    },
+    {
+      "kurskod":      "DT173G",
+      "namn":         "Webbutveckling III",
+      "progression":  "B",
+      "kursplan":     "https://www.miun.se/utbildning/kursplaner-och-utbildningsplaner/Sok-kursplan/kursplan/?kursplanid=22706"
+    },
+    {
+      "kurskod":      "GD008G",
+      "namn":         "Typografi och form för webb",
+      "progression":  "A",
+      "kursplan":     "https://www.miun.se/utbildning/kursplaner-och-utbildningsplaner/Sok-kursplan/kursplan/?kursplanid=24399"
+    }
+  ]
+}

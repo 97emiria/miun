@@ -1,0 +1,16 @@
+C:\Users\E-Hol\Desktop\Miun\GitHub\C#.NET\M3\M3\bin\Debug\net5.0\M3.exe
+C:\Users\E-Hol\Desktop\Miun\GitHub\C#.NET\M3\M3\bin\Debug\net5.0\M3.deps.json
+C:\Users\E-Hol\Desktop\Miun\GitHub\C#.NET\M3\M3\bin\Debug\net5.0\M3.runtimeconfig.json
+C:\Users\E-Hol\Desktop\Miun\GitHub\C#.NET\M3\M3\bin\Debug\net5.0\M3.runtimeconfig.dev.json
+C:\Users\E-Hol\Desktop\Miun\GitHub\C#.NET\M3\M3\bin\Debug\net5.0\M3.dll
+C:\Users\E-Hol\Desktop\Miun\GitHub\C#.NET\M3\M3\bin\Debug\net5.0\ref\M3.dll
+C:\Users\E-Hol\Desktop\Miun\GitHub\C#.NET\M3\M3\bin\Debug\net5.0\M3.pdb
+C:\Users\E-Hol\Desktop\Miun\GitHub\C#.NET\M3\M3\obj\Debug\net5.0\M3.csproj.AssemblyReference.cache
+C:\Users\E-Hol\Desktop\Miun\GitHub\C#.NET\M3\M3\obj\Debug\net5.0\M3.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\E-Hol\Desktop\Miun\GitHub\C#.NET\M3\M3\obj\Debug\net5.0\M3.AssemblyInfoInputs.cache
+C:\Users\E-Hol\Desktop\Miun\GitHub\C#.NET\M3\M3\obj\Debug\net5.0\M3.AssemblyInfo.cs
+C:\Users\E-Hol\Desktop\Miun\GitHub\C#.NET\M3\M3\obj\Debug\net5.0\M3.csproj.CoreCompileInputs.cache
+C:\Users\E-Hol\Desktop\Miun\GitHub\C#.NET\M3\M3\obj\Debug\net5.0\M3.dll
+C:\Users\E-Hol\Desktop\Miun\GitHub\C#.NET\M3\M3\obj\Debug\net5.0\ref\M3.dll
+C:\Users\E-Hol\Desktop\Miun\GitHub\C#.NET\M3\M3\obj\Debug\net5.0\M3.pdb
+C:\Users\E-Hol\Desktop\Miun\GitHub\C#.NET\M3\M3\obj\Debug\net5.0\M3.genruntimeconfig.cache

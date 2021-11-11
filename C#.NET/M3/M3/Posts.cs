@@ -9,16 +9,13 @@ namespace M3
     class Posts
     {
         private string user;
-        private string post;
-        public string timestamp { get; set; }
+        private string message;
 
 
-        public Posts(string theUser, string thePost, string theTimestamp)
+        public Posts(string theUser, string theMessage)
         {
             user = theUser;
-            post = thePost;
-            timestamp = theTimestamp;
-            
+            message = theMessage;
         }
 
 
@@ -39,21 +36,22 @@ namespace M3
         }
 
 
-        public string Post
+        public string Message
         {
-            get { return post; }
+            get { return message; }
             set
             {
                 if(value.Length <= 1)
                 {
-                    post = "false";
+                    message = "false";
                 }
                 else
                 {
-                    post = value;
+                    message = value;
                 }
             }
         }
+
 
 
     }

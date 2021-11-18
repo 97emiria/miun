@@ -16,9 +16,9 @@ namespace countDay
             int m = theMonth();
             int d = theDay();
 
+           
             //Send them to function that calculate day
             string result = calculateDay(c, y, m, d);
-
             Console.WriteLine("The day you were born was a " + result);
         }
 
@@ -111,6 +111,7 @@ namespace countDay
 
             }
 
+
             int theMonth = Convert.ToInt32(month);
 
             return theMonth;
@@ -171,6 +172,13 @@ namespace countDay
         public static string calculateDay(int c, int y, int m, int d)
         {
 
+            //Needed to get correct data
+            if (m < 3)
+            {
+                m += 12;
+                y--;
+            }
+
             //Formula to calculate day
             int answerd = (d + ((13 * (m + 1)) / 5) + y + (y / 4) + (c / 4) + 5 * c) % 7;
 
@@ -178,7 +186,7 @@ namespace countDay
             string theDay = "";
 
             //Print out answerd depending on the answer from formula 
-            switch (answerd)
+           switch (answerd)
             {
                 case 1:
 
@@ -216,6 +224,10 @@ namespace countDay
                     return theDay;
 
             }
+            /*
+            string[] weekday = new string[7] { "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday" };
+            theDay = weekday[answerd-1];
+            */
 
             return theDay;
         }

@@ -1,0 +1,261 @@
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+//Color themes
+@media screen and (prefers-color-scheme: light) { 
+    body {background-color: $white;}
+    header { background-color: $mGrey;}
+    header ul li a{color: $mDark;}
+    main { border: 2px solid $ddd; box-shadow: 5px 5px $eee;}
+    h1 {color: $mDark; border-bottom: 15px double lighten($mDark, 5%); }
+    blockquote {border: 2px solid $mLight;}
+    .imgSource a, .textSource a{color: $black;}
+    .textSource {border: 5px double $mLight;}
+}
+@media screen and (prefers-color-scheme: dark) { 
+    body {background-color: $mDark;}
+    header { background-color: darken($mDark, 5%);}
+
+    header ul li a{color: $eee;}
+
+    main { 
+        border: 2px solid lighten($mDark, 5%); 
+        box-shadow: 5px 5px lighten($mDark, 15%); 
+        background-color: lighten($mDark, 5%); 
+        color: $eee; }
+
+    h1 {color: $mLight; border-bottom: 15px double lighten($mLight, 5%); }
+    blockquote {border: 2px solid $mLight;}
+    .imgSource a, .textSource a{color: $eee;}
+    .textSource {border: 5px double $mLight;}
+}
+
+
+
+
+
+main {
+    max-width: 600px;
+    margin: 0 auto;
+    margin-top: 3em;
+    margin-bottom: 3em;
+    box-sizing: border-box;
+    padding: 1em 2em;
+}
+
+h1 {
+    margin: 0.5em 0;
+    text-align: center;
+    font-family: 'Architects Daughter', cursive;
+}
+
+@media (min-width: 750px) {
+    h1 {
+        font-size: 3em;
+        letter-spacing: 2px;
+    }
+}
+
+h2 {
+    margin-bottom: 1em 0;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: bold;
+}
+
+h3{
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+    font-family: 'Quicksand', sans-serif;
+
+}
+
+p {
+    font-family: 'Open Sans', sans-serif;
+}
+
+
+main a {
+    color: $mGreen;
+    font-weight: bold;
+}
+
+
+blockquote {
+    padding: 1.5em 1em;
+    margin: 1.5em 0;
+    font-family: 'Open Sans', sans-serif;
+    text-align: center;
+    border-left: none; border-right: none; //Make it easier with theme colors
+
+    p:first-child {
+        font-size: 1.4em;
+        margin-bottom: 0.5em;
+    }
+
+    p:last-child::before, p:last-child::after {
+        content: "~";
+        font-size: 1.2em;
+    }
+
+}
+
+
+
+
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    margin: 1em 0;
+    border-radius: 0.1;
+}
+
+.imgSource {
+    text-align: right;
+    margin-top: -1em;
+    margin-bottom: 1em;
+    font-style: italic;
+}
+
+.textSource {
+    box-sizing: border-box;
+    padding: 0.5em;
+    font-style: italic;
+    text-align: center;
+    margin: 1em 0;
+}
+
+
+
+@mixin colorPlay ($test: false) {
+    width: 100%;
+    height: 100px;
+    border: 5px solid $mDark;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    margin-bottom: 1em;
+
+
+    @if $test {
+        outline: 2px solid $mLight;
+        outline-offset: -1em;
+    } @else {
+        outline: 2px solid $mDark;
+        outline-offset: -1em;
+    }
+
+    div {
+        flex: 1;
+    }
+
+}
+
+
+.playBox1 {
+    @include colorPlay;
+}
+
+.playBox1 div:nth-child(1) {
+    background-color: $greyBlue;
+
+}
+.playBox1 div:nth-child(2) {
+    background-color: $lightGreyBlue;
+}
+.playBox1 div:nth-child(3) {
+    background-color: $darkGreyBlue;
+
+}
+
+
+.playBox2 {
+    @include colorPlay;
+    border: none;
+    box-shadow: 1em 1em 0.15em $hueNavyBlue;
+    margin-bottom: 2em;
+}
+
+.playBox2 div:nth-child(1) {
+    background-color: $navyBlue;
+    border-top-left-radius: 0.5em;
+    border-bottom-left-radius: 0.5em;
+}
+.playBox2 div:nth-child(2) {
+    background-color: $satNavyBlue;
+}
+.playBox2 div:nth-child(3) {
+    background-color: $desNavyBlue;
+    border-top-right-radius: 0.5em;
+}
+
+
+.playBox2 {
+    @include colorPlay;
+    border: none;
+    box-shadow: 1em 1em 0.15em $hueNavyBlue;
+    margin-bottom: 2em;
+}
+
+
+.playBox3 {
+    @include colorPlay($test: true);
+    border: none;
+}
+
+
+.playBox3 div:nth-child(1) {
+    background-color: $mDark;
+}
+.playBox3 div:nth-child(2) {
+    background-color: $mGrey;
+}
+.playBox3 div:nth-child(3) {
+    background-color: $mLight;
+}
+.playBox3 div:nth-child(4) {
+    background-color: $mGreen;
+}
+
+
+
+
+
+$blue: skyblue;
+$red: #cd0000;
+$green: #82e669;
+$yellow: #fafa86;
+
+.message {
+    text-align: center;
+    background-color: $blue;
+    margin-bottom: 1em;
+    border: 5px solid darken($blue, 50%);
+    padding: 1em;
+    font-size: 1.2em;
+    color: black;
+    border-radius: 0.2em;
+}
+
+.error {
+    @extend .message;
+    background-color: $red;
+    border: 5px solid darken($red, 25%);
+}
+
+.success {
+    @extend .message;
+    background-color: $green;
+    border: 5px solid darken($green, 25%);
+}
+
+.warning {
+    @extend .message;
+    background-color: $yellow;
+    border: 5px solid darken($yellow, 40%);
+}
+

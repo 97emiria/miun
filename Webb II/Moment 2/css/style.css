@@ -1,0 +1,356 @@
+* {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    padding: 0;
+    margin: 0;
+}
+body {
+    position: relative;
+    min-height: 100vh;
+}
+
+.message {
+    padding: 1em 0;
+    margin: 1em 0;
+}
+
+section {
+    margin: 5em 0;
+}
+section div {
+    margin: 3em 0;
+}
+
+.masterBox {
+    margin: 0 auto;
+    margin-top: 5em;
+
+
+    /*Avstånd för footern*/
+    padding-bottom: 7em;
+
+    width: 80%;
+    max-width: 800px;
+}
+
+
+.masterBox h1 {
+    text-align: center;
+    font-size: 3em;
+
+    border-bottom: 2px solid #333;
+    padding-bottom: 0.2em;
+    width: 50%;
+    text-align: center;
+    margin: 0 auto;
+    margin-bottom: 2em;
+}
+.masterBox p {
+    font-size: 1.1em;
+    /*max-width: 30em;*/
+    line-height: 1.8em;
+}
+.masterBox h2 {
+    font-size: 2em;
+
+    border-bottom: 2px solid #333;
+    padding-bottom: 0.2em;
+    width: 50%;
+    text-align: center;
+    margin: 0 auto;
+    margin-bottom: 2em;
+
+}
+
+.headerBox {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+   
+    z-index: 1;
+    padding: 0.5em 0;
+    height: 1.5em;
+    
+    /*Design*/
+    background-color: #333;
+    color: white;
+}
+
+.headerBox div {
+    margin: 0 auto;
+
+}
+
+.logoBox {
+    float: left;    
+    width: 50%;
+    padding-left: 1em;
+}
+
+.menuBox{
+    width: 50%;
+    text-align: right;
+    margin-right: 0.7em;
+    padding-right: 1.5em;
+
+}
+.menuBox a, .logoBox a {
+    color: #fff;
+    font-size: 1.1em;
+    margin: 0 0.2em;
+    text-decoration: none;
+    transition: 0.5s;
+}
+.menuBox a:hover , .logoBox a:hover{
+    font-size: 1.3em;
+    color: lightskyblue;
+    transition: 0.5s;
+}
+
+.headerImg {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+}
+
+
+
+footer {
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: absolute;
+
+    background-color: #333;
+    padding: 0.5em;
+    text-align: center;
+    font-size: 1em;
+
+    border-top-left-radius: 0.25em;
+    border-top-right-radius: 0.25em;
+}
+
+footer a, footer p {
+    color: #ddd;
+}
+
+
+label {
+    font-size: 1.1em;
+}
+
+
+input[type=date] {
+    cursor: pointer;
+    font-size: 0.9em;
+    padding: 0.5em;
+    margin-bottom: 1em;
+    margin-top: 0.3em;
+}
+
+input[type=text], input[type=submit], input[type=reset], .button  {
+    font-size: 1.1em;
+    padding: 0.5em;
+    width: 96.4%;
+    margin: 0 auto;
+    margin-top: 0.3em;
+}
+input[type=submit], input[type=reset], .button {
+    margin: 0 auto;
+    display: block;
+    width: 100%;
+    padding: 1em 0;
+    background-color: #333;
+    color: white;
+    border-radius: 0.2em;
+    border: none;
+    margin-top: 0.5em;
+    cursor: pointer;
+    transition: 1s;
+}
+
+
+input[type=submit]:hover {
+    transition: 0.7s;
+    background-color: #3bb63b;
+
+}
+input[type=submit]:nth-child(1):hover {
+    transition: 0.7s;
+    background-color: #CD0000;
+}
+
+/*Add task-Form div boxes*/
+.first, .second, .third {
+    margin-bottom: 2em;
+}
+
+
+
+.radioBoxes {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 0.5em;
+}
+
+.radioBoxes div {
+    padding: 0.3em 0.5em;
+    margin: 0 0.2em;
+    text-align: center;
+    border-radius: 0.5em;
+    margin-bottom: 0.5em;
+    min-width: 6em;
+    border: none;
+}
+input[type=radio] { 
+    margin-right: 1em;
+    cursor: pointer;
+    margin: 0 auto;
+}
+
+.radioBoxes div:first-child {
+    border: 1px solid rgb(245, 245, 245);
+}
+
+
+
+#taskList, #addTasks {
+    box-shadow: 0 0 10px 0 #ddd;
+    padding: 2em;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+
+}
+
+thead {
+    color: 333;
+    
+}
+  
+td, th {
+    text-align: left;
+    padding: 1em 0.5em;
+    font-size: 1.1em;
+}
+
+
+
+tr, thead {
+    border-bottom: 1em solid #fff;
+    -webkit-print-color-adjust: exact; /*Så färger synd vid utskrift*/
+}
+/*tbody tr:hover { transform: scale(1.1);}*/
+
+th{
+    border-bottom: 5px solid #ddd;
+    margin-bottom: 0.5em;
+}
+  
+.deleteBtn {
+    width: 1.5em;
+}
+
+
+/*Ger varje task en beskärning*/
+td:first-child {
+    border-top-left-radius: 20%;
+    border-bottom-left-radius: 20%;
+    text-align: center;
+    transition: 0.5s;
+    cursor: pointer;
+}
+td:last-child {
+    border-top-right-radius: 20%;
+    border-bottom-right-radius: 5em;
+    width: 25%;
+}
+
+
+/*Sätter en läng på task baren*/
+table td:nth-child(2) {
+    width: 70%;
+}
+
+
+td:first-child:hover {
+    transition: 0.5s;
+    z-index: 5;
+    display: block;
+    transform: scale(1.7);
+
+}
+
+
+/*Code from https://medium.com/allenhwkim/mobile-friendly-table-b0cb066dbc0e (08/02/21)*/
+@media screen and (max-width: 400px) {
+    table thead {
+        display: none;
+    }
+    table td {
+        display: flex;
+    }
+
+}
+
+@media screen and (max-width: 800px) {
+    .masterBox {
+        width: 90%;
+    }   
+}
+
+
+
+
+@media only screen and (max-width: 500px) {
+    .menuBox{
+        padding-right: 0.5em;
+    }
+    .logoBox {
+        width: 30%;
+    }
+    .headerBox {
+        height: auto;
+    }
+    .menuBox a, .logoBox a {
+        font-size: 1em;
+    }
+}
+
+/*Font-size*/
+@media only screen and (max-width: 525px) {
+    .masterBox h1 {
+        font-size: 1.5em;
+    }
+    .masterBox h2 {
+        font-size: 1.2em;
+        width: 100%;
+    }
+    .masterBox p, label, .button, td, th {
+        font-size: 0.9em;
+    }
+
+}
+@media only screen and (max-width: 480px) {
+    .radioBoxes div{
+        margin: 0 auto;
+        margin-bottom: 0.5em;
+    }
+}
+
+@media print { 
+    .headerBox, #addTasks {
+        display: none;
+    }
+    body {
+        min-height: 100vh;
+        color: #333;
+    }
+    .masterBox {
+        max-width: 80%;
+        width: 80%;
+    }
+}

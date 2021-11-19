@@ -1,0 +1,2 @@
+"use strict";let colorBox=document.getElementById("colorBox"),colorBtn=document.getElementById("colorBtn");colorBtn.addEventListener("click",(function(){let t=Math.floor(16777215*Math.random()).toString(16);colorBox.style.backgroundColor="#"+t,colorBox.style.border="3px solid #"+t}));let txt="En JavaScript hälsning till Malin och Mattias!",o=0,speed=50;function typeWriter(){o<txt.length&&(document.getElementById("hiddenMessage").innerHTML+=txt.charAt(o),o++,setTimeout(typeWriter,speed))}typeWriter();
+//# sourceMappingURL=../maps/main.js.map

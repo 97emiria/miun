@@ -1,0 +1,23 @@
+img {
+    width: 100%;
+    max-width: 350px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 0.2em;
+    margin-top: 1em;
+}
+
+.webpTest {
+    width: 150px;
+    height: 150px;
+
+    position: absolute;
+    right: 2em;
+    bottom: 3em;
+}
+
+@media only screen and (max-width: 800px) {
+    .webpTest {
+        display: none;
+}
+}

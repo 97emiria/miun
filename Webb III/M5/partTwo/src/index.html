@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Moment 5 | Emilia Holmström </title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="style/main.css">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
+
+    <!-- Google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet"> 
+</head>
+<body>
+
+    <header>
+        <a href="index.html">
+            <h1>  Moment 5 </h1>
+            <p>REST-webbtjänster med PHP</p>
+        </a>
+    </header>
+
+    <main>
+
+        <a href="#addCourseSection" class="topLink">Snabbgenväg till att lägga till kurs</a>        
+
+        <section id="courseList">
+            <h2>Kurslista</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Kod</th>
+                        <th>Namn</th>
+                        <th>Progression</th>
+                        <th>Länk</th>
+                        <th>Hantera</th>
+                    </tr>
+                </thead>
+           
+                <tbody id="courseListTable">
+                  
+                </tbody>
+
+            </table>
+
+
+        </section>
+
+
+
+        <section id="addCourseSection">
+            <h2>Lägg till kurs</h2>
+
+            <p id="formMassage" class="formMassage"></p>
+
+            <form action="#addCourseSection">
+                <fieldset>
+                    <legend>Fyll i kurs informationen nedanför</legend>
+    
+                    <label for="code">Kurskod</label>
+                    <input type="text" id="code" name="code" placeholder="xx123x">
+    
+                    <label for="name">Kursnamn</label>
+                    <input type="text" id="name" name="courseName" placeholder="Exempel Webbutveckling I">
+    
+                    <label for="progression">Progression</label> <br>
+                    <input type="text" id="progression" name="progression" placeholder="A eller B">
+    
+                    <label for="syllabus">Länk för att läsa mer</label>
+                    <input type="text" id="syllabus" name="syllabus" placeholder="www.exempel.se">
+    
+                    <button type="submit" class="submitBtn" onclick="addCourse(event)">Lägg till</button>
+                </fieldset>
+            </form>
+        </section>
+
+
+
+    </main>
+
+    <script> const checkPage = true; </script> <!-- To prevent errors in console -->
+    <script src="javascript/main.js"></script>
+    
+</body>
+</html>

@@ -1,0 +1,279 @@
+/*Endast importer av partials*/
+* {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #333;
+  padding: 1em;
+  text-align: center;
+  font-family: "Poiret One";
+  letter-spacing: 2px;
+}
+
+header p {
+  font-weight: bold;
+  font-size: 0.9em;
+  letter-spacing: 2.5px;
+  margin-top: 0.5em;
+}
+
+header a {
+  color: white;
+  text-decoration: none;
+}
+
+main {
+  max-width: 800px;
+  width: 90%;
+  margin: 0 auto;
+  box-sizing: border-box;
+  padding: 1em;
+}
+
+.topLink {
+  font-family: "Poiret One";
+  font-weight: bold;
+  color: #999;
+  text-decoration: none;
+  font-size: 1em;
+  float: right;
+  padding-bottom: 0.2em;
+}
+.topLink:hover {
+  color: #333;
+  border-bottom: 2px solid #333;
+  transition: 0.1s;
+}
+
+section {
+  margin: 2.2em 0;
+  padding: 0.5em 0;
+}
+section h2 {
+  font-family: "Poiret One";
+  font-size: 2.5em;
+  border-bottom: 5px double #333;
+  color: #333;
+  margin-bottom: 1em;
+  padding-bottom: 0.1em;
+}
+
+.formMassage {
+  font-size: 1em;
+  font-family: "Open Sans", sans-serif;
+  border: 2px solid #333;
+  padding: 1em;
+  box-sizing: border-box;
+  text-align: center;
+  max-width: 300px;
+  margin: 0 auto;
+  margin-bottom: 2em;
+  display: none;
+}
+
+.error {
+  display: block;
+  border: 3px solid #cd0000;
+  background-color: #ff9a9a;
+  font-weight: bold;
+}
+
+button {
+  background-color: #333;
+  border: none;
+  color: white;
+  padding: 0.5em;
+  border-radius: 0.2em;
+  margin: 0 auto;
+  cursor: pointer;
+}
+button:hover {
+  transform: scale(0.95);
+  background-color: black;
+}
+
+form {
+  width: 100%;
+  margin: 0 auto;
+}
+form fieldset {
+  border: 2px solid #ddd;
+  border-radius: 0.2em;
+  box-sizing: border-box;
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  padding: 2em 3em;
+}
+form legend {
+  font-size: 1.2em;
+  font-family: "Poiret One";
+  font-weight: bold;
+  padding: 0 0.2em;
+}
+form label {
+  font-size: 1.1em;
+  font-family: "Poiret One";
+  font-weight: bold;
+}
+form input[type=text] {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0.5em 0.3em;
+  font-size: 0.9em;
+  margin-bottom: 2em;
+  margin-top: 0.1em;
+}
+form input[type=submit], form .submitBtn {
+  background-color: #333;
+  border: none;
+  color: white;
+  padding: 1em;
+  border-radius: 0.2em;
+  width: 30%;
+  float: right;
+  margin-right: 1em;
+  cursor: pointer;
+}
+form input[type=submit]:hover, form .submitBtn:hover {
+  transform: scale(0.95);
+  background-color: black;
+}
+form ::placeholder {
+  color: #999;
+}
+form .inputLocked {
+  background-color: #ddd;
+  border: 1px solid #333;
+  border-radius: 0.2em;
+  cursor: not-allowed;
+}
+
+.deleteBtn {
+  background-color: #333;
+  border: none;
+  color: white;
+  padding: 1em;
+  border-radius: 0.2em;
+  width: 30%;
+  float: right;
+  margin-right: 1em;
+  cursor: pointer;
+  background-color: #ddd;
+  color: #333;
+}
+.deleteBtn:hover {
+  transform: scale(0.95);
+  background-color: black;
+}
+.deleteBtn:hover {
+  background-color: #cd0000;
+  font-weight: bold;
+  color: white;
+}
+
+table {
+  width: 100%;
+  border-spacing: 0;
+}
+table th {
+  text-align: left;
+  font-family: "Poiret One";
+  font-weight: bold;
+  font-size: 1.2em;
+  box-sizing: border-box;
+  padding: 1em;
+  border-bottom: 5px double #ddd;
+  background-color: white;
+}
+table td {
+  font-family: "Open Sans", sans-serif;
+  font-size: 1em;
+  padding: 1.5em;
+  border-bottom: 2px solid #ddd;
+}
+
+@media all and (min-width: 760px) {
+  th:nth-child(1),
+th:nth-child(3),
+th:nth-child(4),
+th:nth-child(5) {
+    width: 100px;
+    text-align: center;
+  }
+
+  td:nth-child(1),
+td:nth-child(3),
+td:nth-child(4),
+td:nth-child(5) {
+    text-align: center;
+  }
+}
+@media all and (max-width: 750px) {
+  /* Force table to not be like tables anymore */
+  table, thead, tbody, th, td, tr {
+    display: block;
+  }
+
+  table thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+  table tr {
+    border: 1px solid #ddd;
+    margin-bottom: 1em;
+  }
+  table td {
+    border: none;
+    border-bottom: 1px solid #eee;
+    position: relative;
+    padding-left: 40%;
+    font-size: 0.95em;
+  }
+  table td:before {
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    width: 45%;
+    padding: 1em;
+    padding-right: 10px;
+    white-space: nowrap;
+  }
+  table td:nth-of-type(1):before {
+    content: "Kurskod:";
+    width: 100px;
+  }
+  table td:nth-of-type(2):before {
+    content: "Namn:";
+    width: 100px;
+  }
+  table td:nth-of-type(3):before {
+    content: "Progressation:";
+    width: 100px;
+  }
+  table td:nth-of-type(4):before {
+    content: "Kursinfo:";
+    width: 100px;
+  }
+  table td:nth-of-type(5):before {
+    content: "Hantera:";
+    width: 100px;
+  }
+}
+@media all and (max-width: 450px) {
+  table td {
+    padding-left: 50%;
+  }
+
+  fieldset {
+    padding: 2em 1em;
+  }
+
+  form input[type=submit], .deleteBtn {
+    width: 44%;
+  }
+}
+/*# sourceMappingURL=../maps/main.css.map */

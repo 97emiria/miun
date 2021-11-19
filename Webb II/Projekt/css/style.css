@@ -1,0 +1,1657 @@
+/*
+Made March 2021 of Emilia Holmström
+*/
+
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+body {
+    position: relative;
+    max-width: 100vw;
+    min-height: 100vh;
+}
+
+a {
+    word-break: break-all;
+}
+
+#activepage {
+    color: red;
+}
+
+@font-face {
+    font-family: logoFont;
+    src: url(AbrilFatface-Regular.ttf);
+}
+
+
+/*Message design*/
+.message {
+    padding: 1em 0;
+    margin: 0.5em 0;
+    text-align: center;
+
+    color: black;
+    border: 5px solid #333;
+    background-color: #97f7a4;
+
+    text-align: center;
+    max-width: 30em;
+    margin: 0 auto;
+    border-radius: 0.5em;
+}
+
+/*Message design*/
+.success {
+    padding: 1em 0;
+    margin: 0.5em 0;
+
+    color: black;
+    border: 5px solid green;
+    background-color: rgb(68, 202, 68);
+
+    text-align: center;
+    max-width: 30em;
+    margin: 0 auto;
+    border-radius: 0.5em;
+}
+
+/*Message design*/
+.error {
+    padding: 1em 0;
+    margin: 0.5em 0;
+
+    color: black;
+    border: 5px solid red;
+    background-color: rgb(233, 131, 131);
+
+    text-align: center;
+    max-width: 30em;
+    margin: 0 auto;
+    border-radius: 0.5em;
+}
+
+.error li {
+    margin-left: 1.7em;
+    text-align: left;
+}
+
+.upBtn {
+    /*Position*/
+    position: fixed;
+    right: 1em;
+    bottom: 1em;
+
+    /*Size*/
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 2em;
+
+    /*Style*/
+    background-color: #333;
+    color: white;
+    border: none;
+    outline: none;
+
+    z-index: 5;
+}
+
+.upBtn:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+
+.masterbox {
+    max-width: 850px;
+    width: 90%;
+    margin: 0 auto;
+    padding: 6em 0.5em;
+}
+
+
+.masterbox h1{
+    text-align: center;
+    margin: 1em;
+}
+
+.masterbox h2 {
+    text-align: center;
+    margin: 1em;
+    border-bottom: 2px solid #333;
+    padding: 0.5em;
+    width: 50%;
+    margin: 0 auto;
+    margin-bottom: 2em;
+}
+
+
+footer {
+    position: absolute;
+    bottom: 0.5em;
+    text-align: center;
+    margin: 0 auto;
+    display: block;
+    border-top: 2px solid #ddd;
+    padding-top: 0.5em;
+    left: 0;
+    right: 0;
+    margin-top: 5em;
+}
+
+footer a{
+    color: #333;
+    text-decoration: none;
+    transition: 1s;
+}
+footer a:hover{
+    font-size: 1.1em;
+    transition: 1s;
+}
+
+
+
+
+/* ______ Menu ________________*/
+
+.menuBox {
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    grid-template-rows: 2em;
+    gap: 0px 0px;
+    grid-template-areas:
+      "logobox navBox";
+
+      background-color: #fff;
+
+      position: fixed;
+      z-index: 5;
+      width: 100%;
+      height: 50px;
+
+      font-size: 1.1em;
+      /*max-width: 30em;*/
+      line-height: 1.8em;
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.menuBox div {
+    color: #111;
+    padding: 0.5em;
+}
+.menuBox a {
+    color: #111;
+    text-decoration: none;
+    transition: 0.5s;
+}
+
+.logobox {
+    grid-area: logobox;
+    height: 50px;
+    background-color: #97f7a4;
+    border: 3px solid #97f7a4; /*Needed for gap between logobox and navbox bottom line*/
+    border-bottom-right-radius: 1.5em;
+}
+
+.logobox h1, .smallFormBox h1 {
+    text-align: center;
+    font-size: 2em;
+    color: #000000;
+    font-family: logoFont;
+    letter-spacing: 5px;
+}
+.logobox h1 {
+    margin-top: 0.1em;
+}
+.logobox h1 span {
+    font-family: logoFont;
+    margin: 0 0.2em;
+}
+.logobox:hover {
+ transform: scale(1.05);
+}
+
+
+.navBox {
+    grid-area: navBox;
+    height: 100%;
+    text-align: right;
+    margin-top: -0.3em;
+    border-bottom: 0.2em solid #333;
+}
+
+.navBox a:hover {
+    color: #97f7a4;
+    font-size: 1.08em;
+    transition: 0.5s;
+}
+
+.menuBtn img {
+    width: 2em;
+}
+
+.navBox li{
+    display: inline;
+}
+
+#navBtn {
+    width: 3em;
+    height: 100%;
+    float: right;
+
+    background-color: #fff;
+    border: none;
+    outline: none;
+}
+
+#navBtn:hover {
+    border: none;
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+
+#navBtn img {
+    width: 100%;
+    height: 100%;
+}
+
+
+
+
+
+
+
+/* _____ Index _______________________________________ */
+
+.slideshowBox, .mySlides, .fade {
+    width: 100%;
+    height: 50vh;
+    z-index: -10;
+}
+
+.slideshowBox {
+    position: relative;
+}
+.slideshowBox img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.slideshowText { 
+    position: absolute;
+    bottom: 1em;
+    right: 2em;
+    background-color: white;
+    padding: 0.5em;
+    border-radius: 0.5em;
+    z-index: 5;
+}
+
+.slideshowText a {
+    display: block;
+    font-size: 2em;
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 999;
+}
+
+
+
+.indexLayout {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 0.9fr 1.5fr;
+    gap: 2em 1em;
+    grid-template-areas:
+      "introText introText memberList"
+      "monthBox monthBox memberList";
+
+    max-width: 1200px;
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 3em;
+    max-height: 50em;
+    margin-bottom: 15em;
+}
+
+.indexLayout div {
+    width: 100%;
+}
+
+
+
+
+.introText { 
+    grid-area: introText; 
+    border-top: 6px double #333;
+    border-bottom: 6px double #333;
+    max-width: 700px;
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 3em;
+    margin-bottom: 2em;
+}
+
+.introText h1{
+    font-family: logoFont;
+    font-weight: bold;
+    letter-spacing: 3px;
+    text-align: center;
+    margin-bottom: 1em;
+    padding-top: 1em;
+
+}
+
+.introText h1 span {
+    font-family: logoFont;
+    margin: 0 0.1em;
+}
+
+
+.introText p {
+    font-size: 1.2em;
+    line-height: 1.5em;
+    max-width: 64ch;
+    color: #333;
+    margin: 0 auto;
+    padding: 0 2em 1.3em 2em;
+
+}
+
+
+
+.memberList { 
+    grid-area: memberList; 
+    border: 3px solid #ddd;
+    border-radius: 0.2em;
+    overflow-y: scroll;
+}
+
+.memberList h2 {
+    text-align: center;
+    margin: 1em 0;
+}
+
+.memberList ul { list-style: none;}
+
+.memberList li a{
+    padding: 0.5em;
+    color: #333;
+    text-decoration: none;
+    font-size: 1em;
+}
+.memberList li a:hover{
+    font-size: 1.1em;
+}
+
+.monthBox {
+    grid-area: monthBox;
+    width: 100%;
+    position: relative;
+}
+
+
+.monthBox h2 {
+    text-align: center;
+    margin: 0.5em 0;
+    font-family: logoFont;
+    letter-spacing: 2.2px;
+    font-size: 2em;
+}
+
+.monthBox p {
+    margin: 0.5em 0;
+    font-size: 1.2em;
+    background-color: hsla(0, 0%, 100%, 0.8);
+    padding: 0.5em;
+    border-radius: 0.5em;
+    position: absolute;
+    bottom: 0;
+    left: 0.5em;
+}
+
+.monthBox a {
+    color: #333;
+    text-decoration: none;
+}
+
+.monthBox img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0.2em;
+}
+
+
+/*Style scrollbar, from w3school.com*/
+::-webkit-scrollbar {
+    width: 15px;
+}
+::-webkit-scrollbar-track {
+    background-color: #ddd;
+}
+::-webkit-scrollbar-thumb {
+    background: #aaa; 
+    border-radius: 0.5em;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #111;    
+}
+
+
+
+
+
+/*Show posts*/
+
+.showPostsFrame {
+    max-width: 1200px;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    margin-top: 2.5em;
+}
+
+.showPostsFrameHeader {
+    font-family: logoFont;
+    letter-spacing: 2.2px;
+    font-size: 2em;
+    margin: 0 auto;
+    margin-bottom: 1em;
+    text-align: center;
+    padding-top: 3em;
+}
+
+
+.showPosts {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1.75fr 0.25fr;
+    grid-template-areas:
+        "imgBox imgBox contentBox contentBox"
+        "imgBox imgBox infoBox infoBox";
+
+    border: 2px solid #ddd;
+    position: relative;
+    color: #333;
+    max-width: 90%;
+    margin: 0 auto;
+    margin-bottom: 2em;
+    padding: 0.5em;
+    min-width: 89%;
+}
+
+
+.imgBox {
+    grid-area: imgBox; 
+}
+
+.imgBox img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    padding: 1em;
+    box-sizing: border-box;
+}
+
+.contentBox { 
+    grid-area: contentBox; 
+}
+
+.contentBox h3 {
+    font-size: 1.5em;
+    text-align: center;
+
+    margin: 0 auto;
+
+    margin-bottom: 1em;
+    margin-top: 2em;
+
+    width: 80%;
+
+    border-top: 2px solid #333;
+    border-bottom: 2px solid #333;
+
+}
+
+.contentBox h3 a{
+    text-decoration: none;
+    color: #222;
+    word-break: break-word;
+}
+
+.contentBox h3 a:hover{
+    font-size: 1.05em;
+}
+
+.contentBox p {
+    font-size: 1.1em;
+    width: 90%;
+    margin: 0 auto;
+    color: #222;
+    line-height: 1.8em;
+}
+
+.contentBox a{
+    color: #333;
+    line-height: 3em;  
+    transition: 0.5s;
+}
+.infoBox a {
+    transition: 0.5s;
+    text-decoration: none;
+}
+
+.contentBox a:hover, .infoBox a:hover {
+    font-size: 1.05em;
+    transition: 0.5s;
+    color: #0034a5;
+}
+
+.contentBox ul, .contentBox ol {
+    margin-left: 2.5em;
+}
+
+.infoBox { 
+    grid-area: infoBox; 
+    text-align: right;
+    padding-right: 1em;
+    position: absolute;
+    bottom: 0.5em;
+    right: 0;
+}
+
+.infoBox p {
+    margin-bottom: 0.2em;
+}
+
+.infoBox p:first-child{ 
+    font-size: 1.1em;
+    border-bottom: 2px solid #333;
+    text-align: center;
+}
+
+
+
+
+
+
+/* _____ Inspo page _____________________________________*/
+
+.inspoImgSystem {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.inspoImgSystem div {
+    width: 25%;
+    height: 15em;
+}
+
+.inspoImgSystem img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.inspoImgSystem img:hover {
+    transform: scale(1.1);
+    border-radius: 1em;
+}
+
+@media only screen and (max-width: 750px) {
+    .inspoImgSystem div {
+        width: 25%;
+        height: 10em;
+    }
+}
+
+/*_____________________________________________________________________________________________*/
+/*_____________________________________________________________________________________________*/
+/*_____________________________________________________________________________________________*/
+/*_____________________________________________________________________________________________*/
+
+
+
+
+
+/* _____ Solo post _______________*/
+
+
+.postBox {
+    margin-bottom: 5em;
+}
+
+.postBox p {
+    line-height: 1.8em;
+    margin: 2em 0;
+}
+
+.userPostInfo {
+    border-top: 2px solid #ddd;
+    text-align: right;
+    margin-top: 2em;
+}
+
+.userPostInfo p {
+    margin: 0.3em;
+}
+
+.postBox img {
+    border-radius: 0.2em;
+    width: 100%;
+}
+
+ul, ol {
+    margin-left: 1.5em;
+    line-height: 1.8em;
+}
+
+
+.iconMenu {
+    width: 220px;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.iconMenu div:first-child {
+    margin-top: -1em;
+}
+
+
+.savePost, .iconMenu button {
+    width: 50px;
+    height: 50px;
+    outline: none;
+    border: none;
+    border-radius: 50%;
+}
+
+.iconMenu img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.savePost:hover {
+    transform: scale(1.05);
+    outline: none;
+    border: none;
+}
+
+
+
+
+/* _____ Add post page __________________________________________*/
+
+.updateFromBox {
+    max-width: 350px;
+    padding: 1.5em 2em 1.5em 1.5em;
+    margin-top: 2.5%;
+}
+
+.addingPostBox {
+    max-width: 600px;
+    width: 90%;
+    margin: 0 auto;
+    padding: 6em 0.5em;
+}
+
+.addingPostBox h2 {
+    margin: 0 auto;
+    margin-bottom: 1.5em;
+}
+.addingPostBox p {
+    margin-top: 2em;
+    font-size: 0.9em;
+    color: #555;
+}
+.addingPostBox img {
+    width: 100%;
+    margin-bottom: 1em;
+}
+
+/*To hide info that not necessary on update page*/
+.updatePostBox #postRulsBox div:nth-child(4), .updatePostBox #postRulsBox div:nth-child(3) {
+    display: none;
+}
+
+@media only screen and (max-width: 400px) {
+    .smallFormBox h1 {
+        font-size: 1.5em;
+    }
+
+}
+
+
+/* _____ Often use around forms ________________________________________________*/
+.smallFormBox {
+    max-width: 400px;
+    padding: 1.5em 2em 1.5em 1.5em;
+    margin: 0 auto;
+    margin-top: 2.5%;
+
+    border: 0.2em solid #333;
+}
+
+.smallFormBoxWihtoutBorder{
+    border: none;
+}
+
+.smallFormBox h1 {
+    text-align: center;
+    margin-bottom: 1em;
+    border-bottom: 0.3em double #97f7a4;
+    border-top: 0.3em double #97f7a4;
+    font-size: 2em;
+    padding: 0.5em 0;
+    color: #333;
+    font-family: logoFont;
+    letter-spacing: 2px;
+}
+
+.smallFormBox h3 {
+    margin: 2em 0 1em 0;
+    padding-top: 1em;
+}
+
+
+
+/* ______ Forms _________________________________________*/
+
+form {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin-top: 1em;
+}
+
+label {
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+input[type=text], input[type=password], input[type=email]{
+    font-size: 1.1em;
+    padding: 0.5em;
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 0.3em;
+    margin-bottom: 3em;
+    box-sizing: border-box;
+
+}
+input[type=submit], input[type=reset] {
+    margin: 0 auto;
+    display: block;
+    width: 100%;
+    padding: 1em;
+    background-color: #333;
+    color: #fff;
+    border-radius: 0.2em;
+    border: none;
+    margin-top: 0.5em;
+    cursor: pointer;
+    transition: 1s;
+    font-size: 1.1em;
+}
+
+input[type=submit]:hover {
+    transition: 0.7s;
+    background-color: #3bb63b;
+
+}
+input[type=submit]:nth-child(1):hover, input[type=reset]:hover, .delete:hover {
+    transition: 0.7s;
+    background-color: #CD0000;
+}
+
+textarea {
+    font-size: 1.1em;
+    padding: 1.5em 1em;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    margin-top: 0.3em;
+    resize: none;
+    box-sizing: border-box;
+
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+
+input[type=file] {
+    font-size: 1em;
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 0.3em;
+    margin-bottom: 3em;
+
+    border: 0.5px solid #333;
+    border-radius: 0.2em;
+    padding: 1em 0.5em;
+    cursor: pointer;
+    box-sizing: border-box;
+
+}
+
+input[type=file] button { 
+    background-color: #333;
+}
+
+
+form ul {
+    margin-top: 1em;
+}
+
+.formImg {
+    width: 100%;
+    border-radius: 0.5em;
+}
+
+
+
+
+
+
+/* ______ messages with adding posts ______*/
+
+/*Message design*/
+.postError {
+    padding: 0.5em;
+    color: red;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+.postForget {
+    padding: 0.5em;
+    color: #ff9900;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+
+/*From w3school, change list style color */
+.postUlError, .postUlForget {
+    list-style: none; 
+  }
+.postUlError  li::before, .postUlForget li::before {
+    content: "\2022";  
+    font-size: 1.3em;
+    color: red; 
+    font-weight: bold; 
+    display: inline-block; 
+    width: 1em; 
+    margin-left: -0.5em; 
+  }
+
+.postUlForget  li::before {
+    color: #ff9900; /* Change the color */
+}
+
+
+/* _____ Rules box ______ */
+#postRulsBtn {
+    background-color: #333;
+    border: none;
+    padding: 0.5em;
+    color: white;
+    border-radius: 0.2em;
+    font-size: 1em;
+    cursor: pointer;
+}
+#postRulsBox {
+    max-width: 380px;
+    padding: 2em 1.5em 2em 3em;
+    border: 2px solid #ddd;
+    box-shadow: 2.5px 2.5px 2.5px 0 #ddd;
+    cursor: grabbing;
+}
+
+#postRulsBox h3{
+    margin-top: 1.5em;
+}
+
+
+
+
+
+
+.boxForPosts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+}
+
+/* _____ Comments box design ______*/
+.singelComment {
+    line-height: 1.8em;
+    margin-bottom: 1em;
+    padding: 1em;
+    border-radius: 0.5em;
+
+}
+
+.singelComment a {
+    font-weight: bold;
+    text-decoration: none;
+    color: #333;
+}
+
+.singelComment a:hover {
+    font-size: 1.1em;
+}
+
+.singelComment p:first-child {
+    font-weight: bold;
+    border-bottom: 2px solid #333;
+}
+
+.singelComment p:nth-child(2) {
+    margin: 0.5em 0;
+}
+.singelComment p:last-child {
+    text-align: right;
+}
+
+.singelComment:nth-child(odd) {
+    border: 2px solid #f1f1f1;
+}
+.singelComment:nth-child(even) { 
+    background-color: #97f7a4;
+}
+
+.commentForm {
+    margin-top: 5em;
+}
+
+
+
+
+
+
+
+
+
+
+
+.inspirationGridImg {
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 3em;
+}
+
+.inspirationGridImg div {
+    width: 25%;
+    height: 12em;
+    transition: 0.2s;
+}
+
+@media only screen and (min-width: 1200px) {
+    .inspirationGridImg div {
+        width: 12.5%;
+        height: 9.5em;
+    }
+
+}
+@media only screen and (max-width: 500px) {
+    .inspirationGridImg div {
+        width: 33%;
+        height: 7em;
+    }
+
+}
+.inspirationGridImg div:hover {
+    transform: scale(1.2);
+    transition: 0.7s;
+    z-index: 1;
+}
+
+.inspirationGridImg div img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* ______ Admin ______ */
+.adminBtnBox {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;   
+    margin-bottom: 3em; 
+    margin-top: 2.5em;
+}
+
+.adminBtnBox button {
+    width: 9em;
+    height: 4em;
+    padding: 0.5em;
+    margin: 0 auto;
+    font-size: 1em;
+    background-color: #333;
+    border: none;
+    color: #fff;
+    border-radius: 0.5em;
+    margin-bottom: 2em;
+}
+
+.adminBtnBox button:hover {
+    background-color: #111;
+    cursor: pointer;
+}
+
+.adminSection section {
+    display: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ________________ Profile _____________________________________________________________*/
+
+
+
+.profilGrid {
+    display: grid;
+    grid-template-columns: 15em 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 0.5em;
+    grid-template-areas:
+        "pImg pText"
+        "pImg pText";
+
+    max-width: 650px;
+    margin: 0 auto;
+    margin-bottom: 3em;
+
+}
+
+
+.pImg { 
+    grid-area: pImg; 
+    position: relative;
+}
+
+.pImg img {
+    width: 100%;
+    height: 100%;
+}
+
+.pText { 
+    grid-area: pText; 
+    padding: 1em 1em;
+    line-height: 1.8em;
+    width: 100%;
+
+    position: relative;
+}
+
+.pText div {
+    position: absolute;
+    bottom: 10px;
+}
+
+.pText h1 {
+    font-family: logoFont;
+    letter-spacing: 2.5px;
+    margin-bottom: 0.5em;
+}
+
+.gearWheal {
+    width: 35px;
+    position: absolute;
+    right: 3em;
+    top: 1em;
+}
+
+.gearWheal:hover {
+    transition: 0.5s;
+    cursor: pointer;
+    transform: scale(1.2);
+}
+
+.pText ul {
+    list-style: none;
+}
+
+.pText li a{
+    margin-left: -1.5em;
+    text-decoration: none;
+    color: #333;
+    font-size: 1.1em;
+    line-height: 2.1em;
+    text-align: center;
+}
+
+
+
+@media only screen and (max-width: 650px) {
+    .profilGrid {
+        width: 90%;
+        grid-template-columns: 10em 1fr;
+    }
+
+    .pImg { 
+        grid-area: pImg; 
+        position: relative;
+        width: 10em;
+        height: 10em;
+        margin: 0 auto;
+    }
+
+    .pText {
+        margin: 0 auto;
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    .profilGrid {
+        display: grid;
+        grid-template-columns: 8em 1fr;
+        grid-template-rows: 1fr 1fr;
+        gap: 0.5em;
+        grid-template-areas:
+            "pImg pImg"
+            "pText pText";
+    
+        margin: 0 auto;
+        margin-bottom: 3em;
+    }
+
+    .pImg { 
+        grid-area: pImg; 
+        position: relative;
+        width: 8em;
+        height: 8em;
+        margin: 0 auto;
+    }
+
+    .pText {
+        margin: 0 auto;
+        width: 15em;
+    }
+
+    .gearWheal {
+        width: 35px;
+        position: absolute;
+        right: 1em;
+        top: -10em;
+    }
+}
+
+
+
+
+/*When user dont have any posts*/
+.userVisitingEmptyBox {
+    width: 290px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+
+
+
+/* ____________ Postbox profile ______________________________________________________*/
+
+.profileHeading {
+    margin: 0 auto;
+    max-width: 450px;
+    width: 90%;
+    
+    text-align: center;
+    margin-bottom: 2em;
+    margin-top: 2em;
+    padding-bottom: 0.5em;
+}
+
+
+/*Wrap all posts*/
+.frameFlexBox{
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 910px;
+    margin: 0 auto;
+    
+    justify-content: left;
+    gap: 5px;
+}
+
+.flowBox {
+    width: 300px;
+    height: 300px;
+    position: relative;
+}
+
+.flowBox img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.subFlow { 
+    padding-top: 0.8em;
+    text-align: center;
+    position: absolute;
+
+    width: 100%;
+    top: 1em;
+
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 96%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: hsla(0, 0%, 85%, 0.5);
+}
+
+.flowBox:hover .subFlow{
+    opacity: 1;
+}
+
+
+
+.subFlow button:first-child {
+    margin-top: 70px;
+}
+
+
+.subFlow button {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin: 0 2px;
+    border: none;
+    outline: none;
+    transition: 1s;
+
+}
+
+.btnReadProfile:hover {
+    background: white;
+    color: #333;
+    transition: 0.5s;
+    cursor: pointer;
+    transform: scale(1.1);
+}
+.btnUpdateProfile:hover{
+    background: #3bb63b;
+    transition: 0.5s;
+    cursor: pointer;
+    transform: scale(1.1);
+}
+.btnDeleteProfile:hover{
+    background: #cd0000;
+    transition: 0.5s;
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+
+
+
+
+
+@media only screen and (max-width: 950px) {
+    .frameFlexBox{
+        max-width: 610px;
+    }
+    
+    .flowBox {
+        width: 200px;
+        height: 200px;
+    }
+
+    .subFlow button:first-child {
+        margin-top: 15px;
+    }
+}
+
+
+@media only screen and (max-width: 630px) {
+    .frameFlexBox{
+        max-width: 460px;
+    }
+    
+    .flowBox {
+        width: 227.5px;
+        height: 227.5px;
+    }
+}
+
+
+@media only screen and (max-width: 480px) {
+    .frameFlexBox{
+        max-width: 350px;
+    }
+    
+    .flowBox {
+        width: 172.5px;
+        height: 172.5px;
+    }
+    .subFlow button:first-child {
+        margin-top: 3.5px;
+    }
+}
+
+
+
+
+
+/* ___________________ Comment box profile ________________________________________*/
+
+.commentBoxProfile {
+    display: grid;
+    grid-template-columns: 0.8fr 1.7fr 4.5em;
+    grid-template-areas:
+      "commentImgBox commentCommentBox commentButtonBox";
+
+      border-bottom: 6px double #333;
+      padding: 0.5em;
+      max-width: 800px;
+      margin: 0 auto;
+}
+
+.commentImgBox { 
+    grid-area: commentImgBox; 
+}
+
+.commentImgBox img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.commentCommentBox { 
+    grid-area: commentCommentBox; 
+    padding: 0.9em 1.5em;
+}
+
+.commentCommentBox h2{ 
+    grid-area: commentCommentBox; 
+    padding: 0;
+    text-align: left;
+    border-bottom: 0;
+    width: 100%;
+    font-size: 1.2em;
+}
+
+
+.commentButtonBox { 
+    grid-area: commentButtonBox; 
+}
+
+.commentButtonBox button {
+    width: 100%;
+    height: 5em;
+    margin-bottom: 0.1em;
+    border-radius: 50%;
+    outline: none;
+    border: none;
+    border-radius: 50%;
+    background-color: white;
+}
+.commentButtonBox button img{
+    width: 100%;
+    height: 100%;
+   
+}
+
+
+.commentButtonBox button:first-child {
+    margin-bottom: 1em;
+    margin-top: 0.5em;
+}
+
+
+.noCommentMadeBox {
+    max-width: 800px;
+    margin: 0 auto;
+    width: 90%;
+}
+
+
+.profileButtonsBox {
+    width: 100%;
+    display: flex;
+    max-width: 800px;
+    margin: 0 auto;
+    margin-bottom: 1.5em;
+    justify-content: space-evenly;
+}
+
+
+.profileButtonsBox button {
+    border: none;
+    outline: none;
+    padding: 0.5em;
+    border-radius: 0.5em;
+    width: 10em;
+    background-color: #97f7a4;
+    color: #333;
+    font-size: 1em;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.profileButtonsBox button:hover {
+    transform: scale(1.1);
+}
+
+@media only screen and (max-width: 500px) {
+    .profileButtonsBox {
+        flex-direction: column;
+    }
+
+    .profileButtonsBox button {
+        margin: 0 auto;
+        margin-bottom: 1em;
+    }
+}
+
+/*_______________ setting page design_________________________________________________________________________*/
+
+/*Hide settings boxes*/
+.changeBox section {
+    display: none;
+}
+
+.profileImgChangeBox, .changePasswordBox {
+    max-width: 600px;
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 3em;
+    margin-top: 3em;
+}
+
+.profileImgChangeBox h2 {
+    margin-left: 0.8em;
+    margin-bottom: 1.5em;
+}
+.changePasswordBox h2 {
+    margin-bottom: 1.5em;
+}
+
+.selectImg {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5em;
+    max-width: 600px;
+    margin: 0 auto;
+    margin-bottom: 2em;
+    text-align: center;
+}
+
+.selectImg div {
+    width: 9em;
+    height: 9em;
+    border: 2px solid #333;
+    padding: 0.2em;
+    margin: 0 auto;
+    display: block;
+    border-radius: 0.5em;
+}
+
+.selectImg img {
+    width: 80%;
+    height: 7em;
+    object-fit: cover;
+    margin: 0 auto;
+    margin-bottom: 0.5em;
+}
+
+
+
+/* ______ Media queries ____________________________*/
+
+
+
+/*Main menu*/
+@media only screen and (min-width: 1200px) {
+    .menuBox {
+        grid-template-columns: 0.6fr 1.4fr; 
+    }
+}
+@media only screen and (max-width: 800px) {
+    .logobox {
+        height: 40px;
+        border: 7px solid #97f7a4;
+    }
+    .logobox h1  {
+        font-size: 1.5em;
+        letter-spacing: 2.5px;
+    }
+}
+@media only screen and (max-width: 700px) {
+    .menuBox {
+        grid-template-columns: 1.3fr 0.7fr; 
+    }
+}
+@media only screen and (max-width: 400px) {
+    .logobox h1{
+        font-size: 1.1em;
+    }
+}
+
+/*Burgar meny*/
+@media only screen and (max-width: 750px) {
+    #navBoxSmall {
+        background-color: white;
+        position: absolute;
+        top: 2.8em;
+        left: 0;
+        right: 0;
+        width: 100vw;
+        height: 100vh;
+        margin: 0 auto;
+
+        z-index: -1;
+
+    }
+
+    .navBox ul {
+        width: 80%;
+        margin: 0 auto;
+        margin-top: 2em;
+    }
+
+    .navBox li{
+        display: flex;
+        justify-content: center;
+        font-size: 1.8em;
+        line-height: 3em;
+        margin-left: -0.7em;
+    }
+
+    .navBox span{
+        display: none;
+    }
+
+}
+
+
+
+/*Index layout */
+@media only screen and (max-width: 800px) {
+    .indexLayout {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        gap: 2em 1em;
+        grid-template-areas:
+          "introText introText"
+          "monthBox monthBox"
+          "memberList memberList";
+    
+    margin-bottom: 27em;
+    
+    }
+
+    .memberList {
+        height: 15em;
+    }
+
+    .memberList li {
+        display:flow-root;
+    }
+}
+
+/*Post box on index page*/
+@media only screen and (max-width: 750px) {
+    .showPosts {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 15em 1.8fr 0.2fr;
+        gap: 3em 0;
+        grid-template-areas:
+            "imgBox imgBox"
+            "contentBox contentBox" 
+            "infoBox infoBox";
+    }
+}

@@ -1,0 +1,1813 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+    background-color: #eeeeee;
+}
+
+@font-face {
+    font-family: mainFont;
+    src: url(fonts/NotoSans-Bold.ttf);
+}
+
+/*@import: url("https://necolas.github.io/normalize.css/8.0.1/normalize.css");*/
+
+/*Controll contant space between header and footer*/
+.frameBox {
+    padding: 10em 1em 23em 1em;
+    max-width: 1000px;
+    width: 90%;
+    margin: 0 auto;
+    position: relative;
+    box-sizing: border-box;
+    background-color: #eeeeee;
+}
+
+
+h1 {
+    font-size: 3.5em;
+    border-bottom: 3px solid #333;
+    padding-bottom: 0.1em;
+    margin-bottom: 0.5em;
+    font-family: mainFont, Calibri, 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;;
+    max-width: 550px;
+}
+
+/*Icon header*/
+.iconHeader {
+    border-bottom: 5px solid #333;
+    margin-bottom: 4em;
+}
+
+.iconHeader img {
+    width: 100px;
+    height: 100px;
+    vertical-align: middle;
+}
+.iconHeader h1 {
+    vertical-align: middle;
+    display: inline;
+
+    border: none;
+    padding: 0;
+}
+
+p {
+    font-family: Calibri, 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+    max-width: 60ch;
+    line-height: 1.5em;
+    font-size: 1.3em;
+    margin-bottom: 1em;
+}
+
+
+
+/* _____ Header _____*/
+
+header {
+    /*Style*/
+    background-color: #007EB1;
+    color: white;
+    box-shadow: 0 0 10px 0 #333;
+
+    /*Position*/
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 99;
+
+    /*Size*/
+    height: 75px;
+}
+
+
+
+
+
+/*Menu box*/
+.navMenu{
+    background-color: #fff;
+    width: 250px;
+    border-left: 2px solid #ddd;
+    height: 100vh;
+    float: right;
+
+    transition: 0.7s;
+    position: absolute;
+    top: 0;
+    right: -100vw;
+    padding-top: 5em;
+}
+
+/*Js class to reveal menu*/
+.navBoxMove {
+    right: 0;
+}
+
+
+.navLogo  {
+    width: 300px;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+.navLogo img{
+    width: 100%;
+    height: 75px;
+}
+
+.navLogo img:hover{
+    transform: scale(1.05);
+}
+
+.navMenu ul {
+    list-style: none;
+    width: 100%;
+    max-width: 700px;
+    float: right;
+}
+
+.navMenu li {
+    text-align: center;
+    margin: 1em 0;
+    display: inline;
+}   
+
+.navMenu li img {
+    width: 50px;
+    height: 50px;
+    border: 4px solid #007EB1;
+    border-radius: 0.3em;
+}
+
+.navMenu li a {
+    display: block;
+    padding: 1em 0.5em;
+    width: 200px;
+
+    padding: 0.4em 0;
+
+    margin: 0 auto;
+    margin-bottom: 2em;
+   
+
+    background-color: #007EB1;
+    border: none;
+    cursor: pointer;
+    border-radius: 0.3em;
+
+    z-index: 2;
+
+    /*Center it*/
+    text-align: center;
+
+    color: white;
+    text-decoration: none;
+    font-family: mainFont, Calibri, 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;;
+    font-size: 1.5em;
+
+}
+
+.navMenu li a:hover, .active:hover {
+    background-color: #fff;
+    border: 5px solid #007EB1;
+    color: #000;
+    text-decoration: underline;
+    display: block;
+    box-sizing: border-box;
+}
+
+
+.active {
+    text-decoration: underline;
+}
+
+/*Button to reveal menu small screen*/
+.navButton{
+    width: 90px;
+    height: 70px;
+    vertical-align: middle;
+    position: absolute;
+    top: 0.1em;
+    right: 0.5em;
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+    z-index: 99;
+
+    background-image: url('../images/iconMenu.png');
+    background-size: 100% 100%;
+    transition: 1s;
+    font-size: 1em;
+    text-align: center;
+    color: transparent;
+}
+
+.navButtonClose {
+    background-image: url('../images/iconClose.png');
+    background-size: 100% 100%;
+    transition: 1s;
+}
+
+
+
+/*Menu btn on index and login page*/
+.headerHeight {
+    height: 110px;
+}
+
+.headerHeight .navLogo img {
+    margin-top: 0.9em;
+}
+
+
+.indexInfoBtn a {
+    display: block;
+    padding: 1em 0;
+    width: 150px;
+    height: 50px;
+
+    padding: 0.5em 0;
+
+    position: absolute;
+    right: 0;
+    top: 0;
+
+    background-color: #007EB1;
+    border: none;
+    cursor: pointer;
+    border-radius: 0.3em;
+
+    z-index: 2;
+
+    /*Center it*/
+    text-align: center;
+
+    color: white;
+    text-decoration: none;
+    font-family: mainFont, Calibri, 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;;
+    font-size: 1.5em;
+}
+.indexInfoBtn img { 
+    width: 50px;
+    height: 50px;
+}
+/*Make menu same height as desktop*/
+.headerHigher {
+    height: 120px;
+    overflow: hidden;
+}
+.headerHigher .navLogo a img{
+    width: 100%;
+    height: 100%;
+    margin-top: 1em;
+    margin-left: 1em;
+}
+.indexInfoBtn a:hover{
+    background-color: white;
+    max-height: 120px;
+    height: 100%;
+    color: black;
+}
+
+
+@media only screen and (min-width: 1000px) {
+    header {
+        height: 120px;
+    }
+    .navMenu{
+        background-color: #007EB1;
+        box-shadow: none;
+        width: 60%;
+        height: 120px;
+    
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding-top: 0em;
+        border-left: none;
+    }
+    .navMenu ul {
+        text-align: right;
+        margin-right: 0.2em;
+    }
+
+    .navMenu li {
+        text-align: center;
+        margin: 0;
+        display: inline-block;
+    }  
+
+    .navMenu li a {
+        width: 180px;
+        border-radius: 0;
+        box-shadow: none;
+    }
+
+    .navLogo a img{
+        width: 100%;
+        height: 100%;
+        margin-top: 1em;
+        margin-left: 1em;
+    }
+
+    .navButton {
+        display: none;
+    }
+
+
+    .indexInfoBtn a img {
+        width: 50px;
+        border-radius: 50%;
+
+    }
+    .navMenu li a:hover, .active:hover {
+        border: none;
+    }
+}
+/*Make info-btn not cover logo*/
+@media only screen and (max-width: 500px) {
+    .indexInfoBtn a {
+        width: 100px;
+    }
+}
+
+
+
+
+
+
+/*_____ Collapsible Box ______*/
+
+.collapsibleBox {
+    padding: 1em;
+    max-width: 800px;
+    margin-bottom: 5em;
+    border-left: 5px solid #007EB1;
+    border-top: 1.5px solid #ddd;
+
+}   
+.collTiny {
+    max-width: 500px;
+    border-left: 5px solid #007EB1;
+    border-top: none;
+}
+.collapsibleBox_NoBorder{
+    border-top: none;
+}
+
+.collBtn {
+    font-family: mainFont, Calibri, 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;;
+    background-color: hsla(0, 0%, 100%, 0);
+    padding: 0.5em;
+    font-size: 1.3em;
+    max-width: 100%;
+    width: 100%;
+    vertical-align: middle;
+    border-radius: 0.2em;
+    box-sizing: border-box;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+}
+
+.collBtn button:hover {
+    transform: none;
+}
+
+/*Change question width*/
+.collBtn button:first-child {
+    width: 80%;
+}
+
+/*Add img  with open icon*/
+.collImgBox {
+	width: 50px;
+	height: 50px;
+	background-image: url("../images/iconOpen.png");
+	background-size: cover;
+	transition: 0.2s;
+}
+
+
+/*Answerd box*/
+.collDrop {
+    display: none;
+    margin-top: 1.5em;
+    padding: 0.5em;
+}
+
+
+.collBtn:hover {
+    transform: none;
+    background-color: #cbe6ee;
+}
+
+/*Classes that get added (or change) thru JavsScript*/
+.collBoxOpen {
+    background-color: #cbe6ee;
+}
+.collChangeImg {    /*Change img to close*/
+	background-image: url("../images/iconCloseRound.png");
+	background-size: cover;
+	transition: 0.2s;
+}
+.collDropOpen { /*Class that reveal answerd box*/
+    display: block;
+}
+
+
+
+
+
+
+/*Buttons*/
+button {
+    border: none;
+    cursor: pointer;
+    font-family: mainFont, Calibri, 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;;
+    text-align: left;
+    font-size: 1.2em;
+    width: 100%;
+    padding: 1em;
+    margin-bottom: 1em;
+    background-color: transparent;
+    border-radius: 0.3em;
+}
+
+.maxWidthBtn {
+    max-width: 400px;
+}
+
+.removeBtnStyle {
+    border: none;
+    cursor: pointer;
+    font-family: mainFont, Calibri, 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;;
+    text-align: none;
+    padding-left: 0;
+    padding: 0;
+    margin-bottom: 0;
+    width: 100%;
+    max-width: 100%;
+}
+
+button:hover {
+    transition: 0.3s;
+    box-shadow: none; 
+	transform: scale(1.1);
+}
+
+.rightArrow::after {
+    content: '\01F82A';
+    font-size: 1.5em;
+    vertical-align: middle;
+    float: right;
+    margin-right: 0.2em;
+}
+
+
+
+
+/*The blue btns*/
+.normalBtn {
+    background-color: #cbe6ee;
+    color: black;
+    box-shadow: 7px 7px #a2ccd6; 
+
+    padding: 0.7em;
+    vertical-align: top;
+}
+
+/*The grey btn*/
+.greyBtn {
+    background-color: #373737;
+    color: white;
+    box-shadow: 7px 7px #000; 
+
+    /*Center it*/
+    text-align: center;
+
+    width: 100%;
+    border-radius: 0.2em;
+}
+
+
+.normalBtn:hover {
+	transition: 0.3s;
+	transform: none;
+    box-shadow: none; 
+	display: block;
+
+    margin-left: 4px;
+    margin-top: 4px;
+    transform: none;
+    box-shadow: 4px 4px #a2ccd6;
+    background-color: #b7dbe4;
+}
+
+.greyBtn:hover {
+	transition: 0.3s;
+	transform: none;
+    box-shadow: none; 
+	display: block;
+
+    margin-left: 4px;
+    margin-top: 4px;
+    transform: none;
+    box-shadow: 4px 4px #111;
+    background-color: #333;
+}
+
+
+/*Booking conform btn*/
+.redBtn {
+    background-color: #F0B8B8;
+    border-bottom: 5px solid #cd0000;
+    color: black;
+}
+/*Booking conform btn*/
+.greenBtn {
+    background-color: #D6F0B8;
+    border-bottom: 5px solid #3FD562;
+    color: black;
+}
+
+
+
+/*Buttons on future booking*/
+.cancelBtn, .rebookBtn {
+    width: 200px;
+    font-size: 1.2em;
+    text-align: center;
+    padding-left: 0;
+    padding: 0.5em;
+    font-family: mainFont, Calibri, 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;;
+    margin-right: 0.5em;
+}
+.cancelBtn {
+    background-color: #CD0000;
+    color: white;
+}
+.rebookBtn {
+    background-color: #FFDE0A;
+    color: #333;
+}
+
+
+/*Button on profil underpage*/
+.backBtn {
+    width: 200px;
+    font-size: 1.2em;
+    border-radius: 2em;
+    background-color: white;
+    border: 3px solid #333;
+    text-align: center;
+    padding: 0.5em;
+
+    position: fixed;
+    bottom: 2em;
+    right: 5em;
+    z-index: 1;
+}
+
+
+
+
+
+
+
+/*_____ Index page ______*/
+
+
+.indexBox {
+    width: 95%;
+    margin: 0 auto;
+    margin-top: 3em;
+
+    display: flex;
+    gap: 2em;
+    box-sizing: border-box;
+}
+
+.indexBox div {
+    width: 50%;
+}
+
+.indexBox div:last-child {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.indexBox h1 {
+    font-size: 3em;
+    border-bottom: 3px solid #333;
+    padding-bottom: 0.1em;
+    margin-bottom: 0.3em;
+    font-family: mainFont, Calibri, 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;;
+    max-width: 550px;
+}
+
+.indexBox p {
+    max-width: 50ch;
+    font-size: 1.2em;
+    line-height: 1.5em;
+    font-family: Calibri, 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+    box-sizing: border-box;
+    float: left;
+}
+
+.indexBox div:last-child img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0.5em;
+}
+
+.loginBtnIndex {
+    width: 90%;
+    max-width: 400px;
+    height: 65px;
+}
+
+
+
+.loginBtnIndex img {
+    vertical-align: middle;
+    height: 35px;
+}
+
+
+/*_____ Log in page ______*/
+
+.loginBox {
+    box-sizing: border-box;
+    border: 5px solid #007EB1;
+    padding: 1em;
+    max-width: 500px;
+    margin: 0 auto;
+    box-shadow: 0 0 10px 0 #333;
+    border-radius: 0.3em;
+    background-color: white;
+
+}
+
+.loginBox h2 {
+    font-family: mainFont, Calibri, 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;;
+    font-size: 2em;
+    text-align: center;
+    border-bottom: 3px solid #007EB1;
+    width: 50%;
+    text-align: center;
+    margin: 0 auto;
+    margin-bottom: 1.5em;
+}
+
+.loginBox p {
+    text-align: center;
+}
+
+.loginBox a {
+    font-family: mainFont, Calibri, 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;;
+    font-size: 1.1em;
+}
+.lessBottomMargin {
+    margin-bottom: 5px;
+}
+.loginBtnBox {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin-bottom: 2em;
+}
+
+.loginBtnBoxButton {
+    width: 45%;
+    background-color: #007EB1;
+    border: 2px solid #032735;
+	box-shadow: 7px 7px #032735;
+    color: white;
+    border-radius: 0.2em;
+    text-align: center;
+	transform: none;
+
+}
+.loginBtnBoxButton:hover {
+    margin-left: 7px;
+    margin-top: 7px;
+    transform: none;
+    background-color: #006a94;
+    box-shadow: 4px 4px #032735;
+    display:inline-block;
+    z-index: 55;
+}
+
+/*Change style on active btn thru JS*/
+.loginSelected {
+    background-color: #016288;
+	box-shadow: none;
+
+    transition: 0.1s;
+	transform: none;
+
+    box-shadow: 2px 2px #032735;
+
+	display: block;
+	margin-bottom: 0.9em;
+    display:inline-block;
+}
+
+
+/*Login btn*/
+.loginBox input[type=submit] {
+    width: 100%;
+    max-width: 250px;
+    border: 2px solid #007EB1;
+    border-radius: 0.2em;
+}
+
+
+
+#bankID, #password {
+    display: none;
+}
+
+
+
+.qrCodeStyle {
+    width: 175px;
+    margin: 0 auto;
+    display: block;
+}
+
+.bankID form {
+    width: 100%; 
+    box-sizing: border-box;
+}
+
+.loginFlex {
+    display: flex;
+    gap: 1em;
+    margin: 0;
+}
+
+.loginFlex div:last-child {
+    width: 100%;
+}
+
+.loginFlex img {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid #333;
+    margin-top: 1.8em;
+
+}
+
+
+@media only screen and (max-width: 400px) { 
+    .loginBtnBox {
+        flex-direction: column;
+    }
+
+    .loginBtnBox button {
+        width: 90%;
+        margin: 0 auto;
+        margin-bottom: 1em;
+    }
+}
+
+
+
+
+/*_____ Profile page ______*/
+
+
+
+.profileFlex {
+    display: flex;
+    gap: 3em;
+    justify-content: space-between;
+	font-family: Calibri, 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+
+}
+.profileFlex h2 {
+	font-size: 1.7em;
+	margin-bottom: 1em;
+    padding-bottom: 0.1em;
+    font-family: mainFont, Calibri, 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;;
+    max-width: 550px;
+}
+
+.profileBox_left {
+    width: 40%;
+}
+.profileBox_right {
+    width: 60%;
+}
+
+
+.profileBox_left ul {
+    list-style: none;
+}
+.profileBox_left li {
+    margin-bottom: 3em;
+    max-width: 500px;
+}
+.profileBox_left li a {
+    text-decoration: none;
+    font-size: 1.3em;
+    color: black;
+    font-weight: bold;
+    font-family: Calibri, 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+    border-radius: 0.5em;
+    display: block;
+    padding: 0.5em;
+
+    background-color: #cbe6ee;
+    color: black;
+    box-shadow: 7px 7px #a2ccd6; 
+}
+.profileBox_left img {
+    width: 50px;
+    height: 50px;
+    border-radius: 0.5em;
+    vertical-align: middle;
+}
+.profileBox_left li a:hover {
+	transition: 0.3s;
+	transform: none;
+    box-shadow: none; 
+	display: block;
+
+    margin-left: 4px;
+    margin-top: 4px;
+    transform: none;
+    box-shadow: 4px 4px #a2ccd6; 
+    background-color: #b7dbe4;
+}
+
+/*Change log out btn*/
+.profileBox_left li:last-child a{
+    background-color: #F0B8B8;
+    color: black;
+    box-shadow: 7px 7px #cd0000; 
+
+    padding: 0.7em;
+    vertical-align: top;
+}
+.profileBox_left li:last-child a:hover {
+	transition: 0.3s;
+	transform: none;
+    box-shadow: none; 
+	display: block;
+
+    margin-left: 4px;
+    margin-top: 4px;
+    transform: none;
+    box-shadow: 3px 3px #cd0000;
+    background-color: #eb8b8b;
+}
+
+
+.profileBox_right {
+    box-sizing: border-box;
+    padding: 0em 1.5em 0em 1.5em;
+
+    border-radius: 0.2em;
+    position: relative;
+
+    display: block;
+	border-left: 3px solid #333;
+}
+
+.profileBox_right div {
+    background-color: #cbe6ee;
+    margin-bottom: 1em;
+    box-sizing: border-box;
+    padding: 1em;
+    border-radius: 0.2em;
+    position: relative;
+}
+
+
+.futureBookingHeader {
+    font-size: 2em;
+    border-bottom: 3px solid #333;
+    padding-bottom: 0.1em;
+    margin-bottom: 1em;
+    font-family: mainFont, Calibri, 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;;
+    max-width: 550px;
+    margin-top: 2em;
+}
+
+.kommunImg {
+    position: absolute;
+    top: 2em;
+    right: 0;
+    width: 150px;
+}
+
+
+/*Info page*/
+
+.infoHeadings {
+    font-size: 2em;
+    border-bottom: 3px solid #333;
+    padding-bottom: 0.1em;
+    margin-bottom: 1em;
+    font-family: mainFont, Calibri, 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;;
+    max-width: 550px;
+    padding-top: 5em;
+}
+
+/*Btn menu on info page*/
+.infoNavBtns {
+	display: flex;
+	gap: 1em;
+}
+
+.infoNavBtns button img {
+    width: 50px;
+    height: 50px;
+    vertical-align: middle;
+    border-radius: 0.5em;
+}
+
+
+
+.supportFlex {
+    display: flex;
+    gap: 1em;
+    position: relative;
+}
+.supportFlex p {
+    position: absolute;
+    bottom: 0;
+}
+.supportFlex img {
+    width: 100%;
+    max-width: 75px;
+    height: 100%;
+    max-height: 75px;
+    object-fit: cover;
+    border-radius: 0.3em;
+}
+.supportFlex img:hover {
+    opacity: 0.8;
+}
+
+#support h2 {
+    font-family: mainFont, Calibri, 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;;
+    padding-bottom: 5px;
+}
+
+/*On info page - last edited text box*/
+.updateText {
+    margin-top: 10em;
+    margin-bottom: -1em;
+    border: 3px solid #333;
+    padding: 1em;
+    box-sizing: border-box;
+    border-radius: 0.3em;
+    background-color: white;
+}
+
+
+
+
+
+/*Make one input smaller*/
+.formQuarter {
+    margin: 0 auto;
+    display: flex;
+    gap: 0.5em;
+    justify-content: space-between;
+}
+
+.formQuarter div:first-child {
+    width: 80%;
+}
+.formQuarter_reverse {
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+.formQuarter_reverse div:last-child {
+    width: 80%;
+}
+
+
+/*Standard form*/
+form {
+    margin: 0 1em;
+    text-align: left;
+    margin: 0 auto;
+}
+
+label {
+    font-size: 1.2em;
+    font-weight: bold;
+    font-family: Calibri, 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+    text-align: left;
+    cursor: pointer;
+}
+
+input, select {
+    font-size: 1.1em;
+    padding: 0.5em;
+    width: 100%;
+    margin-top: 0.3em;
+    margin-bottom: 3em;
+    box-sizing: border-box;
+    cursor: pointer;
+    font-family: Calibri, 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+}
+
+input[type=datetime-local] {
+    font-family: mainFont, Calibri, 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;;
+    font-size: 1em;
+}
+
+input[type=number] {
+    max-width: 75px;
+    margin-right: 1em;
+}
+
+input[type=checkbox] {
+    max-width: 20px;
+
+    /* Double-sized Checkboxes */
+    -ms-transform: scale(1.5); /* IE */
+    -moz-transform: scale(1.5); /* FF */
+    -webkit-transform: scale(1.5); /* Safari and Chrome */
+    -o-transform: scale(1.5); /* Opera */
+    transform: scale(1.5);
+    margin-right: 0.5em;
+}
+.weekDays-selector input {
+    display: none!important;
+}
+  
+.weekDays-selector input[type=checkbox] + label {
+    display: inline-block;
+    border-radius: 0.2em;
+    background: #fff;
+    border: 2px solid #333;
+    height: 40px;
+    width: 40px;
+    line-height: 35px;
+
+    margin-right: 0.5em;
+    text-align: center;
+    font-family: mainFont, Calibri, 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;;
+    box-sizing: border-box;
+    }
+  
+.weekDays-selector input[type=checkbox]:checked + label {
+    background: #007EB1;
+    color: #ffffff;
+    border: 2px solid #007EB1;
+
+}
+
+input[type=radio] {
+    max-width: 20px;
+
+    /* Double-sized Checkboxes */
+    -ms-transform: scale(1.2); /* IE */
+    -moz-transform: scale(1.2); /* FF */
+    -webkit-transform: scale(1.2); /* Safari and Chrome */
+    -o-transform: scale(1.2); /* Opera */
+    transform: scale(1.2);
+}
+
+
+input[type=submit] {
+    background-color: #007EB1;
+    font-family: mainFont, Calibri, 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;;
+    font-size: 1.3em;
+    padding: 1em;
+    border: none;
+    color: white;
+    width: 50%;
+    margin: 0 auto;
+    display: block;
+	border-radius: 0.3em;
+}
+
+input[type=submit]:hover {
+    transform: scale(1.05);
+    transition: 0.5s;
+    background-color: #007EB1;
+}
+
+/*Use on booking forms*/
+.inputNumberResponsiveness {
+    display: flex;
+    gap: 1em;
+    margin-bottom: 3em;
+}
+
+.inputNumberResponsiveness input {
+    margin: 0;
+    vertical-align: middle;
+    height: 45px;
+} 
+.inputNumberResponsiveness label {
+    margin: 0;
+    height: 45px;
+    box-sizing: border-box;
+    line-height: 45px;
+}
+
+
+.contactForm {
+	max-width: 500px;
+	margin: 0;
+}
+
+.contactForm fieldset {
+    box-sizing: border-box;
+    border: none;
+    
+}
+
+.contactForm legend {
+    display: none;
+}
+
+textarea {
+	resize: none;
+	width: 100%;
+	height: 250px;
+
+	font-size: 1.1em;
+    padding: 0.5em;
+    margin-top: 0.3em;
+    margin-bottom: 1em;
+    box-sizing: border-box;
+    cursor: pointer;
+
+	font-family: Calibri, 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+}
+
+
+
+
+
+
+/*Booking page*/
+
+.bookingHeading {
+    max-width: 600px;
+    margin: 0 auto;
+    margin-bottom: 0.5em;
+}
+
+.bookingTopBox {
+    max-width: 600px;
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding: 0 1em;
+    margin-bottom: 5em;
+    background-color: #FCFCDE;
+    border-radius: 0.5em;
+}
+
+
+
+.yellowBookingBox {
+    padding: 1.3em 0.5em;
+    font-size: 1.3em;
+}
+.yellowBookingBox h2 {
+    display: inline;
+    vertical-align: middle;
+    font-family: Calibri, 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+    font-size: 1.3em;
+}
+.yellowBookingBox img {
+    width: 75px;
+    height: 75px;
+    object-fit: cover;
+    vertical-align: middle;
+    display: inline;
+}
+
+.bookingTopBox ul {
+    padding: 0.5em 2em;
+    box-sizing: border-box;
+}
+
+.bookingTopBox ul li {
+    font-size: 1.25em;
+    font-family: Calibri, 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+    line-height: 1.5em;
+    margin: 1em 0;
+    font-weight: bold;
+}
+
+.bookingTopBox button {
+    height: 100px;
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+
+    text-align: center;
+    padding: 0;
+    margin-top: 2em;
+}
+
+.bookingForm fieldset {
+    max-width: 600px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    border: none;
+}
+
+.bookingForm fieldset legend {
+    font-family: mainFont, Calibri, 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;;
+    font-size: 2.2em;
+    margin-bottom: 1em;
+}
+
+.bookingForm fieldset legend::before {
+    content: "\007C";
+    vertical-align: 4px;
+    padding-right: 5px;
+}
+
+
+
+/*Rebook form*/
+.rebookForm fieldset {
+    max-width: 800px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    margin-bottom: 2em;
+
+    border: none;
+}
+
+.rebookForm fieldset legend {
+    font-family: mainFont, Calibri, 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;;
+    font-size: 1.5em;
+    padding: 0.5em;
+    border-bottom: 5px solid #007EB1;
+    width: 100%;
+}
+
+.pageHeadingRebook {
+	max-width: 800px;
+	margin: 0 auto;
+}
+
+
+/*Meesage box when cancel/remove/end booking */
+.alertMessageBox {
+    position: fixed;
+    
+    top: 9em;
+    left: 0;
+    right: 0;
+    margin: auto;
+
+    padding: 3em;
+
+    box-sizing: border-box;
+
+    background-color: white;
+    box-shadow: 0 0 10px 0 #333;
+    text-align: center;
+    border-radius: 0.2em;
+
+    width: 80%;
+
+    font-size: 1.3em;
+    display: inline-block;
+}
+
+.alertMessageBox div {
+    display: flex;
+}
+
+.alertMessageBox div img {
+    height: 150px;
+    box-sizing: border-box;
+    background-color: #FCFCDE;
+    border-bottom: 5px solid #FFDE0A;
+}
+
+.alertMessages {
+    width: 80%;
+    box-sizing: border-box;
+    padding: 1em;
+    background-color: #FCFCDE;
+    border-bottom: 5px solid #FFDE0A;
+    font-family: mainFont, Calibri, 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;;
+    font-size: 1.5em;
+    display: inline-block;
+    height: 150px;
+}
+
+.alertMessageBox button {
+    width: 45%;
+    max-width: 300px;
+}
+
+.alertBtn {
+    background-color: transparent;
+    text-align: center;
+    padding-left: 0;
+    padding: 0.3em 0;
+    transition: 1s;
+    margin: 0 0.5em;
+    font-family: mainFont, Calibri, 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;;
+}
+
+    
+.alertBtnGreen{ border-bottom: 5px solid #3FD562; }
+.alertBtnRed { border-bottom: 5px solid #CD0000; }
+.alertBtnNeutral { border-bottom: 5px solid #333}
+
+.alertBtnGreen:hover {background-color: #D6F0B8; transition: 1s;}
+.alertBtnRed:hover {background-color: #F0B8B8; transition: 1s;}
+.alertBtnNeutral:hover {background-color: #ddd; transition: 1s;}
+
+
+.alertMessageBoxGreen .alertMessages, .alertMessageBoxGreen div img  {
+    border-bottom: 5px solid #3FD562;
+    background-color: #D6F0B8;
+}
+
+
+/*Booking end page*/
+.pdfBox {
+    display: flex;
+    margin-top: 5em;
+}
+
+.receipt, .confirmation {
+    border: 5px solid #ddd;
+    width: 250px;
+    height: 300px;
+    margin-bottom: 2em;
+    margin-right: 2em;
+    text-align: center;
+    cursor: pointer;
+    background-color: white;
+    position: relative;
+
+    font-size: 1.5em;
+    font-family: mainFont;
+    padding-top: 2em; 
+    color: black;
+    text-decoration: none;
+}  
+
+.receipt:hover, .confirmation:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 5px 0 #ddd;
+}
+.receipt:active, .confirmation:active {
+    border: 5px solid #333;
+}
+
+.bookEndImg {
+    width: 75px;
+    height: 75px;
+    object-fit: cover;
+    border: 5px solid #333;
+    border-radius: 50%;
+    position: absolute;
+    top: 5em;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+}
+
+
+
+
+
+
+
+/* _____ Footer _____*/
+
+footer {
+    color: white;
+    background-color: #3C4650;
+    font-size: 1em;
+
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+
+
+.footerGrid {
+    display: grid;
+    gap: 0;
+    grid-template-areas:
+        "supportBox pageBox availableBox"
+        ;
+
+      background-color: #3C4650;
+
+      max-width: 1000px;
+
+      margin: 0 auto;
+  
+      /*Need for distance to logo footer*/
+      box-sizing: border-box;
+      padding: 0 1em 5em 1em;
+}
+
+.supportBox { grid-area: supportBox;}
+.pageBox { grid-area: pageBox; }
+.availableBox { grid-area: availableBox; }
+
+
+.supportBox, .pageBox, .availableBox {
+	padding: 1em;
+    margin: 1em;
+}
+
+.pageBox, .availableBox { 
+    border-left: 2px solid #ddd;
+}
+
+.footerGrid h2 {
+	font-family: mainFont, Calibri, 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+
+	font-size: 1.6em;
+    margin-bottom: 0.5em;
+}
+
+.footerGrid ul {
+	padding-left: 1em;
+}
+
+.footerGrid li {
+    font-family: Calibri, 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+    max-width: 60ch;
+    line-height: 1.5em;
+    font-size: 1.1em;
+    margin-bottom: 0.5em;
+}
+
+.footerGrid li a {
+	color: white;
+	text-decoration: none;
+	border-bottom: 1px solid white;
+}
+
+.newTab_arrow li a:hover::after {
+	content: " \01F826";
+}
+.download_arrow li a:hover::after {
+	content: "(nedladdning) \01F81B ";
+}
+
+.footerGrid span {
+    display: none;
+}
+
+
+
+
+/*Bottom box in footer*/
+.logosBox { 
+    background-color: #333E48;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: space-around;
+    padding: 1em 0;
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.logosBox img {
+    max-width: 50%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0.3em;
+}
+
+
+/*Profile flex direction change and some adjustment to the content on profile*/
+@media only screen and (max-width: 1000px) {
+    .profileHeading {
+        margin: 0 auto;
+    }
+
+    .profileFlex {
+        gap: 0;
+        flex-direction: column;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .profileFlex div {
+        width: 100%;
+    }
+
+    .profileBox_left {
+        padding: 3em 0;
+    }
+
+    .profileBox_left ul li {
+        margin: 0 auto;
+        margin-bottom: 2.5em;
+    }
+
+    .profileFlex div {
+        margin: 0 auto;
+    }
+
+    .profileFlex {
+        margin: 0;
+        width: 100%;
+    }
+
+    .btnBoxProfile button {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .profileBox_right {
+        border-left: none;
+        border-top: 5px solid #333;
+        padding-top: 3em;
+        margin: 0 auto;
+    }
+
+    .profileBox_right div {
+        margin-bottom: 2em;
+    }
+
+    /*Button on profil underpageb*/
+    .backBtn {
+        right: 2em;
+    }
+}
+@media only screen and (max-width: 600px) {
+    .kommunImg {
+        position: relative;
+        display: block;
+        margin: 0 auto;
+        margin-bottom: 2em;
+        width: 50%;
+    }
+
+    /*Button on profil underpage*/
+    .backBtn {
+        box-shadow: 0 0 5px 0 #333;
+        bottom: 1.5em;
+        right: 0;
+        left: 0;
+        margin: 0 auto;
+        width: 80%;
+        max-width: 300px;
+        z-index: 1;
+    }
+    footer {
+        z-index: 2;
+    }
+    .backBtn span {
+        display: none;
+    }
+}
+
+/*Footer fix*/
+@media only screen and (max-width: 1000px) {
+    .footerGrid {
+        display: grid;
+        gap: 0;
+        grid-template-areas:
+            "supportBox" 
+            "pageBox" 
+            "availableBox"
+            "logosBox"
+            ;
+    }
+    .footerGrid div {
+        border-left: 3px solid #ddd;
+    }
+
+    .frameBox {
+        padding: 10em 1em 49em 1em;
+    }
+
+    .newTab_arrow li a::after {
+    	content: " \01F826";
+    }
+
+    .download_arrow li a::after {
+        content: "(nedladdning) \01F81B ";
+    }
+    .newTab_arrow li a, .download_arrow li a {
+        max-width: 320px;
+    }
+    .newTab_arrow li a:hover, .download_arrow li a:hover {
+       font-size: 1.1em;
+    }
+}
+
+/*Info page flex direction change and some adjustment to the content*/
+@media only screen and (max-width: 1000px) {
+    .infoNavBtns {
+        gap: 1em;
+        flex-direction: column;
+    }
+    
+}
+
+
+/*Change Index flex direction and adjusts content*/
+@media only screen and (max-width: 1000px) {
+    .indexBox {
+        width: 95%;
+        margin: 0 auto;
+        flex-direction: column-reverse;
+        margin-top: 2em;
+    }
+
+    .indexBox div {
+        max-width: 600px;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .indexBox div p {
+        margin: 0 auto;
+        margin-bottom: 1em;
+    }
+
+    .indexBox div h1 {
+        text-align: center;
+    }
+
+    .indexBox button {
+        margin-top: 1em;
+    }
+
+}
+
+/*Change support flex direction and adjusts content*/
+@media only screen and (max-width: 700px) {
+
+    .supportFlex {
+        flex-direction: column;
+    }
+
+    .supportFlex p {
+        position: relative;
+        margin: 0 auto;
+    }
+
+}
+
+/*Footer logo box*/
+@media only screen and (max-width: 550px) {
+    .logosBox {
+        flex-direction: column;
+        height: 150px;
+    }
+
+    .logosBox img {
+        margin: 0 auto;
+        margin-top: 1em;
+        margin-bottom: 1em;
+    }
+
+    .footerGrid {
+        padding: 0 1em 12em 1em;
+    }
+
+    .footerGrid h2 {
+        font-size: 1.1em;
+    }
+
+    .footerGrid p {
+        font-size: 1em;
+    }
+
+}
+
+/*Random fix for smallest screen*/
+@media only screen and (max-width: 500px) {
+    .frameBox {
+        padding: 8em 1.5em 50em 1.5em;
+        max-width: 1000px;
+        width: 100%;
+        margin: 0 auto;
+        position: relative;
+        border: none;
+        background-color: white;
+        box-sizing: border-box;
+    }
+
+    body {
+        background-color: white;
+    }
+
+    h1, .indexBox h1 {
+        font-size: 2em;
+        border-bottom: 3px solid #333;
+        padding-bottom: 0.1em;
+        margin-bottom: 0.3em;
+        font-family: mainFont, Calibri, 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;;
+        max-width: 550px;
+    }
+
+    .navLogo  {
+        width: 180px;
+        height: 100%;
+    }
+    
+    .navLogo a img{
+        width: 100%;
+        height: 50px;
+        padding-top: 10px;
+    }
+    
+    
+    .navButton {
+        width: 80px;
+        height: 65px;
+    }
+
+
+    .rebookBox {
+        padding: 1em;
+        border: 3px solid #333;
+    }
+
+
+    .collBtn {
+        font-size: 1em;
+    }
+
+}
+
+
+/*Form adjustment*/
+@media only screen and (max-width: 500px) {
+    input[type=submit] {
+        width: 80%;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+
+    .formQuarter, .formQuarter_reverse {
+        flex-direction: column;
+        border-bottom: 2px solid #333;
+        margin-bottom: 3em;
+    }
+    .formQuarter div:first-child, .formQuarter_reverse div:last-child, input {
+        width: 90%;
+    }
+}
+@media only screen and (max-width: 430px) {
+    .inputNumberResponsiveness {
+        gap: 1em;
+        margin-bottom: 4em;
+        flex-direction: column-reverse;
+    }
+    .inputNumberResponsiveness input {
+        max-width: 50%;
+    } 
+    .inputNumberResponsiveness label {
+        margin-bottom: -1em;
+    }
+}
+
+
+
+
+:focus-visible,
+.weekDays-selector input[type=checkbox]:focus-visible
+ {
+    outline: 5px dashed #000000;
+    transition: none;
+
+}
+.navLogo:focus-visible {
+    height: 150px;
+}

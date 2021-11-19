@@ -1,0 +1,17 @@
+/*Testning av autoprefix*/
+.divbox {
+    display: flex;
+    max-width: 350px;
+    width: 100%;
+    height: 50px;
+}
+
+.divbox div:first-child {
+    background: lightslategray; 
+    width: 100%;
+
+}
+.divbox div:last-child {
+    background: lightskyblue; 
+    width: 100%;
+}

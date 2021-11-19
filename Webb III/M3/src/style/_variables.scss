@@ -1,0 +1,23 @@
+//Komponenter/delar som återanvänds
+$mDark: #332A2D;
+$mLight: #E8D7D3;
+$mGrey: #8b7f81;
+$mGreen: #8baa70;
+
+//Bara för att använda sass mer
+$black: #000;
+$white: #fff;
+$ddd: #ddd;
+$eee: #eee;
+
+
+//Blue grey
+$greyBlue: #778899;
+$lightGreyBlue: lighten($greyBlue, 30%);
+$darkGreyBlue: darken($greyBlue, 20%);
+
+//navyBlue (testade att byta färg på denna)
+$navyBlue: hsl(59, 80%, 72%);
+$satNavyBlue: saturate($navyBlue, 50%);
+$desNavyBlue: desaturate($navyBlue, 50%);
+$hueNavyBlue: darken($navyBlue, 60%);

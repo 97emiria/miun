@@ -1,0 +1,19 @@
+header {
+    background-color: $mainDark;
+    padding: 1em;
+    text-align: center;
+    font-family: 'Poiret One';
+    letter-spacing: 2px;
+}
+
+header p {
+    font-weight: bold;
+    font-size: 0.9em;
+    letter-spacing: 2.5px;
+    margin-top: 0.5em;
+}
+
+header a {
+    color: white;
+    text-decoration: none;
+}

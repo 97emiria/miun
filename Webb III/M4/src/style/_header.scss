@@ -1,0 +1,40 @@
+header {
+    nav {
+        max-width: 600px;
+        margin: 0 auto;
+
+        ul {
+            padding: 1em 0;
+            text-align: center;
+            
+            li{
+                display: inline;
+                padding: 0.5em; 
+
+                a {
+                    text-decoration: none;
+                    font-size: 1.2em;
+                    font-family: 'Architects Daughter', cursive;
+                    display: inline-block;
+                    padding: 0 0.5em;    
+
+                    &:hover {
+                        transform: scale(1.25)
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 550px) {
+   header nav ul {
+       text-align: left;
+
+       li a{
+           margin: 0.3em;
+           
+       }
+   }
+
+  }

@@ -1,0 +1,779 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    position: relative;
+    min-height: 100vh;
+    /*background-image: url('../images/upprepadbakgrund.jpg');
+    background-size: cover;
+    background-attachment: fixed;*/
+
+}
+
+@font-face {
+    font-family: logoFonts;
+    src: url(../fonts/Stick-Regular.ttf);
+}
+
+
+.message {
+    color: black;
+    border: 10px solid red;
+    background-color: rgb(233, 131, 131);
+    font-size: 3em;
+    text-align: center;
+}
+
+.success {
+    padding: 1em 0;
+    margin: 1em 0;
+    text-align: center;
+
+    color: black;
+    border: 10px solid green;
+    background-color: rgb(68, 202, 68);
+}
+
+.error {
+    padding: 1em 0;
+    margin: 1em 0;
+    text-align: center;
+    font-size: 1.2em;
+
+    color: black;
+    border: 10px solid red;
+    background-color: rgb(233, 131, 131);
+}
+
+.readMore a{
+    color: red;
+    text-decoration: none;
+    background-color: red;
+}
+
+
+#active {
+    color: rgb(117, 117, 117);
+}
+
+
+
+
+ul {
+    margin: 1em 0;
+}
+
+li {
+    margin-left: 2em;
+    padding: 0.3em;
+}
+
+
+
+/*__________________________________________________________________________________________________________________*/
+/*__________________________________________________________________________________________________________________*/
+/*__________________________________________________________________________________________________________________*/
+/*__________________________________________________________________________________________________________________*/
+/*__________________________________________________________________________________________________________________*/
+
+
+.menuBox {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 2.5em 3em;
+    gap: 0px 0px;
+    grid-template-areas:
+      "userInfo logInOut"
+      "boxforLogo navBox";
+
+      color: #333;
+
+      position: fixed;
+      z-index: 5;
+      width: 100%;
+
+      font-size: 1em;
+      /*max-width: 30em;*/
+      line-height: 1.8em;
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.menuBox div {
+    color: white;
+    padding: 0.5em 1em;
+}
+.menuBox a {
+    color: #fff;
+    text-decoration: none;
+    transition: 0.5s;
+}
+
+.navBox a:hover, .logInOut a:hover {
+    color: #69b6cf;
+    font-size: 1.1em;
+    transition: 0.5s;
+}
+.menuBox .boxforLogo a:hover {
+    color: #69b6cf;
+    font-size: 2em;
+    transition: 0.5s;
+}
+
+.userInfo { 
+    grid-area: userInfo; 
+    padding: 0.5em;
+    background-color: #222;
+
+}
+
+.logInOut { 
+    grid-area: logInOut; 
+    text-align: right;
+    padding: 0.5em;
+    background-color: #222;
+}
+
+
+.boxforLogo { 
+    grid-area: boxforLogo; 
+    background-color: #333;
+    font-family: logoFonts;
+    letter-spacing: 3px;
+}
+
+.boxforLogo a {
+    font-size: 1.8em;
+}
+
+.navBox { 
+    grid-area: navBox; 
+    text-align: right;
+    background-color: #333;
+    padding: 0.6em 0;
+}
+
+
+  
+  
+/*__________________________________________________________________________________________________________________*/
+/*__________________________________________________________________________________________________________________*/
+/*__________________________________________________________________________________________________________________*/
+/*__________________________________________________________________________________________________________________*/
+/*__________________________________________________________________________________________________________________*/
+
+
+.heroBox {
+    position: relative;
+}
+
+.heroImg {
+    z-index: -1;
+    opacity: 0.5;
+}
+
+.heroImg img{
+    width: 100%;
+    height: 60vh;
+    object-fit: cover;
+    object-position: top;
+}
+
+.heroText {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+
+}
+
+.heroText h1 {
+    font-size: 6.5em;
+    font-family: logoFonts;
+    letter-spacing: 6px;
+}
+
+.heroText p {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+
+
+
+/*__________________________________________________________________________________________________________________*/
+/*__________________________________________________________________________________________________________________*/
+/*__________________________________________________________________________________________________________________*/
+/*__________________________________________________________________________________________________________________*/
+/*__________________________________________________________________________________________________________________*/
+
+
+.mainLayout {
+    display: grid;
+    grid-template-columns: 70% 30%;
+    gap: 2.5em 0.5em;
+    grid-template-areas:
+      "topBox topBox"
+      "contentBox adBox"
+      "contentBox adBox";
+
+    padding: 1em 3em 1em 2em;
+    padding-bottom: 5em;
+    
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+
+.topBox { 
+    grid-area: topBox; 
+    margin: 0 auto;
+    display: block;
+    width: 100%;
+    text-align: center;
+
+}
+
+.topBox h3 { 
+    padding: 1em 0 0.5em 0;
+}
+
+.responsiveIframe {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    padding-top: 56.25%; /* 16:9 Aspect Ratio */
+}
+
+.responsiveIframe iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 0.2em;
+}
+
+
+.contentBox {
+    grid-area: contentBox; 
+
+}
+
+.contentBox h2, .topBox h2 {
+    text-align: center;
+    font-size: 2em;
+    padding: 0.5em 0 0.2em 0;
+    border-bottom: 2px solid #333;
+    margin-bottom: 1.5em;
+}
+
+.iDidntComeUpWithAName h2 {
+    text-align: left;
+    font-size: 1.5em;
+    padding: 0;
+    border-bottom: 2px solid #fff;
+    margin-bottom: 0;
+}
+
+.iDidntComeUpWithAName h1 {
+    text-align: center;
+    font-size: 3em;
+    border-bottom: 2px solid #333;
+    margin-bottom: 1em;
+    padding-bottom: 0.2em;
+}
+
+
+
+
+.adBox { 
+    grid-area: adBox; 
+    border: 2px solid #fafafa;  
+    padding: 0 0.5em;
+}
+
+.adBox img {
+    width: 100%;
+    margin-bottom: 2em;
+}
+
+
+
+
+/*__________________________________________________________________________________________________________________*/
+/*__________________________________________________________________________________________________________________*/
+/*__________________________________________________________________________________________________________________*/
+/*__________________________________________________________________________________________________________________*/
+/*__________________________________________________________________________________________________________________*/
+
+
+.masterBox {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    max-width: 800px;
+    margin: 0 auto;
+
+    padding: 5em 2.5em;
+}
+
+.masterBox h1{
+    margin-bottom: 1em;
+}
+
+.updateHeading {
+    padding: 1em 0 1em 0.7em;
+}
+
+
+/*__________________________________________________________________________________________________________________*/
+/*__________________________________________________________________________________________________________________*/
+/*__________________________________________________________________________________________________________________*/
+/*__________________________________________________________________________________________________________________*/
+/*__________________________________________________________________________________________________________________*/
+
+
+
+
+
+
+
+
+
+
+
+footer {
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: absolute;
+
+    background-color: #333;
+    padding: 0.5em;
+    text-align: center;
+    font-size: 1em;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+    border-top-left-radius: 0.25em;
+    border-top-right-radius: 0.25em;
+}
+
+footer a, footer p {
+    color: #ddd;
+}
+
+
+/*__________________________________________________________________________________________________________________*/
+/*__________________________________________________________________________________________________________________*/
+/*__________________________________________________________________________________________________________________*/
+/*__________________________________________________________________________________________________________________*/
+/*__________________________________________________________________________________________________________________*/
+
+
+.loginBox {
+    width: 50%;
+    padding: 2em 2.5em 2em 2em;
+    margin: 0 auto;
+    border: 10px double lightblue;
+    box-shadow: 0 0 10px 0 lightblue;
+    margin-bottom: 5em;
+}
+
+.loginBox h1 {
+    margin-bottom: 1em;
+    text-align: center;
+    padding-bottom: 0.5em;
+}
+
+
+/*__________________________________________________________________________________________________________________*/
+/*__________________________________________________________________________________________________________________*/
+/*__________________________________________________________________________________________________________________*/
+/*__________________________________________________________________________________________________________________*/
+/*__________________________________________________________________________________________________________________*/
+
+
+form {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+label {
+    font-size: 1.1em;
+}
+
+
+input[type=date] {
+    cursor: pointer;
+    font-size: 0.9em;
+    padding: 0.5em;
+    margin-bottom: 1em;
+    margin-top: 0.3em;
+}
+
+input[type=text], input[type=password], input[type=submit], input[type=reset], .button  {
+    font-size: 1.1em;
+    padding: 0.5em;
+    width: 96.4%;
+    margin: 0 auto;
+    margin-top: 0.3em;
+    margin-bottom: 2em;
+}
+input[type=submit], input[type=reset], .button {
+    margin: 0 auto;
+    display: block;
+    width: 100%;
+    padding: 1em 0;
+    background-color: #333;
+    color: white;
+    border-radius: 0.2em;
+    border: none;
+    margin-top: 0.5em;
+    cursor: pointer;
+    transition: 1s;
+}
+
+
+input[type=submit]:hover {
+    transition: 0.7s;
+    background-color: #3bb63b;
+
+}
+input[type=submit]:nth-child(1):hover, input[type=reset]:hover, .delete:hover {
+    transition: 0.7s;
+    background-color: #CD0000;
+}
+
+
+
+textarea {
+    font-size: 1.1em;
+    padding: 3em;
+    width: 85%;
+    height: 35em;
+    margin: 0 auto;
+    margin-top: 0.3em;
+    resize: none;
+
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+input[type=file] {
+    font-size: 1em;
+    width: 96.4%;
+    margin: 0 auto;
+    margin-top: 0.3em;
+
+    border: 0.5px solid #333;
+    border-radius: 0.2em;
+    padding: 1em 0.5em;
+    cursor: pointer;
+}
+
+
+/*__________________________________________________________________________________________________________________*/
+/*__________________________________________________________________________________________________________________*/
+/*__________________________________________________________________________________________________________________*/
+/*__________________________________________________________________________________________________________________*/
+/*__________________________________________________________________________________________________________________*/
+
+
+
+
+/*__________________________________________________________________________________________________________________*/
+/*__________________________________________________________________________________________________________________*/
+/*__________________________________________________________________________________________________________________*/
+/*__________________________________________________________________________________________________________________*/
+/*__________________________________________________________________________________________________________________*/
+
+/*Artiklar*/
+
+article {
+    margin-bottom: 5em;
+}
+
+article p, article h1, article a, article h2 {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+article p, article a {
+    font-size: 1em;
+    /*max-width: 30em;*/
+    line-height: 1.8em;
+}
+
+.articleButton {
+    bottom: 0;
+}
+
+.singelArticels {
+    border-radius: 0.5em;
+    padding: 3em 2em;
+    max-width: 65ch;
+    margin: 0 auto;
+}
+
+
+.singelArticels img {
+    width: 100%;
+    margin: 0 auto;
+    display: block;
+}
+
+.singelArticels .postdate {
+    padding: 0.3em;
+    margin: 1em 0;
+    font-weight: bold;
+}
+
+.singelArticels p {
+    margin: 1em 0;
+}
+
+.singelArticels h1 {
+    font-size: 1.5em;
+}
+.singelArticels h2 {
+    width: 100%;
+}
+
+.dateAuthorBox {
+    margin: 1.5em 0;
+    text-align: right;
+}
+
+
+
+
+
+.articleMini {
+    display: grid;
+    grid-template-columns: 30% 70%;
+    grid-template-rows: 80% 20%;
+    gap: 1em 1em;
+    grid-template-areas:
+      "imgBox textBox"
+      "readMoreBtn readMoreBtn";
+
+    padding: 0 1.8em 2em 1em;
+    height: 16em;
+    border-bottom: 1.5px solid #ddd;
+
+
+}
+
+.imgBox {
+    grid-area: imgBox;
+}
+
+.articleMini img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.textBox {
+    grid-area: textBox; 
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+
+}
+
+.textBox span { 
+    color: #777;
+    font-style: italic;
+    font-size: 1.5em;
+}
+
+.readMoreBtn {
+    grid-area: readMoreBtn;
+}
+
+.readMoreBtn button {
+    width: 100%;
+    margin: 0 auto;
+    display: block;
+}
+
+.articleMini h2 { 
+    font-size: 1.1em;
+}
+
+
+
+
+.btnBox { 
+    text-align: center;
+    margin-top: 1em;
+    margin-bottom: 3em;
+}
+
+.readBtn {
+    width: 100%;
+    margin-top: 1em;
+    
+    background-color: #333;
+    color: #fff;
+    padding: 0.5em;
+    border: none;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.readBtn:hover {
+    transition: 0.7s;
+    background-color: lightblue;
+    color: #111;
+}
+
+.btnBox button {
+    width: 49.6%;
+    margin: 0 auto;
+    background-color: #333;
+    color: #fff;
+    padding: 0.5em;
+    border: none;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.btnBox button:first-child:hover {
+    transition: 0.7s;
+    background-color: #3bb63b;
+
+}
+.btnBox button:last-child:hover {
+    transition: 0.7s;
+    background-color: #CD0000;
+}
+
+.showImgArticle {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.showImgArticle img{
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+}
+
+
+
+.articleImg {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5em;
+    margin-bottom: 2.5em;
+}
+
+.articleImg div {
+    width: 30%;
+    margin: 0 auto;
+}
+
+.articleImg div a  {
+    text-decoration: none;
+    color: #111;
+
+    display: inline-block;
+}
+
+.articleImg div a:hover  {
+    transform: scale(1.2); 
+}
+
+.articleImg img {
+    width: 100%;
+    height: 10em;
+    object-fit: cover;
+}
+
+
+
+
+
+
+
+
+
+/*Meida*/
+
+
+
+@media screen and (max-width: 580px) {
+
+    .menuBox {
+        display: grid;
+        grid-template-columns: 75% 25%;
+        grid-template-rows: 2.5em 3em;
+        gap: 0px 0px;
+        grid-template-areas:
+        "userInfo logInOut"
+        "boxforLogo boxforLogo"
+        "navBox navBox";
+    }
+
+    .userInfo {
+        text-align: left;
+    }
+
+    .boxforLogo {
+        text-align: center;
+        background-color: #2B2B2B;
+    }
+
+    .navBox { 
+        text-align: center;
+        padding: 0.6em 0;
+    }
+
+
+    
+}
+
+@media screen and (max-width: 700px) {
+    .mainLayout {
+        display: grid;
+        grid-template-columns: 100%;
+        gap: 2.5em 0.5em;
+        grid-template-areas:
+        "topBox"
+        "contentBox";
+
+        padding: 1em 3em 1em 2em;
+        padding-bottom: 5em;
+    }
+
+    .adBox { 
+        display: none;
+    }
+    
+}
+
+@media screen and (max-width: 650px) {
+    .btnBox button {
+        width: 45%;
+    }
+
+    .articleImg {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .articleImg img {
+        width: 100%;
+    }
+
+    .articleImg div {
+        width: 100%;
+        margin: 0 auto;
+    }
+}

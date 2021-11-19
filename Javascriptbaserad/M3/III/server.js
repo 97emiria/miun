@@ -1,19 +1,15 @@
 //Get 
 const express = require('express');
+const mongoose = require('mongoose');
+const app = express();
+const fs = require('fs');               //Needed for files
+let cors = require('cors');             //Needed to avoid cors
 
-//Needed to avoid cors
-let cors = require('cors');
-
-//File way in varibale so only one needed to be change
+//File way in varibale so only one needed to be change - Get Json data, throu file-varibale
 const dataPathName = './data/courses.json';
-//Get Json data, throu file-varibale
 const data = require(dataPathName);
 
-//Needed for files
-const fs = require('fs');
-
 //Creat
-const app = express();
 let courseData = data;
 
 //Run neccety things
@@ -67,4 +63,5 @@ app.delete('/courses/:id', (req, res) => {
 
 });
 
+//Listning to server
 app.listen(3000);

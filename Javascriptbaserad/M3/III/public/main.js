@@ -9,21 +9,25 @@ let message = document.getElementById('message');
 
 let getCourses = () => {
     
-    fetch('http://localhost:3000/courses/')
+    fetch('http://localhost:3000/courses')
 
     .then(response => {
-
         response.json().then(data => {
 
             data.forEach(data => {
 
                 coursesList.innerHTML += 
+
                 `
                     <li> 
-                        ${data.namn} 
-                        <button onclick="deleteCourse(${data.id})">
+                        ${data.name} 
+                        <button onclick="editCourse(${data._id})">
+                            <img src="images/iconEdit.png" alt="">
+                        </button> 
+                        <button onclick="deleteCourse(${data._id})">
                             <img src="images/iconDelete.png" alt="">
                         </button> 
+                      
                     </li>
                 `
             })
@@ -80,6 +84,10 @@ let deleteCourse = id => {
 
     });
 
+}
+
+let editCourse = id => {
+    console.log(id)
 }
 
 

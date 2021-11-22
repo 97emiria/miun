@@ -1,0 +1,36 @@
+GET http://localhost:3000/courses
+
+###
+
+GET http://localhost:3000/courses/619bd1cb5a7a89dd973561cc
+
+###
+
+POST http://localhost:3000/courses
+Content-Type: application/json
+
+{
+        "code":         "DT093G",
+        "name":         "Webbutveckling II",
+        "progression":  "B",
+        "semester":     "VT21",
+        "syllabus":     "http://www.miun.se/utbildning/kurser/sok-kursplan/kursplan?kursplanid=15474"
+}
+
+
+###
+
+DELETE http://localhost:3000/courses/619bd077b303926abbb84122
+
+###
+
+PATCH http://localhost:3000/courses/619bd34d0eadb32ef39aa03e
+Content-Type: application/json
+
+{
+        "code":         "DT071G",
+        "name":         "Programmering i C#.NET",
+        "progression":  "B",
+        "semester":     "HT21",
+        "syllabus":     "https://www.miun.se/utbildning/kursplaner-och-utbildningsplaner/Sok-kursplan/kursplan/?kursplanid=25557"
+}

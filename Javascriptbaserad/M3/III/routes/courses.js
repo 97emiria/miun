@@ -14,6 +14,8 @@ router.get('/', async (req, res) => {
 
 });
 
+
+
 //Show one courses
 router.get('/:id', getCourse, (req, res) => {
     res.send(res.course);
@@ -22,7 +24,7 @@ router.get('/:id', getCourse, (req, res) => {
 //Creat 
 router.post('/', async (req, res) => {
 
-    //Get new values
+    //Get the new values
     const course = new coursesModle({
         code: req.body.code,
         name: req.body.name,

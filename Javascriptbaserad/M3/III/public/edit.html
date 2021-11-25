@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <!--Meta tags-->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!--Title-->
+    <title>Moment 3 - MongoDB</title>
+
+    <!--Favicon-->
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+
+    <!--CSS-->
+    <link rel="stylesheet" href="main.css">
+
+    <!--Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Zen+Maru+Gothic&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <header>
+        <a href="index.html">
+            <h1>  Moment 5 </h1>
+            <p>REST-webbtjänster med PHP</p>
+        </a>
+    </header>
+
+    <main>
+
+    <a href="index.html" class="topLink"> &#129072; Gå tillbaka</a>        
+
+        <section id="addCourse">
+            <h2>Ändra kurs</h2>
+
+            <form id="addFrom">
+                <label for="name">Kursnamn</label>
+                <input type="text" id="name" name="courseName" placeholder="Exempel Webbutveckling I">
+
+                <label for="code">Kurskod</label>
+                <input type="text" id="code" name="code" placeholder="xx123x">
+
+                <label for="progression">Progression</label> <br>
+                <input type="text" id="progression" name="progression" placeholder="A eller B">
+
+                <label for="semester">Termin</label> <br>
+                <input type="text" id="semester" name="semester" placeholder="HT eller VT">
+
+                <label for="syllabus">Länk för att läsa mer</label>
+                <input type="text" id="syllabus" name="syllabus" placeholder="www.exempel.se">
+
+                <button type="submit" class="submitBtn" onclick="addCourse(event)">Lägg till</button>
+            </form>
+            <button class="deleteBtn" id="deleteBtn">Radera</button>
+
+        </section>
+
+
+
+    </main>
+
+    <script> const checkPage = false; </script>
+    <script src="javascript/main.js"></script>
+
+</body>
+</html>

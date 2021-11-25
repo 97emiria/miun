@@ -26,21 +26,79 @@
 <body>
 
     <header>
-        <h1>Kurslista år 2 </h1>
+        <h1>Moment 3 - MongoDB </h1>
     </header>
 
     <main>
-        <p id="message"></p>
-        <ul id="coursesList" class="coursesList"></ul>
+
+        <!-- LIST SECTION -->
+        <section>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Kod</th>
+                        <th>Namn</th>
+                        <th>Termin</th>
+                        <th>Progression</th>
+                        <th>Länk</th>
+                        <th>Hantera</th>
+                    </tr>
+                </thead>
+           
+                <tbody id="courseListTable">
+                  
+                </tbody>
+
+            </table>
+        </section>
+
+
+        <!-- FORM SECTION -->
+        <section>
+            <p id="message"></p>
+
+            <div class="" >
+                <h2>Lägg till kurs </h2>
+    
+                <p>Hitta du inte din kurs? Lägg till en nedanför</p>
+    
+                <form id="addFrom">
+                    <label for="name">Kursnamn</label>
+                    <input type="text" id="name" name="courseName" placeholder="Exempel Webbutveckling I">
+    
+                    <label for="code">Kurskod</label>
+                    <input type="text" id="code" name="code" placeholder="xx123x">
+    
+                    <label for="progression">Progression</label> <br>
+                    <input type="text" id="progression" name="progression" placeholder="A eller B">
+
+                    <label for="semester">Termin</label> <br>
+                    <input type="text" id="semester" name="semester" placeholder="HT eller VT">
+    
+                    <label for="syllabus">Länk för att läsa mer</label>
+                    <input type="text" id="syllabus" name="syllabus" placeholder="www.exempel.se">
+    
+                    <button type="submit" class="submitBtn" onclick="addCourse(event)">Lägg till</button>
+                </form>
+
+
+            </div>
+
+       </section>
+       
     </main>
 
-    <aside></aside>
+
+    <aside>
+    </aside>
 
     <footer>
         <p>Senast uppdaterad <span id="timestamp"></span> </p>
     </footer>
+
+    <script src="main.js"></script>
+
 </body>
 
-<script src="main.js"></script>
 
 </html>

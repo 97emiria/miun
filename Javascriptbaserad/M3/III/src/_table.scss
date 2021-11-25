@@ -1,0 +1,128 @@
+table {
+    width: 100%;
+    border-spacing: 0;
+
+    th {
+        text-align: left;
+        font-family: 'Open Sans', sans-serif;
+        font-weight: bold;
+        font-size: 1.2em;
+        box-sizing: border-box;
+        padding: 1em;
+        background-color: $darkGrey;
+        color: white;
+    }
+
+    
+    td {
+        font-family: 'Open Sans', sans-serif;
+        font-size: 1em;
+        padding: 1.5em;
+        border-bottom: 2px solid $lightGrey;
+
+        button {
+            width: 40px;
+            height: 40px;
+            border: none;
+            background-color: white;
+
+            &:hover {
+                transform: scale(0.95);
+                cursor: pointer;
+            }
+
+            img {
+                width: 100%;
+                height: 100%;
+                border-radius: 0.2em;
+            }
+        }
+    }
+        
+}
+
+
+
+
+
+@media all and (min-width: 760px) {
+
+    th:nth-child(1), 
+    th:nth-child(3), 
+    th:nth-child(4), 
+    th:nth-child(5) {
+        width: 100px;
+        text-align: center;
+    }
+    td:nth-child(1), 
+    td:nth-child(3),
+    td:nth-child(4), 
+    td:nth-child(5) {
+        text-align: center;
+    }
+    
+
+}
+
+@media all and (max-width: 750px) {
+
+	/* Force table to not be like tables anymore */
+	table, thead, tbody, th, td, tr { 
+		display: block; 
+	}
+
+    table {
+        thead tr { 
+            position: absolute;
+            top: -9999px;
+            left: -9999px;
+        }
+        
+        tr { border: 1px solid $lightGrey;
+            margin-bottom: 1em;
+
+    }
+        
+        td { 
+            border: none;
+            border-bottom: 1px solid $lightGreyTwo; 
+            position: relative;
+            padding-left: 40%; 
+            font-size: 0.95em;
+        }
+        
+        td:before { 
+            position: absolute;
+            top: 6px;
+            left: 6px;
+            width: 45%; 
+            padding: 1em;
+            padding-right: 10px; 
+            white-space: nowrap;
+        }
+
+        td:nth-of-type(1):before { content: "Kurskod:"; width: 100px;}
+        td:nth-of-type(2):before { content: "Namn:"; width: 100px;}
+        td:nth-of-type(3):before { content: "Progressation:"; width: 100px;}
+        td:nth-of-type(4):before { content: "Kursinfo:"; width: 100px;}
+        td:nth-of-type(5):before { content: "Hantera:"; width: 100px;}
+    }
+	
+}
+
+@media all and (max-width: 450px) {
+
+	table td { 
+		padding-left: 50%; 
+    }
+
+
+    fieldset {
+        padding: 2em 1em;
+    }
+
+    form input[type=submit], .deleteBtn {
+        width: 44%;
+    }
+
+}

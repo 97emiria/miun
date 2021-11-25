@@ -2,7 +2,11 @@ GET http://localhost:3000/courses
 
 ###
 
-GET http://localhost:3000/courses/619bd1cb5a7a89dd973561cc
+GET http://localhost:3000/courses
+
+###
+
+GET http://localhost:3000/courses/619ca99aa1506d3c53d1dab5
 
 ###
 
@@ -10,17 +14,17 @@ POST http://localhost:3000/courses
 Content-Type: application/json
 
 {
-        "code":         "DT093G",
-        "name":         "Webbutveckling II",
-        "progression":  "B",
-        "semester":     "VT21",
-        "syllabus":     "http://www.miun.se/utbildning/kurser/sok-kursplan/kursplan?kursplanid=15474"
+    "code":         "GD008G",
+    "name":         "Typografi och form för webb",
+    "progression":  "A",
+    "semester":     "HT20",
+    "syllabus":     "https://www.miun.se/utbildning/kursplaner-och-utbildningsplaner/Sok-kursplan/kursplan/?kursplanid=24399"
 }
 
 
 ###
 
-DELETE http://localhost:3000/courses/619bd077b303926abbb84122
+DELETE http://localhost:3000/courses/619cc9b018aecaccd5b8162c
 
 ###
 

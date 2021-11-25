@@ -5,10 +5,13 @@ body {
 }
 
 header {
-    max-width: 600px;
+    max-width: 1500px;
     width: 90%;
     margin: 0 auto;
     padding-top: 2em;
+
+    background-color: white;
+    color: white;
 
     h1 {
         font-family: $headerFont;
@@ -18,22 +21,54 @@ header {
 }
 
 main {
-    max-width: 600px;
+    max-width: 1500px;
     width: 90%;
     margin: 0 auto;
-    box-shadow: 7.5px 7.5px $lightGreyTwo;
-    border: 2px solid $lightGrey;
+    padding: 3em 0;
 
     min-height: 300px;
     box-sizing: border-box;
-    padding: 3em 2em;
+
+    display: flex;
+    gap: 5em;
+
 
    p {
         font-family: $bodyFont;
         font-size: 1em;
         line-height: 1.5em;
     }
+
+    section {
+        width: 100%;
+    }
     
+}
+
+@media only screen and  (max-width: 1400px) {
+
+    header {
+        max-width: 800px;
+        width: 90%;
+    }
+            
+    main {
+        gap: 5em 0;
+        flex-direction: column;
+
+        max-width: 800px;
+    
+       p {
+            font-family: $bodyFont;
+            font-size: 1em;
+            line-height: 1.5em;
+        }
+    
+        section {
+            width: 100%;
+        }
+        
+    }
 }
 
 aside {
@@ -53,49 +88,6 @@ footer {
 
 
 
-
-.coursesList {
-    list-style: none;
-
-    li {
-        padding: 1em;
-        padding-left: 0;
-        height: 40px;
-        &:hover {
-            background-color: $lightGreyTwo;
-        }
-
-        &:before {
-            content: '\01F732';
-        }
-    }
-
-    button {
-        float: right;
-        width: 40px;
-        height: 40px;
-        border: 1px solid white;
-        border-radius: 0.5em;
-        background-color: white;
-    
-        align-items: center;
-        vertical-align: middle;
-
-
-        &:hover {
-            cursor: pointer;
-            transform: scale(0.9);
-        }
-
-        img {
-            width: 100%;
-            height: 100%;
-            border-radius: 0.2em;
-        }
-    }
-}
-
-
 //Message styles
 .message {
     padding: 0.3em;
@@ -107,5 +99,49 @@ footer {
 }
 .success {
     @extend .message;
-    background-color: $error;
+    background-color: $success;
+}
+
+
+
+.admin_collapsibleBtn {
+    background-color: $darkGrey;
+    color: white;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    margin-top: 1em;
+    border-radius: 0.3em;
+
+    //Add a arrow
+    &::after {
+        content: "\2B9F";
+        float: right;
+        transform: scale(1.25);
+    }
+
+    &:hover {
+        background-color: darken($darkGrey, 20%);
+        color: white;
+    }
+}
+  
+.collUp {
+    border-top-right-radius: 0.2em;
+    border-top-left-radius: 0.2em;
+
+    &::after  {
+        content: '\2B9D';
+        float: right;
+        transform: scale(1.25);
+
+    }
+}
+
+.admin_collapsibleContent {
+    display: none;
 }

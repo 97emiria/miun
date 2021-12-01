@@ -24,6 +24,8 @@ let getCourses = () => {
     .then(response => {
         response.json().then(data => {
 
+            console.log(data);
+
             data.forEach(data => {
 
                 //Print out course list

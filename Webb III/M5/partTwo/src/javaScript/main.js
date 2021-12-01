@@ -122,24 +122,33 @@ function addCourse(event) {
 
 } 
 
+
+//Get input id
+let codeInput = document.getElementById('code');
+let nameInput = document.getElementById('name');
+let progressionInput = document.getElementById('progression');
+let syllabusInput = document.getElementById('syllabus');
+
 //To edit a course on edit page
 function editCourse() {
 
-    //Collect value from input, function getCourseList print them out
+    //Samlar in värden från input fälten (och lägger dem i variabler) 
     let code = codeInput.value;
     let name = nameInput.value;
     let progression = progressionInput.value;
     let syllabus = syllabusInput.value;
 
+    //Sedan lägger vi dem i ett objekt
     let course = {'code': code, 'name': name, 'progression': progression, 'syllabus': syllabus}; 
 
     //Connect to database
     fetch(apiLinkWithCode, {
         method: 'PUT', 
-        body: JSON.stringify(course),
+        body: JSON.stringify(course),   //Viktigt att de ligger i en json.stringify
     })
     .then(response => response.json())
     
+        //Om det gick att lägga till data kommer jag att hämta in kurslistan igen 
         .then(data => {
             data.forEach(courses => {
                 getCourseList();

@@ -83,15 +83,32 @@ switch($method) {
 
 
         //Om inget id är med skickat, skicka felmeddelande
-        if(!isset($code)) {
+        /* 
+            Överst i rest-koden finns denna kodsnutt:
+            if(isset($_GET['id'])) {
+                $id = $_GET['id'];
+            }
+            Den kollar om det finns ett id
+
+            Så först kollar vi om det finns ett ID, annars skickar vi ett felmeddelande att inget id fanns
+        */
+        if(!isset($id)) {
             http_response_code(400); //Bad Request - The server could not understand the request due to invalid syntax.
-            $response = array("message" => "No course code is sent");
+            $response = array("message" => "No course id is sent");
         //Om id är skickad   
 
         } else {
+            /*
+                Om id finns så hämtar/lägger vi datan i variabeln data
+            */
             $data = json_decode(file_get_contents("php://input"));
 
-            if (!$c->setCode($data->code) ) {
+            /*
+                Denna delen är heeelt frivillig, men att rekommendera sen till projektet. Det jag gör 
+                annars är kolla om datan är okej för databasen, exemple att de inte går att lägga in 
+                tomma värden. Jag använde mig av set-metoder i klassen (men helt frivilligt)
+            */
+            if (!$c->setCode($data->id) ) {
                 http_response_code(400); //User error
                 $response = array('message' => "Error code");
     
@@ -108,7 +125,13 @@ switch($method) {
                 $response = array('message' => "Error syllabus");
     
             } else {
-                
+                /*
+                    Om datan klarar if-satserna så lägger jag till det i databasen. 
+
+                    Det görs genom en "instant" till klassen. Dvs så lägger vi klassen i en variable (så jag tänker i alla fall)
+                    För min del ser det ut såhär:
+                    $c = new Courses();  (där Courses är namnet på min klass)
+                */
                 if($c->updateCourse($data->code, $data->name, $data->progression, $data->syllabus)){
                     $response = array("message" => "Updated");
                     http_response_code(201); //Created

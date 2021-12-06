@@ -1,0 +1,76 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --hue: 200;
+    --saturation: 50%;
+    --front: hsl(var(--hue), var(--saturation), 75%);
+    --back: hsl(var(--hue), var(--saturation), 15%);
+}
+
+body {
+    background: var(--back);
+    overflow: hidden;
+}
+
+.paddle {
+    --position: 50;
+
+    position: absolute;
+    background-color: var(--front);
+    width: 1vh;
+    height: 10vh;
+
+    top: calc(var(--position) * 1vh);
+    transform: translateY(-50%);
+
+}
+
+
+.left { 
+    left: 1vw;
+}
+
+.right { 
+    right: 1vw;
+}
+
+
+.ball {
+    --x: 50;
+    --y: 50;
+
+    position: absolute;
+    background-color: var(--front);
+    left: calc(var(--x) * 1vw);
+    top: calc(var(--y) * 1vh);
+    transform: translate(-50%, -50%);
+    width: 2.5vh;
+    height: 2.5vh;
+    border-radius: 50%;
+}
+
+
+.score {
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 7vh;
+    color: var(--front);
+}
+
+.score > * {
+    flex-grow: 1;
+    flex-basis: 0;
+    padding: 0 2vh;
+    margin: 1vh 0;
+    opacity: .5;
+}
+
+.score > :first-child {
+    text-align: right; 
+    border-right: .5vh solid var(--front);
+}

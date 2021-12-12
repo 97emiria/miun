@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App2.MainPage">
+
+    <StackLayout>
+        <Frame BackgroundColor="#333" Padding="24" CornerRadius="0">
+            <Label Text="Romerska siffror" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
+        </Frame>
+
+        <Label  Text="Räkna ut ditt föddelse år till rommerska siffror"  
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                FontSize="25"
+                Padding="20"
+               />
+
+        <Entry 
+            Margin="20"
+            x:Name="numEntry"
+            Keyboard="Numeric"
+            MaxLength="4"
+            Placeholder="Exemple 1997"
+        />
+
+        <Button Text="Räkna ut" 
+                Margin="20" 
+                Clicked="Button_Clicked"
+                BackgroundColor="#333"
+                TextColor="White"/>
+
+
+        <Label
+            Text=""
+            FontSize="25"
+            Padding="20"
+            x:Name="answeredLabel"
+            />
+
+    </StackLayout>
+
+</ContentPage>

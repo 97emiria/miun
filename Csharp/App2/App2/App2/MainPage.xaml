@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App2.MainPage">
+
+    <StackLayout>
+        <Frame BackgroundColor="#333" Padding="30" CornerRadius="0">
+            <Label Text="Bensinförburkning" 
+                   HorizontalTextAlignment="Center" 
+                   TextColor="White" 
+                   FontSize="32"/>
+        </Frame>
+
+        <Label  Text="Räkna ut din besninförburkning från L/km till gallon/miles"  
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                FontSize="25"
+                Padding="20"
+               />
+
+        <Entry 
+            Margin="20"
+            x:Name="lEntry"
+            Keyboard="Numeric"
+            MaxLength="2"
+            Placeholder="Liter"
+        />
+
+        <Entry 
+            Margin="20"
+            x:Name="kmEntry"
+            Keyboard="Numeric"
+            MaxLength="3"
+            Placeholder="Km"
+        />
+
+        <Button Text="Räkna ut" 
+                Margin="20" 
+                Clicked="Button_Clicked"
+                BackgroundColor="#333"
+                TextColor="White"/>
+
+        <Label
+            Text=""
+            FontSize="25"
+            Padding="20"
+            x:Name="answeredLabel"
+            />
+
+    </StackLayout>
+
+</ContentPage>

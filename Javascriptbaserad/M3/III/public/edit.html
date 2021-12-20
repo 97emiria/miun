@@ -21,103 +21,52 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Zen+Maru+Gothic&display=swap" rel="stylesheet">
 
-    <style>
-        img {
-            width: 50px;
-        }
-    </style>
-
 </head>
 
 <body>
 
     <header>
-        <h1>Moment 3 - MongoDB </h1>
+        <a href="index.html">
+            <h1>  Moment 5 </h1>
+            <p>REST-webbtjänster med PHP</p>
+        </a>
     </header>
 
     <main>
 
-        <svg viewBox="0 0 128 128">
-            <path fill="#E44D26" d="M19.037 113.876L9.032 1.661h109.936l-10.016 112.198-45.019 12.48z"></path><path fill="#F16529" d="M64 116.8l36.378-10.086 8.559-95.878H64z"></path><path fill="#EBEBEB" d="M64 52.455H45.788L44.53 38.361H64V24.599H29.489l.33 3.692 3.382 37.927H64zm0 35.743l-.061.017-15.327-4.14-.979-10.975H33.816l1.928 21.609 28.193 7.826.063-.017z"></path><path fill="#fff" d="M63.952 52.455v13.763h16.947l-1.597 17.849-15.35 4.143v14.319l28.215-7.82.207-2.325 3.234-36.233.335-3.696h-3.708zm0-27.856v13.762h33.244l.276-3.092.628-6.978.329-3.692z"></path>
-        </svg>
+    <a href="index.html" class="topLink"> &#129072; Gå tillbaka</a>        
 
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" />
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-plain.svg" />
+        <section id="addCourse">
+            <h2>Ändra kurs</h2>
 
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-plain.svg" />
+            <form id="addFrom">
+                <label for="name">Kursnamn</label>
+                <input type="text" id="name" name="courseName" placeholder="Exempel Webbutveckling I">
 
+                <label for="code">Kurskod</label>
+                <input type="text" id="code" name="code" placeholder="xx123x">
 
+                <label for="progression">Progression</label> <br>
+                <input type="text" id="progression" name="progression" placeholder="A eller B">
 
-        <!-- LIST SECTION -->
-        <section>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Kod</th>
-                        <th>Namn</th>
-                        <th>Termin</th>
-                        <th>Progression</th>
-                        <th>Länk</th>
-                        <th>Hantera</th>
-                    </tr>
-                </thead>
-           
-                <tbody id="courseListTable">
-                  
-                </tbody>
+                <label for="semester">Termin</label> <br>
+                <input type="text" id="semester" name="semester" placeholder="HT eller VT">
 
-            </table>
+                <label for="syllabus">Länk för att läsa mer</label>
+                <input type="text" id="syllabus" name="syllabus" placeholder="www.exempel.se">
+
+                <button type="submit" class="submitBtn" onclick="addCourse(event)">Lägg till</button>
+            </form>
+            <button class="deleteBtn" id="deleteBtn">Radera</button>
+
         </section>
 
 
-        <!-- FORM SECTION -->
-        <section>
-            <p id="message"></p>
 
-            <div class="" >
-                <h2>Lägg till kurs </h2>
-    
-                <p>Hitta du inte din kurs? Lägg till en nedanför</p>
-    
-                <form id="addFrom">
-                    <label for="name">Kursnamn</label>
-                    <input type="text" id="name" name="courseName" placeholder="Exempel Webbutveckling I">
-    
-                    <label for="code">Kurskod</label>
-                    <input type="text" id="code" name="code" placeholder="xx123x">
-    
-                    <label for="progression">Progression</label> <br>
-                    <input type="text" id="progression" name="progression" placeholder="A eller B">
-
-                    <label for="semester">Termin</label> <br>
-                    <input type="text" id="semester" name="semester" placeholder="HT eller VT">
-    
-                    <label for="syllabus">Länk för att läsa mer</label>
-                    <input type="text" id="syllabus" name="syllabus" placeholder="www.exempel.se">
-    
-                    <button type="submit" class="submitBtn" id="addBtn" onclick="addCourse(event)">Lägg till</button>
-                    <button type="button" class="submitBtn" id="deleteBtn">Radera</button>
-                    <button type="button" class="submitBtn" id="editBtn">Uppdatera</button>
-                </form>
-
-
-            </div>
-
-       </section>
-       
     </main>
 
-
-    <aside>
-    </aside>
-
-    <footer>
-        <p>Senast uppdaterad <span id="timestamp"></span> </p>
-    </footer>
-
-    <script src="main2.js"></script>
+    <script> const checkPage = false; </script>
+    <script src="javascript/main.js"></script>
 
 </body>
-
-
 </html>

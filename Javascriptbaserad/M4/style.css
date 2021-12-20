@@ -1,0 +1,48 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    padding: 1em;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+#app {
+    width: 500px;
+    padding: 2em;
+    text-align: center;
+    margin: 0 auto;
+    border-radius: 0.2em;
+}
+
+img {
+    width: 250px;
+    height: 250px;
+    margin: 0 auto;
+    object-fit: cover;
+    border-radius: 0.2em;
+}
+
+
+
+.male {
+    background-color: #facc5f;
+    color: #333;
+}
+
+.female {
+    background-color: #8b6852;
+    color: #f8f3ec;
+}
+
+button {
+    max-width: 250px;
+    width: 100%;
+    padding: 0.5em;
+    font-size: 1em;
+    border-radius: 0.2em;
+    border: none;
+}
+

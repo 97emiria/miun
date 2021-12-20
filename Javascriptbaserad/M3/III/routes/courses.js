@@ -3,6 +3,8 @@ const courses = require('../models/courses');
 const router = express.Router();
 const coursesModle = require('../models/courses')
 
+
+
 //Show all saved courses
 router.get('/', async (req, res) => {
     try {
@@ -13,7 +15,6 @@ router.get('/', async (req, res) => {
       }
 
 });
-
 
 
 //Show one courses

@@ -10,15 +10,21 @@
 
     <!-- Css -->
     <link rel="stylesheet" href="style.css">
-
-    <!-- React -->
-
-
-    
 </head>
 <body>
-    <div id="mydiv"></div>
 
+    <div id="app">
+        <h1> {{firstname}} {{lastname}} </h1>
+        <br>
+        <img v-bind:src="picture" :alt="`${lastname} and ${firstname}`">
+        <br>
+        <button v-on:click="getUser()" :class="gender">Klick me</button>
+    </div>
+
+    <!-- Vue -->
+    <script src="https://unpkg.com/vue@next"></script>
+
+    <!-- Js -->
     <script src="main.js"></script>
 </body>
 </html>

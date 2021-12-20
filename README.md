@@ -10,6 +10,7 @@ Ett repo för mittuniversitet, just nu innehållande kurserna:
 * Moment 1
 * Moment 2
 * Moment 3 
+* Moment 4
 
 #### Webbutvckling III
 * Moment 1
@@ -23,7 +24,7 @@ Ett repo för mittuniversitet, just nu innehållande kurserna:
 * Moment 3
 * Projekt
 
-#### Random
+#### Blandat
 * Databaser - Projekt
 * Webbanvändbarhet - Projekt
 * JavaScript I - Projekt 
@@ -31,3 +32,5 @@ Ett repo för mittuniversitet, just nu innehållande kurserna:
 #### Playhouse
 * React - todo list 
 * React - pokemon api
+* VUE - todo list 
+* games - pingpong

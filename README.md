@@ -11,6 +11,7 @@ Ett repo för mittuniversitet, just nu innehållande kurserna:
 * Moment 2
 * Moment 3 
 * Moment 4
+* Projekt (Sleep log)
 
 #### Webbutvckling III
 * Moment 1
@@ -22,12 +23,13 @@ Ett repo för mittuniversitet, just nu innehållande kurserna:
 #### Webbutveckling II
 * Moment 2 
 * Moment 3
-* Projekt
+* Projekt (Matgram)
 
 #### Blandat
-* Databaser - Projekt
-* Webbanvändbarhet - Projekt
-* JavaScript I - Projekt 
+* Databaser - Projekt (Biluthyrning)
+* Webbanvändbarhet - Projekt (Färdtjänst)
+* JavaScript I - Projekt (SV Radio)
+* Digital - Projekt (Nafiva)
 
 #### Playhouse
 * React - todo list 

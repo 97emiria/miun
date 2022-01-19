@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nafiva ~ Homepage</title>
+    <link rel="shortcut icon" type="images/x-icon" href="images/favicon.svg">
+    <link href="style/main.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+
+    <div class="heroVideo">
+        <video autoplay muted poster="images/NafivaAdVideoImage.png">
+            <source src="videos/NaFiVaAd.m4v" type="video/webm">
+            <source src="videos/NaFiVaAd.m4v" type="video/mp4">
+            <img src="images/NafivaAdVideoImage.png" title="Your browser does not support the video tag" />
+        </video>
+
+        <div class="textArea">
+            <h1>
+                Expolre NaFiVa
+            </h1>
+        </div>
+    </div>
+
+
+
+    <header>
+        <div class="headerBox" id="headerBox">
+            <div class="logoBox">
+                <a href="index.html">
+                    <img src="images/logo.svg" alt="Text NaFiVa">
+                </a>
+            </div>
+            <div class="menuBox">
+                <button onclick="window.location.href='index.html';" title="To start page">Home</button>
+                <button onclick="window.location.href='pages/products.html';" title="To products page">Products</button>
+                <button onclick="window.location.href='pages/info.html';" title="To Info of company">Info</button>
+
+                <!-- Have a JavaScript function which display cart/basket box-->
+                <img id="cartButton" src="images/cartLogo.svg" class="buttonImg" title="Open cart"
+                    alt="Icon of a cart with a N in it">
+            </div>
+        </div>
+    </header>
+
+
+    <div class="contentBox ">
+
+        <div class="forIndexContent">
+
+
+            <h2>When it matters</h2>
+            <p>
+                what we drink and it will always affect us, so why not drink things that are good
+                for us? Expolre NaFiVa products.
+            </p>
+
+        </div>
+
+
+
+
+        <h2 class="center"> NaFiVa rekommenderar: </h2>
+        <div class="boxForProducts">
+
+            <div>
+                <a href="products/coffeeBeans.html">
+                    <img src="images/coffeeBeans.png"
+                        alt="Coffee brand infront a bag with Nafiva logo and a text Coffe">
+                    <p>
+                        <span>Coffee beans</span> <br>
+                        <span>129:-</span>
+                    </p>
+                </a>
+
+                <button class="button"
+                    onclick="addToBasket(this, '002', 'Coffee beans', 129, '../images/coffeeBeansIcon.png', false); showPutInBasket()">
+                    Add to cart
+                </button>
+            </div>
+
+
+
+            <div>
+                <a href="products/chocolate.html">
+                    <img src="images/chocolateBag.png"
+                        alt="Chocolate powder infront of a bag with nafiva logo and text chocolate">
+                    <p>
+                        <span>Chocolate</span> <br>
+                        <span>89:-</span>
+                    </p>
+                </a>
+                <button class="button"
+                    onclick="addToBasket(this, '005', 'Chocolate', 89, '../images/chocolateBagIcon.png', false); showPutInBasket()">
+                    Add to cart
+                </button>
+            </div>
+
+
+
+            <div>
+                <a href="products/baileys.html">
+                    <img src="images/baileys.png" alt="Bottle of Baileys">
+                    <p>
+                        <span>Baileys </span> <br>
+                        <span>149:-</span>
+                    </p>
+                </a>
+
+                <button class="button"
+                    onclick="addToBasket(this, '004', 'Baileys', 149, '../images/baileysIcon.png', false); showPutInBasket()">
+                    Add to cart
+                </button>
+            </div>
+
+
+
+
+        </div>
+
+
+        <button class="button" onclick="window.location.href='pages/products.html';" title="To products page">
+            To the products
+        </button>
+
+        <picture>
+            <source srcset="images/adCoffeeFour.webp" type="image/webp">
+            <img src="images/adCoffeeFour.png" class="adBanner"
+                alt="A glass with coffee in it and coffee beans around. Text: Nafiva moment that coffe drinkers will rarely forget">
+        </picture>
+    </div>
+
+
+
+    <footer>
+        <div class="footerDiv">
+            <div>
+                <img src="images/logo.svg" alt="Its says">
+            </div>
+            <div>
+                <ul>
+                    <li><a href="pages/info.html#termsOfPurchase">Terms of purchase</a></li>
+                    <li><a href="pages/info.html#customerService">Customer service</a></li>
+                    <li><a href="pages/info.html#aboutNafiva">About us</a></li>
+                </ul>
+            </div>
+            <div>
+                <ul>
+                    <li><a href="https://sv-se.facebook.com/">Facebook</a> </li>
+                    <li><a href="https://www.instagram.com/">Instagram</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+
+
+    <!-- Cart/Basket infromation box-->
+    <div class="cartOverviewBox" id="cartOverviewBox">
+        <h1>Overview cart</h1>
+        <ul id="basket">
+            <li>Its empty</li>
+        </ul>
+        <button class="button" onclick="emptyBasket()">Clear cart</button>
+        <br>
+        <br>
+        <button class="button" onclick="window.location.href='pages/checkout.html';"
+            title="To Info of company">Checkout</button>
+    </div>
+
+    <!-- Div box for message, controlled in JavaScript-->
+    <div class="productAddedStyle" id="productAdded"></div>
+
+
+
+
+    <script src="javascript/hideIndexMenu.js"></script>
+    <script src="javascript/addToCart.js"></script>
+    <script src="javascript/gallery.js"></script>
+
+</body>
+
+</html>

@@ -12,6 +12,7 @@ const computerScoreElem = document.getElementById('computer-score');
 
 let lastTime;
 
+
 function update(time) {
 
     if(lastTime != null) {
@@ -46,8 +47,27 @@ function handleLose() {
 }
 
 document.addEventListener("mousemove", e => {
-    playerPaddle.position = (e.y / window.innerHeight) * 100;
+    playerPaddle.position = (e.y / window.innerHeight) * 100
 })
 
-//Move ball?
-window.requestAnimationFrame(update);
+
+
+let countDownMessage = document.getElementById('countDownMessage');
+var timeleft  = 4;
+var downloadTimer = setInterval(function(){
+
+    countDownMessage.innerHTML = -1 + timeleft;
+
+
+    if(timeleft <= 0){
+      clearInterval(downloadTimer);
+      countDownMessage.innerHTML = "";
+
+      //Move ball?
+        window.requestAnimationFrame(update);
+    }
+
+    timeleft -= 1;
+
+}, 1000);
+

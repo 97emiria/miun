@@ -77,7 +77,6 @@ namespace M3
             {
                 // Create an instance of StreamReader to read from a file.
                 using (StreamReader sr = new StreamReader("../../../postList.txt"))
-
                 return true;
             }
             catch (Exception)
@@ -263,6 +262,7 @@ namespace M3
                     case "yes":
                     case "Yes":
                     case "YES":
+                    
                         //Remove that row from list-element
                         postList.RemoveAt(postID);
 

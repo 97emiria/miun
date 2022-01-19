@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Info ~ Nafiva</title>
+    <link rel="shortcut icon" type="images/x-icon" href="images/icon.png">
+    <link href="../style/main.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <header>
+        <div class="headerBox" id="headerBox">
+            <div class="logoBox">
+                <a href="../index.html">
+                    <img src="../images/logo.svg" alt="">
+                </a>
+            </div>
+            <div class="menuBox">
+                <button onclick="window.location.href='../index.html';" title="To start page">Home</button>
+                <button onclick="window.location.href='../pages/products.html';"
+                    title="To products page">Products</button>
+                <button onclick="window.location.href='../pages/info.html';" title="To Info of company">Info</button>
+
+                <!-- Have a JavaScript function which display cart/basket box-->
+                <img id="cartButton" src="../images/cartLogo.svg" class="buttonImg" alt="Icon of a cart with a N in it">
+            </div>
+        </div>
+    </header>
+
+
+
+    <div class="contentBox">
+
+
+
+        <h1>Information page</h1>
+        <!--Box for print layout only-->
+        <div class="subMenuBox">
+            <p>Below you have som buttons to gudie you through this page</p>
+            <nav class="infoSubMenu">
+                <button class="button" onclick="window.location.href='#aboutNafiva';">About NaFiVa</button>
+                <button class="button" onclick="window.location.href='#termsOfPurchase';">Terms of
+                    purchase</button>
+                <button class="button infobutton" onclick="window.location.href='#customerService';">Customer
+                    service</button>
+            </nav>
+        </div>
+
+        <!-- Only a frameBox for style resons-->
+        <div class="infoboxFrame">
+
+            <section id="aboutNafiva">
+
+
+                <h2>A bit about NaFiVa</h2>
+
+                <article>
+                    <h3>What is NaFiVa?</h3>
+                    <p>
+                        A school project for Mid Sweden University that aims to create an online store for a fictitious
+                        / real company. This project became an online store for a company that sells its own products
+                        such as coffee and tea as examples.
+                    </p>
+                </article>
+
+                <article>
+                    <h3>History of the name NaFiVa</h3>
+                    <p>
+                        From the beginning this company was suppose to sell fishing rolls and hiking backpags. Na stands
+                        for nature, Fi fisking and Va for "vandring" which means hiking in swedish. Well... after a
+                        little google serach other ideas blow up and the plan had change. But the name NaFiVa was quite
+                        fitting for a coffe/tea brend, so we kept it and even after 14 years (read days) we still love
+                        the name.
+                    </p>
+                </article>
+
+
+
+            </section>
+
+            <section id="termsOfPurchase">
+
+                <h2>Terms of purchase</h2>
+
+                <article>
+                    <h3>Delivery</h3>
+                    <p>
+                        Free delivery to everyone in Scandinavia, otherwise a shipping fee of 59 SEK will be added.
+                    </p>
+                </article>
+
+
+
+                <article>
+                    <h3>Return</h3>
+                    <p>
+                        In Scandinavia, we allow free returns on unopened goods, not gift cards. The rest of the world
+                        accepts unopened goods where the customer is responsible for return shipping.
+                    </p>
+                </article>
+
+
+                <article>
+                    <h3>Payment</h3>
+                    <p>
+                        At the moment, we can only handle purchases via invoice. Working on card payment.
+                    </p>
+                </article>
+            </section>
+
+
+            <section id="customerService">
+                <h2>Customer service</h2>
+
+                <h3>Phonenumber</h3>
+                <p> You can call us on this number:
+                    <a href="tel:+1800229933">076 123 456 789</a>
+                </p>
+                <h3>Mail</h3>
+                <p>
+                    You can send us a mail to:
+                    <a href="mailto:nafiva@support.com">nafiva@support.com</a>
+                </p>
+            </section>
+
+
+        </div>
+    </div>
+
+
+
+    <footer>
+        <div class="footerDiv">
+            <div>
+                <img src="../images/logo.svg" alt="">
+            </div>
+            <div>
+                <ul>
+                    <li><a href="../pages/info.html#termsOfPurchase">Terms of purchase</a></li>
+                    <li><a href="../pages/info.html#customerService">Customer service</a></li>
+                    <li><a href="../pages/info.html#aboutNafiva">About us</a></li>
+                </ul>
+            </div>
+            <div>
+                <ul>
+                    <li><a href="https://sv-se.facebook.com/">Facebook</a> </li>
+                    <li><a href="https://www.instagram.com/">Instagram</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Cart/Basket infromation box-->
+    <div class="cartOverviewBox" id="cartOverviewBox">
+        <h1>Overview cart</h1>
+        <ul id="basket">
+            <li>Its empty</li>
+        </ul>
+        <button class="button" onclick="emptyBasket()">Clear cart</button>
+        <br>
+        <br>
+        <button class="button" onclick="window.location.href='../pages/checkout.html';"
+            title="To Info of company">Checkout</button>
+    </div>
+
+    <!--To top button-->
+    <button class="toTopButton" onclick="window.location.href='#top';">&#8593;</button>
+
+    <script src="../javascript/addToCart.js"></script>
+</body>
+
+</html>

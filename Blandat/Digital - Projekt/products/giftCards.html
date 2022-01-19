@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gift Card ~ Nafiva</title>
+    <link rel="shortcut icon" type="images/x-icon" href="../images/favicon.svg">
+    <link href="../style/main.css" rel="stylesheet" type="text/css">
+</head>
+
+<body class="footerFix">
+
+
+
+    <header>
+        <div class="headerBox" id="headerBox">
+            <div class="logoBox">
+                <a href="../index.html">
+                    <img src="../images/nameLogo999.png" alt="It says Nafiva">
+                </a>
+            </div>
+            <div class="menuBox">
+                <button onclick="window.location.href='../index.html';" title="To start page">Home</button>
+                <button onclick="window.location.href='../pages/products.html';" title="To products page">Products</button>
+                <button onclick="window.location.href='../pages/info.html';" title="To Info of company">Info</button>
+            <!-- Have a JavaScript function which display cart/basket box-->
+            <img id="cartButton" src="../images/cartLogo.svg" class="buttonImg" alt="Icon of a cart with a N in it">
+            </div>
+        </div>
+    </header>
+
+
+
+    <div class="contentBox">
+        <div class="singelProductPageBox">
+            <div class="productImg">
+                <img src="../images/giftCard.png" alt="Gift card, card and gift bag">
+
+            </div>
+            <div class="productText">
+                <h1>Gift Card</h1>
+                <p>
+                    Perfect to give away to someone who is worth a calm moment with the best in the mug or glas.
+                </p>
+                <p class="priceBox">
+                    Gift card value 250:- inclusive a gift bag <br> 250:-
+                </p>
+
+                <button class="button"
+                    onclick="addToBasket(this, '006', 'Gift Card', 250, '../images/giftCardIcon.png', false); displayBasketSingelProduct()">
+                    Add to cart
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footerSingelProdukt">
+        <div class="footerDiv">
+            <div>
+                <img src="../images/logo.svg" alt="It says Nafiva">
+            </div>
+            <div>
+                <ul>
+                    <li><a href="../pages/info.html#termsOfPurchase">Terms of purchase</a></li>
+                    <li><a href="../pages/info.html#customerService">Customer service</a></li>
+                    <li><a href="../pages/info.html#aboutNafiva">About us</a></li>
+                </ul>
+            </div>
+            <div>
+                <ul>
+                    <li><a href="https://sv-se.facebook.com/">Facebook</a> </li>
+                    <li><a href="https://www.instagram.com/">Instagram</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart/Basket infromation box-->
+    <div class="cartOverviewBox" id="cartOverviewBox">
+        <h1>Overview cart</h1>
+        <ul id="basket">
+            <li>Its empty</li>
+        </ul>
+        <button class="button" onclick="emptyBasket()">Clear cart</button>
+        <br>
+        <br>
+        <button class="button" onclick="window.location.href='../pages/checkout.html';"
+            title="To Info of company">Checkout</button>
+        <br>
+        <br>
+        <button class="button" onclick="window.location.href='../pages/products.html';"
+            title="To products page"> Back to products page</button>
+    </div>
+
+
+<!-- Div box for message, controlled in JavaScript-->
+<div class="productAddedStyle" id="productAdded"></div>
+
+
+    <script src="../javascript/addToCart.js"></script>
+</body>
+
+</html>

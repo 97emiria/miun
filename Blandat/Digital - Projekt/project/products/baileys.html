@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baileys ~ Nafiva</title>
+    <link rel="shortcut icon" type="images/x-icon" href="../images/favicon.svg">
+    <link href="../style/main.css" rel="stylesheet" type="text/css">
+</head>
+
+<body class="footerFix">
+
+
+    <header>
+        <div class="headerBox" id="headerBox">
+            <div class="logoBox">
+                <a href="../index.html">
+                    <img src="../images/logo.svg" alt="">
+                </a>
+            </div>
+            <div class="menuBox">
+                <button onclick="window.location.href='../index.html';" title="To start page">Home</button>
+                <button onclick="window.location.href='../pages/products.html';" title="To products page">Products</button>
+                <button onclick="window.location.href='../pages/info.html';" title="To Info of company">Info</button>
+
+            <!-- Have a JavaScript function which display cart/basket box-->
+            <img id="cartButton" src="../images/cartLogo.svg" class="buttonImg" alt="Icon of a cart with a N in it">
+            </div>
+        </div>
+    </header>
+
+
+
+    <div class="contentBox">
+        <div class="singelProductPageBox">
+            <div class="productImg">
+                <img src="../images/baileys.png" alt="">
+
+            </div>
+            <div class="productText">
+                <h1>Baileys</h1>
+                <p>
+                    Sometime, when you can't find peace in a cup of coffee or tea, then you have Baileys. It's helping
+                    putting your mind at peace for a couple of hours, your best hours!
+                </p>
+
+                <p class="priceBox">
+                    150ml <br> 149:-
+                </p>
+
+                <button class="button"
+                    onclick="addToBasket(this, '004', 'Baileys', 149, '../images/baileysIcon.png', false); displayBasketSingelProduct()">
+                    Add to cart
+                </button>
+            </div>
+        </div>
+    </div>
+
+
+    <footer class="footerSingelProdukt">
+        <div class="footerDiv">
+            <div>
+                <img src="../images/logo.svg" alt="">
+            </div>
+            <div>
+                <ul>
+                    <li><a href="../pages/info.html#termsOfPurchase">Terms of purchase</a></li>
+                    <li><a href="../pages/info.html#customerService">Customer service</a></li>
+                    <li><a href="../pages/info.html#aboutNafiva">About us</a></li>
+                </ul>
+            </div>
+            <div>
+                <ul>
+                    <li><a href="https://sv-se.facebook.com/">Facebook</a> </li>
+                    <li><a href="https://www.instagram.com/">Instagram</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Cart/Basket infromation box-->
+    <div class="cartOverviewBox" id="cartOverviewBox">
+        <h1>Overview cart</h1>
+        <ul id="basket">
+            <li>Its empty</li>
+        </ul>
+        <button class="button" onclick="emptyBasket()">Clear cart</button>
+        <br>
+        <br>
+        <button class="button" onclick="window.location.href='../pages/checkout.html';"
+            title="To Info of company">Checkout</button>
+        <br>
+        <br>
+        <button class="button" onclick="window.location.href='../pages/products.html';"
+            title="To products page"> Back to products page</button>
+    </div>
+
+
+<!-- Div box for message, controlled in JavaScript-->
+<div class="productAddedStyle" id="productAdded"></div>
+
+    <script src="../javascript/addToCart.js"></script>
+</body>
+
+</html>

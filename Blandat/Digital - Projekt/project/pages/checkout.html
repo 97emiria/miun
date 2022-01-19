@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart ~ Nafiva</title>
+    <link rel="shortcut icon" type="images/x-icon" href="../images/favicon.svg">
+    <link href="../style/main.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+
+    <header>
+        <div class="headerBox" id="headerBox">
+            <div class="logoBox">
+                <a href="../index.html">
+                    <img src="../images/logo.svg" alt="">
+                </a>
+            </div>
+            <div class="menuBox">
+                <button onclick="window.location.href='../index.html';" title="To start page">Home</button>
+                <button onclick="window.location.href='../pages/products.html';"
+                    title="To products page">Products</button>
+                <button onclick="window.location.href='../pages/info.html';" title="To Info of company">Info</button>
+
+            <!-- Have a JavaScript function which display cart/basket box-->
+            <img id="cartButton" src="../images/cartLogo.svg" class="buttonImg" alt="Icon of a cart with a N in it">
+
+            </div>
+        </div>
+    </header>
+
+    <div class="contentBox">
+
+
+        <h1>Cart</h1>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Image</th>
+                    <th>Product</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody id="checkout"></tbody>
+        </table>
+
+
+
+        <div class="checkoutButtonSubMenu">
+            <h2>Do you want to continue with your order?</h2>
+
+            <button class="button " id="formButton"> Yes, continue </button>
+            <button class="button" onclick="emptyBasket()"> No, clear cart</button>
+        </div>
+
+
+
+
+
+        <div id="orderForm" class="orderForm">
+            <form>
+                <fieldset>
+                    <legend>Order form</legend> <br>
+
+                    <h3>Person and address information</h3>
+                    <br>
+                    <br>
+
+                    <label for="name">Name / Company</label><br>
+                    <input type="text" id="name" name="name"><br>
+
+                    <label for="address">Address</label> <br>
+                    <input type="text" id="address" name="address"><br>
+
+                    <label for="zipCode">ZIP code</label><br>
+                    <input type="text" id="zipCode" name="zipCode"><br>
+
+                    <label for="city"> City</label><br>
+                    <input type="text" id="city" name="city"><br>
+
+                    <label for="mobile">Mobile number</label><br>
+                    <input type="text" id="mobile" name="mobile"><br>
+
+                    <label for="email">E-mail</label> <br>
+                    <input type="text" id="email" name="email">
+
+
+                    <h3>Payment options </h3>
+                    <br>
+                    <br>
+                    <input type="radio" id="invoiceOne" name="paymentMethod" value="paymentMethod">
+                    <label for="invoiceOne">Invoice</label>
+                    <br>
+                    <br>
+
+                    <input type="radio" id="invoiceTwo" name="paymentMethod" value="paymentMethod">
+                    <label for="invoiceTwo">Invoice</label>
+
+                    <h3>Message</h3>
+                    <p>
+                        Do you want to leave us a message? Keep in mind that your order will be processed manually and
+                        may
+                        take an extra day or two before it will be shipping.
+                    </p>
+                    <textarea></textarea>
+
+                    <br>
+
+                </fieldset>
+            </form>
+            <button class="button" onclick="checkoutBasket(); "
+                id="purchaseButton"> Complete purchase </button>
+            <br>
+
+        </div>
+
+
+
+
+    </div>
+
+
+    <footer>
+        <div class="footerDiv">
+            <div>
+                <img src="../images/logo.svg" alt="">
+            </div>
+            <div>
+                <ul>
+                    <li><a href="../pages/info.html#termsOfPurchase">Terms of purchase</a></li>
+                    <li><a href="../pages/info.html#customerService">Customer service</a></li>
+                    <li><a href="../pages/info.html#aboutNafiva">About us</a></li>
+                </ul>
+            </div>
+            <div>
+                <ul>
+                    <li><a href="https://sv-se.facebook.com/">Facebook</a> </li>
+                    <li><a href="https://www.instagram.com/">Instagram</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Cart/Basket infromation box-->
+    <div class="cartOverviewBox" id="cartOverviewBox">
+        <h1>Overview cart</h1>
+        <ul id="basket">
+            <li>Its empty</li>
+        </ul>
+        <button class="button" onclick="emptyBasket()">Clear cart</button>
+        <br>
+        <br>
+        <button class="button" onclick="window.location.href='../pages/checkout.html';"
+            title="To Info of company">Checkout</button>
+    </div>
+
+        <!--To top button-->
+        <button class="toTopButton" id="upButton" onclick="window.location.href='#top';">&#8593;</button>
+
+    <script src="../javascript/addToCart.js"></script>
+</body>
+
+</html>

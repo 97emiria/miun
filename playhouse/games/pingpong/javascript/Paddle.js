@@ -1,8 +1,9 @@
-const SPEED = 0.02;
+const SPEED = 0.009;
 
 export default class Paddle {
     constructor(paddleElem) {
         this.paddleElem = paddleElem;
+        this.reset()
     }
 
     get position() {

@@ -1,0 +1,51 @@
+﻿
+<!DOCTYPE html>
+<html lang="se">
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+    <head>
+        <title>@ViewData["Title"]</title>
+        <link rel="stylesheet" href="~/Style/main.css" />
+    </head>
+
+    <body>
+
+        <header>
+            <div id="logoBox" class="logoBox">
+                <img src="~/Images/logo.png" />
+            </div>
+            <div id="timeBox" class="timeBox">
+                <p id="timestamp">Hej</p>
+            </div>
+        </header>
+
+        <div class="contentBox">
+            <aside>
+                <nav>
+                    <ul>
+                        <li><a href="/">Startsida</a></li>
+                        <li><a href="/About">Om mig</a></li>
+                        <li><a href="/Razor">Razor</a></li>
+                    </ul>
+                </nav> 
+            </aside>
+            <main>
+                @RenderBody()
+            </main>
+        </div>
+
+        <footer>
+            <p>Av Emilia Holmström - Kontakta mig via e-post: <a href="Mailto: emho2003@student.miun.se">emho2003@student.miun.se</a> </p>
+        </footer>
+
+        <script src="~/JavaScript/JavaScript.js"></script>
+    </body>
+
+
+
+
+</html>

@@ -1,0 +1,51 @@
+﻿@page "/calculator"
+
+<PageTitle>Konventera tempratur</PageTitle>
+
+<h1>Räkna ut C &#129062; F</h1>
+
+    <label for="celsius">Celsius:</label> <br />
+    <input type="number" class="form-control" @bind="celsius"/>
+    <button @onclick="CalculateTemp">Räkna ut</button>
+
+
+<br>
+<br>
+<p class="answered">Tempraturen i fahrenheit: <b>@fahrenheit</b> °F </p>
+
+
+<br />
+<hr />
+<br />
+
+
+<h1>Räkna ut km/h &#129062; miles/hour</h1>
+
+    <label for="celsius">Km/h:</label> <br />
+    <input type="number" class="form-control" @bind="kilometers"/>
+    <button @onclick="CalculateMiles">Räkna ut</button>
+
+<br>
+<br>
+<p class="answered">Hastigheten blir: <b>@miles</b> miles/hour </p>
+
+
+@code {
+
+    //C -> F
+    private double fahrenheit;
+    private double celsius = 0;
+
+    private void CalculateTemp() {
+        fahrenheit = 32 + (int)(celsius / 0.5556);
+    }
+
+
+    //Km - > Miles
+    private double kilometers = 0;
+    private double miles;
+
+    private void CalculateMiles() {
+        miles = Math.Round(kilometers * 0.621371);
+    }
+}

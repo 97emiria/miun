@@ -1,0 +1,38 @@
+﻿@page "/json"
+@inject HttpClient Http
+
+<PageTitle>Json</PageTitle>
+
+<h1>Json test</h1>
+<h2>Kurslista från en json-fil</h2>
+
+@if (courseList == null)
+{
+    <p>Loading...</p>
+}
+else
+{
+    @foreach (var course in courseList) 
+    { 
+        <p>@course.code, @course.name</p>
+    }
+}
+
+
+<ComponentTest/>
+
+
+@code {
+    private Courses[] courseList;
+
+    protected override async Task OnInitializedAsync()
+    {
+        courseList = await Http.GetFromJsonAsync<Courses[]>("courselist.json");
+    }
+
+    public class Courses
+    {
+        public string code { get; set; }
+        public string name { get; set; }
+    }
+}

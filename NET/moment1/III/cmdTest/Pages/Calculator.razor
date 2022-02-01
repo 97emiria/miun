@@ -1,0 +1,24 @@
+@page "/Calculator"
+
+<PageTitle>Konventera tempratur</PageTitle>
+
+
+<label for="celsius">Celus:</label>
+<input type="number" class="form-control" @bind="celsius"/>
+<br>
+<button class="btn btn-primary" @onclick="Calculate">Calculate</button>
+
+<br>
+<br>
+<h3>Temp in fahrenheit: @fahrenheit</h3>
+
+@code {
+    private double fahrenheit;
+    private double celsius = 0;
+
+    private void Calculate() {
+        fahrenheit = 32 + (int)(celsius / 0.5556);
+    }
+}
+
+

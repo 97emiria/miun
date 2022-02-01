@@ -1,0 +1,19 @@
+﻿
+ <nav>
+    <ul>
+        <li><a href="/">Startsida</a></li>
+        <li><a href="/calculator">Räknare</a></li>
+        <li><a href="/Json">Json</a></li>
+    </ul>
+</nav> 
+
+@code {
+    private bool collapseNavMenu = true;
+
+    private string? NavMenuCssClass => collapseNavMenu ? "collapse" : null;
+
+    private void ToggleNavMenu()
+    {
+        collapseNavMenu = !collapseNavMenu;
+    }
+}

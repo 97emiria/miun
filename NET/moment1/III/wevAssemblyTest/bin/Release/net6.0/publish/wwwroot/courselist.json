@@ -1,0 +1,50 @@
+ [
+  {
+    "code":         "DT057G",
+    "name":         "Webbutveckling I"
+  },
+  {
+    "code":         "DT093G",
+    "name":         "Webbutveckling II"
+  },
+  {
+    "code":         "DT003G",
+    "name":         "Databaser"
+  },
+  {
+    "code":         "DT068G",
+    "name":         "Webbanvändbarhet"
+  },
+  {
+    "code":         "DT071G",
+    "name":         "Programmering i C#.NET"
+  },
+  {
+    "code":         "DT084G",
+    "name":         "Introduktion till programmering i JavaScript"
+  },
+  {
+    "code":         "DT102G",
+    "name":         "ASP.NET med C#"
+  },
+  {
+    "code":         "DT152G",
+    "name":         "Webbdesign för CMS"
+  },
+  {
+    "code":         "DT162G",
+    "name":         "Javascriptbaserad webbutveckling"
+  },
+  {
+    "code":         "DT163G",
+    "name":         "Digital bildbehandling för webb"
+  },
+  {
+    "code":         "DT173G",
+    "name":         "Webbutveckling III"
+  },
+  {
+    "code":         "GD008G",
+    "name":         "Typografi och form för webb"
+  }
+]

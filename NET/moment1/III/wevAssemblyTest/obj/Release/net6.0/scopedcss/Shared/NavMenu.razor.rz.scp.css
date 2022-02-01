@@ -1,0 +1,33 @@
+
+ nav[b-b5lgd3rgnz] {
+    margin: 0 auto;
+    text-align: center;
+}
+
+nav ul[b-b5lgd3rgnz] {
+    list-style: none;
+    padding: 1em 0;
+}
+
+ nav li[b-b5lgd3rgnz] {
+    margin: 1em;
+    padding: 0.5rem;
+    background-color: #bebebe;
+    border-radius: 0.2rem;
+}
+
+    nav li:last-child[b-b5lgd3rgnz] {
+        margin-bottom: 0;
+    }
+
+     nav li a[b-b5lgd3rgnz] {
+        text-decoration: none;
+        display: block;
+        color: #333;
+        width: 100%;
+    }
+
+     nav li:hover[b-b5lgd3rgnz] {
+        background-color: #5e5d5d;
+        cursor: pointer;
+    }

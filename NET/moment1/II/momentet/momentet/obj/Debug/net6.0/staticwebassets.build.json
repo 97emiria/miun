@@ -1,0 +1,88 @@
+{
+  "Version": 1,
+  "Hash": "r4r9JpwNNrcdF4Do0SoSLHXxBqpUVbRCxVXDBrcGxDU=",
+  "Source": "momentet",
+  "BasePath": "_content/momentet",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "momentet\\wwwroot",
+      "Source": "momentet",
+      "ContentRoot": "C:\\Users\\E-Hol\\GitHub\\NET\\moment1\\II\\momentet\\momentet\\wwwroot\\",
+      "BasePath": "_content/momentet",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\E-Hol\\GitHub\\NET\\moment1\\II\\momentet\\momentet\\wwwroot\\Images\\logo.png",
+      "SourceId": "momentet",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\E-Hol\\GitHub\\NET\\moment1\\II\\momentet\\momentet\\wwwroot\\",
+      "BasePath": "_content/momentet",
+      "RelativePath": "Images/logo.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\logo.png"
+    },
+    {
+      "Identity": "C:\\Users\\E-Hol\\GitHub\\NET\\moment1\\II\\momentet\\momentet\\wwwroot\\Images\\redPanda.jpg",
+      "SourceId": "momentet",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\E-Hol\\GitHub\\NET\\moment1\\II\\momentet\\momentet\\wwwroot\\",
+      "BasePath": "_content/momentet",
+      "RelativePath": "Images/redPanda.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\redPanda.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\E-Hol\\GitHub\\NET\\moment1\\II\\momentet\\momentet\\wwwroot\\JavaScript\\JavaScript.js",
+      "SourceId": "momentet",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\E-Hol\\GitHub\\NET\\moment1\\II\\momentet\\momentet\\wwwroot\\",
+      "BasePath": "_content/momentet",
+      "RelativePath": "JavaScript/JavaScript.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\JavaScript\\JavaScript.js"
+    },
+    {
+      "Identity": "C:\\Users\\E-Hol\\GitHub\\NET\\moment1\\II\\momentet\\momentet\\wwwroot\\Style\\main.css",
+      "SourceId": "momentet",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\E-Hol\\GitHub\\NET\\moment1\\II\\momentet\\momentet\\wwwroot\\",
+      "BasePath": "_content/momentet",
+      "RelativePath": "Style/main.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Style\\main.css"
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.redpandaImg {
+    max-height: 250px;
+}
+
+
+main p {
+    font-size: 1em;
+    margin: 1em 0;
+    line-height: 1.6em;
+    max-width: 70ch;
+}
+
+
+h1 {
+    margin-bottom: 1em;
+}
+
+main ul {
+    margin-left: 1.2em;
+}
+
+button {
+    padding: 0.5rem 1rem;
+    background-color: #333;
+    border-radius: 0.2em;
+    border: none;
+    color: white;
+    display: inline;
+    align-items: center;
+}
+
+input {
+    padding: 0.35rem 1rem;
+    display: inline;
+    align-items: center;
+}
+
+.answered {
+    font-size: 1.3em;
+}

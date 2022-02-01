@@ -1,0 +1,33 @@
+
+ nav {
+    margin: 0 auto;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 1em 0;
+}
+
+ nav li {
+    margin: 1em;
+    padding: 0.5rem;
+    background-color: #bebebe;
+    border-radius: 0.2rem;
+}
+
+    nav li:last-child {
+        margin-bottom: 0;
+    }
+
+     nav li a {
+        text-decoration: none;
+        display: block;
+        color: #333;
+        width: 100%;
+    }
+
+     nav li:hover {
+        background-color: #5e5d5d;
+        cursor: pointer;
+    }

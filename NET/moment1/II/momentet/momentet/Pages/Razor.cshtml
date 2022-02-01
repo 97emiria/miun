@@ -1,0 +1,35 @@
+﻿@page
+
+@{
+    ViewData["Title"] = "Razor";
+    Layout = "_Layout";
+
+
+    //Creat course list
+    String[] courseList = { "DT003G, Databaser", "DT057G, Webbutveckling I", "DT068G, Webbanvändbarhet" };
+
+    var date = DateTime.Now;
+
+    //Inte ultimata lösningen kanske
+    string message;
+    if(date.ToString("dddd") != "måndag")
+    {
+        message = "Idag är inte måndag :(";
+    } else
+    {
+        message = "Idag är det måndag! :D";
+    }
+}
+
+<h1>Razor</h1>
+
+<p><b>Dagens datum är:</b> @date </p>
+<p>@message </p>
+
+<ul>
+    @foreach (var course in courseList) {
+        <li>@course</li>
+    }
+</ul>
+
+

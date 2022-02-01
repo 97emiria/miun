@@ -1,0 +1,26 @@
+﻿@inherits LayoutComponentBase
+
+
+<body>
+        <header>
+            <div id="logoBox" class="logoBox">
+                <img src="images/logo.png" />
+            </div>
+            <div>
+                 @DateTime.Now.ToString("yyyy-MM-dd")
+            </div>
+        </header>
+
+        <div class="contentBox">
+            <aside>
+                <NavMenu />
+            </aside>
+            <main>
+                @Body
+            </main>
+        </div>
+        
+    
+        <Footer />
+
+</body>

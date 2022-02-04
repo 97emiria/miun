@@ -1553,11 +1553,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\E-Hol\\github\\net\\moment1\\III\\wevAssemblyTest\\wevAssemblyTest.csproj",
+      "projectUniqueName": "C:\\Users\\E-Hol\\github\\net\\moment1\\iii\\wevAssemblyTest\\wevAssemblyTest.csproj",
       "projectName": "wevAssemblyTest",
-      "projectPath": "C:\\Users\\E-Hol\\github\\net\\moment1\\III\\wevAssemblyTest\\wevAssemblyTest.csproj",
+      "projectPath": "C:\\Users\\E-Hol\\github\\net\\moment1\\iii\\wevAssemblyTest\\wevAssemblyTest.csproj",
       "packagesPath": "C:\\Users\\E-Hol\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\E-Hol\\github\\net\\moment1\\III\\wevAssemblyTest\\obj\\",
+      "outputPath": "C:\\Users\\E-Hol\\github\\net\\moment1\\iii\\wevAssemblyTest\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -1616,7 +1616,7 @@
         "downloadDependencies": [
           {
             "name": "Microsoft.NETCore.App.Runtime.Mono.browser-wasm",
-            "version": "[6.0.0, 6.0.0]"
+            "version": "[6.0.1, 6.0.1]"
           }
         ],
         "frameworkReferences": {
@@ -1624,7 +1624,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
       }
     },
     "runtimes": {

@@ -1,0 +1,45 @@
+
+header {
+    margin-bottom: 3em;
+
+    border-bottom: 2px solid #eee;
+    box-shadow: 0 0 15px 0 #ddd;   
+}
+
+nav {
+
+    padding: 1em 0;
+
+    ul {
+        list-style: none;
+        text-align: center;
+
+        display: flex;
+        gap: 1em;
+        justify-content: space-around;
+
+        max-width: 500px;
+        margin: 0 auto;
+    }
+
+    li {
+        width: 125px;
+        border-radius: 25%;
+    }
+
+    a {
+        text-decoration: none;
+        display: block;
+        color: $textColor;
+
+        width: 100%;
+        border-bottom: 2px solid $dark;
+        padding: 0.5em;
+
+        font-family: $bodyFont;
+
+        &:hover {
+            background-color: $middle;
+        }
+    }
+}

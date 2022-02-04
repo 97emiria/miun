@@ -1,0 +1,46 @@
+@{
+}
+<!DOCTYPE html>
+<html lang="se">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>@ViewData["Title"]</title>
+        <link rel="stylesheet" href="~/Style/main.css" />
+
+        <!-- Favicon -->
+        <link rel="shortcut icon" href="~/images/favicon.png" type="image/x-icon">    
+
+    </head>
+
+    <body>
+
+        <header>
+            <nav>
+                <ul>
+                    <li><a asp-controller="Home" asp-action="Index">Hem</a></li>
+                    <li><a asp-controller="Home" asp-action="Index">LängreTest</a></li>
+                    <li><a asp-controller="Home" asp-action="Index">Tredje</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <div class="contentBox">
+            <main>
+                @RenderBody()
+            </main>
+        </div>
+
+        <footer>
+            <p>Av Emilia Holmström, e-post: <a href="Mailto: emho2003@student.miun.se">emho2003@student.miun.se</a> </p>
+        </footer>
+
+        <script src="~/JavaScript/JavaScript.js"></script>
+    </body>
+
+
+
+
+</html>

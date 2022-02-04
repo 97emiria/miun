@@ -1,0 +1,22 @@
+@model video.Models.CourseModel
+@{
+    ViewData["Title"] = "Kurser";
+}
+
+<h1>Kurser</h1>
+
+<form method="post" >
+    <div asp-validation-summary="ModelOnly"></div>
+    <br>
+    <label asp-for="Code"></label> <br>
+    <input asp-for="Code"/>
+    <span asp-validation-for="Code"></span>
+    <br>
+    <br>
+    <label asp-for="Name"></label><br>
+    <input asp-for="Name"/>
+    <span asp-validation-for="Name"></span>
+    <br>
+    <br>
+    <input type="submit" value="Lägg till"/>
+</form>

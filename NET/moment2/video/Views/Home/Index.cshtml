@@ -1,0 +1,17 @@
+@model List<video.Models.CourseModel>
+@{
+    ViewData["Title"] = "Startsidan";
+    //Layout = "_Layout";
+}
+
+
+<h1>Startsidan</h1>
+
+<p>Några kurser</p>
+<ul>
+    @if(Model != null) {
+        @foreach(var course in Model) {
+            <li>@course.Code, @course.Name</li>
+        }
+    }
+</ul>

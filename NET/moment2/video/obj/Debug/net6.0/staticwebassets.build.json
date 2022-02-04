@@ -1,0 +1,88 @@
+{
+  "Version": 1,
+  "Hash": "1gkagihEGBNPq2Dxqr02VnnKahz+T+M/A09uGWo3EYI=",
+  "Source": "video",
+  "BasePath": "_content/video",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "video\\wwwroot",
+      "Source": "video",
+      "ContentRoot": "C:\\Users\\E-Hol\\GitHub\\NET\\moment2\\video\\wwwroot\\",
+      "BasePath": "_content/video",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\E-Hol\\GitHub\\NET\\moment2\\video\\wwwroot\\Images\\logo.png",
+      "SourceId": "video",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\E-Hol\\GitHub\\NET\\moment2\\video\\wwwroot\\",
+      "BasePath": "_content/video",
+      "RelativePath": "Images/logo.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\logo.png"
+    },
+    {
+      "Identity": "C:\\Users\\E-Hol\\GitHub\\NET\\moment2\\video\\wwwroot\\Images\\redPanda.jpg",
+      "SourceId": "video",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\E-Hol\\GitHub\\NET\\moment2\\video\\wwwroot\\",
+      "BasePath": "_content/video",
+      "RelativePath": "Images/redPanda.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\redPanda.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\E-Hol\\GitHub\\NET\\moment2\\video\\wwwroot\\JavaScript\\JavaScript.js",
+      "SourceId": "video",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\E-Hol\\GitHub\\NET\\moment2\\video\\wwwroot\\",
+      "BasePath": "_content/video",
+      "RelativePath": "JavaScript/JavaScript.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\JavaScript\\JavaScript.js"
+    },
+    {
+      "Identity": "C:\\Users\\E-Hol\\GitHub\\NET\\moment2\\video\\wwwroot\\Style\\main.css",
+      "SourceId": "video",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\E-Hol\\GitHub\\NET\\moment2\\video\\wwwroot\\",
+      "BasePath": "_content/video",
+      "RelativePath": "Style/main.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Style\\main.css"
+    }
+  ]
+}

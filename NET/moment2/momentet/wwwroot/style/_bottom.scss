@@ -13,9 +13,12 @@ footer {
 
     box-shadow: 0 0 15px 0 #ddd;
 
+    background: $mixedDark;
+    color: white;
 
     a {
         color: $textColor;
+        color: white;
     }
 
 }

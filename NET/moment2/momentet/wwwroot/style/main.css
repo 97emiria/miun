@@ -1,3 +1,6 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700");
+@import url("https://fonts.googleapis.com/css2?family=Asap&display=swap");
 * {
   padding: 0;
   margin: 0;
@@ -6,14 +9,44 @@
 }
 
 header {
+  background: -webkit-gradient(linear, left top, right top, from(#354f52), color-stop(#2b4043), to(#172224));
+  background: linear-gradient(0.25turn, #354f52, #2b4043, #172224);
+}
+
+header div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
   margin-bottom: 3em;
-  border-bottom: 2px solid #eee;
-  -webkit-box-shadow: 0 0 15px 0 #ddd;
-          box-shadow: 0 0 15px 0 #ddd;
+  padding: 0.5em 0;
+}
+
+.logoBox {
+  max-height: 100px;
+  padding: 0.2em;
+}
+
+.logoBox a {
+  color: white;
+  text-decoration: none;
+  font-size: 2.5em;
+  font-family: "Asap", "Poiret One", Georgia, "Times New Roman", Times, serif;
+}
+
+.logoBox img {
+  max-height: 50px;
 }
 
 nav {
-  padding: 1em 0;
+  padding: 1em;
 }
 
 nav ul {
@@ -39,13 +72,33 @@ nav a {
   display: block;
   color: #333;
   width: 100%;
-  border-bottom: 2px solid #354f52;
   padding: 0.5em;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Source Sans Pro", "Open Sans", sans-serif;
+  color: white;
 }
 
 nav a:hover {
-  background-color: #84a98c;
+  font-weight: bold;
+}
+
+@media all and (max-width: 700px) {
+  .logoBox {
+    max-height: 50px;
+    padding: 0.2em;
+  }
+  .logoBox img {
+    max-height: 40px;
+  }
+}
+
+@media all and (max-width: 650px) {
+  header {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    border-bottom: 2px solid #ddd;
+  }
 }
 
 body {
@@ -56,7 +109,27 @@ body {
 }
 
 h1 {
-  font-family: "Poiret One", Georgia, "Times New Roman", Times, serif;
+  font-family: "Asap", "Poiret One", Georgia, "Times New Roman", Times, serif;
+  border-left: 3px solid #84a98c;
+  padding-left: 0.5em;
+  margin-bottom: 1em;
+  font-size: 2.5em;
+}
+
+main {
+  max-width: 1200px;
+  width: 90%;
+  margin: 0 auto;
+  padding-bottom: 5em;
+}
+
+p, a, li {
+  font-family: "Source Sans Pro", "Open Sans", sans-serif;
+  font-size: 1em;
+}
+
+.courseList article {
+  margin: 2em 0;
 }
 
 footer {
@@ -64,15 +137,165 @@ footer {
   bottom: 0;
   border-top: 2px solid #eee;
   background-color: #cad2c5;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Source Sans Pro", "Open Sans", sans-serif;
   padding: 1em;
   width: 100%;
   text-align: center;
   -webkit-box-shadow: 0 0 15px 0 #ddd;
           box-shadow: 0 0 15px 0 #ddd;
+  background: -webkit-gradient(linear, left top, right top, from(#354f52), color-stop(#2b4043), to(#172224));
+  background: linear-gradient(0.25turn, #354f52, #2b4043, #172224);
+  color: white;
 }
 
 footer a {
   color: #333;
+  color: white;
+}
+
+form {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 2em 0;
+  max-width: 500px;
+  font-family: "Source Sans Pro", "Open Sans", sans-serif;
+}
+
+form input {
+  display: inline-block;
+  width: 100%;
+  padding: 0.5em 0;
+  font-size: 1em;
+  border: none;
+  border-bottom: 2px solid #ddd;
+}
+
+form input:focus {
+  background-color: #eee;
+  outline: none;
+  -webkit-box-shadow: 0 0 2.5px 0 #eee;
+          box-shadow: 0 0 2.5px 0 #eee;
+}
+
+form label {
+  color: #999;
+  font-size: 0.9em;
+}
+
+form input[type=submit] {
+  background: #354f52;
+  color: white;
+  border: none;
+  border-radius: 5em;
+  padding: 1em;
+  cursor: pointer;
+  max-width: 300px;
+  width: 80%;
+  margin: 0 auto;
+  display: block;
+}
+
+form input[type=submit]:hover {
+  background-color: #0d1314;
+}
+
+form span {
+  display: inline-block;
+  width: 100%;
+  color: #cd0000;
+  margin-bottom: 2em;
+  font-size: 0.9em;
+  font-weight: bold;
+}
+
+table {
+  width: 100%;
+  max-width: 800px;
+  border-spacing: 0;
+  margin: 2em 0;
+  background-color: #354f52;
+  color: white;
+}
+
+table th {
+  text-align: left;
+  font-family: "Asap", "Poiret One", Georgia, "Times New Roman", Times, serif;
+  font-size: 1em;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 1em;
+  background-color: #172224;
+}
+
+table td {
+  font-family: "Source Sans Pro", "Open Sans", sans-serif;
+  font-size: 1em;
+  padding: 1em;
+}
+
+table tr {
+  font-family: "Source Sans Pro", "Open Sans", sans-serif;
+}
+
+table tr:nth-child(even) {
+  background-color: #2b4043;
+}
+
+table a {
+  color: white;
+}
+
+@media all and (max-width: 600px) {
+  /* Force table to not be like tables anymore */
+  table, thead, tbody, th, td, tr {
+    display: block;
+  }
+  table thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+  table tr {
+    border: 1px solid #ddd;
+    margin-bottom: 1em;
+  }
+  table td {
+    border: none;
+    border-bottom: 1px solid #eee;
+    position: relative;
+    padding-left: 40%;
+    font-size: 0.95em;
+  }
+  table td:before {
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    width: 45%;
+    padding: 1em;
+    padding-right: 10px;
+    white-space: nowrap;
+  }
+  table td:nth-of-type(1):before {
+    content: "Kurskod:";
+    width: 100px;
+  }
+  table td:nth-of-type(2):before {
+    content: "Namn:";
+    width: 100px;
+  }
+  table td:nth-of-type(3):before {
+    content: "Progressation:";
+    width: 100px;
+  }
+  table td:nth-of-type(4):before {
+    content: "Länk:";
+    width: 100px;
+  }
+}
+
+@media all and (max-width: 450px) {
+  table td {
+    padding-left: 50%;
+  }
 }
 /*# sourceMappingURL=main.css.map */

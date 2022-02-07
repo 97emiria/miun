@@ -6,18 +6,10 @@ using momentet.Models;
 namespace momentet.Controllers
 {
 
-    public class HomeController : Controller
+    public class CourseController : Controller
     {
 
       public IActionResult Index()
-        {
-            ViewBag.date = DateTime.Now.ToString("yyyy-MM-dd");
-            return View();
-        }
-
-
-        [HttpGet("/om")]
-        public IActionResult About()
         {
             var JsonStr = System.IO.File.ReadAllText("data/courses.json");
             var JsonObj = JsonConvert.DeserializeObject<List<CourseModel>>(JsonStr);
@@ -26,18 +18,19 @@ namespace momentet.Controllers
         }
 
 
-          public IActionResult GuestBook()
+        //[HttpGet("/kurser/läggtill")]
+        public IActionResult Add()
         {
             return View();
         }
 
         [HttpPost]
-          public IActionResult GuestBook(GuestBookModel model)
+        public IActionResult Add(CourseModel model)
         {
              if (ModelState.IsValid)
             {
                 // Läs in befintliga
-                var JsonStr = System.IO.File.ReadAllText("data/guestbook.json");
+                var JsonStr = System.IO.File.ReadAllText("data/courses.json");
                 var JsonObj = JsonConvert.DeserializeObject<List<CourseModel>>(JsonStr);
 
                 // Lägg till
@@ -46,12 +39,12 @@ namespace momentet.Controllers
                     JsonObj.Add(model);
                 }
                 // Konvertera till JSON-sträng och spara
-                System.IO.File.WriteAllText("data/guestbook.json", JsonConvert.SerializeObject(JsonObj, Formatting.Indented));
+                System.IO.File.WriteAllText("data/courses.json", JsonConvert.SerializeObject(JsonObj, Formatting.Indented));
             
                 ModelState.Clear();
             }
+            
             return View();
         }
-
     }
 }

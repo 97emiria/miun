@@ -1,0 +1,26 @@
+[
+  {
+    "Code": "DT057G",
+    "Name": "Webbutveckling I",
+    "Progression": "A",
+    "Url": "http://www.miun.se/utbildning/kurser/sok-kursplan/kursplan?kursplanid=15472"
+  },
+  {
+    "Code": "DT093G",
+    "Name": "Webbutveckling II",
+    "Progression": "B",
+    "Url": "http://www.miun.se/utbildning/kurser/sok-kursplan/kursplan?kursplanid=15474"
+  },
+  {
+    "Code": "DT173G",
+    "Name": "Webbutveckling III",
+    "Progression": "B",
+    "Url": "https://www.miun.se/utbildning/kursplaner-och-utbildningsplaner/Sok-kursplan/kursplan/?kursplanid=22706"
+  },
+  {
+    "Code": "DT191G",
+    "Name": "Webbutveckling med .NET",
+    "Progression": "B",
+    "Url": "https://www.miun.se/utbildning/kursplaner-och-utbildningsplaner/Sok-kursplan/kursplan/?kursplanid=27130"
+  }
+]

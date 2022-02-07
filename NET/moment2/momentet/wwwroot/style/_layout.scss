@@ -10,4 +10,32 @@ body {
 
 h1 {
     font-family: $headerFont;
+    border-left: 3px solid $middle;
+    padding-left: 0.5em;
+    margin-bottom: 1em;
+    font-size: 2.5em;
+}
+
+
+main { 
+    max-width: 1200px;
+    width: 90%;
+    margin: 0 auto;
+    padding-bottom: 5em;
+}
+
+
+p, a, li {
+    font-family: $bodyFont;
+    font-size: 1em;
+}
+
+
+
+
+
+.courseList {
+    article {
+        margin: 2em 0;
+    }
 }

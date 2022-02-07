@@ -1,0 +1,47 @@
+@model List<momentet.Models.CourseModel>
+@{
+    ViewData["Title"] = "Kurslista";
+    ViewData["Heading"] = "Kurslista";
+}
+
+<div class="courseList">
+    @if(Model != null) {
+            <table>
+                <thead>
+                    <tr>
+                        <th>Kod</th>
+                        <th>Namn</th>
+                        <th>Progression</th>
+                        <th>Länk</th>
+                    </tr>
+                </thead>
+           
+                <tbody id="courseListTable">
+                   @foreach(var course in Model) 
+                   {
+                       <tr>
+                           <td>@course.Code</td>
+                           <td>@course.Name</td>
+                           <td>@course.Progression</td>
+                           <td>
+                               <a href="@course.Url">Webblänk</a>
+                           </td>
+                       </tr>
+                   }
+                </tbody>
+
+            </table>
+
+
+            <p>Saknas en kurs i listan? <a asp-controller="Course" asp-action="Add">Lägg till fler kurser här</a></p>
+
+    } else {
+            <p>Det finns inga kurser tillagda ännu, <a asp-controller="Course" asp-action="Add">lägg till den första kursen här!</a></p>
+
+    }
+
+    
+    
+</div>
+
+

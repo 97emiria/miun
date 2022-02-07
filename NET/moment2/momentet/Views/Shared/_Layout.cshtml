@@ -18,20 +18,26 @@
     <body>
 
         <header>
-            <nav>
-                <ul>
-                    <li><a asp-controller="Home" asp-action="Index">Hem</a></li>
-                    <li><a asp-controller="Home" asp-action="Index">LängreTest</a></li>
-                    <li><a asp-controller="Home" asp-action="Index">Tredje</a></li>
-                </ul>
-            </nav>
+           <div>
+                <section class="logoBox">
+                    <a asp-controller="Home" asp-action="Index">
+                        Moment 2
+                    </a>
+                </section>
+                <nav>
+                    <ul>
+                        <li><a asp-controller="Home" asp-action="Index">Hem</a></li>
+                        <li><a asp-controller="Home" asp-action="Guestbook">Gästbook</a></li>
+                        <li><a asp-controller="Course" asp-action="Index">Kurslista</a></li>
+                    </ul>
+                </nav>
+           </div>
         </header>
 
-        <div class="contentBox">
-            <main>
-                @RenderBody()
-            </main>
-        </div>
+        <main>
+            <h1>@ViewData["Heading"]</h1>
+            @RenderBody()
+        </main>
 
         <footer>
             <p>Av Emilia Holmström, e-post: <a href="Mailto: emho2003@student.miun.se">emho2003@student.miun.se</a> </p>

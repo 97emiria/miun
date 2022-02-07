@@ -1,0 +1,22 @@
+@model momentet.Models.GuestBookModel
+@{
+    ViewData["Title"] = "Gästbok";
+    ViewData["Heading"] = "Gästbok";
+}
+
+
+
+<form mthod="Post">
+    <!-- Error messages -->
+    <div asp-validation-summary="ModelOnly"></div>
+
+    <label asp-for="Author"></label>
+    <input asp-for="Author" />
+    <span asp-validation-for="Author"></span>
+
+    <label asp-for="Message"></label>
+    <input asp-for="Message" />
+    <span asp-validation-for="Message"></span>
+
+    <input type="submit" value="Posta"/>
+</form>

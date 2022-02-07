@@ -1,0 +1,31 @@
+@model momentet.Models.CourseModel
+@{
+    ViewData["Title"] = "Lägg till ny kurs";
+    ViewData["Heading"] = "Lägg till";
+
+}
+
+<form method="post">
+    <!-- Error messages -->
+    <div asp-validation-summary="ModelOnly"></div>
+
+    <label asp-for="Code"></label>
+    <input asp-for="Code" />
+    <span asp-validation-for="Code"></span>
+
+    <label asp-for="Name"></label>
+    <input asp-for="Name"/>
+    <span asp-validation-for="Name"></span>
+
+    <label asp-for="Progression"></label>
+    <input asp-for="Progression" Style="text-transform: uppercase;"/>
+    <span asp-validation-for="Progression"></span>
+
+
+    <label asp-for="Url"></label>
+    <input asp-for="Url" />
+    <span asp-validation-for="Url"></span>
+
+    <input type="submit" value="Lägg till" />
+
+</form>

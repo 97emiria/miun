@@ -1,5 +1,5 @@
 {
-  "FilePath": "c:\\Users\\E-Hol\\GitHub\\NET\\moment2\\momentet\\momentet.csproj",
+  "FilePath": "c:\\Users\\E-Hol\\github\\net\\moment2\\momentet\\momentet.csproj",
   "Configuration": {
     "ConfigurationName": "MVC-3.0",
     "LanguageVersion": "6.0",
@@ -16298,23 +16298,43 @@
   "RootNamespace": "momentet",
   "Documents": [
     {
-      "FilePath": "c:\\Users\\E-Hol\\GitHub\\NET\\moment2\\momentet\\Views\\_ViewStart.cshtml",
+      "FilePath": "c:\\Users\\E-Hol\\github\\net\\moment2\\momentet\\Views\\Course\\Index.cshtml",
+      "TargetPath": "Views\\Course\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\E-Hol\\github\\net\\moment2\\momentet\\Views\\_ViewStart.cshtml",
       "TargetPath": "Views\\_ViewStart.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\E-Hol\\GitHub\\NET\\moment2\\momentet\\Views\\Home\\Index.cshtml",
+      "FilePath": "c:\\Users\\E-Hol\\github\\net\\moment2\\momentet\\Views\\Home\\Index.cshtml",
       "TargetPath": "Views\\Home\\Index.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\E-Hol\\GitHub\\NET\\moment2\\momentet\\Views\\Shared\\_Layout.cshtml",
+      "FilePath": "c:\\Users\\E-Hol\\github\\net\\moment2\\momentet\\Views\\Home\\About.cshtml",
+      "TargetPath": "Views\\Home\\About.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\E-Hol\\github\\net\\moment2\\momentet\\Views\\Course\\Add.cshtml",
+      "TargetPath": "Views\\Course\\Add.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\E-Hol\\github\\net\\moment2\\momentet\\Views\\Shared\\_Layout.cshtml",
       "TargetPath": "Views\\Shared\\_Layout.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\E-Hol\\GitHub\\NET\\moment2\\momentet\\Views\\_ViewImports.cshtml",
+      "FilePath": "c:\\Users\\E-Hol\\github\\net\\moment2\\momentet\\Views\\_ViewImports.cshtml",
       "TargetPath": "Views\\_ViewImports.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\E-Hol\\github\\net\\moment2\\momentet\\Views\\Home\\GuestBook.cshtml",
+      "TargetPath": "Views\\Home\\GuestBook.cshtml",
       "FileKind": "mvc"
     }
   ],

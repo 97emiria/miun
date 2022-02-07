@@ -1,14 +1,42 @@
 
 header {
-    margin-bottom: 3em;
+    background: $mixedDark;
 
-    border-bottom: 2px solid #eee;
-    box-shadow: 0 0 15px 0 #ddd;   
+    div {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    
+        max-width: 1200px;
+        margin: 0 auto;
+        margin-bottom: 3em;
+        padding: 0.5em 0;
+    
+    }
 }
+
+.logoBox {
+    max-height: 100px;
+    padding: 0.2em;
+
+
+    a {
+        color: white;
+        text-decoration: none;
+        font-size: 2.5em;
+        font-family: $headerFont;
+    }
+
+    img {
+        max-height: 50px;
+    }
+}
+
+
 
 nav {
 
-    padding: 1em 0;
+    padding: 1em;
 
     ul {
         list-style: none;
@@ -33,13 +61,37 @@ nav {
         color: $textColor;
 
         width: 100%;
-        border-bottom: 2px solid $dark;
         padding: 0.5em;
 
         font-family: $bodyFont;
+        color: white;
 
         &:hover {
-            background-color: $middle;
+            //background-color: $middle;
+            //background-image: linear-gradient(to right, $middle , $light, $light, $light);
+            font-weight: bold;
+
         }
     }
+}
+
+
+@media all and (max-width: 700px) {
+    .logoBox {
+        max-height: 50px;
+        padding: 0.2em;
+    
+        img {
+            max-height: 40px;
+        }
+    }
+}
+
+@media all and (max-width: 650px) {
+    header {
+        flex-direction: column;
+
+        border-bottom: 2px solid $grey;
+    }
+    
 }

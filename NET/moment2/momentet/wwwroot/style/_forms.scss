@@ -1,0 +1,58 @@
+form {
+    box-sizing: border-box;
+    margin: 2em 0;
+    max-width: 500px;
+    font-family: $bodyFont;
+
+    input {
+        display: inline-block;
+        width: 100%;
+        padding: 0.5em 0;
+
+        font-size: 1em;
+
+        border: none;
+        border-bottom: 2px solid $grey;
+
+        &:focus {
+            background-color: #eee;
+            outline: none;
+            box-shadow: 0 0 2.5px 0 #eee;
+        }
+
+    }
+
+
+    label {
+        color: #999;
+        font-size: 0.9em;
+    }
+
+    input[type=submit] {
+        background: $dark;
+        color: white;
+        border: none;
+        border-radius: 5em;
+        padding: 1em;
+        cursor: pointer;
+
+        max-width: 300px;
+        width: 80%;
+        margin: 0 auto;    
+        display: block;
+
+        &:hover {
+            background-color: darken($dark, 20%);
+        }
+    }
+
+    span {
+        display: inline-block;
+        width: 100%;
+        color: $error;
+        margin-bottom: 2em;
+        font-size: 0.9em;
+        font-weight: bold;
+    }
+
+}

@@ -16,6 +16,17 @@ h1 {
     font-size: 2.5em;
 }
 
+h2 {
+    font-family: $headerFont;
+    border-left: 3px solid $middle;
+    padding-left: 0.5em;
+    margin-bottom: 1em;
+}
+
+h3 {
+    font-family: $headerFont;
+}
+
 
 main { 
     max-width: 1200px;
@@ -32,6 +43,32 @@ p, a, li {
 
 
 
+.guestBookFlex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+
+    section {
+        width: 500px;
+    }
+
+    h3 {
+        margin-top: 1em;
+    }
+
+    .guestbook_topBox {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 0.5em;
+    }
+}
+
+.guestbookArticle {
+    border-bottom: 1px solid $grey;
+    padding: 1em 0;
+}
 
 
 .courseList {

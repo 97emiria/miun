@@ -1,22 +1,59 @@
-@model momentet.Models.GuestBookModel
+@model momentet.ModelsTwo.GuestBookModel
+
 @{
     ViewData["Title"] = "Gästbok";
     ViewData["Heading"] = "Gästbok";
+
+    string[] feelingsArr = {":|", ":)", ":(", ">:|"};
 }
 
 
+<div class="guestBookFlex">
+    <section>
+        <h2>Posta ett inlägg</h2>
+        <form method="POST">
+            <!-- Error messages -->
+            <div asp-validation-summary="ModelOnly"></div>
 
-<form mthod="Post">
-    <!-- Error messages -->
-    <div asp-validation-summary="ModelOnly"></div>
+            <label asp-for="Author"></label>
+            <input asp-for="Author" />
+            <span asp-validation-for="Author"></span>
 
-    <label asp-for="Author"></label>
-    <input asp-for="Author" />
-    <span asp-validation-for="Author"></span>
+            <label asp-for="Message"></label>
+            <input asp-for="Message" />
+            <span asp-validation-for="Message"></span>
 
-    <label asp-for="Message"></label>
-    <input asp-for="Message" />
-    <span asp-validation-for="Message"></span>
+            <label asp-for="Feeling"></label>
+            @Html.DropDownList("Feeling", new List<SelectListItem>
+            {
+                new SelectListItem{ Text="Neutral", Value = "1" },
+                new SelectListItem{ Text="Glad", Value = "2" },
+                new SelectListItem{ Text="Arg", Value = "3" },
+                new SelectListItem{ Text="Ledsen", Value = "4" },
+                new SelectListItem{ Text="Förvirrad", Value = "5" },
+                new SelectListItem{ Text="Kunglig", Value = "6" },
+            })
 
-    <input type="submit" value="Posta"/>
-</form>
+            <input type="submit" value="Posta" />
+        </form>
+    </section>
+
+    <section>
+        <h2>Alla poster:</h2>
+        @if (ViewBag.guestbook != null)
+        {
+            foreach (var item in ViewBag.guestbook)
+            {
+                <article class="guestbookArticle">
+                    <div class="guestbook_topBox">
+                        <h3> @item.Author </h3>
+                        @if(item.Feeling != null) {
+                            <p>@feelingsArr[item.Feeling-1]</p>
+                        }
+                    </div>
+                    <p> @item.Message </p>
+                </article>
+            }
+        }
+    </section>
+</div>

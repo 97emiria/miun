@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "u7IGHXBZwx2ZOXJAo7iZJlrcfxlYclVPp46lpysHZgs=",
+  "Hash": "k5QkiyflFPFRThATgmCvx6SBejGj46ENKQAEfkh5ofc=",
   "Source": "momentet",
   "BasePath": "_content/momentet",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "momentet\\wwwroot",
       "Source": "momentet",
-      "ContentRoot": "C:\\Users\\E-Hol\\github\\net\\moment2\\momentet\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\E-Hol\\github\\NET\\moment2\\momentet\\wwwroot\\",
       "BasePath": "_content/momentet",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\E-Hol\\github\\net\\moment2\\momentet\\wwwroot\\images\\favicon.png",
+      "Identity": "C:\\Users\\E-Hol\\github\\NET\\moment2\\momentet\\wwwroot\\images\\favicon.png",
       "SourceId": "momentet",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\E-Hol\\github\\net\\moment2\\momentet\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\E-Hol\\github\\NET\\moment2\\momentet\\wwwroot\\",
       "BasePath": "_content/momentet",
       "RelativePath": "images/favicon.png",
       "AssetKind": "All",
@@ -34,10 +34,10 @@
       "OriginalItemSpec": "wwwroot\\images\\favicon.png"
     },
     {
-      "Identity": "C:\\Users\\E-Hol\\github\\net\\moment2\\momentet\\wwwroot\\images\\logo.png",
+      "Identity": "C:\\Users\\E-Hol\\github\\NET\\moment2\\momentet\\wwwroot\\images\\logo.png",
       "SourceId": "momentet",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\E-Hol\\github\\net\\moment2\\momentet\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\E-Hol\\github\\NET\\moment2\\momentet\\wwwroot\\",
       "BasePath": "_content/momentet",
       "RelativePath": "images/logo.png",
       "AssetKind": "All",
@@ -51,10 +51,10 @@
       "OriginalItemSpec": "wwwroot\\images\\logo.png"
     },
     {
-      "Identity": "C:\\Users\\E-Hol\\github\\net\\moment2\\momentet\\wwwroot\\style\\_bottom.scss",
+      "Identity": "C:\\Users\\E-Hol\\github\\NET\\moment2\\momentet\\wwwroot\\style\\_bottom.scss",
       "SourceId": "momentet",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\E-Hol\\github\\net\\moment2\\momentet\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\E-Hol\\github\\NET\\moment2\\momentet\\wwwroot\\",
       "BasePath": "_content/momentet",
       "RelativePath": "style/_bottom.scss",
       "AssetKind": "All",
@@ -68,10 +68,10 @@
       "OriginalItemSpec": "wwwroot\\style\\_bottom.scss"
     },
     {
-      "Identity": "C:\\Users\\E-Hol\\github\\net\\moment2\\momentet\\wwwroot\\style\\_forms.scss",
+      "Identity": "C:\\Users\\E-Hol\\github\\NET\\moment2\\momentet\\wwwroot\\style\\_forms.scss",
       "SourceId": "momentet",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\E-Hol\\github\\net\\moment2\\momentet\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\E-Hol\\github\\NET\\moment2\\momentet\\wwwroot\\",
       "BasePath": "_content/momentet",
       "RelativePath": "style/_forms.scss",
       "AssetKind": "All",
@@ -85,10 +85,10 @@
       "OriginalItemSpec": "wwwroot\\style\\_forms.scss"
     },
     {
-      "Identity": "C:\\Users\\E-Hol\\github\\net\\moment2\\momentet\\wwwroot\\style\\_header.scss",
+      "Identity": "C:\\Users\\E-Hol\\github\\NET\\moment2\\momentet\\wwwroot\\style\\_header.scss",
       "SourceId": "momentet",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\E-Hol\\github\\net\\moment2\\momentet\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\E-Hol\\github\\NET\\moment2\\momentet\\wwwroot\\",
       "BasePath": "_content/momentet",
       "RelativePath": "style/_header.scss",
       "AssetKind": "All",
@@ -102,10 +102,10 @@
       "OriginalItemSpec": "wwwroot\\style\\_header.scss"
     },
     {
-      "Identity": "C:\\Users\\E-Hol\\github\\net\\moment2\\momentet\\wwwroot\\style\\_layout.scss",
+      "Identity": "C:\\Users\\E-Hol\\github\\NET\\moment2\\momentet\\wwwroot\\style\\_layout.scss",
       "SourceId": "momentet",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\E-Hol\\github\\net\\moment2\\momentet\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\E-Hol\\github\\NET\\moment2\\momentet\\wwwroot\\",
       "BasePath": "_content/momentet",
       "RelativePath": "style/_layout.scss",
       "AssetKind": "All",
@@ -119,12 +119,12 @@
       "OriginalItemSpec": "wwwroot\\style\\_layout.scss"
     },
     {
-      "Identity": "C:\\Users\\E-Hol\\github\\net\\moment2\\momentet\\wwwroot\\style\\_reste.scss",
+      "Identity": "C:\\Users\\E-Hol\\github\\NET\\moment2\\momentet\\wwwroot\\style\\_reset.scss",
       "SourceId": "momentet",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\E-Hol\\github\\net\\moment2\\momentet\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\E-Hol\\github\\NET\\moment2\\momentet\\wwwroot\\",
       "BasePath": "_content/momentet",
-      "RelativePath": "style/_reste.scss",
+      "RelativePath": "style/_reset.scss",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -133,13 +133,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\style\\_reste.scss"
+      "OriginalItemSpec": "wwwroot\\style\\_reset.scss"
     },
     {
-      "Identity": "C:\\Users\\E-Hol\\github\\net\\moment2\\momentet\\wwwroot\\style\\_table.scss",
+      "Identity": "C:\\Users\\E-Hol\\github\\NET\\moment2\\momentet\\wwwroot\\style\\_table.scss",
       "SourceId": "momentet",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\E-Hol\\github\\net\\moment2\\momentet\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\E-Hol\\github\\NET\\moment2\\momentet\\wwwroot\\",
       "BasePath": "_content/momentet",
       "RelativePath": "style/_table.scss",
       "AssetKind": "All",
@@ -153,10 +153,10 @@
       "OriginalItemSpec": "wwwroot\\style\\_table.scss"
     },
     {
-      "Identity": "C:\\Users\\E-Hol\\github\\net\\moment2\\momentet\\wwwroot\\style\\_variables.scss",
+      "Identity": "C:\\Users\\E-Hol\\github\\NET\\moment2\\momentet\\wwwroot\\style\\_variables.scss",
       "SourceId": "momentet",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\E-Hol\\github\\net\\moment2\\momentet\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\E-Hol\\github\\NET\\moment2\\momentet\\wwwroot\\",
       "BasePath": "_content/momentet",
       "RelativePath": "style/_variables.scss",
       "AssetKind": "All",
@@ -170,10 +170,10 @@
       "OriginalItemSpec": "wwwroot\\style\\_variables.scss"
     },
     {
-      "Identity": "C:\\Users\\E-Hol\\github\\net\\moment2\\momentet\\wwwroot\\style\\main.css",
+      "Identity": "C:\\Users\\E-Hol\\github\\NET\\moment2\\momentet\\wwwroot\\style\\main.css",
       "SourceId": "momentet",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\E-Hol\\github\\net\\moment2\\momentet\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\E-Hol\\github\\NET\\moment2\\momentet\\wwwroot\\",
       "BasePath": "_content/momentet",
       "RelativePath": "style/main.css",
       "AssetKind": "All",
@@ -187,10 +187,10 @@
       "OriginalItemSpec": "wwwroot\\style\\main.css"
     },
     {
-      "Identity": "C:\\Users\\E-Hol\\github\\net\\moment2\\momentet\\wwwroot\\style\\main.css.map",
+      "Identity": "C:\\Users\\E-Hol\\github\\NET\\moment2\\momentet\\wwwroot\\style\\main.css.map",
       "SourceId": "momentet",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\E-Hol\\github\\net\\moment2\\momentet\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\E-Hol\\github\\NET\\moment2\\momentet\\wwwroot\\",
       "BasePath": "_content/momentet",
       "RelativePath": "style/main.css.map",
       "AssetKind": "All",
@@ -204,10 +204,10 @@
       "OriginalItemSpec": "wwwroot\\style\\main.css.map"
     },
     {
-      "Identity": "C:\\Users\\E-Hol\\github\\net\\moment2\\momentet\\wwwroot\\style\\main.scss",
+      "Identity": "C:\\Users\\E-Hol\\github\\NET\\moment2\\momentet\\wwwroot\\style\\main.scss",
       "SourceId": "momentet",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\E-Hol\\github\\net\\moment2\\momentet\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\E-Hol\\github\\NET\\moment2\\momentet\\wwwroot\\",
       "BasePath": "_content/momentet",
       "RelativePath": "style/main.scss",
       "AssetKind": "All",

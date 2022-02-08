@@ -1,5 +1,15 @@
+
 @{
+    string tommi;
+
+    if(Context.Session.GetString("timestamp") != null) {
+        tommi = Context.Session.GetString("timestamp")!;
+    } else {
+        Context.Session.SetString("timestamp", DateTime.Now.ToString("yyyy-MM-dd") );
+        tommi = Context.Session.GetString("timestamp")!;
+    }
 }
+
 <!DOCTYPE html>
 <html lang="se">
     <head>
@@ -7,7 +17,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <title>@ViewData["Title"]</title>
+        <title>@ViewData["Title"] | Emiria.se </title>
         <link rel="stylesheet" href="~/Style/main.css" />
 
         <!-- Favicon -->
@@ -41,6 +51,7 @@
 
         <footer>
             <p>Av Emilia Holmström, e-post: <a href="Mailto: emho2003@student.miun.se">emho2003@student.miun.se</a> </p>
+            @tommi
         </footer>
 
         <script src="~/JavaScript/JavaScript.js"></script>

@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using momentet.Models;
+using momentet.ModelsTwo;
 
 namespace momentet.Controllers
 {
@@ -26,19 +27,24 @@ namespace momentet.Controllers
         }
 
 
+        [HttpGet("/guestbook")]
           public IActionResult GuestBook()
         {
+            var JsonStrTwo = System.IO.File.ReadAllText("data/guestbook.json");
+            var JsonObjTwo = JsonConvert.DeserializeObject<List<GuestBookModel>>(JsonStrTwo);    
+            ViewBag.guestbook = JsonObjTwo;
+
             return View();
         }
 
-        [HttpPost]
-          public IActionResult GuestBook(GuestBookModel model)
+        [HttpPost("/guestbook")]
+        public IActionResult GuestBook(GuestBookModel model)
         {
-             if (ModelState.IsValid)
+            if (ModelState.IsValid)
             {
                 // Läs in befintliga
                 var JsonStr = System.IO.File.ReadAllText("data/guestbook.json");
-                var JsonObj = JsonConvert.DeserializeObject<List<CourseModel>>(JsonStr);
+                var JsonObj = JsonConvert.DeserializeObject<List<GuestBookModel>>(JsonStr);
 
                 // Lägg till
                 if (JsonObj != null)
@@ -49,9 +55,15 @@ namespace momentet.Controllers
                 System.IO.File.WriteAllText("data/guestbook.json", JsonConvert.SerializeObject(JsonObj, Formatting.Indented));
             
                 ModelState.Clear();
+
+                return RedirectToAction("GuestBook");
             }
+
+            var JsonStrTwo = System.IO.File.ReadAllText("data/guestbook.json");
+            var JsonObjTwo = JsonConvert.DeserializeObject<List<GuestBookModel>>(JsonStrTwo);    
+            ViewBag.guestbook = JsonObjTwo;
+
             return View();
         }
-
     }
 }

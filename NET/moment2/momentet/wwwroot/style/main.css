@@ -116,6 +116,17 @@ h1 {
   font-size: 2.5em;
 }
 
+h2 {
+  font-family: "Asap", "Poiret One", Georgia, "Times New Roman", Times, serif;
+  border-left: 3px solid #84a98c;
+  padding-left: 0.5em;
+  margin-bottom: 1em;
+}
+
+h3 {
+  font-family: "Asap", "Poiret One", Georgia, "Times New Roman", Times, serif;
+}
+
 main {
   max-width: 1200px;
   width: 90%;
@@ -126,6 +137,43 @@ main {
 p, a, li {
   font-family: "Source Sans Pro", "Open Sans", sans-serif;
   font-size: 1em;
+}
+
+.guestBookFlex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.guestBookFlex section {
+  width: 500px;
+}
+
+.guestBookFlex h3 {
+  margin-top: 1em;
+}
+
+.guestBookFlex .guestbook_topBox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 0.5em;
+}
+
+.guestbookArticle {
+  border-bottom: 1px solid #ddd;
+  padding: 1em 0;
 }
 
 .courseList article {
@@ -197,6 +245,24 @@ form input[type=submit] {
 
 form input[type=submit]:hover {
   background-color: #0d1314;
+}
+
+form .radioBox input[type=radio] {
+  width: auto;
+  margin: 0.5em 0.1em;
+}
+
+form select {
+  font-size: 1.1em;
+  padding: 0.5em;
+  width: 100%;
+  margin-top: 0.3em;
+  margin-bottom: 3em;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  cursor: pointer;
+  font-family: "Source Sans Pro", "Open Sans", sans-serif;
+  border: 1px solid #ddd;
 }
 
 form span {

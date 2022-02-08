@@ -1,6 +1,42 @@
 [
-    {
-        "name": "Emm",
-        "messgae": "Hejsan"
-    }
+  {
+    "Author": "Emm",
+    "Message": "Hejsan",
+    "Feeling": null
+  },
+  {
+    "Author": "Emm",
+    "Message": "Two",
+    "Feeling": 3
+  },
+  {
+    "Author": "Emilia",
+    "Message": "Hej hej!",
+    "Feeling": 3
+  },
+  {
+    "Author": "Emilia",
+    "Message": "Hej hej!",
+    "Feeling": 3
+  },
+  {
+    "Author": "Emilia",
+    "Message": "Hej hej!",
+    "Feeling": 3
+  },
+  {
+    "Author": "Emilia",
+    "Message": "Hej hej!",
+    "Feeling": 2
+  },
+  {
+    "Author": "Emilia",
+    "Message": "Hej hej!",
+    "Feeling": 1
+  },
+  {
+    "Author": "Emilia",
+    "Message": "Hej hej!",
+    "Feeling": 1
+  }
 ]

@@ -46,6 +46,28 @@ form {
         }
     }
 
+   
+
+    .radioBox {
+        input[type=radio] {
+            width: auto;
+            margin: 0.5em 0.1em;
+       }
+    }
+
+
+    select {
+        font-size: 1.1em;
+        padding: 0.5em;
+        width: 100%;
+        margin-top: 0.3em;
+        margin-bottom: 3em;
+        box-sizing: border-box;
+        cursor: pointer;
+        font-family: $bodyFont;
+        border: 1px solid $grey;
+    }
+
     span {
         display: inline-block;
         width: 100%;

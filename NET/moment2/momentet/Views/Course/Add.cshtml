@@ -5,7 +5,7 @@
 
 }
 
-<form method="post">
+<form method="POST">
     <!-- Error messages -->
     <div asp-validation-summary="ModelOnly"></div>
 
@@ -17,10 +17,12 @@
     <input asp-for="Name"/>
     <span asp-validation-for="Name"></span>
 
-    <label asp-for="Progression"></label>
-    <input asp-for="Progression" Style="text-transform: uppercase;"/>
-    <span asp-validation-for="Progression"></span>
-
+    <div class="radioBox">
+        <label asp-for="Progression"></label> <br>
+        @Html.RadioButtonFor(model => model.Progression, "A")@Html.Label("A") <br>
+        @Html.RadioButtonFor(model => model.Progression, "B")@Html.Label("B")
+        <span asp-validation-for="Progression"></span>
+    </div>
 
     <label asp-for="Url"></label>
     <input asp-for="Url" />

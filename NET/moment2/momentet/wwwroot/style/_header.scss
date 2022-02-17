@@ -8,6 +8,7 @@ header {
         align-items: center;
     
         max-width: 1200px;
+        width: 90%;
         margin: 0 auto;
         margin-bottom: 3em;
         padding: 0.5em 0;
@@ -18,17 +19,11 @@ header {
 .logoBox {
     max-height: 100px;
     padding: 0.2em;
-
-
     a {
         color: white;
         text-decoration: none;
         font-size: 2.5em;
         font-family: $headerFont;
-    }
-
-    img {
-        max-height: 50px;
     }
 }
 
@@ -51,7 +46,7 @@ nav {
     }
 
     li {
-        width: 125px;
+        width: 115px;
         border-radius: 25%;
     }
 
@@ -67,10 +62,7 @@ nav {
         color: white;
 
         &:hover {
-            //background-color: $middle;
-            //background-image: linear-gradient(to right, $middle , $light, $light, $light);
             font-weight: bold;
-
         }
     }
 }
@@ -78,20 +70,18 @@ nav {
 
 @media all and (max-width: 700px) {
     .logoBox {
-        max-height: 50px;
         padding: 0.2em;
-    
-        img {
-            max-height: 40px;
-        }
     }
 }
 
-@media all and (max-width: 650px) {
-    header {
+@media all and (max-width: 700px) {
+    header div {
         flex-direction: column;
-
         border-bottom: 2px solid $grey;
+    }
+
+    nav li {
+        width: 80px;
     }
     
 }

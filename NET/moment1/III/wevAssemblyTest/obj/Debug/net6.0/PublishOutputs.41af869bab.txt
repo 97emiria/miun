@@ -1,0 +1,1 @@
+C:\Users\E-Hol\github\net\moment1\III\wevAssemblyTest\bin\Debug\net6.0\publish\web.config

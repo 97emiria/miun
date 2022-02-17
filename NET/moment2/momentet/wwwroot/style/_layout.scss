@@ -12,7 +12,7 @@ h1 {
     font-family: $headerFont;
     border-left: 3px solid $middle;
     padding-left: 0.5em;
-    margin-bottom: 1em;
+    margin: 1em 0;
     font-size: 2.5em;
 }
 
@@ -32,7 +32,8 @@ main {
     max-width: 1200px;
     width: 90%;
     margin: 0 auto;
-    padding-bottom: 5em;
+    padding-bottom: 10em;
+    position: relative;
 }
 
 
@@ -47,10 +48,12 @@ p, a, li {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    gap: 2em;
 
 
     section {
         width: 500px;
+        margin-bottom: 2em;
     }
 
     h3 {
@@ -75,4 +78,15 @@ p, a, li {
     article {
         margin: 2em 0;
     }
+}
+
+
+.rocket {
+    position: absolute;
+    width: 100px;
+    height: auto;
+    top: 10rem;
+    right: 10%;
+    z-index: 1;
+    object-fit: cover;
 }

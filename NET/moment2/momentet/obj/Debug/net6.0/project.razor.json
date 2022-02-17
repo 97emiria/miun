@@ -16333,6 +16333,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\E-Hol\\github\\net\\moment2\\momentet\\Views\\Shared\\_rocket.cshtml",
+      "TargetPath": "Views\\Shared\\_rocket.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\E-Hol\\github\\net\\moment2\\momentet\\Views\\Home\\GuestBook.cshtml",
       "TargetPath": "Views\\Home\\GuestBook.cshtml",
       "FileKind": "mvc"

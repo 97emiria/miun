@@ -1,8 +1,26 @@
 @{
     ViewData["Title"] = "Startsidan";
     ViewData["Heading"] = "Startsida";
+
+    string[] feelingsArr = {":|", ":)", ":(", ">:|"};
+
+
 }
 
 <p>Hej! &#128075;</p>
 
 <p>Aktuell datum: <b>@ViewBag.date</b> </p>
+
+<p>Finns också en gömd om mig sida, den hittar du <a asp-controller="Home" asp-action="About">här</a></p>
+
+<br>
+<br>
+@if(Context.Session.GetString("visitCourseList") != null) {
+    string visitCourseList = Context.Session.GetString("visitCourseList")!;
+    <p>Du har idag tittat på kurslistan <b>@visitCourseList</b> gånger </p>
+} 
+
+
+<partial name="_rocket" />
+
+

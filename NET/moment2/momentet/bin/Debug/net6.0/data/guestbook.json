@@ -2,41 +2,21 @@
   {
     "Author": "Emm",
     "Message": "Hejsan",
-    "Feeling": null
-  },
-  {
-    "Author": "Emm",
-    "Message": "Two",
-    "Feeling": 3
+    "Feeling": 1
   },
   {
     "Author": "Emilia",
-    "Message": "Hej hej!",
+    "Message": "Trött",
     "Feeling": 3
   },
   {
-    "Author": "Emilia",
-    "Message": "Hej hej!",
-    "Feeling": 3
-  },
-  {
-    "Author": "Emilia",
-    "Message": "Hej hej!",
-    "Feeling": 3
-  },
-  {
-    "Author": "Emilia",
-    "Message": "Hej hej!",
+    "Author": "Rolf",
+    "Message": "Idag är en bra dag!",
     "Feeling": 2
   },
   {
     "Author": "Emilia",
-    "Message": "Hej hej!",
-    "Feeling": 1
-  },
-  {
-    "Author": "Emilia",
-    "Message": "Hej hej!",
-    "Feeling": 1
+    "Message": "Testa",
+    "Feeling": 2
   }
 ]

@@ -2,6 +2,24 @@
 @{
     ViewData["Title"] = "Kurslista";
     ViewData["Heading"] = "Kurslista";
+
+
+    string visitCourseList;
+
+    if(Context.Session.GetString("visitCourseList") != null) {
+        
+        //Hämta 
+        visitCourseList = Context.Session.GetString("visitCourseList")!;
+
+        //Uppdatera
+        int times = Convert.ToInt32(visitCourseList)+1;
+        string newNumber = times.ToString();
+        Context.Session.SetString("visitCourseList", newNumber);
+
+    } else {
+        Context.Session.SetString("visitCourseList", "1");
+    }
+
 }
 
 <div class="courseList">

@@ -1,12 +1,12 @@
 
 @{
-    string tommi;
+    string sessionTimestamp;
 
     if(Context.Session.GetString("timestamp") != null) {
-        tommi = Context.Session.GetString("timestamp")!;
+        sessionTimestamp = Context.Session.GetString("timestamp")!;
     } else {
         Context.Session.SetString("timestamp", DateTime.Now.ToString("yyyy-MM-dd") );
-        tommi = Context.Session.GetString("timestamp")!;
+        sessionTimestamp = Context.Session.GetString("timestamp")!;
     }
 }
 
@@ -51,7 +51,7 @@
 
         <footer>
             <p>Av Emilia Holmström, e-post: <a href="Mailto: emho2003@student.miun.se">emho2003@student.miun.se</a> </p>
-            @tommi
+            @sessionTimestamp
         </footer>
 
         <script src="~/JavaScript/JavaScript.js"></script>

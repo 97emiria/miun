@@ -5,11 +5,10 @@
     ViewData["Heading"] = "Om mig";
 }
 
-<p>Jag är en student, här är 3 slumpmässiga kurser jag läst</p>
+<p>Jag är en student, här är några kurser jag läst</p>
 
 @if(Model != null) {
     @foreach(var course in Model) {
         <li>@course.Name</li>
     }
- //Försök hämta en slumpmässigkurs
 }

@@ -849,10 +849,6 @@
       "url": "_framework\/System.Private.CoreLib.dll"
     },
     {
-      "hash": "sha256-awQsJ\/WxYhouHPuE+i3eJqjA4XClQlr2rD6nKvW80ww=",
-      "url": "_framework\/dotnet.6.0.1.8znpwenwpk.js"
-    },
-    {
       "hash": "sha256-2kYo2V\/aZ7htYEvY5PVJlrMYhFf1jH8\/VS+SP7B7QUg=",
       "url": "_framework\/dotnet.timezones.blat"
     },
@@ -891,7 +887,11 @@
     {
       "hash": "sha256-9Ksvs5isAIMvb8SRYx7zvFlHwx9pvdSRkeXabu0Zsak=",
       "url": "_framework\/blazor.boot.json"
+    },
+    {
+      "hash": "sha256-wbTVn69TU0+WI83iB+kky8tf\/BjZdYJeM0rUP96ur\/c=",
+      "url": "_framework\/dotnet.6.0.2.3dxil4fgy9.js"
     }
   ],
-  "version": "LZMmDLnf"
+  "version": "Yg4RR7Kz"
 };

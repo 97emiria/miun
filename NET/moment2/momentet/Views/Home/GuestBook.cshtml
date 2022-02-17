@@ -19,20 +19,18 @@
             <input asp-for="Author" />
             <span asp-validation-for="Author"></span>
 
-            <label asp-for="Message"></label>
-            <input asp-for="Message" />
-            <span asp-validation-for="Message"></span>
-
             <label asp-for="Feeling"></label>
             @Html.DropDownList("Feeling", new List<SelectListItem>
             {
                 new SelectListItem{ Text="Neutral", Value = "1" },
                 new SelectListItem{ Text="Glad", Value = "2" },
-                new SelectListItem{ Text="Arg", Value = "3" },
-                new SelectListItem{ Text="Ledsen", Value = "4" },
-                new SelectListItem{ Text="Förvirrad", Value = "5" },
-                new SelectListItem{ Text="Kunglig", Value = "6" },
+                new SelectListItem{ Text="Arg", Value = "4" },
+                new SelectListItem{ Text="Ledsen", Value = "3" }
             })
+
+            <label asp-for="Message"></label>
+            @Html.TextAreaFor(ModelsTwo => ModelsTwo.Message)
+            <span asp-validation-for="Message"></span>
 
             <input type="submit" value="Posta" />
         </form>
@@ -42,9 +40,11 @@
         <h2>Alla poster:</h2>
         @if (ViewBag.guestbook != null)
         {
+            ViewBag.guestbook.Reverse();
             foreach (var item in ViewBag.guestbook)
             {
                 <article class="guestbookArticle">
+                    
                     <div class="guestbook_topBox">
                         <h3> @item.Author </h3>
                         @if(item.Feeling != null) {

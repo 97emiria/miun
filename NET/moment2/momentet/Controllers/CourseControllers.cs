@@ -9,6 +9,7 @@ namespace momentet.Controllers
     public class CourseController : Controller
     {
 
+    [HttpGet("/kurser")]
       public IActionResult Index()
         {
             var JsonStr = System.IO.File.ReadAllText("data/courses.json");
@@ -18,13 +19,13 @@ namespace momentet.Controllers
         }
 
 
-        //[HttpGet("/kurser/läggtill")]
+        [HttpGet("/kurser/laggatill")]
         public IActionResult Add()
         {
             return View();
         }
 
-        [HttpPost]
+        [HttpPost("/kurser/laggatill")]
         public IActionResult Add(CourseModel model)
         {
              if (ModelState.IsValid)
@@ -42,6 +43,7 @@ namespace momentet.Controllers
                 System.IO.File.WriteAllText("data/courses.json", JsonConvert.SerializeObject(JsonObj, Formatting.Indented));
             
                 ModelState.Clear();
+
             }
             
             return View();

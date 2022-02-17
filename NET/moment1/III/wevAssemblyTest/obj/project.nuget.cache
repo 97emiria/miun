@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "UDHyvcCgHFsEIQJDkdVhJAy3wBcp7Ct4bP6BkJTTiXXtIDF761/7xlwc/TORA/zJ7RTCnj8gcP37f3tLL+XgBA==",
+  "dgSpecHash": "El2jI5V2JIo4IUbQhRF7L6nUQ941YzFhcTZQGcSgZER0WP+glCC8czc3X0xON6DlSRuQgc6RJ6EXRrJKGOOMKg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\E-Hol\\github\\net\\moment1\\iii\\wevAssemblyTest\\wevAssemblyTest.csproj",
+  "projectFilePath": "C:\\Users\\E-Hol\\github\\net\\moment1\\III\\wevAssemblyTest\\wevAssemblyTest.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\E-Hol\\.nuget\\packages\\microsoft.aspnetcore.authorization\\6.0.0\\microsoft.aspnetcore.authorization.6.0.0.nupkg.sha512",
     "C:\\Users\\E-Hol\\.nuget\\packages\\microsoft.aspnetcore.components\\6.0.0\\microsoft.aspnetcore.components.6.0.0.nupkg.sha512",
@@ -33,7 +33,7 @@
     "C:\\Users\\E-Hol\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
     "C:\\Users\\E-Hol\\.nuget\\packages\\system.text.encodings.web\\6.0.0\\system.text.encodings.web.6.0.0.nupkg.sha512",
     "C:\\Users\\E-Hol\\.nuget\\packages\\system.text.json\\6.0.0\\system.text.json.6.0.0.nupkg.sha512",
-    "C:\\Users\\E-Hol\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\6.0.1\\microsoft.netcore.app.runtime.mono.browser-wasm.6.0.1.nupkg.sha512"
+    "C:\\Users\\E-Hol\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\6.0.2\\microsoft.netcore.app.runtime.mono.browser-wasm.6.0.2.nupkg.sha512"
   ],
   "logs": []
 }

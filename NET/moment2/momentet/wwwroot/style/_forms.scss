@@ -77,4 +77,17 @@ form {
         font-weight: bold;
     }
 
+
+    textarea {
+        width: 100%;
+        height: 150px;
+        padding: 0.5em 0.2em;
+        box-sizing: border-box;
+        border: 2px solid $grey;
+        border-radius: 4px;
+        resize: none;
+        font-family: $bodyFont;
+        font-size: 1em;
+      }
+
 }

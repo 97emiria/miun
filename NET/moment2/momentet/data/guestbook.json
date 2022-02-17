@@ -5,18 +5,23 @@
     "Feeling": 1
   },
   {
-    "Author": "Emm",
-    "Message": "Two",
+    "Author": "Emilia",
+    "Message": "Trött",
+    "Feeling": 3
+  },
+  {
+    "Author": "Rolf",
+    "Message": "Idag är en bra dag!",
     "Feeling": 2
   },
   {
     "Author": "Emilia",
-    "Message": "Hej hej!",
-    "Feeling": 3
+    "Message": "Testa",
+    "Feeling": 2
   },
   {
     "Author": "Emilia",
-    "Message": "Hej hej!",
-    "Feeling": 4
+    "Message": "Bra dag!",
+    "Feeling": 2
   }
 ]

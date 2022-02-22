@@ -1,0 +1,98 @@
+form {
+    box-sizing: border-box;
+    margin: 2em 0;
+    max-width: 500px;
+    font-family: $bodyFont;
+
+    input {
+        display: inline-block;
+        width: 100%;
+        padding: 0.5em 0;
+
+        font-size: 1em;
+
+        border: none;
+        border-bottom: 2px solid $grey;
+
+        &:focus {
+            background-color: #eee;
+            outline: none;
+            box-shadow: 0 0 2.5px 0 #eee;
+        }
+
+    }
+
+
+    label {
+        color: #999;
+        font-size: 0.9em;
+    }
+
+    input[type=submit] {
+        //background: $dark;
+        color: white;
+        border: none;
+        border-radius: 0.25rem;
+        padding: 0.5em;
+        cursor: pointer;
+
+        width: 100%;
+        display: block;
+        margin: 1em 0;
+
+        &:hover {
+            background-color: darken($dark, 20%);
+        }
+    }
+
+   
+
+    .radioBox {
+        input[type=radio] {
+            width: auto;
+            margin: 0.5em 0.1em;
+       }
+    }
+
+
+    select {
+        font-size: 1.1em;
+        padding: 0.5em;
+        width: 100%;
+        margin-top: 0.3em;
+        margin-bottom: 3em;
+        box-sizing: border-box;
+        cursor: pointer;
+        font-family: $bodyFont;
+        border: 1px solid $grey;
+    }
+
+    span {
+        display: inline-block;
+        width: 100%;
+        color: $error;
+        margin-bottom: 2em;
+        font-size: 0.9em;
+        font-weight: bold;
+    }
+
+
+    textarea {
+        width: 100%;
+        height: 150px;
+        padding: 0.5em 0.2em;
+        box-sizing: border-box;
+        border: 2px solid $grey;
+        border-radius: 4px;
+        resize: none;
+        font-family: $bodyFont;
+        font-size: 1em;
+    }
+
+
+    .form-check-label { 
+        margin: 1em 0;
+    }
+
+
+}

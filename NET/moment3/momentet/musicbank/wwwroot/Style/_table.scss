@@ -1,0 +1,99 @@
+
+table {
+    width: 100%;
+    max-width: 800px;
+    border-spacing: 0;
+
+    margin: 2em 0;
+
+    background-color: $dark;
+    color: white;
+
+    th {
+        text-align: left;
+        font-family: $headerFont;
+        font-size: 1em;
+        box-sizing: border-box;
+        padding: 1em;
+        background-color: darken($dark, 15%);
+    }
+
+    
+    td {
+        font-family: $bodyFont;
+        font-size: 1em;
+        padding: 1em;
+    }
+
+    tr {
+
+        font-family: $bodyFont;
+
+        &:nth-child(even) {
+        background-color: darken($dark, 5%);
+
+        }
+    }
+
+    a {
+        color: white;
+    }
+        
+}
+
+
+
+
+
+@media all and (max-width: 600px) {
+
+	/* Force table to not be like tables anymore */
+	table, thead, tbody, th, td, tr { 
+		display: block; 
+	}
+
+    table {
+        thead tr { 
+            position: absolute;
+            top: -9999px;
+            left: -9999px;
+        }
+        
+        tr { border: 1px solid $grey;
+            margin-bottom: 1em;
+
+    }
+        
+        td { 
+            border: none;
+            border-bottom: 1px solid #eee; 
+            position: relative;
+            padding-left: 40%; 
+            font-size: 0.95em;
+        }
+        
+        td:before { 
+            position: absolute;
+            top: 6px;
+            left: 6px;
+            width: 45%; 
+            padding: 1em;
+            padding-right: 10px; 
+            white-space: nowrap;
+        }
+
+        td:nth-of-type(1):before { content: "Kurskod:"; width: 100px;}
+        td:nth-of-type(2):before { content: "Namn:"; width: 100px;}
+        td:nth-of-type(3):before { content: "Progressation:"; width: 100px;}
+        td:nth-of-type(4):before { content: "Länk:"; width: 100px;}
+    }
+	
+}
+
+@media all and (max-width: 450px) {
+
+	table td { 
+		padding-left: 50%; 
+    }
+
+}

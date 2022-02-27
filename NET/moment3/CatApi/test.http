@@ -1,0 +1,15 @@
+GET https://localhost:7298/api/cat/1
+
+###
+
+POST https://localhost:7298/api/cat
+content-type: application/json
+
+{
+    "name": "sample",
+    "breed": "Unknown"
+}
+
+###
+
+DELETE https://localhost:7298/api/cat/3

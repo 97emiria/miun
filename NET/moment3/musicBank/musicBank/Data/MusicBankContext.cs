@@ -1,4 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using musicBank.Models;
 
 namespace musicBank.Data
@@ -10,9 +10,10 @@ namespace musicBank.Data
 
         }
 
-        public DbSet<Albums> Albums { get; set; }
-        public DbSet<Artists> Artists { get; set; }
-        public DbSet<Relation> Relation { get; set; }
+        public DbSet<Album> Albums { get; set; }
+        public DbSet<Artist> Artists { get; set; }
+        public DbSet<musicBank.Models.Borrower> Borrower { get; set; }
+        public DbSet<musicBank.Models.Borrow> Borrow { get; set; }
 
     }
 }

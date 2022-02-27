@@ -30,7 +30,7 @@ form {
 
     input[type=submit] {
         //background: $dark;
-        color: white;
+        //color: white;
         border: none;
         border-radius: 0.25rem;
         padding: 0.5em;
@@ -41,6 +41,7 @@ form {
         margin: 1em 0;
 
         &:hover {
+            color: white;
             background-color: darken($dark, 20%);
         }
     }
@@ -95,4 +96,10 @@ form {
     }
 
 
+}
+
+
+.searchBtn {
+    max-width: 200px;
+    color: #333;
 }

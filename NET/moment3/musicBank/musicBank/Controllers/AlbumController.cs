@@ -21,9 +21,23 @@ namespace musicBank.Controllers
         }
 
         // GET: Album
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string searchString)
         {
+            //Include artist to album 
             var musicBankContext = _context.Albums.Include(a => a.Artist);
+            _context.Artists.ToListAsync();
+
+            //Search
+            var albums = from m in _context.Albums select m;
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                albums = albums.Where(s => s.AlbumName!.Contains(searchString));
+
+                //Return search result
+                return View(await albums.ToListAsync());
+            }
+                        
+            //Return all (self note)
             return View(await musicBankContext.ToListAsync());
         }
 

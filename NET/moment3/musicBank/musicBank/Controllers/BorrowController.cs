@@ -48,18 +48,34 @@ namespace musicBank.Controllers
         }
 
         // GET: Borrow/Create
-        public IActionResult Create()
+        public async Task<IActionResult> Create()
         {
-            //If sats som kollar om albumet redan finns i databasen, i så fall vissa inte 
 
-            ViewData["AlbumID"] = new SelectList(_context.Albums, "AlbumID", "AlbumName");
+            //var AllAlbums = new SelectList(_context.Albums, "AlbumID", "AlbumName");
+            var AllLoans =  _context.Borrow.ToList();
+            var AllAlbums =  _context.Albums.ToList();
+            
+            var SomeAlbums = AllAlbums;
+            
+            foreach (var Album in AllAlbums.ToList()) {
+                
+                foreach(var Loan in AllLoans.ToList()) {
+
+                    if(Album.AlbumID == Loan.AlbumID) {
+                        SomeAlbums.Remove(Album);
+                    }   
+                    
+                }
+
+            }
+
+            ViewData["AlbumID"] = new SelectList(SomeAlbums, "AlbumID", "AlbumName");
             ViewData["BorrowerID"] = new SelectList(_context.Borrower, "BorrowerID", "NameBorrower");
+
             return View();
         }
 
         // POST: Borrow/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("BorrowID,AlbumID,BorrowerID,Rented,BorrowTime")] Borrow borrow)
@@ -88,6 +104,7 @@ namespace musicBank.Controllers
             {
                 return NotFound();
             }
+
             ViewData["AlbumID"] = new SelectList(_context.Albums, "AlbumID", "AlbumName", borrow.AlbumID);
             ViewData["BorrowerID"] = new SelectList(_context.Borrower, "BorrowerID", "NameBorrower", borrow.BorrowerID);
             return View(borrow);

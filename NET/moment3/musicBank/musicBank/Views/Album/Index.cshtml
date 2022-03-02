@@ -39,3 +39,20 @@
 }
     </tbody>
 </table>
+
+<br>
+<br>
+<hr>
+<br>
+
+
+<section>
+    <h2>Sök</h2>
+    <form asp-controller="Album" asp-action="Index" method="get">
+    <p>
+        <label for="SearchString">Sök album</label>
+        <input type="text" name="SearchString" />
+        <input type="submit" value="Filter" />
+    </p>
+</form>
+</section>

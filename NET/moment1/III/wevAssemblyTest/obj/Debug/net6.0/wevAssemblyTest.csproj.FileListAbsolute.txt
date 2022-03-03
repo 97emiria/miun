@@ -399,7 +399,6 @@ C:\Users\E-Hol\github\net\moment1\III\wevAssemblyTest\bin\Debug\net6.0\wwwroot\s
 C:\Users\E-Hol\github\net\moment1\III\wevAssemblyTest\bin\Debug\net6.0\wwwroot\service-worker.js
 C:\Users\E-Hol\github\net\moment1\III\wevAssemblyTest\bin\Debug\net6.0\wevAssemblyTest.staticwebassets.runtime.json
 C:\Users\E-Hol\github\net\moment1\III\wevAssemblyTest\bin\Debug\net6.0\wevAssemblyTest.dll
-C:\Users\E-Hol\github\net\moment1\III\wevAssemblyTest\bin\Debug\net6.0\ref\wevAssemblyTest.dll
 C:\Users\E-Hol\github\net\moment1\III\wevAssemblyTest\bin\Debug\net6.0\wevAssemblyTest.pdb
 C:\Users\E-Hol\github\net\moment1\III\wevAssemblyTest\bin\Debug\net6.0\Microsoft.AspNetCore.Authorization.dll
 C:\Users\E-Hol\github\net\moment1\III\wevAssemblyTest\bin\Debug\net6.0\Microsoft.AspNetCore.Components.dll
@@ -817,5 +816,6 @@ C:\Users\E-Hol\github\net\moment1\III\wevAssemblyTest\obj\Debug\net6.0\build-gz\
 C:\Users\E-Hol\github\net\moment1\III\wevAssemblyTest\obj\Debug\net6.0\build-gz\nZpSvNSb.gz
 C:\Users\E-Hol\github\net\moment1\III\wevAssemblyTest\obj\Debug\net6.0\build-gz\sRf+QS9e.gz
 C:\Users\E-Hol\github\net\moment1\III\wevAssemblyTest\obj\Debug\net6.0\build-gz\Tn1x5fuA.gz
-C:\Users\E-Hol\github\net\moment1\III\wevAssemblyTest\obj\Debug\net6.0\build-gz\4ZtoDYC5.gz
-C:\Users\E-Hol\github\net\moment1\III\wevAssemblyTest\obj\Debug\net6.0\build-gz\j8orjhq1.gz
+C:\Users\E-Hol\GitHub\NET\moment1\III\wevAssemblyTest\obj\Debug\net6.0\build-gz\12njwJof.gz
+C:\Users\E-Hol\GitHub\NET\moment1\III\wevAssemblyTest\obj\Debug\net6.0\build-gz\rmemUDHg.gz
+C:\Users\E-Hol\GitHub\NET\moment1\III\wevAssemblyTest\obj\Debug\net6.0\refint\wevAssemblyTest.dll

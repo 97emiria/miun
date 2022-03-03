@@ -1551,11 +1551,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\E-Hol\\github\\net\\moment1\\III\\wevAssemblyTest\\wevAssemblyTest.csproj",
+      "projectUniqueName": "C:\\Users\\E-Hol\\GitHub\\NET\\moment1\\III\\wevAssemblyTest\\wevAssemblyTest.csproj",
       "projectName": "wevAssemblyTest",
-      "projectPath": "C:\\Users\\E-Hol\\github\\net\\moment1\\III\\wevAssemblyTest\\wevAssemblyTest.csproj",
+      "projectPath": "C:\\Users\\E-Hol\\GitHub\\NET\\moment1\\III\\wevAssemblyTest\\wevAssemblyTest.csproj",
       "packagesPath": "C:\\Users\\E-Hol\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\E-Hol\\github\\net\\moment1\\III\\wevAssemblyTest\\obj\\",
+      "outputPath": "C:\\Users\\E-Hol\\GitHub\\NET\\moment1\\III\\wevAssemblyTest\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\E-Hol\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -1616,7 +1616,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.102\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200\\RuntimeIdentifierGraph.json"
       }
     },
     "runtimes": {

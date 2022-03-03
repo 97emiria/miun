@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "El2jI5V2JIo4IUbQhRF7L6nUQ941YzFhcTZQGcSgZER0WP+glCC8czc3X0xON6DlSRuQgc6RJ6EXRrJKGOOMKg==",
+  "dgSpecHash": "n2pW+ZB13N6NTZjFyGsGmWuF5wkfT/9RtpkJnRGvCHzmMIsGdtx9ad61g5Uc0L28HJgG5UUfW5LR1Af8tKuvGQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\E-Hol\\github\\net\\moment1\\III\\wevAssemblyTest\\wevAssemblyTest.csproj",
+  "projectFilePath": "C:\\Users\\E-Hol\\GitHub\\NET\\moment1\\III\\wevAssemblyTest\\wevAssemblyTest.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\E-Hol\\.nuget\\packages\\microsoft.aspnetcore.authorization\\6.0.0\\microsoft.aspnetcore.authorization.6.0.0.nupkg.sha512",
     "C:\\Users\\E-Hol\\.nuget\\packages\\microsoft.aspnetcore.components\\6.0.0\\microsoft.aspnetcore.components.6.0.0.nupkg.sha512",

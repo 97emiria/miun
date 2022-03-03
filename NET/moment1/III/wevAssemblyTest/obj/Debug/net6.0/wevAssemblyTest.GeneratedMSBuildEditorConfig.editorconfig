@@ -11,49 +11,49 @@ build_property.EnableTrimAnalyzer = true
 build_property.IncludeAllContentForSelfExtract = 
 build_property.RootNamespace = wevAssemblyTest
 build_property.RootNamespace = wevAssemblyTest
-build_property.ProjectDir = C:\Users\E-Hol\github\net\moment1\III\wevAssemblyTest\
+build_property.ProjectDir = c:\Users\E-Hol\GitHub\NET\moment1\III\wevAssemblyTest\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\E-Hol\github\net\moment1\III\wevAssemblyTest
+build_property.MSBuildProjectDirectory = c:\Users\E-Hol\GitHub\NET\moment1\III\wevAssemblyTest
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/E-Hol/github/net/moment1/III/wevAssemblyTest/App.razor]
+[c:/Users/E-Hol/GitHub/NET/moment1/III/wevAssemblyTest/App.razor]
 build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/E-Hol/github/net/moment1/III/wevAssemblyTest/Pages/Calculator.razor]
+[c:/Users/E-Hol/GitHub/NET/moment1/III/wevAssemblyTest/Pages/Calculator.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2FsY3VsYXRvci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/E-Hol/github/net/moment1/III/wevAssemblyTest/Pages/Index.razor]
+[c:/Users/E-Hol/GitHub/NET/moment1/III/wevAssemblyTest/Pages/Index.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXgucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/E-Hol/github/net/moment1/III/wevAssemblyTest/Pages/Json.razor]
+[c:/Users/E-Hol/GitHub/NET/moment1/III/wevAssemblyTest/Pages/Json.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSnNvbi5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/E-Hol/github/net/moment1/III/wevAssemblyTest/Shared/SurveyPrompt.razor]
+[c:/Users/E-Hol/GitHub/NET/moment1/III/wevAssemblyTest/Shared/SurveyPrompt.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXFN1cnZleVByb21wdC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/E-Hol/github/net/moment1/III/wevAssemblyTest/_Imports.razor]
+[c:/Users/E-Hol/GitHub/NET/moment1/III/wevAssemblyTest/_Imports.razor]
 build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/E-Hol/github/net/moment1/III/wevAssemblyTest/Shared/ComponentTest.razor]
+[c:/Users/E-Hol/GitHub/NET/moment1/III/wevAssemblyTest/Shared/ComponentTest.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXENvbXBvbmVudFRlc3QucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = b-2tqwwizawg
 
-[C:/Users/E-Hol/github/net/moment1/III/wevAssemblyTest/Shared/Footer.razor]
+[c:/Users/E-Hol/GitHub/NET/moment1/III/wevAssemblyTest/Shared/Footer.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXEZvb3Rlci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = b-21pqvzm1f8
 
-[C:/Users/E-Hol/github/net/moment1/III/wevAssemblyTest/Shared/MainLayout.razor]
+[c:/Users/E-Hol/GitHub/NET/moment1/III/wevAssemblyTest/Shared/MainLayout.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE1haW5MYXlvdXQucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = b-q3i45v2yke
 
-[C:/Users/E-Hol/github/net/moment1/III/wevAssemblyTest/Shared/NavMenu.razor]
+[c:/Users/E-Hol/GitHub/NET/moment1/III/wevAssemblyTest/Shared/NavMenu.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE5hdk1lbnUucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = b-b5lgd3rgnz

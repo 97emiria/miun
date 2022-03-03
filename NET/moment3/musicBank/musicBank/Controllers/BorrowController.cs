@@ -55,21 +55,21 @@ namespace musicBank.Controllers
             var AllLoans =  _context.Borrow.ToList();
             var AllAlbums =  _context.Albums.ToList();
             
-            var SomeAlbums = AllAlbums;
+            var AvailableAlbums = AllAlbums;
             
             foreach (var Album in AllAlbums.ToList()) {
                 
                 foreach(var Loan in AllLoans.ToList()) {
 
                     if(Album.AlbumID == Loan.AlbumID) {
-                        SomeAlbums.Remove(Album);
+                        AvailableAlbums.Remove(Album);
                     }   
                     
                 }
 
             }
 
-            ViewData["AlbumID"] = new SelectList(SomeAlbums, "AlbumID", "AlbumName");
+            ViewData["AlbumID"] = new SelectList(AvailableAlbums, "AlbumID", "AlbumName");
             ViewData["BorrowerID"] = new SelectList(_context.Borrower, "BorrowerID", "NameBorrower");
 
             return View();

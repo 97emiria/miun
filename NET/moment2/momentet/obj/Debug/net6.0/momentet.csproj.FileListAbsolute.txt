@@ -5,7 +5,6 @@ C:\Users\E-Hol\GitHub\NET\moment2\momentet\bin\Debug\net6.0\momentet.exe
 C:\Users\E-Hol\GitHub\NET\moment2\momentet\bin\Debug\net6.0\momentet.deps.json
 C:\Users\E-Hol\GitHub\NET\moment2\momentet\bin\Debug\net6.0\momentet.runtimeconfig.json
 C:\Users\E-Hol\GitHub\NET\moment2\momentet\bin\Debug\net6.0\momentet.dll
-C:\Users\E-Hol\GitHub\NET\moment2\momentet\bin\Debug\net6.0\ref\momentet.dll
 C:\Users\E-Hol\GitHub\NET\moment2\momentet\bin\Debug\net6.0\momentet.pdb
 C:\Users\E-Hol\GitHub\NET\moment2\momentet\obj\Debug\net6.0\momentet.csproj.AssemblyReference.cache
 C:\Users\E-Hol\GitHub\NET\moment2\momentet\obj\Debug\net6.0\momentet.GeneratedMSBuildEditorConfig.editorconfig
@@ -27,3 +26,4 @@ C:\Users\E-Hol\github\net\moment2\momentet\obj\Debug\net6.0\momentet.csproj.Copy
 C:\Users\E-Hol\github\net\moment2\momentet\bin\Debug\net6.0\data\courses.json
 C:\Users\E-Hol\github\net\moment2\momentet\bin\Debug\net6.0\data\withID.json
 C:\Users\E-Hol\github\net\moment2\momentet\bin\Debug\net6.0\data\guestbook.json
+C:\Users\E-Hol\GitHub\NET\moment2\momentet\obj\Debug\net6.0\refint\momentet.dll

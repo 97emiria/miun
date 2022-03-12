@@ -1,0 +1,82 @@
+@model IEnumerable<ReceProject.Models.News>
+
+@{
+    ViewData["Title"] = "Nyheter";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<section class="search">
+    <h2>Sök</h2>
+    <form asp-controller="News" asp-action="Index" method="get">
+        <input type="text" name="SearchString" Placeholer="Hashtags" />
+        <input type="submit" value="Filter" />
+    </form>
+</section>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Header)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Text)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Hashtags)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Author)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ImageName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Publish)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LastUpdated)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Header)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Text)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Hashtags)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Author)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ImageName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Publish)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastUpdated)
+            </td>
+            <td>
+        
+                <a asp-action="Details" asp-route-id="@item.id">Hantera</a>
+
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+
+

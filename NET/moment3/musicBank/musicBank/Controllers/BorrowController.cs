@@ -66,7 +66,6 @@ namespace musicBank.Controllers
                     }   
                     
                 }
-
             }
 
             ViewData["AlbumID"] = new SelectList(AvailableAlbums, "AlbumID", "AlbumName");

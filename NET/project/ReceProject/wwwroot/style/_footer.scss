@@ -1,0 +1,20 @@
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: $light;
+
+    .footerFlex {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        max-width: 1200px;
+        padding: 1em;
+        margin: 0 auto;
+    }
+
+    a {
+        color: $textColor;
+        padding-left: 1em;
+    }
+}

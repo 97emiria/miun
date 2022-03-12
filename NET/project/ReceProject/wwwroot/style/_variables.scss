@@ -1,0 +1,26 @@
+//Theme Colors
+$dark: #627267;
+$medium: #859883;
+$light: #C6DDC4;
+
+$grey: #999;
+
+$white: #F3F3F3;
+
+//Theme colors mixed 
+$mixed: linear-gradient(0.25turn, $dark, $medium, $light);
+$mixedDark: linear-gradient(0.25turn, $dark, darken($dark, 5%), darken($dark, 15%));
+
+//Message colors
+$message: #64a8f5;
+$error: #cd0000;
+$success: #78f17e;
+$warning: #f5f574;
+
+//fonts
+$headerFont: 'Poiret One', 'Asap', Georgia, 'Times New Roman', Times, serif;
+$bodyFont: 'Source Sans Pro', 'Open Sans', sans-serif;
+
+//Other
+$textColor: #333;
+

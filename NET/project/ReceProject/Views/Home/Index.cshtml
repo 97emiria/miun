@@ -1,0 +1,52 @@
+﻿@model IEnumerable<ReceProject.Models.News>
+
+@{
+    ViewData["Title"] = "Home Page";
+    Layout = "PublicLayout";
+}
+
+
+<section class="home_top">
+
+    <div>
+        <h1>Hi,</h1>
+        <p>
+            Trött på att sitta hemma? Eller är kontoret alldeles för stökigt för att få något gjort? Varför inte ta och
+            boka
+            ett litet arbetsrum hos oss i några timmar och få både en ny och härlig arbetsmiljö med garanterad tystnad?
+
+            <span>Pssss! Du hittar också konferans lokaler hos oss</span>
+
+            <br>
+            <br>
+            Du hittar våra rum här från 125kr/h!
+        </p>
+
+        <a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a> <br>
+        <a asp-area="" asp-controller="Home" asp-action="OfficeRooms">Our Office room</a> <br>
+        <a asp-area="" asp-controller="Admin" asp-action="Index">Admin</a> <br>
+        <a asp-area="" asp-controller="News" asp-action="Index">News</a> <br>
+
+    </div>
+    <div>
+        <img src="~/Images/kazantceva.jpg" alt="">
+    </div>
+
+</section>
+
+
+<section class="news">
+
+    <h2>News</h2>
+    <hr>
+
+    @foreach (var item in Model)
+    {
+        <article>
+            <h3> @Html.DisplayFor(modelItem => item.Header) </h3>
+            <p> @Html.DisplayFor(modelItem => item.Text) </p>
+            <p> @Html.DisplayFor(modelItem => item.Publish)</p>
+        </article>
+    }
+
+</section>

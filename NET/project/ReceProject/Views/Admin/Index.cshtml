@@ -1,0 +1,14 @@
+@{
+    ViewData["Title"] = "Admin Page";
+}
+
+
+<h1>Admin</h1>
+<p>Inloggad som: </p>
+
+<section class="admin_frontpageLinksBox" style="display: inline-block">
+    <a asp-area="" asp-controller="Rent" asp-action="Index">Rent</a>
+    <a asp-area="" asp-controller="News" asp-action="Index">News</a>
+    <a asp-area="" asp-controller="Room" asp-action="Index">Rooms</a>
+    <a asp-area="" asp-controller="Home" asp-action="Index">Webbplatsen</a>
+</section>

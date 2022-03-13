@@ -27,12 +27,10 @@ public class Room {
 
     //Image
     [Display(Name = "Bildnamn")]
-    [Required(ErrorMessage = "Kan inte lämnas tomt")]
     public string? ImageName { get; set; }
     [NotMapped] //Sparas inte i db
-    [Display(Name = "Bildnamn")]
+    [Display(Name = "Bild")]
     public IFormFile? ImageFile { get; set; }
-
 
     //Timestamp
     [Display(Name = "Senast uppdaterad")]

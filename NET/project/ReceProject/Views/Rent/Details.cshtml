@@ -2,47 +2,72 @@
 
 @{
     ViewData["Title"] = "Details";
+
+    string none = "-";
 }
 
-<h1>Details</h1>
 
-<div>
-    <h4>Rent</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Name)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Name)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Phone)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Phone)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Room)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Room.Name)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Note)
-        </dt>
-        <dd class = "col-sm-10">
+
+<h1>Hantera hyrning</h1>
+
+<div class="detailsButtons">
+    <a asp-action="Edit" asp-route-id="@Model?.Id">
+        <img src="~/images/iconPen.png" alt="Ändra">
+    </a>
+    <a asp-action="Delete" asp-route-id="@Model?.Id">
+        <img src="~/images/iconRemove.png" alt="Papperskorg">
+    </a>
+</div>
+
+<h2>Hyringsinfo</h2>
+<dl class="row">
+
+    <dt class="col-sm-2">
+        Uthyrt sedan:
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(model => model.TimeRentedSince)
+    </dd>
+    <dt class="col-sm-2">
+        Kontorsrum:
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(model => model.Room.Name)
+    </dd>
+    <dt class="col-sm-2">
+        Pris:
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(model => model.Room.Price) kr/h
+    </dd>
+</dl>
+
+<h2>Kund info</h2>
+<dl class="row">
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(model => model.Name)
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(model => model.Name)
+    </dd>
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(model => model.Phone)
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(model => model.Phone)
+    </dd>
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(model => model.Note)
+    </dt>
+    <dd class="col-sm-10">
+        <!--Dosent work, fix it-->
+        @if (String.IsNullOrEmpty(@Html.DisplayFor(model => model.Note).ToString()))
+        {
+            @none
+        }
+        else
+        {
             @Html.DisplayFor(model => model.Note)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.TimeRentedSince)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.TimeRentedSince)
-        </dd>
-    </dl>
-</div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
-</div>
+        }
+    </dd>
+</dl>

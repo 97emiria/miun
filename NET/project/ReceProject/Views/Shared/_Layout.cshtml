@@ -1,56 +1,52 @@
-﻿<!DOCTYPE html>
-<html lang="sv">
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
 
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - Project</title>
-
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/Project.styles.css" asp-append-version="true" />
-
-    <!-- "Min" Css -->
-    <link rel="stylesheet" href="~/Style/main.css" />
-
-    <!-- Body & header font import -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Dongle:wght@400;700&family=Poiret+One&display=swap"
-        rel="stylesheet">
-</head>
+@Html.Partial("Head")
 
 <body>
 
-     <header>
-           <div>
-                <section class="logoBox">
-                    <a asp-controller="Admin" asp-action="Index">
-                        <img src="~/Images/logoAdmin.png" alt="">
-                    </a>
-                </section>
-                <nav>
-                    <ul>
+    <header>
+        <div>
+            <section class="logoBox">
+                    @if (SignInManager.IsSignedIn(User)) {
+                        <a asp-controller="Admin" asp-action="Index">
+                            <img src="~/Images/logoAdmin.png" alt="">
+                        </a>
+                    }
+                    else {
+                         <a asp-controller="Home" asp-action="Index">
+                            <img src="~/Images/logo.png" alt="">
+                        </a>
+                    }
+            </section>
+            <nav>
+                <ul>
+                    @if (SignInManager.IsSignedIn(User))
+                    {
                         <li><a asp-controller="Rent" asp-action="Index">Boka</a></li>
-                        <li><a asp-controller="Room" asp-action="Index">Hantera rum</a></li>
+                        <li><a asp-controller="Room" asp-action="Index">Rummen</a></li>
                         <li><a asp-controller="News" asp-action="Index">Nyheter</a></li>
-                    </ul>
-                </nav>
-           </div>
-        </header>
+                    
+                    } else {
+                        <li><a asp-controller="Home" asp-action="Contact">Kontakt</a></li>
+                        <li><a asp-controller="Home" asp-action="Room">Våra kontorsrum</a></li>
+                    }
+                </ul>
+
+
+            </nav>
+        </div>
+    </header>
 
     <main class="maxWidthAndCenter">
         @RenderBody()
     </main>
 
     <footer>
-        <div class="footerFlex">
-            <div>&copy; 2022 Rece</div>
-            <div>
-                <a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a>
-                <a asp-area="" asp-controller="Home" asp-action="OfficeRooms">Our Office room</a>
-            </div>
-        </div>
+        @Html.Partial("Footer")
     </footer>
+
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>

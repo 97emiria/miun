@@ -3,13 +3,14 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using ReceProject.Data;
 using ReceProject.Models;
 
-namespace ReceProject.Controllers
+namespace ReceProject.Controllers_Admin
 {
     public class NewsController : Controller
     {
@@ -22,20 +23,20 @@ namespace ReceProject.Controllers
             _hostEnvironment = hostEnvironment;
         }
 
+
         // GET: News
+        [Authorize]
         public async Task<IActionResult> Index(string searchString)
         {
             //Search
             var news = from m in _context.News select m;
             if (!String.IsNullOrEmpty(searchString))
             {
-                news = news.Where(s => s.Hashtags!.Contains(searchString));
-
-                //Return search result
+                news = news.Where(s => s.Hashtags!.Contains(searchString) || s.Header!.Contains(searchString));
             }
-                return View(await news.ToListAsync());
-                  
-            //return View(await _context.News.ToListAsync());
+
+                 
+            return View(await news.ToListAsync());
         }
 
         // GET: News/Details/5
@@ -47,7 +48,7 @@ namespace ReceProject.Controllers
             }
 
             var news = await _context.News
-                .FirstOrDefaultAsync(m => m.id == id);
+                .FirstOrDefaultAsync(m => m.Id == id);
             if (news == null)
             {
                 return NotFound();
@@ -57,6 +58,7 @@ namespace ReceProject.Controllers
         }
 
         // GET: News/Create
+        [Authorize]
         public IActionResult Create()
         {
             return View();
@@ -73,8 +75,9 @@ namespace ReceProject.Controllers
             {
 
                 //Upload image 
-                if(news.ImageFile != null) {
-                        
+                if (news.ImageFile != null)
+                {
+
                     //Strings
                     string wwwRootPath = _hostEnvironment.WebRootPath;                  //String to wwwroot folder / file path
 
@@ -90,18 +93,19 @@ namespace ReceProject.Controllers
                     string path = Path.Combine(wwwRootPath + "/uploadsNews/" + fileName);
 
                     //Move to folder 
-                    using(var fileStream = new FileStream(path, FileMode.Create)) 
+                    using (var fileStream = new FileStream(path, FileMode.Create))
                     {
                         await news.ImageFile.CopyToAsync(fileStream);
                     }
 
                 }
 
-
+                news.Author = User.Identity.Name;
                 _context.Add(news);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+
             return View(news);
         }
 
@@ -126,9 +130,9 @@ namespace ReceProject.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("id,Header,Text,Hashtags,Author,ImageName,Publish,LastUpdated")] News news)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Header,Text,Hashtags,Author,ImageName,Publish,LastUpdated")] News news)
         {
-            if (id != news.id)
+            if (id != news.Id)
             {
                 return NotFound();
             }
@@ -142,7 +146,7 @@ namespace ReceProject.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!NewsExists(news.id))
+                    if (!NewsExists(news.Id))
                     {
                         return NotFound();
                     }
@@ -157,6 +161,7 @@ namespace ReceProject.Controllers
         }
 
         // GET: News/Delete/5
+        [Authorize]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -165,7 +170,7 @@ namespace ReceProject.Controllers
             }
 
             var news = await _context.News
-                .FirstOrDefaultAsync(m => m.id == id);
+                .FirstOrDefaultAsync(m => m.Id == id);
             if (news == null)
             {
                 return NotFound();
@@ -187,7 +192,7 @@ namespace ReceProject.Controllers
 
         private bool NewsExists(int id)
         {
-            return _context.News.Any(e => e.id == id);
+            return _context.News.Any(e => e.Id == id);
         }
     }
 }

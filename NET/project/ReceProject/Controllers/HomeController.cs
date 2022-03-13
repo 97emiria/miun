@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using ReceProject.Models;
 using ReceProject.Data;
 
+using Microsoft.EntityFrameworkCore;
 
 namespace ReceProject.Controllers;
 
@@ -42,7 +43,7 @@ public class HomeController : Controller
     }
 
     [HttpGet("/Kontorsrum")]
-    public IActionResult OfficeRooms()
+    public IActionResult Room()
     {
 
         //ViewData["RoomId"] = new SelectList(_context.Rooms, "Id", "Name");
@@ -50,6 +51,10 @@ public class HomeController : Controller
 
         return View(AllRooms);
     }
+
+    
+       
+
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()

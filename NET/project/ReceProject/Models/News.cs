@@ -5,7 +5,7 @@ namespace ReceProject.Models;
 
 public class News {
 
-    public int id { get; set; }
+    public int Id { get; set; }
 
     //Header
     [Display(Name = "Rubrik")]
@@ -30,7 +30,7 @@ public class News {
     [Display(Name = "Bildnamn")]
     public string? ImageName { get; set; }
     [NotMapped] //Sparas inte i db
-    [Display(Name = "Bildnamn")]
+    [Display(Name = "Bild")]
     public IFormFile? ImageFile { get; set; }
 
 

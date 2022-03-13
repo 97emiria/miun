@@ -19,7 +19,7 @@ namespace ReceProject.Migrations
 
             modelBuilder.Entity("ReceProject.Models.News", b =>
                 {
-                    b.Property<int>("id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
@@ -46,7 +46,7 @@ namespace ReceProject.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.HasKey("id");
+                    b.HasKey("Id");
 
                     b.ToTable("News");
                 });
@@ -93,7 +93,6 @@ namespace ReceProject.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("ImageName")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<DateTime>("LastUpdated")

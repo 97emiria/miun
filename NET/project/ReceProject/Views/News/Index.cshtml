@@ -2,81 +2,68 @@
 
 @{
     ViewData["Title"] = "Nyheter";
+
+    //@Html.DisplayFor(modelItem => item.Text).ToString().Substring(0,100)
+
 }
 
-<h1>@ViewData["Title"]</h1>
+<div class="adminTop">
+
+    <div>
+        <h1>@ViewData["Title"]</h1>
+    </div>
+
+    <div>
+        <a asp-action="Create" class="btnCreate">
+            <img class="imgAdd" src="~/images/iconAdd.png" alt="">
+            Skapa ny artikel
+        </a>
+    </div>
+
+</div>
 
 <section class="search">
-    <h2>Sök</h2>
     <form asp-controller="News" asp-action="Index" method="get">
-        <input type="text" name="SearchString" Placeholer="Hashtags" />
-        <input type="submit" value="Filter" />
+        <div>
+            <input type="text" name="SearchString"
+                placeholder="Sök efter kundnamn eller telefonnumer och tryck enter" />
+        </div>
+        <div>
+            <input type="submit" value="Sök" />
+        </div>
     </form>
 </section>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
+@foreach (var item in Model)
+{
+    <article class="admin_indexList">
 
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Header)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Text)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Hashtags)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Author)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ImageName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Publish)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.LastUpdated)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
+        <div class="image">
+            <img src="uploadsNews/@Html.DisplayFor(modelItem => item.ImageName)" alt="">
+
+        </div>
+
+        <div class="text">
+            <h2>
                 @Html.DisplayFor(modelItem => item.Header)
-            </td>
-            <td>
+            </h2>
+            <p>
+
                 @Html.DisplayFor(modelItem => item.Text)
-            </td>
-            <td>
+            </p>
+            <p>
                 @Html.DisplayFor(modelItem => item.Hashtags)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Author)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ImageName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Publish)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.LastUpdated)
-            </td>
-            <td>
-        
-                <a asp-action="Details" asp-route-id="@item.id">Hantera</a>
+            </p>
+        </div>
 
-            </td>
-        </tr>
+        <div class="icon">
+            <a asp-action="Details" asp-route-id="@item.Id">
+                <img src="~/images/iconPen.png" alt="">
+            </a>
+
+
+        </div>
+
+
+    </article>
 }
-    </tbody>
-</table>
-
-

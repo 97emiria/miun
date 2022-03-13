@@ -1,15 +1,12 @@
 @model ReceProject.Models.News
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Skapa ny artikel";
 }
 
-<h1>Create</h1>
+<h1>Skapa ny artikel</h1>
 
-<h4>News</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
+    <div>
         <form asp-action="Create" enctype="multipart/form-data">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
@@ -19,18 +16,13 @@
             </div>
             <div class="form-group">
                 <label asp-for="Text" class="control-label"></label>
-                <input asp-for="Text" class="form-control" />
+                <textarea asp-for="Text" class="form-control"></textarea>
                 <span asp-validation-for="Text" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Hashtags" class="control-label"></label>
                 <input asp-for="Hashtags" class="form-control" />
                 <span asp-validation-for="Hashtags" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Author" class="control-label"></label>
-                <input asp-for="Author" class="form-control" />
-                <span asp-validation-for="Author" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="ImageFile" class="control-label"></label>
@@ -42,10 +34,6 @@
             </div>
         </form>
     </div>
-</div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
 </div>
 
 @section Scripts {

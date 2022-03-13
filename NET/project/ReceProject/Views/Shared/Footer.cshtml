@@ -1,0 +1,16 @@
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
+    <div class="footerFlex">
+        <div>&copy; 2022 Rece</div>
+        <div>
+            <a asp-area="" asp-controller="Home" asp-action="Contact">Kontakt</a>
+            <a asp-controller="Home" asp-action="Room">Våra kontorsrum</a>
+            @if (SignInManager.IsSignedIn(User)) {
+                <a asp-controller="Admin" asp-action="Index">Admin</a>
+            } else {
+                <a asp-area="Identity" asp-page="/Account/Login">Logga in anställda</a>
+            }
+        </div>
+    </div>

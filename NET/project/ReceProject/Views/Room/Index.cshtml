@@ -1,59 +1,69 @@
 @model IEnumerable<ReceProject.Models.Room>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Kontorsrum";
 }
 
-<h1>Index</h1>
+<div class="adminTop">
+    <div>
+        <h1>@ViewData["Title"]</h1>
+    </div>
+    <div>
+        <a asp-action="Create" class="btnCreate">
+           <img class="imgAdd" src="~/images/iconAdd.png" alt="">
+            Lägg till nytt kontorsrum
+        </a>
+    </div>
+</div>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Name)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Price)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Description)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ImageName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.LastUpdated)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Price)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Description)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ImageName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.LastUpdated)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+<section class="search">
+    <form asp-controller="Rent" asp-action="Index" method="get">
+        <div>
+            <input type="text" name="SearchString" placeholder="Rummets namn" />
+        </div>
+        <div>
+            <input type="submit" value="Sök" />
+        </div>
+    </form>
+</section>
+
+<section class="admin_RoomList">
+    @foreach (var item in Model)
+    {
+          <div class="admin_indexList">
+
+            <div class="image">
+                <img src="~/uploadsRooms/@Html.DisplayFor(modelItem => item.ImageName)" alt="">
+            </div>
+
+            <div class="text">
+                <dl class="row">
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.Name)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </dd>
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.Price)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(modelItem => item.Price)
+                    </dd>
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.Description)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(modelItem => item.Description)
+                    </dd>
+                </dl>
+            </div>
+
+            <div class="icon">
+                <a asp-action="Details" asp-route-id="@item.Id">
+                    <img src="~/images/iconPen.png" alt="">
+                </a>
+            </div>
+        </div>
+    }
+</section>

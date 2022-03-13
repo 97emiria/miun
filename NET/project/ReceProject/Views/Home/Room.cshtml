@@ -1,0 +1,30 @@
+﻿@model IEnumerable<ReceProject.Models.Room>
+@{
+    ViewData["Title"] = "Våra uthyrnignskontor";
+    Layout = "PublicLayout";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<p>Klicka på en bild för mer information</p>
+
+<section class="home_roomList">
+    @foreach (var item in Model)
+    {
+        <div class="home_innerRoomList">
+
+            <div class="image">
+                <a asp-controller="Room" asp-action="Details" asp-route-id="@item.Id">
+                    <img src="~/uploadsRooms/@Html.DisplayFor(modelItem => item.ImageName)" alt="">
+                </a>
+            </div>
+
+            <div class="text">
+                <h2>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </h2>
+            </div>
+
+        </div>
+    }
+</section>

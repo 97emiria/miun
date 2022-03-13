@@ -66,7 +66,7 @@ nav li {
 nav a {
   text-decoration: none;
   display: block;
-  color: #333;
+  color: #111;
   width: 100%;
   padding: 0.5em;
   font-family: "Source Sans Pro", "Open Sans", sans-serif;
@@ -138,9 +138,6 @@ img {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
   gap: 1em;
 }
 
@@ -155,11 +152,255 @@ img {
 .home_top img {
   width: 100%;
   height: 100%;
-  max-height: 500px;
-  max-width: 350px;
+  max-width: 400px;
+  max-height: 300px;
   -o-object-fit: cover;
      object-fit: cover;
   margin: 0 auto;
+}
+
+.admin_newsFlex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 1rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 2em;
+}
+
+.admin_newsFlex .image {
+  width: 100%;
+  max-width: 150px;
+  max-height: 150px;
+}
+
+.admin_newsFlex .image img {
+  width: 100%;
+  height: 100%;
+  max-height: 150px;
+  max-width: 150px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.admin_newsFlex .text {
+  width: 100%;
+  min-height: 150px;
+}
+
+.admin_newsFlex .icon {
+  width: 50px;
+  height: 50px;
+}
+
+.admin_newsFlex .icon img {
+  width: 50px;
+  height: 50px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.admin_newsFlex:hover {
+  background-color: #C6DDC4;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.home_RoomList {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 1em;
+}
+
+.home_RoomList a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 2em;
+  width: 350px;
+  text-decoration: none;
+  color: #111;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.home_RoomList a img {
+  width: 100%;
+}
+
+.home_RoomList a:hover {
+  -webkit-transform: scale(0.95);
+          transform: scale(0.95);
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.admin_DetailImage {
+  max-width: 500px;
+}
+
+.admin_indexList {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 1em;
+  text-decoration: none;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #111;
+  margin-bottom: 1em;
+  border-radius: 0.25em;
+  padding: 0.5em;
+  position: relative;
+}
+
+.admin_indexList:hover {
+  background-color: #C6DDC4;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.admin_indexList .text {
+  width: 100%;
+}
+
+.admin_indexList .image {
+  width: 100%;
+  max-width: 200px;
+  height: 150px;
+}
+
+.admin_indexList .icon img {
+  width: 50px;
+  height: 50px;
+}
+
+.admin_indexList .icon:hover {
+  -webkit-transform: scale(0.98);
+          transform: scale(0.98);
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.home_roomList {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 2em;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.home_roomList .home_innerRoomList {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 1em;
+  text-decoration: none;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #111;
+  margin-bottom: 1em;
+  border-radius: 0.25em;
+  position: relative;
+  width: 30%;
+}
+
+.home_roomList .home_innerRoomList .text {
+  width: 100%;
+  position: relative;
+}
+
+.home_roomList .home_innerRoomList .image {
+  width: 100%;
+}
+
+.news_details {
+  gap: 5em;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  margin-top: -5em;
+}
+
+.news_details div {
+  max-width: 500px;
+}
+
+.news_details img {
+  max-height: 375px;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.news_details h1 {
+  font-size: 3.5em;
+}
+
+.news_details .hashtags {
+  color: #999;
+  font-style: italic;
+}
+
+.news_details .postInfo {
+  border-radius: 0.5em;
+  padding: 1em;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-color: #eee;
+  font-size: 0.9em;
+  -webkit-box-pack: bottom;
+      -ms-flex-pack: bottom;
+          justify-content: bottom;
+}
+
+@media only screen and (max-width: 1000px) {
+  .news_details {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin: 0 auto;
+    max-width: 500px;
+  }
+}
+
+.admin_deleteText {
+  font-size: 1.5em;
+  color: #cd0000;
+}
+
+.admin_delete {
+  background-color: #cd0000;
 }
 
 footer {
@@ -183,7 +424,7 @@ footer .footerFlex {
 }
 
 footer a {
-  color: #333;
+  color: #111;
   padding-left: 1em;
 }
 
@@ -194,22 +435,45 @@ form {
   font-family: "Source Sans Pro", "Open Sans", sans-serif;
 }
 
-form input[type=text], form input[type=number] {
+form input {
   display: inline-block;
   width: 100%;
-  padding: 0.5em 0;
-  margin-top: 3em;
+  padding: 0.5em;
+  margin-bottom: 3em;
   font-size: 1em;
-  border: none;
-  border-radius: none;
-  border-bottom: 2px solid #999;
+  border: 1px solid #999;
+  border-radius: 0.25rem;
 }
 
-form input[type=text]:focus, form input[type=number]:focus {
+form input:focus {
   background-color: #eee;
   outline: none;
   -webkit-box-shadow: 0 0 2.5px 0 #eee;
           box-shadow: 0 0 2.5px 0 #eee;
+}
+
+form ::-webkit-input-placeholder {
+  font-style: italic;
+  color: #999;
+  font-size: 0.9em;
+}
+
+form :-ms-input-placeholder {
+  font-style: italic;
+  color: #999;
+  font-size: 0.9em;
+}
+
+form ::-ms-input-placeholder {
+  font-style: italic;
+  color: #999;
+  font-size: 0.9em;
+}
+
+form ::placeholder {
+  font-style: italic;
+  color: #999;
+  font-size: 0.9em;
 }
 
 form label {
@@ -222,7 +486,7 @@ form input[type=submit] {
   color: white;
   border: none;
   border-radius: 0.25rem;
-  padding: 0.5em;
+  padding: 1em;
   cursor: pointer;
   width: 100%;
   display: block;
@@ -234,52 +498,6 @@ form input[type=submit]:hover {
   background-color: #333b35;
 }
 
-form .radioBox input[type=radio] {
-  width: auto;
-  margin: 0.5em 0.1em;
-}
-
-form select {
-  font-size: 1.1em;
-  padding: 0.5em;
-  width: 100%;
-  margin-top: 0.3em;
-  margin-bottom: 3em;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  cursor: pointer;
-  font-family: "Source Sans Pro", "Open Sans", sans-serif;
-  border: 1px solid #999;
-}
-
-form span {
-  width: 100%;
-  color: #cd0000;
-  font-size: 0.9em;
-  font-weight: bold;
-  padding-right: 1em;
-}
-
-form ::-webkit-input-placeholder {
-  font-style: italic;
-  color: #999;
-}
-
-form :-ms-input-placeholder {
-  font-style: italic;
-  color: #999;
-}
-
-form ::-ms-input-placeholder {
-  font-style: italic;
-  color: #999;
-}
-
-form ::placeholder {
-  font-style: italic;
-  color: #999;
-}
-
 form textarea {
   width: 100%;
   height: 150px;
@@ -287,55 +505,158 @@ form textarea {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   border: 2px solid #999;
+  border-radius: 4px;
   resize: none;
   font-family: "Source Sans Pro", "Open Sans", sans-serif;
   font-size: 1em;
-}
-
-form .form-check-label {
-  margin: 1em 0;
-}
-
-.fromSpanFlex {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.fromSpanFlex div:last-child {
-  width: 20%;
+  margin-bottom: 2.2em;
 }
 
 .search {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  margin: 5em 0;
+  margin: 3em 0;
 }
 
 .search form {
+  max-width: none;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  gap: 1em;
   width: 100%;
   max-width: none;
 }
 
-.search input[type=text] {
-  padding: 0;
-  border-bottom: 1px solid #999;
+.search form div:first-child {
   width: 100%;
-  padding: 1em 0.5em;
-  margin-top: 0;
 }
 
-.search input[type=submit] {
-  width: 20%;
-  border-radius: 10em;
-  padding: 0.5em 2em;
-  margin: 0;
+.search form div:last-child {
+  width: 200px;
+}
+
+.search form input {
+  display: inline;
+  width: 100%;
+  max-width: none;
+}
+
+.search form input[type=submit] {
+  padding: 0.5em;
+  display: inline;
+  margin: 0 1em;
+}
+
+.deleteFrom input[type=submit] {
+  background-color: white;
+  border: none;
+  border-radius: none;
+  padding: 0;
+  cursor: pointer;
+  width: auto;
+  display: block;
+  margin: 3em 0;
+  color: #627267;
+}
+
+.deleteFrom input[type=submit]:hover {
+  color: #111;
+  background-color: white;
+}
+
+.logoutForm {
+  max-width: 200px;
+}
+
+.btnCreate {
+  color: #111;
+  width: 100%;
+  border: none;
+  text-decoration: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 0.5em;
+}
+
+.btnCreate .imgAdd {
+  width: 30px;
+  height: 30px;
+}
+
+.btnCreate:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+  text-decoration: none;
+  color: #111;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.adminTop {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: -7em;
+}
+
+.btnDelete {
+  color: black;
+  border: 2px solid red;
+}
+
+.btnGoBack {
+  color: black;
+  border: 2px solid red;
+}
+
+.btnRent {
+  background-color: #627267;
+  color: white;
+  border: none;
+  padding: 1em;
+  width: 100%;
+  border-radius: 0.25rem;
+}
+
+.btnRent:hover {
+  background-color: #333b35;
+}
+
+.detailsButtons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 1em;
+  -webkit-box-pack: right;
+      -ms-flex-pack: right;
+          justify-content: right;
+  text-align: right;
+}
+
+.detailsButtons a {
+  text-decoration: none;
+  width: 50px;
+  height: 50px;
+}
+
+.detailsButtons img {
+  width: 50px;
+  height: 50px;
+}
+
+.detailsButtons .deleteFrom button {
+  background-color: white;
+  border: none;
 }
 /*# sourceMappingURL=Main.css.map */

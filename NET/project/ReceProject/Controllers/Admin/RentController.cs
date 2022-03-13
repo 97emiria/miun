@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -21,6 +22,7 @@ namespace ReceProject.Controllers_Admin
         }
 
         // GET: Rent
+        [Authorize]
         public async Task<IActionResult> Index(string searchString)
         {
 
@@ -62,6 +64,7 @@ namespace ReceProject.Controllers_Admin
         }
 
         // GET: Rent/Create
+        [Authorize]
         public IActionResult Create()
         {
 
@@ -106,6 +109,7 @@ namespace ReceProject.Controllers_Admin
         }
 
         // GET: Rent/Edit/5
+        [Authorize]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -118,7 +122,7 @@ namespace ReceProject.Controllers_Admin
             {
                 return NotFound();
             }
-            ViewData["RoomId"] = new SelectList(_context.Rooms, "Id", "Name", rent.RoomId);
+            //ViewData["RoomId"] = new SelectList(_context.Rooms, "Id", "Name", rent.RoomId);
             return View(rent);
         }
 
@@ -159,6 +163,7 @@ namespace ReceProject.Controllers_Admin
         }
 
         // GET: Rent/Delete/5
+        [Authorize]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)

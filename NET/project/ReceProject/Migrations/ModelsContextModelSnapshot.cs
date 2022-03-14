@@ -72,7 +72,7 @@ namespace ReceProject.Migrations
                     b.Property<int>("RoomId")
                         .HasColumnType("INTEGER");
 
-                    b.Property<DateTime>("TimeRentedSince")
+                    b.Property<string>("TimeRentedSince")
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");

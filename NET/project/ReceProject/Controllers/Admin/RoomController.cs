@@ -25,12 +25,14 @@ namespace ReceProject.Controllers_Admin
 
         // GET: Room
         [Authorize]
+        [HttpGet("/Rum")]
         public async Task<IActionResult> Index()
         {
             return View(await _context.Rooms.ToListAsync());
         }
 
         // GET: Room/Details/5
+        [HttpGet("/Rum/Detaljer")]
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -50,6 +52,7 @@ namespace ReceProject.Controllers_Admin
 
         // GET: Room/Create
         [Authorize]
+        [HttpGet("/Rum/Skapa")]
         public IActionResult Create()
         {
             return View();
@@ -66,8 +69,9 @@ namespace ReceProject.Controllers_Admin
             {
 
                 //Upload image 
-                if(room.ImageFile != null) {
-                        
+                if (room.ImageFile != null)
+                {
+
                     //Strings
                     string wwwRootPath = _hostEnvironment.WebRootPath;                              //String to wwwroot folder / file path
 
@@ -82,7 +86,7 @@ namespace ReceProject.Controllers_Admin
                     string path = Path.Combine(wwwRootPath + "/uploadsRooms/" + fileName);
 
                     //Move to folder 
-                    using(var fileStream = new FileStream(path, FileMode.Create)) 
+                    using (var fileStream = new FileStream(path, FileMode.Create))
                     {
                         await room.ImageFile.CopyToAsync(fileStream);
                     }
@@ -100,6 +104,7 @@ namespace ReceProject.Controllers_Admin
 
         // GET: Room/Edit/5
         [Authorize]
+        [HttpGet("/Rum/Ändra")]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -152,6 +157,7 @@ namespace ReceProject.Controllers_Admin
 
         // GET: Room/Delete/5
         [Authorize]
+        [HttpGet("/Rum/Ta-bort")]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)

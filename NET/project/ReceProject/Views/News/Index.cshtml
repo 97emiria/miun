@@ -25,8 +25,7 @@
 <section class="search">
     <form asp-controller="News" asp-action="Index" method="get">
         <div>
-            <input type="text" name="SearchString"
-                placeholder="Sök efter kundnamn eller telefonnumer och tryck enter" />
+            <input type="text" name="SearchString" placeholder="Sök efter hashtags " />
         </div>
         <div>
             <input type="submit" value="Sök" />
@@ -34,7 +33,7 @@
     </form>
 </section>
 
-@foreach (var item in Model)
+@foreach (var item in Model.Reverse())
 {
     <article class="admin_indexList">
 

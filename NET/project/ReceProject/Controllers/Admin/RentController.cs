@@ -23,6 +23,7 @@ namespace ReceProject.Controllers_Admin
 
         // GET: Rent
         [Authorize]
+        [HttpGet("/Bokningar")]
         public async Task<IActionResult> Index(string searchString)
         {
 
@@ -45,6 +46,7 @@ namespace ReceProject.Controllers_Admin
         }
 
         // GET: Rent/Details/5
+        [HttpGet("/Bokningar/Detaljer")]
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -65,6 +67,7 @@ namespace ReceProject.Controllers_Admin
 
         // GET: Rent/Create
         [Authorize]
+        [HttpGet("/Bokningar/Boka")]
         public IActionResult Create()
         {
 
@@ -110,6 +113,7 @@ namespace ReceProject.Controllers_Admin
 
         // GET: Rent/Edit/5
         [Authorize]
+        [HttpGet("/Bokningar/Ändra")]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -164,6 +168,7 @@ namespace ReceProject.Controllers_Admin
 
         // GET: Rent/Delete/5
         [Authorize]
+        [HttpGet("/Bokningar/Ta-bort")]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)

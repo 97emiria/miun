@@ -26,6 +26,7 @@ namespace ReceProject.Controllers_Admin
 
         // GET: News
         [Authorize]
+        [HttpGet("/Nyheter")]
         public async Task<IActionResult> Index(string searchString)
         {
             //Search
@@ -40,6 +41,7 @@ namespace ReceProject.Controllers_Admin
         }
 
         // GET: News/Details/5
+        [HttpGet("/Nyheter/Enskild-artikel")]
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -110,6 +112,7 @@ namespace ReceProject.Controllers_Admin
         }
 
         // GET: News/Edit/5
+        [HttpGet("/Nyheter/Ändra")]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -130,7 +133,7 @@ namespace ReceProject.Controllers_Admin
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Header,Text,Hashtags,Author,ImageName,Publish,LastUpdated")] News news)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Header,Text,Hashtags,Author,ImageFile,LastUpdated")] News news)
         {
             if (id != news.Id)
             {
@@ -139,8 +142,41 @@ namespace ReceProject.Controllers_Admin
 
             if (ModelState.IsValid)
             {
+                //Upload image 
+                if (news.ImageFile != null)
+                {
+
+                    //Strings
+                    string wwwRootPath = _hostEnvironment.WebRootPath;                  //String to wwwroot folder / file path
+
+                    //Add file to model / Save filename to database
+                    //string fileName = Path.GetFileName(news.ImageFile.FileName);                  //Filename
+                    string fileName = Path.GetFileNameWithoutExtension(news.ImageFile.FileName);    //File name without 
+                    string extension = Path.GetExtension(news.ImageFile.FileName);                  //Filhändelse / datatyp
+                    fileName = fileName + DateTime.Now.ToString("yyyyMMddssff") + extension;
+
+                    news.ImageName = fileName;
+
+                    //Output path
+                    string path = Path.Combine(wwwRootPath + "/uploadsNews/" + fileName);
+
+                    //Move to folder 
+                    using (var fileStream = new FileStream(path, FileMode.Create))
+                    {
+                        await news.ImageFile.CopyToAsync(fileStream);
+                    }
+
+                }
+                //Get old values to not overwrite
+                else {
+
+                }
+
                 try
                 {
+                    //Things dont update 
+                    //Publish
+     
                     _context.Update(news);
                     await _context.SaveChangesAsync();
                 }
@@ -157,11 +193,13 @@ namespace ReceProject.Controllers_Admin
                 }
                 return RedirectToAction(nameof(Index));
             }
+            
             return View(news);
         }
 
         // GET: News/Delete/5
         [Authorize]
+        [HttpGet("/Nyheter/Ta-bort")]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)

@@ -21,17 +21,8 @@ public class HomeController : Controller
     }
     public IActionResult Index()
     {
-
-        //Get news list
-        //ViewData["NewsID"] = new SelectList(_context.News.ToList(), "NewsID", "Header");
-        ViewData["NewsID"] = new SelectList(_context.News, "NewsID", "Header", "Text");
-
-        var albums = from m in _context.News select m;
-        ViewData["NewsID"] = albums;
-
+        //Get news
         var AllNews =  _context.News.ToList();
-
-
         return View(AllNews);
     }
 
@@ -45,10 +36,8 @@ public class HomeController : Controller
     [HttpGet("/Kontorsrum")]
     public IActionResult Room()
     {
-
-        //ViewData["RoomId"] = new SelectList(_context.Rooms, "Id", "Name");
+        //Get the rooms
         var AllRooms =  _context.Rooms.ToList();
-
         return View(AllRooms);
     }
 

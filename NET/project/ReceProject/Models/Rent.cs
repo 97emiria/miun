@@ -29,7 +29,7 @@ public class Rent {
 
 
     //Timestamp
-    [Display(Name = "Uthyrd")]
+    [Display(Name = "Bokat")]
     public String? TimeRentedSince { get; set; } = DateTime.Now.ToString("yyyy/MM/dd HH:mm");
 }
 

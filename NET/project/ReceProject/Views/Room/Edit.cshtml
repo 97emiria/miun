@@ -1,12 +1,12 @@
 @model ReceProject.Models.Room
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "Ändra ruminformation";
 }
 
-<h1>Edit</h1>
+<h1>Ändra</h1>
 
-<form asp-action="Edit">
+<form asp-action="Edit" enctype="multipart/form-data">
     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
     <input type="hidden" asp-for="Id" />
     <div class="form-group">

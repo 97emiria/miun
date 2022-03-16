@@ -37,8 +37,8 @@ public class HomeController : Controller
     public IActionResult Room()
     {
         //Get the rooms
-        var AllRooms =  _context.Rooms.ToList();
-        return View(AllRooms);
+        //var AllRooms =  _context.Rooms.ToList();
+        return View(_context.Rooms.ToList());
     }
 
     

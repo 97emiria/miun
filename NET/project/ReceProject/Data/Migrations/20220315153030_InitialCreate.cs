@@ -8,30 +8,30 @@ namespace ReceProject.Data.Migrations
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.AddColumn<string>(
+            migrationBuilder.DropColumn(
                 name: "FirstName",
-                table: "AspNetUsers",
-                type: "TEXT",
-                nullable: false,
-                defaultValue: "");
+                table: "AspNetUsers");
 
-            migrationBuilder.AddColumn<string>(
+            migrationBuilder.DropColumn(
                 name: "LastName",
-                table: "AspNetUsers",
-                type: "TEXT",
-                nullable: false,
-                defaultValue: "");
+                table: "AspNetUsers");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropColumn(
+            migrationBuilder.AddColumn<string>(
                 name: "FirstName",
-                table: "AspNetUsers");
+                table: "AspNetUsers",
+                type: "TEXT",
+                nullable: false,
+                defaultValue: "");
 
-            migrationBuilder.DropColumn(
+            migrationBuilder.AddColumn<string>(
                 name: "LastName",
-                table: "AspNetUsers");
+                table: "AspNetUsers",
+                type: "TEXT",
+                nullable: false,
+                defaultValue: "");
         }
     }
 }

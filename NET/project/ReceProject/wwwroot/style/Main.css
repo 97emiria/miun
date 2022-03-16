@@ -69,7 +69,7 @@ nav a {
   color: #111;
   width: 100%;
   padding: 0.5em;
-  font-family: "Source Sans Pro", "Open Sans", sans-serif;
+  font-family: "Fredoka", "Source Sans Pro", "Open Sans", sans-serif;
   color: #627267;
   font-weight: bold;
 }
@@ -101,10 +101,11 @@ nav a:hover {
 .maxWidthAndCenter {
   max-width: 1200px;
   width: 90%;
-  margin: 0 auto;
-  margin-top: 5em;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  padding-bottom: 8em;
+  margin: 0 auto;
+  box-sizing: border-box;
 }
 
 .backToList {
@@ -123,8 +124,15 @@ h1 {
   color: #627267;
 }
 
-p {
+h2, h3, h4 {
+  font-family: "Poiret One", "Asap", Georgia, "Times New Roman", Times, serif;
+}
+
+p, dd {
   color: #627267;
+  max-width: 65ch;
+  line-height: 1.5em;
+  font-family: "Fredoka", "Source Sans Pro", "Open Sans", sans-serif;
 }
 
 img {
@@ -139,27 +147,71 @@ img {
   display: -ms-flexbox;
   display: flex;
   gap: 1em;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 5em;
+}
+
+.home_top p {
+  max-width: 65ch;
 }
 
 .home_top div {
   width: 100%;
 }
 
+.home_top div:first-child {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+}
+
 .home_top div:last-child {
   text-align: right;
+  display: inline-block;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
 }
 
 .home_top img {
-  width: 100%;
-  height: 100%;
-  max-width: 400px;
-  max-height: 300px;
+  width: auto;
+  max-height: 70vh;
+  -webkit-box-shadow: 50px 50px #C6DDC4;
+          box-shadow: 50px 50px #C6DDC4;
   -o-object-fit: cover;
      object-fit: cover;
-  margin: 0 auto;
+  margin: 1em;
+  border-radius: 0.2em;
+  margin-right: 1em;
 }
 
-.admin_newsFlex {
+@media only screen and (max-width: 1000px) {
+  .home_top {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    gap: 1em;
+    border: 2px solid grey;
+    margin-bottom: 5em;
+  }
+  .home_top div {
+    width: 100%;
+  }
+  .home_top div:last-child {
+    text-align: right;
+  }
+  .home_top img {
+    width: 50%;
+    -webkit-box-shadow: 30px 30px #C6DDC4;
+            box-shadow: 30px 30px #C6DDC4;
+    -o-object-fit: cover;
+       object-fit: cover;
+    margin: 1em;
+    border-radius: 0.2em;
+  }
+}
+
+.home_newsFlex {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -168,15 +220,17 @@ img {
       -ms-flex-align: center;
           align-items: center;
   margin-bottom: 2em;
+  padding: 0.5em;
+  border-radius: 0.25rem;
 }
 
-.admin_newsFlex .image {
+.home_newsFlex .image {
   width: 100%;
   max-width: 150px;
   max-height: 150px;
 }
 
-.admin_newsFlex .image img {
+.home_newsFlex .image img {
   width: 100%;
   height: 100%;
   max-height: 150px;
@@ -185,24 +239,24 @@ img {
      object-fit: cover;
 }
 
-.admin_newsFlex .text {
+.home_newsFlex .text {
   width: 100%;
   min-height: 150px;
 }
 
-.admin_newsFlex .icon {
+.home_newsFlex .icon {
   width: 50px;
   height: 50px;
 }
 
-.admin_newsFlex .icon img {
+.home_newsFlex .icon img {
   width: 50px;
   height: 50px;
   -o-object-fit: contain;
      object-fit: contain;
 }
 
-.admin_newsFlex:hover {
+.home_newsFlex:hover {
   background-color: #C6DDC4;
   -webkit-transition: 0.2s;
   transition: 0.2s;
@@ -245,10 +299,6 @@ img {
           transform: scale(0.95);
   -webkit-transition: 0.2s;
   transition: 0.2s;
-}
-
-.admin_DetailImage {
-  max-width: 500px;
 }
 
 .admin_indexList {
@@ -337,9 +387,6 @@ img {
 }
 
 .news_details {
-  gap: 5em;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -347,15 +394,27 @@ img {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  margin-top: -5em;
+  gap: 5em;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
-.news_details div {
+.news_details div:first-child {
   max-width: 500px;
+  width: 100%;
+  display: inline-block;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+}
+
+.news_details div:last-child {
+  width: 500px;
+  height: 375px;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
 }
 
 .news_details img {
-  max-height: 375px;
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
@@ -378,9 +437,6 @@ img {
           box-sizing: border-box;
   background-color: #eee;
   font-size: 0.9em;
-  -webkit-box-pack: bottom;
-      -ms-flex-pack: bottom;
-          justify-content: bottom;
 }
 
 @media only screen and (max-width: 1000px) {
@@ -427,6 +483,63 @@ img {
      object-fit: cover;
 }
 
+.room_detail {
+  max-width: 700px;
+}
+
+.room_detail .image img {
+  width: 700px;
+  height: 525px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.admin_Delete {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 1rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 2em;
+}
+
+.admin_Delete .image {
+  width: 100%;
+  max-width: 150px;
+  max-height: 150px;
+}
+
+.admin_Delete .image img {
+  width: 100%;
+  height: 100%;
+  max-height: 150px;
+  max-width: 150px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.admin_Delete .text {
+  width: 100%;
+  display: inline-block;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+}
+
+.adminTop {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 1em;
+}
+
 footer {
   position: absolute;
   bottom: 0;
@@ -453,14 +566,14 @@ footer a {
   padding-left: 1em;
 }
 
-form {
+form, .formDesign {
   max-width: 600px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  font-family: "Source Sans Pro", "Open Sans", sans-serif;
+  font-family: "Fredoka", "Source Sans Pro", "Open Sans", sans-serif;
 }
 
-form input {
+form input, .formDesign input {
   display: inline-block;
   width: 100%;
   padding: 0.5em;
@@ -470,43 +583,43 @@ form input {
   border-radius: 0.25rem;
 }
 
-form input:focus {
+form input:focus, .formDesign input:focus {
   background-color: #eee;
   outline: none;
   -webkit-box-shadow: 0 0 2.5px 0 #eee;
           box-shadow: 0 0 2.5px 0 #eee;
 }
 
-form ::-webkit-input-placeholder {
+form ::-webkit-input-placeholder, .formDesign ::-webkit-input-placeholder {
   font-style: italic;
   color: #999;
   font-size: 0.9em;
 }
 
-form :-ms-input-placeholder {
+form :-ms-input-placeholder, .formDesign :-ms-input-placeholder {
   font-style: italic;
   color: #999;
   font-size: 0.9em;
 }
 
-form ::-ms-input-placeholder {
+form ::-ms-input-placeholder, .formDesign ::-ms-input-placeholder {
   font-style: italic;
   color: #999;
   font-size: 0.9em;
 }
 
-form ::placeholder {
+form ::placeholder, .formDesign ::placeholder {
   font-style: italic;
   color: #999;
   font-size: 0.9em;
 }
 
-form label {
+form label, .formDesign label {
   color: #999;
   font-size: 0.9em;
 }
 
-form input[type=submit] {
+form input[type=submit], .formDesign input[type=submit] {
   background: #627267;
   color: white;
   border: none;
@@ -518,12 +631,12 @@ form input[type=submit] {
   margin: 3em 0;
 }
 
-form input[type=submit]:hover {
+form input[type=submit]:hover, .formDesign input[type=submit]:hover {
   color: white;
   background-color: #333b35;
 }
 
-form textarea {
+form textarea, .formDesign textarea {
   width: 100%;
   height: 150px;
   padding: 0.5em 0.2em;
@@ -532,9 +645,13 @@ form textarea {
   border: 2px solid #999;
   border-radius: 4px;
   resize: none;
-  font-family: "Source Sans Pro", "Open Sans", sans-serif;
+  font-family: "Fredoka", "Source Sans Pro", "Open Sans", sans-serif;
   font-size: 1em;
   margin-bottom: 2.2em;
+}
+
+form .textareaBigger, .formDesign .textareaBigger {
+  height: 250px;
 }
 
 .search {
@@ -620,19 +737,6 @@ form textarea {
   color: #111;
   -webkit-transition: 0.2s;
   transition: 0.2s;
-}
-
-.adminTop {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  margin-top: -7em;
 }
 
 .btnDelete {

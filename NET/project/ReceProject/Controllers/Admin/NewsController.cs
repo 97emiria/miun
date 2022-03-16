@@ -112,7 +112,6 @@ namespace ReceProject.Controllers_Admin
         }
 
         // GET: News/Edit/5
-        [HttpGet("/Nyheter/Ändra")]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)

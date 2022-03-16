@@ -1,14 +1,12 @@
 @model ReceProject.Models.Rent
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Hantera enskild bokning";
 
     string none = "-";
 }
 
-
-
-<h1>Hantera hyrning</h1>
+<h1>Hantera bokning</h1>
 
 <div class="detailsButtons">
     <a asp-action="Edit" asp-route-id="@Model?.Id">
@@ -19,11 +17,10 @@
     </a>
 </div>
 
-<h2>Hyringsinfo</h2>
+<h2>Bokningsinfo</h2>
 <dl class="row">
-
     <dt class="col-sm-2">
-        Uthyrt sedan:
+        Bokat sedan:
     </dt>
     <dd class="col-sm-10">
         @Html.DisplayFor(model => model.TimeRentedSince)

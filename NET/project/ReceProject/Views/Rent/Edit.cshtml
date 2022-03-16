@@ -1,10 +1,10 @@
 @model ReceProject.Models.Rent
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "Ändra bokning";
 }
 
-<h1>Ändra uthryning</h1>
+<h1>Ändra bokning</h1>
 
 <form asp-action="Edit">
     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
@@ -28,10 +28,6 @@
         <input type="submit" value="Save" class="btn btn-primary" />
     </div>
 </form>
-
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
 
 @section Scripts {
 @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

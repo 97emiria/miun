@@ -52,7 +52,6 @@ namespace ReceProject.Controllers_Admin
 
         // GET: Room/Create
         [Authorize]
-        [HttpGet("/Rum/Skapa")]
         public IActionResult Create()
         {
             return View();
@@ -104,7 +103,6 @@ namespace ReceProject.Controllers_Admin
 
         // GET: Room/Edit/5
         [Authorize]
-        [HttpGet("/Rum/Ändra")]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -125,7 +123,7 @@ namespace ReceProject.Controllers_Admin
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Price,Description,ImageName,LastUpdated")] Room room)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Price,Description,ImageFile,LastUpdated")] Room room)
         {
             if (id != room.Id)
             {
@@ -134,8 +132,33 @@ namespace ReceProject.Controllers_Admin
 
             if (ModelState.IsValid)
             {
+                  //Upload image 
+                    if (room.ImageFile != null)
+                    {
+
+                        //Strings
+                        string wwwRootPath = _hostEnvironment.WebRootPath;                              //String to wwwroot folder / file path
+
+                        //Add file to model / Save filename to database
+                        string fileName = Path.GetFileNameWithoutExtension(room.ImageFile.FileName);    //File name without 
+                        string extension = Path.GetExtension(room.ImageFile.FileName);                  //Filhändelse / datatyp
+                        fileName = fileName + DateTime.Now.ToString("yyyyMMddssff") + extension;
+
+                        room.ImageName = fileName;
+
+                        //Output path
+                        string path = Path.Combine(wwwRootPath + "/uploadsRooms/" + fileName);
+
+                        //Move to folder 
+                        using (var fileStream = new FileStream(path, FileMode.Create))
+                        {
+                            await room.ImageFile.CopyToAsync(fileStream);
+                        }
+
+                    }
                 try
                 {
+                  
                     _context.Update(room);
                     await _context.SaveChangesAsync();
                 }

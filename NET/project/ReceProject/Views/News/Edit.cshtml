@@ -1,43 +1,39 @@
 @model ReceProject.Models.News
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "Ändra";
 }
 
-<h1>Edit</h1>
+<h1>Ändra artikel</h1>
 
-<h4>News</h4>
-<hr />
 <div>
-    <div>
-        <form asp-action="Edit" enctype="multipart/form-data">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="Id" />
-            <div class="form-group">
-                <label asp-for="Header" class="control-label"></label>
-                <input asp-for="Header" class="form-control" />
-                <span asp-validation-for="Header" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Text" class="control-label"></label>
-                <textarea asp-for="Text" class="form-control"></textarea>
-                <span asp-validation-for="Text" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Hashtags" class="control-label"></label>
-                <input asp-for="Hashtags" class="form-control" />
-                <span asp-validation-for="Hashtags" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ImageFile" class="control-label"></label>
-                <input asp-for="ImageFile" class="form-control" />
-                <span asp-validation-for="ImageFile" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
-            </div>
-        </form>
-    </div>
+    <form asp-action="Edit" enctype="multipart/form-data">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <input type="hidden" asp-for="Id" />
+        <div class="form-group">
+            <label asp-for="Header" class="control-label"></label>
+            <input asp-for="Header" class="form-control" />
+            <span asp-validation-for="Header" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Text" class="control-label"></label>
+            <textarea asp-for="Text" class="form-control textareaBigger"></textarea>
+            <span asp-validation-for="Text" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Hashtags" class="control-label"></label>
+            <input asp-for="Hashtags" class="form-control" />
+            <span asp-validation-for="Hashtags" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="ImageFile" class="control-label"></label>
+            <input asp-for="ImageFile" class="form-control" />
+            <span asp-validation-for="ImageFile" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Save" class="btn btn-primary" />
+        </div>
+    </form>
 </div>
 
 @section Scripts {

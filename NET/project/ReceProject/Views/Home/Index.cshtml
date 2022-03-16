@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<ReceProject.Models.News>
 
 @{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Startsida";
     Layout = "PublicLayout";
 }
 
@@ -9,7 +9,7 @@
 <section class="home_top">
 
     <div>
-        <h1>Hi,</h1>
+        <h1>Hi</h1>
         <p>
             Trött på att sitta hemma? Eller är kontoret alldeles för stökigt för att få något gjort? Varför inte ta och
             boka
@@ -25,12 +25,12 @@
 
 <section class="home_news">
 
-    <h2>News</h2>
+    <h2>Neheter</h2>
     <hr>
 
     @foreach (var item in Model.Reverse().Take(3))
     {
-        <article class="admin_newsFlex">
+        <article class="home_newsFlex">
             <div class="image">
                 <img src="uploadsNews/@Html.DisplayFor(modelItem => item.ImageName)" alt="">
 

@@ -113,7 +113,6 @@ namespace ReceProject.Controllers_Admin
 
         // GET: Rent/Edit/5
         [Authorize]
-        [HttpGet("/Bokningar/Ändra")]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)

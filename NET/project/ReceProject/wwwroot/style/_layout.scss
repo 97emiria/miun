@@ -2,8 +2,10 @@
 .maxWidthAndCenter {
     max-width: 1200px;
     width: 90%;
+    box-sizing: border-box;
+    padding-bottom: 8em;
     margin: 0 auto;
-    margin-top: 5em;
+    //margin-top: 5em;
     box-sizing: border-box;
 }
 
@@ -23,8 +25,15 @@ h1 {
     color: $dark;
 }
 
-p {
+h2, h3, h4 {
+    font-family: $headerFont;
+}
+
+p, dd {
     color: $dark;
+    max-width: 65ch;
+    line-height: 1.5em;
+    font-family: $bodyFont;
 }
 
 img {
@@ -38,30 +47,74 @@ img {
 .home_top {
     display: flex;
     gap: 1em;
+    align-items: center;
+
+    margin-bottom: 5em;
+
+    p {
+        max-width: 65ch;
+    }
 
     div {
         width: 100%;
 
+        &:first-child {
+            align-self: flex-end;
+        }
+
         &:last-child {
             text-align: right;
+            display: inline-block;
+            align-self: flex-start;
         }
     }
 
     img {
-        width: 100%;
-        height: 100%;
-        max-width: 400px;
-        max-height: 300px;
+        width: auto;
+        max-height: 70vh;
+        box-shadow: 50px 50px $light;
         object-fit: cover;
-        margin: 0 auto;
+        margin: 1em;
+        border-radius: 0.2em;
+        margin-right: 1em;
     }
 }
 
-.admin_newsFlex {
+
+@media only screen and (max-width: 1000px) {
+    .home_top {
+        display: flex;
+        gap: 1em;
+    
+        border: 2px solid grey;
+        margin-bottom: 5em;
+    
+        div {
+            width: 100%;
+    
+            &:last-child {
+                text-align: right;
+            }
+        }
+    
+        img {
+            width: 50%;
+            box-shadow: 30px 30px $light;
+            object-fit: cover;
+            margin: 1em;
+            border-radius: 0.2em;
+        }
+    }
+    
+}
+
+.home_newsFlex {
     display: flex;
     gap: 1rem;
     align-items: center;
     margin-bottom: 2em;
+    padding: 0.5em;
+    border-radius: $BorderRadiusValue;
 
     .image {
         width: 100%;
@@ -131,9 +184,6 @@ img {
     }
 }
 
-.admin_DetailImage {
-    max-width: 500px;
-}
 
 .admin_indexList {
     display: flex;
@@ -208,19 +258,27 @@ img {
 }
 
 .news_details {
+    display: flex;
+    flex-direction: row;
     gap: 5em;
     box-sizing: border-box;
 
-    display: flex;
-    flex-direction: row;
-    margin-top: -5em;
-
-    div {
+    //Text
+    div:first-child {
         max-width: 500px;
+        width: 100%;
+        display: inline-block;
+        align-self: flex-end;
+    }
+
+    //Image
+    div:last-child {
+        width: 500px;
+        height: 375px;
+        align-self: flex-end;
     }
 
     img {
-        max-height: 375px;
         width: 100%;
         height: 100%;
         object-fit: cover;
@@ -236,18 +294,13 @@ img {
     }
 
     .postInfo {
-        //border-top: 2.5px solid $grey;
-        //border-bottom: 2.5px solid $grey;
         border-radius: 0.5em;
         padding: 1em;
         box-sizing: border-box;
         background-color: #eee;
         font-size: 0.9em;
-
-        justify-content: bottom;
     }
 }
-
 
 @media only screen and (max-width: 1000px) {
     .news_details {
@@ -255,8 +308,7 @@ img {
         margin: 0 auto;
         max-width: 500px;
     }
-  }
-
+}
 
 .admin_deleteText {
     font-size: 1.5em;
@@ -266,8 +318,6 @@ img {
 .admin_delete {
     background-color: $error;
 }
-
-
 
 .contact_iconAndText {
     display: flex;
@@ -279,12 +329,67 @@ img {
         max-width: 60px;
         max-height: 60px;
     }
-
 }
 
-.contact_image{
+.contact_image {
     width: 100%;
     height: 100%;
     max-height: 500px;
     object-fit: cover;
+}
+
+
+.room_detail {
+
+    max-width: 700px;
+
+    .image {
+
+        img {
+            width: 700px;
+            height: 525px;
+            object-fit: cover;
+        }
+
+    }
+}
+
+
+.admin_Delete {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    margin-bottom: 2em;
+
+    .image {
+        width: 100%;
+        max-width: 150px;
+        max-height: 150px;
+
+        img {
+            width: 100%;
+            height: 100%;
+
+            //Needed for align-items
+            max-height: 150px;
+            max-width: 150px;
+
+            object-fit: cover;
+        }
+    }
+
+    .text {
+        width: 100%;
+        display: inline-block;
+        align-self: flex-end;
+    }
+
+}
+
+
+.adminTop {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1em;
 }

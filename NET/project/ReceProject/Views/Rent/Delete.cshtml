@@ -1,20 +1,48 @@
 @model ReceProject.Models.Rent
 
 @{
-    ViewData["Title"] = "Delete";
+    ViewData["Title"] = "Ta bort";
 }
 
-<h1>Ta bort hyrning för</h1>
 
-<p class="admin_deleteText"> 
-    Hyrning för
-    <strong> @Html.DisplayFor(model => model.Name)</strong>    
-    av rummet 
-    <strong>@Html.DisplayFor(model => model.Room.Name)</strong> 
-    kommer att tas bort
-</p>
+<h1>Ta bort</h1>
 
-<form asp-action="Delete" >
+<h2>Radera denna bokning?</h2>
+<hr>
+
+<article class="admin_Delete">
+    <div class="image">
+        <img src="~/uploadsRooms/@Html.DisplayFor(model => model.Room.ImageName)" alt="">
+    </div>
+    <div class="text">
+        <dl class="row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Name)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Name)
+            </dd>
+            <dt class="col-sm-2">
+                Kontorsrum:
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Room.Name)
+            </dd>
+            <dt class="col-sm-2">
+                Bokat sedan:
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.TimeRentedSince)
+            </dd>
+        </dl>
+    </div>
+</article>
+
+
+
+
+
+<form asp-action="Delete">
     <input type="hidden" asp-for="Id" />
     <input type="submit" value="Ta bort" class="btn btn-danger" />
 </form>

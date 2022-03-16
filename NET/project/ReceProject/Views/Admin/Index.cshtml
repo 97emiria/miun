@@ -2,8 +2,9 @@
 @inject SignInManager<IdentityUser> SignInManager
 @inject UserManager<IdentityUser> UserManager
 
+
 @{
-    ViewData["Title"] = "Admin Page";
+    ViewData["Title"] = "Admin";
 }
 
 
@@ -15,4 +16,5 @@
 <form class="logoutForm" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
     <input type="submit" value="Logga ut" />
 </form>
+
 

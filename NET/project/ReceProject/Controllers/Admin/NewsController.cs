@@ -9,6 +9,8 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using ReceProject.Data;
 using ReceProject.Models;
+using System.Drawing;
+using LazZiya.ImageResize;
 
 namespace ReceProject.Controllers_Admin
 {
@@ -86,7 +88,7 @@ namespace ReceProject.Controllers_Admin
                     //Add file to model / Save filename to database
                     string fileName = Path.GetFileNameWithoutExtension(news.ImageFile.FileName);    //File name without datatyp
                     string extension = Path.GetExtension(news.ImageFile.FileName);                  //Filhändelse / datatyp
-                    fileName = fileName + DateTime.Now.ToString("yyyyMMddssff") + extension;
+                    fileName = fileName.Substring(0, 10) + DateTime.Now.ToString("yyyyMMddssff") + extension;
 
                     news.ImageName = fileName;
 
@@ -98,8 +100,10 @@ namespace ReceProject.Controllers_Admin
                     {
                         await news.ImageFile.CopyToAsync(fileStream);
                     }
-
                 }
+
+                //Resize images
+                ResizeImage(news.ImageName);
 
                 news.Author = User.Identity.Name;
                 _context.Add(news);
@@ -109,6 +113,21 @@ namespace ReceProject.Controllers_Admin
 
             return View(news);
         }
+
+
+        //Resize Images
+        private void ResizeImage(string fileName)
+        {
+            string wwwRootPath = _hostEnvironment.WebRootPath;                  //String to wwwroot folder / file path
+
+            //Thumbnail
+            using (var img = Image.FromFile(Path.Combine(wwwRootPath + "/uploadsNews/" + fileName)))
+            {
+                img.Scale(200, 200).SaveAs(Path.Combine(wwwRootPath + "/uploadsNews/square_" + fileName));
+            }
+
+        }
+
 
         // GET: News/Edit/5
         public async Task<IActionResult> Edit(int? id)
@@ -151,9 +170,11 @@ namespace ReceProject.Controllers_Admin
                     //string fileName = Path.GetFileName(news.ImageFile.FileName);                  //Filename
                     string fileName = Path.GetFileNameWithoutExtension(news.ImageFile.FileName);    //File name without 
                     string extension = Path.GetExtension(news.ImageFile.FileName);                  //Filhändelse / datatyp
-                    fileName = fileName + DateTime.Now.ToString("yyyyMMddssff") + extension;
+                    fileName = fileName.Substring(0, 10) + DateTime.Now.ToString("yyyyMMddssff") + extension;
 
                     news.ImageName = fileName;
+
+
 
                     //Output path
                     string path = Path.Combine(wwwRootPath + "/uploadsNews/" + fileName);
@@ -165,7 +186,9 @@ namespace ReceProject.Controllers_Admin
                     }
 
                 }
-  
+
+                //Resize images
+                ResizeImage(news.ImageName);
 
                 try
                 {

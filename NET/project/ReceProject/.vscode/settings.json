@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/16b47750-b755-4be1-b56a-6a298f92a619/resourceGroups/appsvc_windows_centralus/providers/Microsoft.Web/sites/ReceProject",
+    "appService.deploySubpath": "Publish"
+}

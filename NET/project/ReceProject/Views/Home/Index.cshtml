@@ -58,7 +58,7 @@
 
 
 <section id="rooms">
-    <h2>Våra kontrosrum</h2>
+    <h2>Några av våra kontrosrum</h2>
     <hr>
     <div class="home_roomList">
 
@@ -69,7 +69,7 @@
 
                 <div class="image">
                     <a asp-controller="Room" asp-action="Details" asp-route-id="@room.Id">
-                        <img src="~/uploadsRooms/@room.ImageName" alt="">
+                        <img src="~/uploadsRooms/smallRatio_@room.ImageName" alt="">
                     </a>
                 </div>
                 <div class="text">
@@ -80,6 +80,8 @@
             </div>
         }
     </div>
+    <a asp-controller="Home" asp-action="Room">Se alla kontorsrum här!</a>
+
 </section>
 
 
@@ -92,7 +94,7 @@
     {
         <article class="home_newsFlex">
             <div class="image">
-                <img src="uploadsNews/@Html.DisplayFor(modelItem => item.ImageName)" alt="">
+                <img src="uploadsNews/square_@Html.DisplayFor(modelItem => item.ImageName)" alt="">
 
             </div>
             <div class="text">

@@ -9,6 +9,11 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using ReceProject.Data;
 using ReceProject.Models;
+using System.Drawing;
+using LazZiya.ImageResize;
+using System;  
+using System.Drawing;  
+using System.IO;
 
 namespace ReceProject.Controllers_Admin
 {
@@ -91,6 +96,8 @@ namespace ReceProject.Controllers_Admin
 
                 }
 
+                //Creat resizes images
+                ResizeImage(room.ImageName);
 
                 _context.Add(room);
                 await _context.SaveChangesAsync();
@@ -98,6 +105,21 @@ namespace ReceProject.Controllers_Admin
             }
 
             return View(room);
+        }
+
+
+        //Resize Images
+        private void ResizeImage(string fileName)
+        {
+            string wwwRootPath = _hostEnvironment.WebRootPath;                  //String to wwwroot folder / file path
+
+            //Thumbnail
+            using (var img = Image.FromFile(Path.Combine(wwwRootPath + "/uploadsRooms/" + fileName)))
+            {
+                img.Scale(400, 300).SaveAs(Path.Combine(wwwRootPath + "/uploadsRooms/smallRatio_" + fileName));
+                img.Scale(400, 300).SaveAs(Path.Combine(wwwRootPath + "/uploadsRooms/square_" + fileName));
+            }
+
         }
 
         // GET: Room/Edit/5
@@ -131,12 +153,25 @@ namespace ReceProject.Controllers_Admin
 
             if (ModelState.IsValid)
             {
+                    //Strings
+                string wwwRootPath = _hostEnvironment.WebRootPath;                              //String to wwwroot folder / file path
+
+
+                //Remove old image first
+                string file_name = wwwRootPath + "/uploadsRooms/" + room.ImageName;
+
+                var dataResult = from m in _context.Rooms  where m.Id == room.Id select m.ImageName;
+
+                if (System.IO.File.Exists(wwwRootPath + "/uploadsRooms/" + dataResult))
+                {
+                    System.IO.File.Delete(wwwRootPath + "/uploadsRooms/" + dataResult);
+                    System.IO.File.Delete(wwwRootPath + "/uploadsRooms/smallRatio_" + dataResult);
+                    System.IO.File.Delete(wwwRootPath + "/uploadsRooms/square_" + dataResult);
+                }
+
                 //Upload image 
                 if (room.ImageFile != null)
                 {
-
-                    //Strings
-                    string wwwRootPath = _hostEnvironment.WebRootPath;                              //String to wwwroot folder / file path
 
                     //Add file to model / Save filename to database
                     string fileName = Path.GetFileNameWithoutExtension(room.ImageFile.FileName);    //File name without 
@@ -155,6 +190,11 @@ namespace ReceProject.Controllers_Admin
                     }
 
                 }
+
+
+                //Creat resizes images
+                ResizeImage(room.ImageName);
+
 
                 try
                 {

@@ -5,16 +5,44 @@
 
 @{
     ViewData["Title"] = "Admin";
+
+
+    int allRents = Int32.Parse(@ViewData["AllRents"].ToString());
+    int allRooms = Int32.Parse(@ViewData["AllRooms"].ToString());
+    int available = allRooms - allRents;
 }
 
 
 <h1>Admin</h1>
+<br><br>
+<br>
+
+<h2>Uppgifter</h2>
+<hr>
 <p>Inloggad som: @User.Identity?.Name </p>
-<a asp-controller="Home" asp-action="Index">Hoppa till den publika webbplatsen</a>
+<br>
+<br><br>
+<br>
 
+<h2>Övriga uppgifter</h2>
+<hr>
+<p>Tillgängliga rum just nu är @available</p>
+<br>
+<br><br>
+<br>
+<h2>Länkar</h2>
+<hr>
+<ul>
+    <li><a asp-controller="Home" asp-action="Index">Hoppa till den publika webbplatsen</a> </li>
+    <li><a asp-controller="Home" asp-action="Contact">Kontaktuppgifter</a> </li>
+</ul>
 
-<form class="logoutForm" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+<br>
+<br><br>
+<br>
+<h2>Logga ut</h2>
+<hr>
+<form class="logoutForm" asp-area="Identity" asp-page="/Account/Logout"
+    asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
     <input type="submit" value="Logga ut" />
 </form>
-
-

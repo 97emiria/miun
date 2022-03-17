@@ -3,7 +3,11 @@ header {
     background: white;
     border-bottom: 2px solid $white;
 
-    div {
+    display: fixed;
+    width: 100%;
+    
+
+    .headerFlex {
         display: flex;
         justify-content: space-between;
         align-items: center;

@@ -4,6 +4,9 @@
     ViewData["Title"] = "Boka rum";
 }
 
+
+
+
 <h1>Boka rum</h1>
 
 <form asp-action="Create">
@@ -19,8 +22,15 @@
         <span asp-validation-for="Phone" class="text-danger"></span>
     </div>
     <div class="form-group">
-        <label asp-for="RoomId" class="control-label"></label>
-        <select asp-for="RoomId" class="form-control" asp-items="ViewBag.RoomId"></select>
+        @if (ViewBag.RoomId != null)
+        {
+            <label asp-for="RoomId" class="control-label"></label>
+            <select asp-for="RoomId" class="form-control" asp-items="ViewBag.RoomId"></select>
+        }
+        else
+        {
+            <p>Inga rum lediga :(</p>
+        }
     </div>
     <br>
     <br>

@@ -5,8 +5,9 @@ using ReceProject.Data;
 var builder = WebApplication.CreateBuilder(args);
 
 //Add database connection for Models
-builder.Services.AddDbContext<ModelsContext>(options =>
-options.UseSqlite(builder.Configuration.GetConnectionString("DatabaseString")));
+
+    builder.Services.AddDbContext<ModelsContext>(options =>
+    options.UseSqlite(builder.Configuration.GetConnectionString("DatabaseString")));
 
 
 // Add services to the container.

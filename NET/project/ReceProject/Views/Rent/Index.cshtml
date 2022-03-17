@@ -2,6 +2,16 @@
 
 @{
     ViewData["Title"] = "Bokningar";
+
+    List<string> TotaltRentedRooms = new List<string>();
+    foreach (var item in Model)
+    {
+        TotaltRentedRooms.Add(item.Room.Name.ToString());
+    }
+
+    int allRents = Int32.Parse(@ViewData["AllRents"].ToString());
+    int allRooms = Int32.Parse(@ViewData["AllRooms"].ToString());
+    int available = allRooms-allRents;
 }
 
 <div class="adminTop">
@@ -9,24 +19,31 @@
         <h1>@ViewData["Title"]</h1>
     </div>
     <div>
-        <a asp-action="Create" class="btnCreate">
-            <img class="imgAdd" src="~/images/iconAdd.png" alt="">
-            Boka kontor
-        </a>
+        @if (allRents >= allRooms)
+        {
+            <p>Inga rum lediga</p>
+        }
+        else
+        {
+            <a asp-action="Create" class="btnCreate">
+                <img class="imgAdd" src="~/images/iconAdd.png" alt="">
+                Boka kontor (@available tillgängligt)
+            </a>
+        }
     </div>
 </div>
 
 <section class="search">
     <form asp-controller="Rent" asp-action="Index" method="get">
         <div>
-            <input type="text" name="SearchString"
-                placeholder="Sök efter kundnamn eller telefonnumer" />
+            <input type="text" name="SearchString" placeholder="Sök efter kundnamn eller telefonnumer" />
         </div>
         <div>
             <input type="submit" value="Sök" />
         </div>
     </form>
 </section>
+
 
 
 
@@ -42,7 +59,7 @@
             <div class="text">
                 <dl class="row">
                     <dt class="col-sm-2">
-                        Bokad av:
+                        @Html.DisplayNameFor(modelItem => item.Name):
                     </dt>
                     <dd class="col-sm-10">
                         @Html.DisplayFor(modelItem => item.Name)

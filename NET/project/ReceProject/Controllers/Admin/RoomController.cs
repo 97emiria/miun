@@ -32,7 +32,7 @@ namespace ReceProject.Controllers_Admin
         }
 
         // GET: Room/Details/5
-        [HttpGet("/Rum/Detaljer")]
+        //[HttpGet("/Rum/Detaljer")]
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -70,7 +70,6 @@ namespace ReceProject.Controllers_Admin
                 //Upload image 
                 if (room.ImageFile != null)
                 {
-
                     //Strings
                     string wwwRootPath = _hostEnvironment.WebRootPath;                              //String to wwwroot folder / file path
 
@@ -180,7 +179,7 @@ namespace ReceProject.Controllers_Admin
 
         // GET: Room/Delete/5
         [Authorize]
-        [HttpGet("/Rum/Ta-bort")]
+        //[HttpGet("/Rum/Ta-bort")]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)

@@ -5,7 +5,6 @@
     box-sizing: border-box;
     padding-bottom: 8em;
     margin: 0 auto;
-    //margin-top: 5em;
     box-sizing: border-box;
 }
 
@@ -16,6 +15,15 @@
 
 main {
     padding-bottom: 10em;
+}
+
+.homeSpace {
+    margin: 7em 0;
+}
+
+.rent_detaljSpace {
+    margin: 3em 0;
+    max-width: 600px;
 }
 
 h1 {
@@ -36,6 +44,22 @@ p, dd {
     font-family: $bodyFont;
 }
 
+dd, dt, dl {
+    font-family: $bodyFont;
+}
+
+a {
+    font-family: $bodyFont;
+    color: $dark;
+    font-weight: 600; //Semibold
+}
+
+.inactiveLink {
+    cursor: not-allowed;
+    color: $grey;
+    pointer-events: none;
+}
+
 img {
     width: 100%;
     height: 100%;
@@ -49,7 +73,7 @@ img {
     gap: 1em;
     align-items: center;
 
-    margin-bottom: 5em;
+    padding-bottom: 10em;
 
     p {
         max-width: 65ch;
@@ -71,7 +95,7 @@ img {
 
     img {
         width: auto;
-        max-height: 70vh;
+        max-height: 60vh;
         box-shadow: 50px 50px $light;
         object-fit: cover;
         margin: 1em;
@@ -110,11 +134,12 @@ img {
 
 .home_newsFlex {
     display: flex;
-    gap: 1rem;
+    gap: 1em;
     align-items: center;
-    margin-bottom: 2em;
     padding: 0.5em;
     border-radius: $BorderRadiusValue;
+    //max-width: 800px;
+    margin: 2em;
 
     .image {
         width: 100%;
@@ -136,6 +161,16 @@ img {
     .text {
         width: 100%;
         min-height: 150px;
+        
+        p {
+            max-width: 65ch;
+        }
+
+        .textFlex {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
     }
 
     .icon {
@@ -153,37 +188,123 @@ img {
         background-color: $light;
         transition: 0.2s;
     }
+
+
 }
 
-.home_RoomList {
+.home_roomList {
     display: flex;
     flex-wrap: wrap;
-    gap: 1em;
+    gap: 2em;
+    justify-content: space-between;
 
-    a {
+    .home_innerRoomList {
         display: flex;
         flex-direction: column;
+        gap: 1em;
+        text-decoration: none;
         align-items: center;
 
-        margin-bottom: 2em;
-
-        width: 350px;
-
-        text-decoration: none;
         color: $textColor;
-        transition: 0.2s;
+        margin-bottom: 1em;
+        border-radius: 0.25em;
 
-        img {
+        position: relative;
+        width: 30%;
+
+        .text {
             width: 100%;
+            position: relative;
         }
 
-        &:hover {
-            transform: scale(0.95);
-            transition: 0.2s;
+        .image {
+            width: 100%;
         }
     }
 }
 
+
+.home_lists {
+
+    margin-left: -1em;
+
+    li {
+        margin: 1.5em 0;
+        align-items: center;
+    }
+
+    img {
+        width: 30px;
+    }
+    
+}
+
+.home_listFlex {
+    display: flex;
+    gap: 1em;
+
+    section {
+        width: 100%;
+    }
+
+    img {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+.home_ContactFlex {
+    display: flex;
+    justify-content: space-between;
+    gap: 3em;
+}
+
+
+
+//Contact
+
+.contact_iconAndText {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    margin: 2em 0;
+
+    .image {
+        max-width: 60px;
+        max-height: 60px;
+    }
+}
+
+.contact_image {
+    width: 100%;
+    height: 100%;
+    max-height: 500px;
+    object-fit: cover;
+}
+
+
+//Room
+
+.room_detail {
+
+    max-width: 700px;
+
+    .image {
+
+        img {
+            width: 700px;
+            height: 525px;
+            object-fit: cover;
+        }
+
+    }
+}
+
+
+
+
+
+//Admin - index
 
 .admin_indexList {
     display: flex;
@@ -226,36 +347,27 @@ img {
     }
 }
 
-.home_roomList {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2em;
-    justify-content: space-between;
 
-    .home_innerRoomList {
-        display: flex;
+
+
+
+@media only screen and (max-width: 1000px) {
+    .news_details {
         flex-direction: column;
-        gap: 1em;
-        text-decoration: none;
-        align-items: center;
-
-        color: $textColor;
-        margin-bottom: 1em;
-        border-radius: 0.25em;
-
-        position: relative;
-        width: 30%;
-
-        .text {
-            width: 100%;
-            position: relative;
-        }
-
-        .image {
-            width: 100%;
-        }
+        margin: 0 auto;
+        max-width: 500px;
     }
 }
+
+.admin_deleteText {
+    font-size: 1.5em;
+    color: $error;
+}
+
+.admin_delete {
+    background-color: $error;
+}
+
 
 .news_details {
     display: flex;
@@ -302,57 +414,7 @@ img {
     }
 }
 
-@media only screen and (max-width: 1000px) {
-    .news_details {
-        flex-direction: column;
-        margin: 0 auto;
-        max-width: 500px;
-    }
-}
 
-.admin_deleteText {
-    font-size: 1.5em;
-    color: $error;
-}
-
-.admin_delete {
-    background-color: $error;
-}
-
-.contact_iconAndText {
-    display: flex;
-    align-items: center;
-    gap: 1em;
-    margin: 2em 0;
-
-    .image {
-        max-width: 60px;
-        max-height: 60px;
-    }
-}
-
-.contact_image {
-    width: 100%;
-    height: 100%;
-    max-height: 500px;
-    object-fit: cover;
-}
-
-
-.room_detail {
-
-    max-width: 700px;
-
-    .image {
-
-        img {
-            width: 700px;
-            height: 525px;
-            object-fit: cover;
-        }
-
-    }
-}
 
 
 .admin_Delete {
@@ -393,3 +455,5 @@ img {
     align-items: center;
     margin-bottom: 1em;
 }
+
+

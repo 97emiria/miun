@@ -6,14 +6,20 @@
 }
 
 
-<section class="home_top">
+<section class="home_top homeSpace">
 
     <div>
-        <h1>Hi</h1>
+        <h1>Hyr ett kontorsrum</h1>
         <p>
             Trött på att sitta hemma? Eller är kontoret alldeles för stökigt för att få något gjort? Varför inte ta och
             boka
             ett litet arbetsrum hos oss i några timmar och få både en ny och härlig arbetsmiljö med garanterad tystnad?
+
+            <br>
+            <br>
+
+            <a asp-controller="Home" asp-action="Room">Kika på våra olika kontorsrum här!</a>
+
         </p>
     </div>
     <div>
@@ -23,9 +29,37 @@
 </section>
 
 
-<section class="home_news">
+<div id="howItWorks" class="home_listFlex homeSpace">
+    <section>
+        <h2>Hur går det till?</h2>
+        <hr>
 
-    <h2>Neheter</h2>
+        <ol class="home_lists">
+            <li> Välj ett av de lediga rummen</li>
+            <li> Leta upp ditt kontorsrum och börja jobba</li>
+            <li> Ta en paus och kom förbi cafeterian för en kopp kaffe eller/och något sött</li>
+            <li> Återgå till ditt tillfälliga kontor</li>
+            <li> När du är klar för dagen (senast 19.45) kommer du ut till oss och betalar</li>
+        </ol>
+    </section>
+
+    <section id="GoodToKnow">
+        <h2>Bra att veta</h2>
+        <hr>
+
+        <ul class="home_lists">
+            <li> Gratis och påligit wifi</li>
+            <li> Alla rum har möjlighet till att jobba stående</li>
+            <li> Bokar du en helddag (6h+) ingår fika</li>
+            <li> Möjlighet till lunchrum med mikro finns, nästan som riktigt kontor, hur bra?</li>
+        </ul>
+    </section>
+</div>
+
+
+<section class="home_news homeSpace">
+
+    <h2>Senaste nytt</h2>
     <hr>
 
     @foreach (var item in Model.Reverse().Take(3))
@@ -36,12 +70,69 @@
 
             </div>
             <div class="text">
-                <h3> @Html.DisplayFor(modelItem => item.Header) </h3>
-                <p> @Html.DisplayFor(modelItem => item.Text) </p>
-                <p> @Html.DisplayFor(modelItem => item.Hashtags) </p>
-                <p> @Html.ActionLink("Läs mera", "Details", "News", new {Id=item.Id}) </p>
+
+                <div class="textFlex">
+                    <h3> @Html.DisplayFor(modelItem => item.Header) </h3>
+                    <p>@Convert.ToDateTime(item.LastUpdated).ToString("dd/MM/yyyy") </p>
+                </div>
+
+                @if (item.Text.Length <= 100)
+                {
+                    <p>
+                        @Html.DisplayFor(modelItem => item.Text)
+                        @Html.ActionLink("Läs mera", "Details", "News", new {Id=item.Id})
+                    </p>
+                    
+                }
+                else
+                {
+                    <p>
+                        @(item.Text.ToString().Substring(0, 150) + "... ")
+                        @Html.ActionLink("Fortsätt läsa artikeln här", "Details", "News", new {Id=item.Id})
+                    </p>
+                    
+                }
+
+                <p class="hashtags"> @Html.DisplayFor(modelItem => item.Hashtags) </p>
             </div>
         </article>
     }
 
+    <a asp-controller="News" asp-action="Details">Se alla våra nyhetsartiklar här</a>
+
+</section>
+
+
+
+<section id="contact homeSpace">
+    <h2>Hitta till oss eller kontakta oss</h2>
+    <hr>
+    <div class="home_ContactFlex">
+        <article class="contact_iconAndText">
+            <div class="image">
+                <img src="~/Images/iconPhone.png" alt="Telefon">
+            </div>
+            <div class="text">
+                <a href="tel:+46701234567">070 123 456 7</a>
+            </div>
+        </article>
+
+        <article class="contact_iconAndText">
+            <div class="image">
+                <img src="~/Images/iconMail.png" alt="Mail">
+            </div>
+            <div class="text">
+                <a href="mailto:hej@rece.se">hej@rece.se</a>
+            </div>
+        </article>
+
+        <article class="contact_iconAndText">
+            <div class="image">
+                <img src="~/Images/iconMap.png" alt="Adress">
+            </div>
+            <div class="text">
+                <p> Rece AB <br> Någonstans 34I <br> 000 11 Världen </p>
+            </div>
+        </article>
+    </div>
 </section>

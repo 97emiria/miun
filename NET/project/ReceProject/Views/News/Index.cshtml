@@ -47,8 +47,16 @@
                 @Html.DisplayFor(modelItem => item.Header)
             </h2>
             <p>
+                @if (item.Text.Length <= 100)
+                {
+                    @Html.DisplayFor(modelItem => item.Text)
 
-                @Html.DisplayFor(modelItem => item.Text)
+                }
+                else
+                {
+                    @(item.Text.ToString().Substring(0, 200) + "...")
+                }
+
             </p>
             <p>
                 @Html.DisplayFor(modelItem => item.Hashtags)

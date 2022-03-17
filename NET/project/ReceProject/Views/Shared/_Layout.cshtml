@@ -7,8 +7,8 @@
 <body>
 
     <header>
-        <div>
-            <section class="logoBox">
+        <div class="headerFlex">
+            <div class="logoBox">
                     @if (SignInManager.IsSignedIn(User)) {
                         <a asp-controller="Admin" asp-action="Index">
                             <img src="~/Images/logoAdmin.png" alt="">
@@ -19,7 +19,7 @@
                             <img src="~/Images/logo.png" alt="">
                         </a>
                     }
-            </section>
+            </div>
             <nav>
                 <ul>
                     @if (SignInManager.IsSignedIn(User))

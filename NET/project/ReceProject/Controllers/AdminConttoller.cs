@@ -9,18 +9,26 @@ namespace ReceProject.Controllers;
 public class AdminController : Controller
 {
     private readonly ILogger<AdminController> _logger;
-    private readonly ApplicationDbContext _context;
+    private readonly ApplicationDbContext _Applicationcontext;
+        private readonly ModelsContext _Modelscontext;
 
-    public AdminController(ILogger<AdminController> logger, ApplicationDbContext context)
+    public AdminController(ILogger<AdminController> logger, ApplicationDbContext Applicationcontext, ModelsContext Modelscontext)
     {
         _logger = logger;
-        _context = context;
+        _Applicationcontext = Applicationcontext;
+        _Modelscontext = Modelscontext;
+
     }
 
     [Authorize]
     public IActionResult Index()
     {
-        var AllNews =  _context.Users.ToList();
+        //Get numbers to compare in index
+        ViewData["AllRooms"] = _Modelscontext.Rooms.ToList().Count().ToString();
+        ViewData["AllRents"] = _Modelscontext.Rents.ToList().Count().ToString();
+
+        var AllNews = _Applicationcontext.Users.ToList();
         return View(AllNews);
     }
 }
+

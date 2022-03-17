@@ -36,7 +36,7 @@ namespace ReceProject.Controllers_Admin
                 news = news.Where(s => s.Hashtags!.Contains(searchString) || s.Header!.Contains(searchString));
             }
 
-                 
+
             return View(await news.ToListAsync());
         }
 
@@ -84,21 +84,20 @@ namespace ReceProject.Controllers_Admin
                     string wwwRootPath = _hostEnvironment.WebRootPath;                  //String to wwwroot folder / file path
 
                     //Add file to model / Save filename to database
-                    //string fileName = Path.GetFileName(news.ImageFile.FileName);                  //Filename
-                    string fileName = Path.GetFileNameWithoutExtension(news.ImageFile.FileName);    //File name without 
+                    string fileName = Path.GetFileNameWithoutExtension(news.ImageFile.FileName);    //File name without datatyp
                     string extension = Path.GetExtension(news.ImageFile.FileName);                  //Filhändelse / datatyp
                     fileName = fileName + DateTime.Now.ToString("yyyyMMddssff") + extension;
 
                     news.ImageName = fileName;
 
-                    //Output path
-                    string path = Path.Combine(wwwRootPath + "/uploadsNews/" + fileName);
+    //Output path
+    string path = Path.Combine(wwwRootPath + "/uploadsNews/" + fileName);
 
-                    //Move to folder 
-                    using (var fileStream = new FileStream(path, FileMode.Create))
-                    {
-                        await news.ImageFile.CopyToAsync(fileStream);
-                    }
+    //Move to folder 
+    using (var fileStream = new FileStream(path, FileMode.Create))
+    {
+        await news.ImageFile.CopyToAsync(fileStream);
+    }
 
                 }
 
@@ -167,7 +166,8 @@ namespace ReceProject.Controllers_Admin
 
                 }
                 //Get old values to not overwrite
-                else {
+                else
+                {
 
                 }
 
@@ -175,7 +175,7 @@ namespace ReceProject.Controllers_Admin
                 {
                     //Things dont update 
                     //Publish
-     
+
                     _context.Update(news);
                     await _context.SaveChangesAsync();
                 }
@@ -192,7 +192,7 @@ namespace ReceProject.Controllers_Admin
                 }
                 return RedirectToAction(nameof(Index));
             }
-            
+
             return View(news);
         }
 

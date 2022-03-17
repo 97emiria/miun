@@ -17,8 +17,8 @@ public class HomeController : Controller
     {
         _logger = logger;
         _context = context;
-
     }
+    
     public IActionResult Index()
     {
         //Get news

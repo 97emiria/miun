@@ -31,6 +31,11 @@ namespace ReceProject.Controllers_Admin
             _context.Rooms.ToListAsync();
 
 
+            //Get numbers to compare in index
+            ViewData["AllRooms"] = _context.Rooms.ToList().Count().ToString();
+            ViewData["AllRents"] = _context.Rents.ToList().Count().ToString();
+
+
             //Search
             var searchResult = from m in _context.Rents select m;
             if (!String.IsNullOrEmpty(searchString))
@@ -46,7 +51,7 @@ namespace ReceProject.Controllers_Admin
         }
 
         // GET: Rent/Details/5
-        [HttpGet("/Bokningar/Detaljer")]
+        //[HttpGet("/Bokningar/Detaljer")]
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -67,26 +72,29 @@ namespace ReceProject.Controllers_Admin
 
         // GET: Rent/Create
         [Authorize]
-        [HttpGet("/Bokningar/Boka")]
+        //[HttpGet("/Bokningar/Boka")]
         public IActionResult Create()
         {
 
             //Get the lists
-            var AllRooms =  _context.Rooms.ToList();
-            var AllRents =  _context.Rents.ToList();
+            var AllRooms = _context.Rooms.ToList();
+            var AllRents = _context.Rents.ToList();
 
             //Creat a new list with all rooms
             var AvailableRooms = AllRooms;
 
-            foreach(var Rent in AllRents.ToList()) {
-                foreach (var Room in AllRooms.ToList()) {
+            foreach (var Room in AllRooms.ToList())
+            {
+                foreach (var Rent in AllRents.ToList())
+                {
 
                     //Compare if room exist in database
-                    if(Rent.RoomId == Room.Id) {
+                    if (Room.Id == Rent.RoomId)
+                    {
                         //Remove thouse rooms who is takenls
-                        
+
                         AvailableRooms.Remove(Room);
-                    }   
+                    }
                 }
             }
 
@@ -167,7 +175,7 @@ namespace ReceProject.Controllers_Admin
 
         // GET: Rent/Delete/5
         [Authorize]
-        [HttpGet("/Bokningar/Ta-bort")]
+        //[HttpGet("/Bokningar/Ta-bort")]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)

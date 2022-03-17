@@ -99,6 +99,10 @@ namespace ReceProject.Controllers_Admin
             }
 
             ViewData["RoomId"] = new SelectList(AvailableRooms, "Id", "Name");
+            //Get numbers to compare in index
+            ViewData["AllRooms"] = _context.Rooms.ToList().Count().ToString();
+            ViewData["AllRents"] = _context.Rents.ToList().Count().ToString();
+            
             return View();
         }
 

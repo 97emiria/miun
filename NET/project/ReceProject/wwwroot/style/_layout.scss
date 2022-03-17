@@ -221,6 +221,30 @@ img {
             width: 100%;
         }
     }
+
+    .home_innerRoomListHomePage {
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+        text-decoration: none;
+        align-items: center;
+
+        color: $textColor;
+        margin-bottom: 1em;
+        border-radius: 0.25em;
+
+        position: relative;
+        width: 20%;
+
+        .text {
+            width: 100%;
+            position: relative;
+        }
+
+        .image {
+            width: 100%;
+        }
+    }
 }
 
 

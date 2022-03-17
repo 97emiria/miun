@@ -346,6 +346,35 @@ img {
   width: 100%;
 }
 
+.home_roomList .home_innerRoomListHomePage {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 1em;
+  text-decoration: none;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #111;
+  margin-bottom: 1em;
+  border-radius: 0.25em;
+  position: relative;
+  width: 20%;
+}
+
+.home_roomList .home_innerRoomListHomePage .text {
+  width: 100%;
+  position: relative;
+}
+
+.home_roomList .home_innerRoomListHomePage .image {
+  width: 100%;
+}
+
 .home_lists {
   margin-left: -1em;
 }

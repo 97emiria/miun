@@ -57,12 +57,38 @@
 </div>
 
 
+<section id="rooms">
+    <h2>Våra kontrosrum</h2>
+    <hr>
+    <div class="home_roomList">
+
+
+        @foreach (var room in ViewBag.Rooms)
+        {
+            <div class="home_innerRoomListHomePage">
+
+                <div class="image">
+                    <a asp-controller="Room" asp-action="Details" asp-route-id="@room.Id">
+                        <img src="~/uploadsRooms/@room.ImageName" alt="">
+                    </a>
+                </div>
+                <div class="text">
+                    <h2>
+                        @room.Name
+                    </h2>
+                </div>
+            </div>
+        }
+    </div>
+</section>
+
+
 <section class="home_news homeSpace">
 
     <h2>Senaste nytt</h2>
     <hr>
 
-    @foreach (var item in Model.Reverse().Take(3))
+    @foreach (var item in Model)
     {
         <article class="home_newsFlex">
             <div class="image">
@@ -82,7 +108,7 @@
                         @Html.DisplayFor(modelItem => item.Text)
                         @Html.ActionLink("Läs mera", "Details", "News", new {Id=item.Id})
                     </p>
-                    
+
                 }
                 else
                 {
@@ -90,7 +116,7 @@
                         @(item.Text.ToString().Substring(0, 150) + "... ")
                         @Html.ActionLink("Fortsätt läsa artikeln här", "Details", "News", new {Id=item.Id})
                     </p>
-                    
+
                 }
 
                 <p class="hashtags"> @Html.DisplayFor(modelItem => item.Hashtags) </p>

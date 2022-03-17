@@ -90,14 +90,14 @@ namespace ReceProject.Controllers_Admin
 
                     news.ImageName = fileName;
 
-    //Output path
-    string path = Path.Combine(wwwRootPath + "/uploadsNews/" + fileName);
+                    //Output path
+                    string path = Path.Combine(wwwRootPath + "/uploadsNews/" + fileName);
 
-    //Move to folder 
-    using (var fileStream = new FileStream(path, FileMode.Create))
-    {
-        await news.ImageFile.CopyToAsync(fileStream);
-    }
+                    //Move to folder 
+                    using (var fileStream = new FileStream(path, FileMode.Create))
+                    {
+                        await news.ImageFile.CopyToAsync(fileStream);
+                    }
 
                 }
 
@@ -165,11 +165,7 @@ namespace ReceProject.Controllers_Admin
                     }
 
                 }
-                //Get old values to not overwrite
-                else
-                {
-
-                }
+  
 
                 try
                 {

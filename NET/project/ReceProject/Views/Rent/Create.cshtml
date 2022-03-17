@@ -2,6 +2,10 @@
 
 @{
     ViewData["Title"] = "Boka rum";
+
+    int allRents = Int32.Parse(@ViewData["AllRents"].ToString());
+    int allRooms = Int32.Parse(@ViewData["AllRooms"].ToString());
+    int available = allRooms - allRents;
 }
 
 
@@ -22,14 +26,15 @@
         <span asp-validation-for="Phone" class="text-danger"></span>
     </div>
     <div class="form-group">
-        @if (ViewBag.RoomId != null)
+        @if (allRents >= allRooms)
         {
-            <label asp-for="RoomId" class="control-label"></label>
-            <select asp-for="RoomId" class="form-control" asp-items="ViewBag.RoomId"></select>
+            <p>Inga rum lediga :(</p>
+
         }
         else
         {
-            <p>Inga rum lediga :(</p>
+           <label asp-for="RoomId" class="control-label"></label>
+            <select asp-for="RoomId" class="form-control" asp-items="ViewBag.RoomId"></select>
         }
     </div>
     <br>

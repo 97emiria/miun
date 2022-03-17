@@ -18,11 +18,15 @@ public class HomeController : Controller
         _logger = logger;
         _context = context;
     }
-    
+
     public IActionResult Index()
     {
-        //Get news
-        var AllNews =  _context.News.ToList();
+
+        ViewData["Rooms"] = _context.Rooms.ToList().Take(4);
+
+
+        //Get the latest three news
+        var AllNews =  _context.News.ToList().Take(3).Reverse();
         return View(AllNews);
     }
 

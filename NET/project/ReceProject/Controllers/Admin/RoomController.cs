@@ -131,33 +131,33 @@ namespace ReceProject.Controllers_Admin
 
             if (ModelState.IsValid)
             {
-                  //Upload image 
-                    if (room.ImageFile != null)
+                //Upload image 
+                if (room.ImageFile != null)
+                {
+
+                    //Strings
+                    string wwwRootPath = _hostEnvironment.WebRootPath;                              //String to wwwroot folder / file path
+
+                    //Add file to model / Save filename to database
+                    string fileName = Path.GetFileNameWithoutExtension(room.ImageFile.FileName);    //File name without 
+                    string extension = Path.GetExtension(room.ImageFile.FileName);                  //Filhändelse / datatyp
+                    fileName = fileName + DateTime.Now.ToString("yyyyMMddssff") + extension;
+
+                    room.ImageName = fileName;
+
+                    //Output path
+                    string path = Path.Combine(wwwRootPath + "/uploadsRooms/" + fileName);
+
+                    //Move to folder 
+                    using (var fileStream = new FileStream(path, FileMode.Create))
                     {
-
-                        //Strings
-                        string wwwRootPath = _hostEnvironment.WebRootPath;                              //String to wwwroot folder / file path
-
-                        //Add file to model / Save filename to database
-                        string fileName = Path.GetFileNameWithoutExtension(room.ImageFile.FileName);    //File name without 
-                        string extension = Path.GetExtension(room.ImageFile.FileName);                  //Filhändelse / datatyp
-                        fileName = fileName + DateTime.Now.ToString("yyyyMMddssff") + extension;
-
-                        room.ImageName = fileName;
-
-                        //Output path
-                        string path = Path.Combine(wwwRootPath + "/uploadsRooms/" + fileName);
-
-                        //Move to folder 
-                        using (var fileStream = new FileStream(path, FileMode.Create))
-                        {
-                            await room.ImageFile.CopyToAsync(fileStream);
-                        }
-
+                        await room.ImageFile.CopyToAsync(fileStream);
                     }
+
+                }
+
                 try
                 {
-                  
                     _context.Update(room);
                     await _context.SaveChangesAsync();
                 }

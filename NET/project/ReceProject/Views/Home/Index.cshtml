@@ -89,22 +89,22 @@
                     <p>@Convert.ToDateTime(item.LastUpdated).ToString("dd/MM/yyyy") </p>
                 </div>
 
-                @if (item.Text.Length <= 100)
-                {
-                    <p>
-                        @Html.DisplayFor(modelItem => item.Text)
-                        @Html.ActionLink("Läs mera", "Details", "News", new {Id=item.Id})
-                    </p>
+    @if (item.Text.Length <= 100)
+    {
+        <p>
+            @Html.DisplayFor(modelItem => item.Text)
+            @Html.ActionLink("Läs mera", "Details", "News", new {Id=item.Id})
+        </p>
 
-                }
-                else
-                {
-                    <p>
-                        @(item.Text.ToString().Substring(0, 100) + "... ")
-                        @Html.ActionLink("Fortsätt läsa artikeln här", "Details", "News", new {Id=item.Id})
-                    </p>
+    }
+    else
+    {
+        <p>
+            @(item.Text.ToString().Substring(0, 100) + "... ")
+            @Html.ActionLink("Fortsätt läsa artikeln här", "Details", "News", new {Id=item.Id})
+        </p>
 
-                }
+    }
 
                 <p class="hashtags"> @Html.DisplayFor(modelItem => item.Hashtags) </p>
             </div>

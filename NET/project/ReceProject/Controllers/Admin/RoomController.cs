@@ -11,8 +11,8 @@ using ReceProject.Data;
 using ReceProject.Models;
 using System.Drawing;
 using LazZiya.ImageResize;
-using System;  
-using System.Drawing;  
+using System;
+using System.Drawing;
 using System.IO;
 
 namespace ReceProject.Controllers_Admin
@@ -124,6 +124,21 @@ namespace ReceProject.Controllers_Admin
 
         }
 
+        private void ResizeImageTwo(string fileName)
+        {
+            string wwwRootPath = _hostEnvironment.WebRootPath;                  //String to wwwroot folder / file path
+
+            //Thumbnail
+            using (var img = Image.FromFile(Path.Combine(wwwRootPath + "/uploadsRooms/" + fileName)))
+            {
+                img.Scale(400, 300).SaveAs(Path.Combine(wwwRootPath + "/uploadsRooms/small_" + fileName + "____new"));
+                img.Scale(800, 600).SaveAs(Path.Combine(wwwRootPath + "/uploadsRooms/big_" + fileName + "____new"));
+            }
+
+            System.IO.File.Delete(wwwRootPath + "/uploadsRooms/" + fileName);
+
+        }
+
         // GET: Room/Edit/5
         [Authorize]
         public async Task<IActionResult> Edit(int? id)
@@ -153,16 +168,27 @@ namespace ReceProject.Controllers_Admin
                 return NotFound();
             }
 
+            //Strings
+            string wwwRootPath = _hostEnvironment.WebRootPath;                              //String to wwwroot folder / file path
+
+            //Get old data
+            var roomResult = from m in _context.Rooms where m.Id == room.Id select m.ImageName;
+
+            string hej = roomResult.ToString();
+
+            System.IO.File.Delete(wwwRootPath + "/uploadsRooms/big_" + hej);
+            System.IO.File.Delete(wwwRootPath + "/uploadsRooms/small_" + hej);
+
+
+
             if (ModelState.IsValid)
             {
-                    //Strings
-                string wwwRootPath = _hostEnvironment.WebRootPath;                              //String to wwwroot folder / file path
 
 
                 //Remove old image first
                 string file_name = wwwRootPath + "/uploadsRooms/" + room.ImageName;
 
-                var dataResult = from m in _context.Rooms  where m.Id == room.Id select m.ImageName;
+                var dataResult = from m in _context.Rooms where m.Id == room.Id select m.ImageName;
 
                 if (System.IO.File.Exists(wwwRootPath + "/uploadsRooms/" + dataResult))
                 {

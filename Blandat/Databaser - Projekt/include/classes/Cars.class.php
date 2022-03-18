@@ -13,7 +13,7 @@ class Cars {
     //content to database 
     function __construct() {
         //$this->db = new mysqli("localhost", "carRent", "password", "carRent");
-        $this->db = new mysqli('studentmysql.miun.se', 'emho2003', 'b@@d5XVfZG', 'emho2003');
+        $this->db = new mysqli('DBHOST', 'DBUSER', 'DBPASSWORD', 'DBDATABASE');
         
         if($this->db->connect_errno > 0) {
            die("Fel vid anslutning: " . $this->db->connect_error);

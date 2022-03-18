@@ -18,19 +18,20 @@
             <br>
             <br>
 
-            <a asp-controller="Home" asp-action="Room">Kika på våra olika kontorsrum här!</a>
-
+            <a asp-controller="Home" asp-action="Room" class="linkImg">
+                <img src="~/Images/iconLink.png" alt="">Kika på våra olika kontorsrum här!
+            </a>
         </p>
     </div>
     <div>
-        <img src="~/Images/kazantceva.jpg" alt="">
+        <img src="~/Images/receOfficeRooms.jpg" alt="">
     </div>
 
 </section>
 
 
-<div id="howItWorks" class="home_listFlex homeSpace">
-    <section>
+<div class="home_listFlex homeSpace">
+    <section id="howItWorks">
         <h2>Hur går det till?</h2>
         <hr>
 
@@ -57,40 +58,24 @@
 </div>
 
 
-<section id="rooms">
-    <h2>Några av våra kontrosrum</h2>
+<section id="about" class="homeSpace">
+    <h2>Vilka är vi bakom Rece?</h2>
     <hr>
-    <div class="home_roomList">
-
-
-        @foreach (var room in ViewBag.Rooms)
-        {
-            <div class="home_innerRoomListHomePage">
-
-                <div class="image">
-                    <a asp-controller="Room" asp-action="Details" asp-route-id="@room.Id">
-                        <img src="~/uploadsRooms/smallRatio_@room.ImageName" alt="">
-                    </a>
-                </div>
-                <div class="text">
-                    <h2>
-                        @room.Name
-                    </h2>
-                </div>
-            </div>
-        }
-    </div>
-    <a asp-controller="Home" asp-action="Room">Se alla kontorsrum här!</a>
+    <p>
+        Rece är ett fiktivt företag vars grundtanke var att låta människor kunna byta arbetsmiljö emellan åt på ett
+        smidigt sätt.
+    </p>
+    <img class="contact_image" src="~/images/office.jpg" alt="">
 
 </section>
 
 
-<section class="home_news homeSpace">
+<section id="news" class="home_news homeSpace">
 
     <h2>Senaste nytt</h2>
     <hr>
 
-    @foreach (var item in Model)
+    @foreach (var item in Model.Reverse().Take(3))
     {
         <article class="home_newsFlex">
             <div class="image">
@@ -115,7 +100,7 @@
                 else
                 {
                     <p>
-                        @(item.Text.ToString().Substring(0, 150) + "... ")
+                        @(item.Text.ToString().Substring(0, 100) + "... ")
                         @Html.ActionLink("Fortsätt läsa artikeln här", "Details", "News", new {Id=item.Id})
                     </p>
 
@@ -126,13 +111,19 @@
         </article>
     }
 
-    <a asp-controller="News" asp-action="Details">Se alla våra nyhetsartiklar här</a>
+
+    <a asp-controller="News" asp-action="Details">
+        <img src="~/Images/iconLink.png" class="linkImg" alt="">Se alla våra nyhetsartiklar här
+    </a>
 
 </section>
 
 
 
-<section id="contact homeSpace">
+
+
+
+<section id="contact" class="homeSpace">
     <h2>Hitta till oss eller kontakta oss</h2>
     <hr>
     <div class="home_ContactFlex">

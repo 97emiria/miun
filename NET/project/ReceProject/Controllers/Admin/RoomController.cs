@@ -116,9 +116,11 @@ namespace ReceProject.Controllers_Admin
             //Thumbnail
             using (var img = Image.FromFile(Path.Combine(wwwRootPath + "/uploadsRooms/" + fileName)))
             {
-                img.Scale(400, 300).SaveAs(Path.Combine(wwwRootPath + "/uploadsRooms/smallRatio_" + fileName));
-                img.Scale(400, 300).SaveAs(Path.Combine(wwwRootPath + "/uploadsRooms/square_" + fileName));
+                img.Scale(400, 300).SaveAs(Path.Combine(wwwRootPath + "/uploadsRooms/small_" + fileName));
+                img.Scale(800, 600).SaveAs(Path.Combine(wwwRootPath + "/uploadsRooms/big_" + fileName));
             }
+
+            System.IO.File.Delete(wwwRootPath + "/uploadsRooms/" + fileName);
 
         }
 

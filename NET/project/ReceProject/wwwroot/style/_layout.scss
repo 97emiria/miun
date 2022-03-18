@@ -33,18 +33,23 @@ h1 {
     color: $dark;
 }
 
-h2, h3, h4 {
+h2,
+h3,
+h4 {
     font-family: $headerFont;
 }
 
-p, dd {
+p,
+dd {
     color: $dark;
     max-width: 65ch;
     line-height: 1.5em;
     font-family: $bodyFont;
 }
 
-dd, dt, dl {
+dd,
+dt,
+dl {
     font-family: $bodyFont;
 }
 
@@ -52,7 +57,14 @@ a {
     font-family: $bodyFont;
     color: $dark;
     font-weight: 600; //Semibold
+
+    .linkImg {
+        width: 25px;
+        height: 25px;
+    }
 }
+
+
 
 .inactiveLink {
     cursor: not-allowed;
@@ -104,23 +116,22 @@ img {
     }
 }
 
-
 @media only screen and (max-width: 1000px) {
     .home_top {
         display: flex;
         gap: 1em;
-    
+
         border: 2px solid grey;
         margin-bottom: 5em;
-    
+
         div {
             width: 100%;
-    
+
             &:last-child {
                 text-align: right;
             }
         }
-    
+
         img {
             width: 50%;
             box-shadow: 30px 30px $light;
@@ -129,7 +140,6 @@ img {
             border-radius: 0.2em;
         }
     }
-    
 }
 
 .home_newsFlex {
@@ -138,8 +148,7 @@ img {
     align-items: center;
     padding: 0.5em;
     border-radius: $BorderRadiusValue;
-    //max-width: 800px;
-    margin: 2em;
+    margin: 2em 0;
 
     .image {
         width: 100%;
@@ -147,9 +156,6 @@ img {
         max-height: 150px;
 
         img {
-            width: 100%;
-            height: 100%;
-
             //Needed for align-items
             max-height: 150px;
             max-width: 150px;
@@ -161,7 +167,7 @@ img {
     .text {
         width: 100%;
         min-height: 150px;
-        
+
         p {
             max-width: 65ch;
         }
@@ -173,23 +179,10 @@ img {
         }
     }
 
-    .icon {
-        width: 50px;
-        height: 50px;
-
-        img {
-            width: 50px;
-            height: 50px;
-            object-fit: contain;
-        }
-    }
-
     &:hover {
         background-color: $light;
         transition: 0.2s;
     }
-
-
 }
 
 .home_roomList {
@@ -253,9 +246,7 @@ img {
     }
 }
 
-
 .home_lists {
-
     margin-left: -1em;
 
     li {
@@ -266,7 +257,6 @@ img {
     img {
         width: 30px;
     }
-    
 }
 
 .home_listFlex {
@@ -289,8 +279,6 @@ img {
     gap: 3em;
 }
 
-
-
 //Contact
 
 .contact_iconAndText {
@@ -312,27 +300,19 @@ img {
     object-fit: cover;
 }
 
-
 //Room
 
 .room_detail {
-
     max-width: 700px;
 
     .image {
-
         img {
             width: 700px;
             height: 525px;
             object-fit: cover;
         }
-
     }
 }
-
-
-
-
 
 //Admin - index
 
@@ -377,10 +357,6 @@ img {
     }
 }
 
-
-
-
-
 @media only screen and (max-width: 1000px) {
     .news_details {
         flex-direction: column;
@@ -397,7 +373,6 @@ img {
 .admin_delete {
     background-color: $error;
 }
-
 
 .news_details {
     display: flex;
@@ -444,9 +419,6 @@ img {
     }
 }
 
-
-
-
 .admin_Delete {
     display: flex;
     gap: 1rem;
@@ -475,9 +447,7 @@ img {
         display: inline-block;
         align-self: flex-end;
     }
-
 }
-
 
 .adminTop {
     display: flex;
@@ -485,5 +455,3 @@ img {
     align-items: center;
     margin-bottom: 1em;
 }
-
-

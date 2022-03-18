@@ -12,6 +12,7 @@ using ReceProject.Models;
 using System.Drawing;
 using LazZiya.ImageResize;
 
+
 namespace ReceProject.Controllers_Admin
 {
     public class NewsController : Controller
@@ -116,15 +117,18 @@ namespace ReceProject.Controllers_Admin
 
 
         //Resize Images
-        private void ResizeImage(string fileName)
+        private async void ResizeImage(string fileName)
         {
             string wwwRootPath = _hostEnvironment.WebRootPath;                  //String to wwwroot folder / file path
 
             //Thumbnail
             using (var img = Image.FromFile(Path.Combine(wwwRootPath + "/uploadsNews/" + fileName)))
             {
-                img.Scale(200, 200).SaveAs(Path.Combine(wwwRootPath + "/uploadsNews/square_" + fileName));
+                img.Scale(300, 225).SaveAs(Path.Combine(wwwRootPath + "/uploadsNews/small_" + fileName));
+                img.Scale(800, 600).SaveAs(Path.Combine(wwwRootPath + "/uploadsNews/big_" + fileName));
             }
+
+            System.IO.File.Delete(wwwRootPath + "/uploadsNews/" + fileName);
 
         }
 

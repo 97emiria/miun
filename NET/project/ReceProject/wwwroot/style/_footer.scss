@@ -19,3 +19,17 @@ footer {
         padding-left: 1em;
     }
 }
+
+
+@media only screen and (max-width: 500px) {
+    .footerFlex {
+        flex-direction: column;
+        gap: 1em;
+        align-items: stretch;
+
+        a {
+            padding-left: 0;
+            padding-right: 1em;
+        }
+    }
+}

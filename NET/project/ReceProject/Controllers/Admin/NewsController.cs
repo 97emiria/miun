@@ -88,7 +88,16 @@ namespace ReceProject.Controllers_Admin
                     //Add file to model / Save filename to database
                     string fileName = Path.GetFileNameWithoutExtension(news.ImageFile.FileName);    //File name without datatyp
                     string extension = Path.GetExtension(news.ImageFile.FileName);                  //Filhändelse / datatyp
-                    fileName = fileName.Substring(0, 10) + DateTime.Now.ToString("yyyyMMddssff") + extension;
+
+                    if (fileName.Length > 10)
+                    {
+                        fileName = fileName.Substring(0, 10) + DateTime.Now.ToString("yyyyMMddssff") + extension;
+                    }
+                    else
+                    {
+                        fileName = fileName + DateTime.Now.ToString("yyyyMMddssff") + extension;
+                    }
+
 
                     news.ImageName = fileName;
 
@@ -100,10 +109,12 @@ namespace ReceProject.Controllers_Admin
                     {
                         await news.ImageFile.CopyToAsync(fileStream);
                     }
+
+                    //Resize images
+                    ResizeImage(news.ImageName);
                 }
 
-                //Resize images
-                ResizeImage(news.ImageName);
+
 
                 news.Author = User.Identity.Name;
                 _context.Add(news);
@@ -173,7 +184,14 @@ namespace ReceProject.Controllers_Admin
                     //string fileName = Path.GetFileName(news.ImageFile.FileName);                  //Filename
                     string fileName = Path.GetFileNameWithoutExtension(news.ImageFile.FileName);    //File name without 
                     string extension = Path.GetExtension(news.ImageFile.FileName);                  //Filhändelse / datatyp
-                    fileName = fileName.Substring(0, 10) + DateTime.Now.ToString("yyyyMMddssff") + extension;
+                    if (fileName.Length > 10)
+                    {
+                        fileName = fileName.Substring(0, 10) + DateTime.Now.ToString("yyyyMMddssff") + extension;
+                    }
+                    else
+                    {
+                        fileName = fileName + DateTime.Now.ToString("yyyyMMddssff") + extension;
+                    }
 
                     news.ImageName = fileName;
 
@@ -186,10 +204,11 @@ namespace ReceProject.Controllers_Admin
                         await news.ImageFile.CopyToAsync(fileStream);
                     }
 
+                    //Resize images
+                    ResizeImage(news.ImageName);
                 }
 
-                //Resize images
-                ResizeImage(news.ImageName);
+
 
                 try
                 {

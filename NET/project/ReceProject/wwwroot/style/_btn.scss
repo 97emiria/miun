@@ -26,24 +26,13 @@
 
 
 
-.btnDelete {
-    color: black;
-    border: 2px solid red;
-}
-
-
-.btnGoBack {
-    color: black;
-    border: 2px solid red;
-}
-
 .btnRent {
     background-color: $dark;
     color: white;
     border: none;
     padding: 1em;
     width: 100%;
-    border-radius: 0.25rem;
+    border-radius: $BorderRadiusValue;
     &:hover {
         background-color: darken($dark, 20%);
     }

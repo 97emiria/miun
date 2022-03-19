@@ -57,14 +57,20 @@ a {
     font-family: $bodyFont;
     color: $dark;
     font-weight: 500; //Semibold
-
-    .linkImg {
-        width: 25px;
-        height: 25px;
-    }
 }
 
+@media only screen and (max-width: 500px) {
+    h1 {
+        font-size: 3em;
+        font-weight: bold;
+    }
 
+    h2,
+    h3,
+    h4 {
+        font-weight: bold;
+    }
+}
 
 .inactiveLink {
     cursor: not-allowed;
@@ -111,7 +117,7 @@ img {
         box-shadow: 50px 50px $light;
         object-fit: cover;
         margin: 1em;
-        border-radius: 0.2em;
+        border-radius: $BorderRadiusValue;
         margin-right: 1em;
     }
 }
@@ -120,24 +126,80 @@ img {
     .home_top {
         display: flex;
         gap: 1em;
-
-        border: 2px solid grey;
         margin-bottom: 5em;
 
-        div {
-            width: 100%;
+        padding-bottom: 5em;
 
+        div {
             &:last-child {
-                text-align: right;
+                text-align: center;
             }
         }
 
         img {
-            width: 50%;
+            width: 70%;
             box-shadow: 30px 30px $light;
             object-fit: cover;
             margin: 1em;
-            border-radius: 0.2em;
+            border-radius: $BorderRadiusValue;
+        }
+    }
+}
+
+.home_about {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1em;
+
+    div {
+        width: 100%;
+    }
+
+    .image {
+        width: 100%;
+        height: 100%;
+
+        img {
+            max-height: 300px;
+        }
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .home_top {
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+        margin-bottom: 5em;
+
+        img {
+            width: 90%;
+            max-width: 500px;
+            max-height: 500px;
+            box-shadow: 15px 15px $light;
+            margin: none;
+            margin-right: none;
+            object-fit: cover;
+        }
+    }
+
+    .home_about {
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+
+        div {
+            width: 100%;
+        }
+
+        .image {
+            width: 100%;
+            height: 100%;
+
+            img {
+                max-height: 300px;
+            }
         }
     }
 }
@@ -200,7 +262,7 @@ img {
 
         color: $textColor;
         margin-bottom: 1em;
-        border-radius: 0.25em;
+        border-radius: $BorderRadiusValue;
 
         position: relative;
         width: 30%;
@@ -208,14 +270,14 @@ img {
         .text {
             width: 100%;
             position: relative;
+            text-align: center;
         }
 
         .image {
             width: 100%;
-            width: 100%;
             height: 100%;
-            width: 400px;
-            height: 300px;
+            max-width: 400px;
+            max-height: 300px;
         }
     }
 
@@ -228,7 +290,7 @@ img {
 
         color: $textColor;
         margin-bottom: 1em;
-        border-radius: 0.25em;
+        border-radius: $BorderRadiusValue;
 
         position: relative;
         width: 20%;
@@ -243,6 +305,37 @@ img {
             width: 270px;
             height: 200px;
         }
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .home_roomList {
+        display: flex;
+
+        .home_innerRoomList {
+            width: 50%;
+        }
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .home_roomList .home_innerRoomList {
+        width: 100%;
+    }
+
+    .home_newsFlex .text .textFlex {
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: flex-start;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .home_newsFlex {
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+        align-items: stretch;
     }
 }
 
@@ -277,6 +370,20 @@ img {
     display: flex;
     justify-content: space-between;
     gap: 3em;
+}
+
+@media only screen and (max-width: 800px) {
+    .home_listFlex {
+        flex-direction: column;
+        gap: 3em;
+    }
+
+    .home_ContactFlex {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 0;
+    }
 }
 
 //Contact
@@ -316,6 +423,10 @@ img {
 
 //Admin - index
 
+.Admin_Section {
+    margin-bottom: 5em;
+}
+
 .admin_indexList {
     display: flex;
     gap: 1em;
@@ -324,10 +435,8 @@ img {
 
     color: $textColor;
     margin-bottom: 1em;
-    border-radius: 0.25em;
+    border-radius: $BorderRadiusValue;
     padding: 0.5em;
-
-    position: relative;
 
     &:hover {
         background-color: $light;
@@ -357,11 +466,39 @@ img {
     }
 }
 
-@media only screen and (max-width: 1000px) {
-    .news_details {
+@media only screen and (max-width: 800px) {
+    .admin_indexList {
+        display: flex;
         flex-direction: column;
-        margin: 0 auto;
-        max-width: 500px;
+        gap: 1em;
+        align-items: stretch;
+        position: relative;
+        border-bottom: 3px solid $dark;
+
+        .icon {
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+    }
+
+    .adminTop {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .room_detail {
+        max-width: 700px;
+        width: 100%;
+
+        .image {
+            img {
+                max-width: 700px;
+                width: 100%;
+                height: auto;
+                object-fit: cover;
+            }
+        }
     }
 }
 
@@ -411,11 +548,19 @@ img {
     }
 
     .postInfo {
-        border-radius: 0.5em;
+        border-radius: $BorderRadiusValue;
         padding: 1em;
         box-sizing: border-box;
         background-color: #eee;
         font-size: 0.9em;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .news_details {
+        flex-direction: column;
+        margin: 0 auto;
+        max-width: 500px;
     }
 }
 

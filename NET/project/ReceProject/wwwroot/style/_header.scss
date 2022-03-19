@@ -49,10 +49,6 @@ nav {
         margin: 0 auto;
     }
 
-    li {
-        border-radius: 25%;
-    }
-
     a {
         text-decoration: none;
         display: block;
@@ -79,14 +75,20 @@ nav {
     }
 }
 
-@media all and (max-width: 700px) {
-    header div {
-        flex-direction: column;
-        border-bottom: 2px solid $grey;
-    }
+@media all and (max-width: 500px) {
 
-    nav li {
-        width: 80px;
+    nav {
+        width: 100%;
+
+        ul {
+            flex-direction: column;
+            text-align: right;
+
+        }
+    }
+    nav li a {
+        width: 100%;
+        display: inline;
     }
     
 }

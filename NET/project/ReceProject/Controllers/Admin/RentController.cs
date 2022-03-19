@@ -116,6 +116,7 @@ namespace ReceProject.Controllers_Admin
         {
             if (ModelState.IsValid)
             {
+                rent.RentedByEmployee = User.Identity.Name;
                 _context.Add(rent);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));

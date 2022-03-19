@@ -1,26 +1,26 @@
 @model ReceProject.Models.Room
 
 @{
-    ViewData["Title"] = "Ta bort";
+    ViewData["Title"] = "Ta bort rum";
 }
 
-<h1>Ta bort</h1>
+<h1>Ta bort rum</h1>
 
-<h2>Radera detta rum?</h2>
-<hr>
-
-<article class="admin_Delete">
-    <div class="image">
-        <img src="~/uploadsRooms/small_@Html.DisplayFor(model => model.ImageName)" alt="">
-    </div>
-    <div class="text">
-        <h3> @Html.DisplayFor(model => model.Name) </h3>
-        <p> @Html.DisplayFor(model => model.Price) </p>
+<article>
+    <h2>Radera detta rum?</h2>
+    <hr>
+    <div class="admin_Delete">
+        <div class="image">
+            <img src="~/uploadsRooms/small_@Html.DisplayFor(model => model.ImageName)" alt="">
+        </div>
+        <div class="text">
+            <h3> @Html.DisplayFor(model => model.Name) </h3>
+            <p> @Html.DisplayFor(model => model.Price) </p>
+        </div>
     </div>
 </article>
-    
-    <form asp-action="Delete">
-        <input type="hidden" asp-for="Id" />
-        <input type="submit" value="Delete" class="btn btn-danger" /> 
-    </form>
-</div>
+
+<form asp-action="Delete" class="deleteFrom">
+    <input type="hidden" asp-for="Id" />
+    <input type="submit" value="Delete" class="btn btn-danger" />
+</form>

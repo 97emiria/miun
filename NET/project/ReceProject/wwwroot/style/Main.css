@@ -61,10 +61,6 @@ nav ul {
   margin: 0 auto;
 }
 
-nav li {
-  border-radius: 25%;
-}
-
 nav a {
   text-decoration: none;
   display: block;
@@ -86,16 +82,20 @@ nav a:hover {
   }
 }
 
-@media all and (max-width: 700px) {
-  header div {
+@media all and (max-width: 500px) {
+  nav {
+    width: 100%;
+  }
+  nav ul {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    border-bottom: 2px solid #999;
+    text-align: right;
   }
-  nav li {
-    width: 80px;
+  nav li a {
+    width: 100%;
+    display: inline;
   }
 }
 
@@ -161,9 +161,16 @@ a {
   font-weight: 500;
 }
 
-a .linkImg {
-  width: 25px;
-  height: 25px;
+@media only screen and (max-width: 500px) {
+  h1 {
+    font-size: 3em;
+    font-weight: bold;
+  }
+  h2,
+  h3,
+  h4 {
+    font-weight: bold;
+  }
 }
 
 .inactiveLink {
@@ -218,7 +225,7 @@ img {
   -o-object-fit: cover;
      object-fit: cover;
   margin: 1em;
-  border-radius: 0.2em;
+  border-radius: 0.25rem;
   margin-right: 1em;
 }
 
@@ -228,23 +235,91 @@ img {
     display: -ms-flexbox;
     display: flex;
     gap: 1em;
-    border: 2px solid grey;
     margin-bottom: 5em;
-  }
-  .home_top div {
-    width: 100%;
+    padding-bottom: 5em;
   }
   .home_top div:last-child {
-    text-align: right;
+    text-align: center;
   }
   .home_top img {
-    width: 50%;
+    width: 70%;
     -webkit-box-shadow: 30px 30px #C6DDC4;
             box-shadow: 30px 30px #C6DDC4;
     -o-object-fit: cover;
        object-fit: cover;
     margin: 1em;
-    border-radius: 0.2em;
+    border-radius: 0.25rem;
+  }
+}
+
+.home_about {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 1em;
+}
+
+.home_about div {
+  width: 100%;
+}
+
+.home_about .image {
+  width: 100%;
+  height: 100%;
+}
+
+.home_about .image img {
+  max-height: 300px;
+}
+
+@media only screen and (max-width: 800px) {
+  .home_top {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 1em;
+    margin-bottom: 5em;
+  }
+  .home_top img {
+    width: 90%;
+    max-width: 500px;
+    max-height: 500px;
+    -webkit-box-shadow: 15px 15px #C6DDC4;
+            box-shadow: 15px 15px #C6DDC4;
+    margin: none;
+    margin-right: none;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  .home_about {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 1em;
+  }
+  .home_about div {
+    width: 100%;
+  }
+  .home_about .image {
+    width: 100%;
+    height: 100%;
+  }
+  .home_about .image img {
+    max-height: 300px;
   }
 }
 
@@ -328,7 +403,7 @@ img {
           align-items: center;
   color: #111;
   margin-bottom: 1em;
-  border-radius: 0.25em;
+  border-radius: 0.25rem;
   position: relative;
   width: 30%;
 }
@@ -336,14 +411,14 @@ img {
 .home_roomList .home_innerRoomList .text {
   width: 100%;
   position: relative;
+  text-align: center;
 }
 
 .home_roomList .home_innerRoomList .image {
   width: 100%;
-  width: 100%;
   height: 100%;
-  width: 400px;
-  height: 300px;
+  max-width: 400px;
+  max-height: 300px;
 }
 
 .home_roomList .home_innerRoomListHomePage {
@@ -361,7 +436,7 @@ img {
           align-items: center;
   color: #111;
   margin-bottom: 1em;
-  border-radius: 0.25em;
+  border-radius: 0.25rem;
   position: relative;
   width: 20%;
 }
@@ -375,6 +450,50 @@ img {
 .home_roomList .home_innerRoomListHomePage .image {
   width: 270px;
   height: 200px;
+}
+
+@media only screen and (max-width: 1000px) {
+  .home_roomList {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .home_roomList .home_innerRoomList {
+    width: 50%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .home_roomList .home_innerRoomList {
+    width: 100%;
+  }
+  .home_newsFlex .text .textFlex {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .home_newsFlex {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 1em;
+    -webkit-box-align: stretch;
+        -ms-flex-align: stretch;
+            align-items: stretch;
+  }
 }
 
 .home_lists {
@@ -418,6 +537,29 @@ img {
   gap: 3em;
 }
 
+@media only screen and (max-width: 800px) {
+  .home_listFlex {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 3em;
+  }
+  .home_ContactFlex {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    gap: 0;
+  }
+}
+
 .contact_iconAndText {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -453,6 +595,10 @@ img {
      object-fit: cover;
 }
 
+.Admin_Section {
+  margin-bottom: 5em;
+}
+
 .admin_indexList {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -464,9 +610,8 @@ img {
           align-items: center;
   color: #111;
   margin-bottom: 1em;
-  border-radius: 0.25em;
+  border-radius: 0.25rem;
   padding: 0.5em;
-  position: relative;
 }
 
 .admin_indexList:hover {
@@ -497,24 +642,56 @@ img {
   transition: 0.2s;
 }
 
-@media only screen and (max-width: 1000px) {
-  .news_details {
+@media only screen and (max-width: 800px) {
+  .admin_indexList {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    margin: 0 auto;
-    max-width: 500px;
+    gap: 1em;
+    -webkit-box-align: stretch;
+        -ms-flex-align: stretch;
+            align-items: stretch;
+    position: relative;
+    border-bottom: 3px solid #627267;
+  }
+  .admin_indexList .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .adminTop {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: stretch;
+        -ms-flex-align: stretch;
+            align-items: stretch;
+  }
+  .room_detail {
+    max-width: 700px;
+    width: 100%;
+  }
+  .room_detail .image img {
+    max-width: 700px;
+    width: 100%;
+    height: auto;
+    -o-object-fit: cover;
+       object-fit: cover;
   }
 }
 
 .admin_deleteText {
   font-size: 1.5em;
-  color: #cd0000;
+  color: #b40000;
 }
 
 .admin_delete {
-  background-color: #cd0000;
+  background-color: #b40000;
 }
 
 .news_details {
@@ -562,12 +739,23 @@ img {
 }
 
 .news_details .postInfo {
-  border-radius: 0.5em;
+  border-radius: 0.25rem;
   padding: 1em;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   background-color: #eee;
   font-size: 0.9em;
+}
+
+@media only screen and (max-width: 1000px) {
+  .news_details {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin: 0 auto;
+    max-width: 500px;
+  }
 }
 
 .admin_Delete {
@@ -642,14 +830,34 @@ footer a {
   padding-left: 1em;
 }
 
-form, .formDesign {
+@media only screen and (max-width: 500px) {
+  .footerFlex {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 1em;
+    -webkit-box-align: stretch;
+        -ms-flex-align: stretch;
+            align-items: stretch;
+  }
+  .footerFlex a {
+    padding-left: 0;
+    padding-right: 1em;
+  }
+}
+
+form,
+.formDesign {
   max-width: 600px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  padding-bottom: 4em;
   font-family: "Fredoka", "Source Sans Pro", "Open Sans", sans-serif;
 }
 
-form input, .formDesign input {
+form input,
+.formDesign input {
   display: inline-block;
   width: 100%;
   padding: 0.5em;
@@ -658,47 +866,55 @@ form input, .formDesign input {
   border-radius: 0.25rem;
 }
 
-form input:focus, .formDesign input:focus {
+form input:focus,
+.formDesign input:focus {
   background-color: #eee;
   outline: none;
   -webkit-box-shadow: 0 0 2.5px 0 #eee;
           box-shadow: 0 0 2.5px 0 #eee;
 }
 
-form .formMargin, .formDesign .formMargin {
+form .formMargin,
+.formDesign .formMargin {
   margin-bottom: 3em;
 }
 
-form ::-webkit-input-placeholder, .formDesign ::-webkit-input-placeholder {
+form ::-webkit-input-placeholder,
+.formDesign ::-webkit-input-placeholder {
   font-style: italic;
   color: #999;
   font-size: 0.9em;
 }
 
-form :-ms-input-placeholder, .formDesign :-ms-input-placeholder {
+form :-ms-input-placeholder,
+.formDesign :-ms-input-placeholder {
   font-style: italic;
   color: #999;
   font-size: 0.9em;
 }
 
-form ::-ms-input-placeholder, .formDesign ::-ms-input-placeholder {
+form ::-ms-input-placeholder,
+.formDesign ::-ms-input-placeholder {
   font-style: italic;
   color: #999;
   font-size: 0.9em;
 }
 
-form ::placeholder, .formDesign ::placeholder {
+form ::placeholder,
+.formDesign ::placeholder {
   font-style: italic;
   color: #999;
   font-size: 0.9em;
 }
 
-form label, .formDesign label {
+form label,
+.formDesign label {
   color: #999;
   font-size: 0.9em;
 }
 
-form input[type=submit], .formDesign input[type=submit] {
+form input[type="submit"],
+.formDesign input[type="submit"] {
   background: #627267;
   color: white;
   border: none;
@@ -706,30 +922,34 @@ form input[type=submit], .formDesign input[type=submit] {
   padding: 1em;
   cursor: pointer;
   width: 100%;
+  max-width: 200px;
+  float: right;
   display: block;
-  margin: 3em 0;
 }
 
-form input[type=submit]:hover, .formDesign input[type=submit]:hover {
+form input[type="submit"]:hover,
+.formDesign input[type="submit"]:hover {
   color: white;
   background-color: #333b35;
 }
 
-form textarea, .formDesign textarea {
+form textarea,
+.formDesign textarea {
   width: 100%;
   height: 150px;
   padding: 0.5em 0.2em;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   border: 2px solid #999;
-  border-radius: 4px;
+  border-radius: 0.25rem;
   resize: none;
   font-family: "Fredoka", "Source Sans Pro", "Open Sans", sans-serif;
   font-size: 1em;
   margin-bottom: 2.2em;
 }
 
-form .textareaBigger, .formDesign .textareaBigger {
+form .textareaBigger,
+.formDesign .textareaBigger {
   height: 250px;
 }
 
@@ -763,27 +983,33 @@ form .textareaBigger, .formDesign .textareaBigger {
   max-width: none;
 }
 
-.search form input[type=submit] {
+.search form input[type="submit"] {
   padding: 0.5em;
   display: inline;
   margin: 0 1em;
+  float: none;
+}
+
+.deleteFrom {
+  width: 100%;
+  max-width: none;
 }
 
 .deleteFrom input[type=submit] {
-  background-color: white;
-  border: none;
   border-radius: none;
-  padding: 0;
   cursor: pointer;
-  width: auto;
   display: block;
-  margin: 3em 0;
-  color: #627267;
+  margin: 1em 0;
+  color: #b40000;
+  font-weight: bold;
+  background-color: white;
+  border-bottom: 5px solid #b40000;
 }
 
 .deleteFrom input[type=submit]:hover {
-  color: #111;
-  background-color: white;
+  background-color: #b40000;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
 }
 
 .logoutForm {
@@ -816,16 +1042,6 @@ form .textareaBigger, .formDesign .textareaBigger {
   color: #111;
   -webkit-transition: 0.2s;
   transition: 0.2s;
-}
-
-.btnDelete {
-  color: black;
-  border: 2px solid red;
-}
-
-.btnGoBack {
-  color: black;
-  border: 2px solid red;
 }
 
 .btnRent {

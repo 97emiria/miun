@@ -61,12 +61,24 @@
 <section id="about" class="homeSpace">
     <h2>Vilka är vi bakom Rece?</h2>
     <hr>
-    <p>
-        Rece är ett fiktivt företag vars grundtanke var att låta människor kunna byta arbetsmiljö emellan åt på ett
-        smidigt sätt.
-    </p>
-    <img class="contact_image" src="~/images/office.jpg" alt="">
-
+    <div class="home_about">
+        <div class="text">
+            <p>
+                Rece är ett fiktivt företag vars grundtanke var att låta människor kunna byta arbetsmiljö emellan åt på
+                ett
+                smidigt sätt.
+                <br>
+                <br>
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+                scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap
+                into electronic typesetting, remaining essentially unchanged.  
+            </p>
+        </div>
+        <div class="image">
+            <img src="~/images/teamRece.jpg" alt="">
+        </div>
+    </div>
 </section>
 
 
@@ -88,22 +100,22 @@
                     <p>@Convert.ToDateTime(item.LastUpdated).ToString("dd/MM/yyyy") </p>
                 </div>
 
-    @if (item.Text.Length <= 100)
-    {
-        <p>
-            @Html.DisplayFor(modelItem => item.Text)
-            @Html.ActionLink("Läs mera", "Details", "News", new {Id=item.Id})
-        </p>
+                @if (item.Text.Length <= 100)
+                {
+                    <p>
+                        @Html.DisplayFor(modelItem => item.Text)
+                        @Html.ActionLink("Läs mer", "Details", "News", new {Id=item.Id})
+                    </p>
 
-    }
-    else
-    {
-        <p>
-            @(item.Text.ToString().Substring(0, 100) + "... ")
-            @Html.ActionLink("Fortsätt läsa artikeln här", "Details", "News", new {Id=item.Id})
-        </p>
+                }
+                else
+                {
+                    <p>
+                        @(item.Text.ToString().Substring(0, 100) + "... ")
+                        @Html.ActionLink("Läs mer", "Details", "News", new {Id=item.Id})
+                    </p>
 
-    }
+                }
 
                 <p class="hashtags"> @Html.DisplayFor(modelItem => item.Hashtags) </p>
             </div>
@@ -111,9 +123,7 @@
     }
 
 
-    <a asp-controller="News" asp-action="Index">
-        <img src="~/Images/iconLink.png" class="linkImg" alt="">Se alla våra nyhetsartiklar här
-    </a>
+    <a asp-controller="News" asp-action="Index"> Se alla våra nyhetsartiklar här </a>
 
 </section>
 

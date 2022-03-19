@@ -9,17 +9,17 @@
 
 <form id="account" method="post">
     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-    <div>
+    <div class="formMargin">
         <label asp-for="Input.Email" class="form-label"></label>
         <input asp-for="Input.Email" class="form-control" autocomplete="username" aria-required="true" />
         <span asp-validation-for="Input.Email" class="text-danger"></span>
     </div>
-    <div>
+    <div class="formMargin">
         <label asp-for="Input.Password" class="form-label"></label>
         <input asp-for="Input.Password" class="form-control" autocomplete="current-password" aria-required="true" />
         <span asp-validation-for="Input.Password" class="text-danger"></span>
     </div>
-    <div>
+    <div class="formMargin">
         <input id="login-submit" type="submit" value="Logga in"/>
     </div>
 </form>

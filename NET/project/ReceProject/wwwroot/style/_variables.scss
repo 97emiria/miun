@@ -12,7 +12,7 @@ $mixedDark: linear-gradient(0.25turn, $dark, darken($dark, 5%), darken($dark, 15
 
 //Message colors
 $message: #64a8f5;
-$error: #cd0000;
+$error: darken(#cd0000, 5%);
 $success: #78f17e;
 $warning: #f5f574;
 

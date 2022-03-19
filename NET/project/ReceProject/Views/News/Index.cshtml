@@ -53,34 +53,40 @@
             <h2>
                 @Html.DisplayFor(modelItem => item.Header)
             </h2>
-            <p>
-                @if (item.Text.Length <= 100)
-                {
+            @if (item.Text.Length <= 100)
+            {
+                <p>
                     @Html.DisplayFor(modelItem => item.Text)
+                    @Html.ActionLink("Läs mer", "Details", "News", new {Id=item.Id})
+                </p>
 
-                }
-                else
-                {
-                    @(item.Text.ToString().Substring(0, 200) + "...")
-                }
+            }
+            else
+            {
+                <p>
+                    @(item.Text.ToString().Substring(0, 100) + "... ")
+                    @Html.ActionLink("Läs mer", "Details", "News", new {Id=item.Id})
+                </p>
 
-            </p>
+            }
             <p>
                 @Html.DisplayFor(modelItem => item.Hashtags)
             </p>
         </div>
 
         <div class="icon">
-        @if (SignInManager.IsSignedIn(User))
-        {
-            <a asp-action="Details" asp-route-id="@item.Id">
-                <img src="~/images/iconPen.png" alt="">
-            </a>
-        } else {
-            <a asp-action="Details" asp-route-id="@item.Id">
-                Läs artikel
-            </a>
-        }
+            @if (SignInManager.IsSignedIn(User))
+            {
+                <a asp-action="Details" asp-route-id="@item.Id">
+                    <img src="~/images/iconPen.png" alt="">
+                </a>
+            }
+            else
+            {
+                <a asp-action="Details" asp-route-id="@item.Id">
+                    Läs artikel
+                </a>
+            }
         </div>
 
 

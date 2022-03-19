@@ -31,8 +31,20 @@ namespace ReceProject.Controllers_Admin
         // GET: Room
         [Authorize]
         [HttpGet("/Rum")]
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string searchString)
         {
+            //Search
+            var searchResult = from m in _context.Rooms select m;
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                searchResult = searchResult.Where(s => s.Name!.Contains(searchString));
+
+                //Return search result
+                return View(await searchResult.ToListAsync());
+
+            }
+
+
             return View(await _context.Rooms.ToListAsync());
         }
 

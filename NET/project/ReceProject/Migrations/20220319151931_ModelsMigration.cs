@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace ReceProject.Migrations
 {
-    public partial class InitialCreate : Migration
+    public partial class ModelsMigration : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -55,6 +55,7 @@ namespace ReceProject.Migrations
                     Phone = table.Column<string>(type: "TEXT", nullable: false),
                     RoomId = table.Column<int>(type: "INTEGER", nullable: false),
                     Note = table.Column<string>(type: "TEXT", maxLength: 244, nullable: true),
+                    RentedByEmployee = table.Column<string>(type: "TEXT", nullable: false),
                     TimeRentedSince = table.Column<DateTime>(type: "TEXT", nullable: false)
                 },
                 constraints: table =>

@@ -19,7 +19,7 @@ public class News {
     
     //Hashtags for search
     [Display(Name = "Hashtags")]
-    public string? Hashtags { get; set; }
+    public string? Hashtags { get; set; } 
 
     
     //Author = sign in persons name

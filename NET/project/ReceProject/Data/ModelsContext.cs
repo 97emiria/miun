@@ -15,4 +15,3 @@ namespace ReceProject.Data;
         public DbSet<Room> Rooms { get; set; }
 
     }
-

@@ -11,8 +11,8 @@ using ReceProject.Data;
 namespace ReceProject.Migrations
 {
     [DbContext(typeof(ModelsContext))]
-    [Migration("20220314191027_Second")]
-    partial class Second
+    [Migration("20220319151931_ModelsMigration")]
+    partial class ModelsMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -41,8 +41,7 @@ namespace ReceProject.Migrations
                     b.Property<DateTime>("LastUpdated")
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("Publish")
-                        .ValueGeneratedOnAddOrUpdate()
+                    b.Property<DateTime>("Publish")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Text")
@@ -72,10 +71,14 @@ namespace ReceProject.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("RentedByEmployee")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
                     b.Property<int>("RoomId")
                         .HasColumnType("INTEGER");
 
-                    b.Property<string>("TimeRentedSince")
+                    b.Property<DateTime>("TimeRentedSince")
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");

@@ -21,6 +21,7 @@ using Microsoft.Extensions.Logging;
 
 namespace ReceProject.Areas.Identity.Pages.Account
 {
+    [Authorize(Roles = "Administrator")]
     public class RegisterModel : PageModel
     {
         private readonly SignInManager<IdentityUser> _signInManager;
@@ -74,7 +75,6 @@ namespace ReceProject.Areas.Identity.Pages.Account
             ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
             ///     directly from your code. This API may change or be removed in future releases.
             /// </summary>
-
             [Required]
             [EmailAddress]
             [Display(Name = "E-postadress")]
@@ -95,10 +95,11 @@ namespace ReceProject.Areas.Identity.Pages.Account
             ///     directly from your code. This API may change or be removed in future releases.
             /// </summary>
             [DataType(DataType.Password)]
-            [Display(Name = "Bekräfta Lösenord")]
-            [Compare("Password", ErrorMessage = "Lösenorden stämmer inte överenssins")]
+            [Display(Name = "Bekräfta lösenord")]
+            [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
             public string ConfirmPassword { get; set; }
         }
+
 
 
         public async Task OnGetAsync(string returnUrl = null)

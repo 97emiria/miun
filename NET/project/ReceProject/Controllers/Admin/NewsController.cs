@@ -28,7 +28,6 @@ namespace ReceProject.Controllers_Admin
 
 
         // GET: News
-        [Authorize]
         [HttpGet("/Nyheter")]
         public async Task<IActionResult> Index(string searchString)
         {
@@ -178,8 +177,6 @@ namespace ReceProject.Controllers_Admin
 
                     news.ImageName = fileName;
 
-
-
                     //Output path
                     string path = Path.Combine(wwwRootPath + "/uploadsNews/" + fileName);
 
@@ -221,7 +218,6 @@ namespace ReceProject.Controllers_Admin
 
         // GET: News/Delete/5
         [Authorize]
-        [HttpGet("/Nyheter/Ta-bort")]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)

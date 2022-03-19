@@ -158,7 +158,7 @@ dl {
 a {
   font-family: "Fredoka", "Source Sans Pro", "Open Sans", sans-serif;
   color: #627267;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 a .linkImg {
@@ -263,13 +263,13 @@ img {
 
 .home_newsFlex .image {
   width: 100%;
-  max-width: 150px;
-  max-height: 150px;
+  width: 150px;
+  height: 150px;
 }
 
 .home_newsFlex .image img {
-  max-height: 150px;
-  max-width: 150px;
+  height: 150px;
+  width: 150px;
   -o-object-fit: cover;
      object-fit: cover;
 }

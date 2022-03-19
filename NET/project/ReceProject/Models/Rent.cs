@@ -4,7 +4,7 @@ namespace ReceProject.Models;
 
 public class Rent {
     
-    public int Id { get; set; }
+      public int Id { get; set; }
 
     //Customer info 
     [Required(ErrorMessage = "Kan inte lämnas tomt")]
@@ -28,9 +28,15 @@ public class Rent {
     public string? Note { get; set; }
 
 
+    [Display(Name = "Bokades av")]
+    [Required(ErrorMessage = "Kan inte lämnas tomt")]
+    public string? RentedByEmployee { get; set; }
+
+
     //Timestamp
-    [Display(Name = "Bokat")]
-    public String? TimeRentedSince { get; set; } = DateTime.Now.ToString("yyyy/MM/dd HH:mm");
+    [Display(Name = "Uthyrd")]
+    public DateTime TimeRentedSince { get; set; } = DateTime.Now;
+
 }
 
 

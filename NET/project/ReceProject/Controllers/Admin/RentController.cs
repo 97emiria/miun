@@ -3,7 +3,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -22,36 +21,13 @@ namespace ReceProject.Controllers_Admin
         }
 
         // GET: Rent
-        [Authorize]
-        [HttpGet("/Bokningar")]
-        public async Task<IActionResult> Index(string searchString)
+        public async Task<IActionResult> Index()
         {
-
             var modelsContext = _context.Rents.Include(r => r.Room);
-            _context.Rooms.ToListAsync();
-
-
-            //Get numbers to compare in index
-            ViewData["AllRooms"] = _context.Rooms.ToList().Count().ToString();
-            ViewData["AllRents"] = _context.Rents.ToList().Count().ToString();
-
-
-            //Search
-            var searchResult = from m in _context.Rents select m;
-            if (!String.IsNullOrEmpty(searchString))
-            {
-                searchResult = searchResult.Where(s => s.Name!.Contains(searchString) || s.Phone!.Contains(searchString));
-
-                //Return search result
-                return View(await searchResult.ToListAsync());
-            }
-
-
             return View(await modelsContext.ToListAsync());
         }
 
         // GET: Rent/Details/5
-        //[HttpGet("/Bokningar/Detaljer")]
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -71,38 +47,9 @@ namespace ReceProject.Controllers_Admin
         }
 
         // GET: Rent/Create
-        [Authorize]
-        //[HttpGet("/Bokningar/Boka")]
         public IActionResult Create()
         {
-
-            //Get the lists
-            var AllRooms = _context.Rooms.ToList();
-            var AllRents = _context.Rents.ToList();
-
-            //Creat a new list with all rooms
-            var AvailableRooms = AllRooms;
-
-            foreach (var Room in AllRooms.ToList())
-            {
-                foreach (var Rent in AllRents.ToList())
-                {
-
-                    //Compare if room exist in database
-                    if (Room.Id == Rent.RoomId)
-                    {
-                        //Remove thouse rooms who is takenls
-
-                        AvailableRooms.Remove(Room);
-                    }
-                }
-            }
-
-            ViewData["RoomId"] = new SelectList(AvailableRooms, "Id", "Name");
-            //Get numbers to compare in index
-            ViewData["AllRooms"] = _context.Rooms.ToList().Count().ToString();
-            ViewData["AllRents"] = _context.Rents.ToList().Count().ToString();
-            
+            ViewData["RoomId"] = new SelectList(_context.Rooms, "Id", "Description");
             return View();
         }
 
@@ -111,7 +58,7 @@ namespace ReceProject.Controllers_Admin
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name,Phone,RoomId,Note,TimeRentedSince")] Rent rent)
+        public async Task<IActionResult> Create([Bind("Id,Name,Phone,RoomId,Note,RentedByEmployee,TimeRentedSince")] Rent rent)
         {
             if (ModelState.IsValid)
             {
@@ -119,12 +66,11 @@ namespace ReceProject.Controllers_Admin
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["RoomId"] = new SelectList(_context.Rooms, "Id", "Name", rent.RoomId);
+            ViewData["RoomId"] = new SelectList(_context.Rooms, "Id", "Description", rent.RoomId);
             return View(rent);
         }
 
         // GET: Rent/Edit/5
-        [Authorize]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -137,7 +83,7 @@ namespace ReceProject.Controllers_Admin
             {
                 return NotFound();
             }
-            //ViewData["RoomId"] = new SelectList(_context.Rooms, "Id", "Name", rent.RoomId);
+            ViewData["RoomId"] = new SelectList(_context.Rooms, "Id", "Description", rent.RoomId);
             return View(rent);
         }
 
@@ -146,7 +92,7 @@ namespace ReceProject.Controllers_Admin
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Phone,RoomId,Note,TimeRentedSince")] Rent rent)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Phone,RoomId,Note,RentedByEmployee,TimeRentedSince")] Rent rent)
         {
             if (id != rent.Id)
             {
@@ -173,13 +119,11 @@ namespace ReceProject.Controllers_Admin
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["RoomId"] = new SelectList(_context.Rooms, "Id", "Name", rent.RoomId);
+            ViewData["RoomId"] = new SelectList(_context.Rooms, "Id", "Description", rent.RoomId);
             return View(rent);
         }
 
         // GET: Rent/Delete/5
-        [Authorize]
-        //[HttpGet("/Bokningar/Ta-bort")]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)

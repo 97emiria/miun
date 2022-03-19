@@ -83,6 +83,7 @@ namespace ReceProject.Controllers_Admin
                     string extension = Path.GetExtension(room.ImageFile.FileName);                  //Filhändelse / datatyp
                     fileName = fileName + DateTime.Now.ToString("yyyyMMddssff") + extension;
 
+                    //Save new filename to database
                     room.ImageName = fileName;
 
                     //Output path
@@ -94,13 +95,31 @@ namespace ReceProject.Controllers_Admin
                         await room.ImageFile.CopyToAsync(fileStream);
                     }
 
+
+                    //Creat resizes images
+                    ResizeImage(room.ImageName);
                 }
 
-                //Creat resizes images
-                ResizeImage(room.ImageName);
 
-                _context.Add(room);
-                await _context.SaveChangesAsync();
+                try
+                {
+                    //Things dont update 
+                    //Publish
+
+                    _context.Update(room);
+                    await _context.SaveChangesAsync();
+                }
+                catch (DbUpdateConcurrencyException)
+                {
+                    if (!RoomExists(room.Id))
+                    {
+                        return NotFound();
+                    }
+                    else
+                    {
+                        throw;
+                    }
+                }
                 return RedirectToAction(nameof(Index));
             }
 
@@ -217,11 +236,14 @@ namespace ReceProject.Controllers_Admin
                         await room.ImageFile.CopyToAsync(fileStream);
                     }
 
+
+                    //Creat resizes images
+                    ResizeImage(room.ImageName);
+
                 }
 
 
-                //Creat resizes images
-                ResizeImage(room.ImageName);
+
 
 
                 try

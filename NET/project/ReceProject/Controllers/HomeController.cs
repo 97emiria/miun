@@ -21,12 +21,13 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
-
         ViewData["Rooms"] = _context.Rooms.ToList().Take(4);
 
         //Get the latest three news
         var AllNews =  _context.News.ToList();
         return View(AllNews);
+
+
     }
 
     

@@ -8,7 +8,6 @@ form, .formDesign {
         display: inline-block;
         width: 100%;
         padding: 0.5em;
-        margin-bottom: 3em;
         font-size: 1em;
 
         border: 1px solid $grey;
@@ -22,7 +21,7 @@ form, .formDesign {
 
     }
 
-    select {
+    .formMargin {
         margin-bottom: 3em;
     }
 

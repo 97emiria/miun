@@ -6,15 +6,19 @@
     string none = "-";
 }
 
-<h1>Hantera bokning</h1>
 
-<div class="detailsButtons">
-    <a asp-action="Edit" asp-route-id="@Model?.Id">
-        <img src="~/images/iconPen.png" alt="Ändra">
-    </a>
-    <a asp-action="Delete" asp-route-id="@Model?.Id">
-        <img src="~/images/iconRemove.png" alt="Papperskorg">
-    </a>
+<div class="adminTop">
+    <div>
+        <h1>Hantera bokning</h1>
+    </div>
+    <div class="detailsButtons">
+        <a asp-action="Edit" asp-route-id="@Model?.Id">
+            <img src="~/images/iconPen.png" alt="Ändra">
+        </a>
+        <a asp-action="Delete" asp-route-id="@Model?.Id">
+            <img src="~/images/iconRemove.png" alt="Papperskorg">
+        </a>
+    </div>
 </div>
 
 

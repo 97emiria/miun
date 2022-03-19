@@ -9,7 +9,9 @@
         TotaltRentedRooms.Add(item.Room.Name.ToString());
     }
 
-
+    int allRents = Int32.Parse(@ViewData["AllRents"].ToString());
+    int allRooms = Int32.Parse(@ViewData["AllRooms"].ToString());
+    int available = allRooms-allRents;
 }
 
 <div class="adminTop">
@@ -17,10 +19,17 @@
         <h1>@ViewData["Title"]</h1>
     </div>
     <div>
+        @if (allRents >= allRooms)
+        {
+            <p>Inga rum lediga</p>
+        }
+        else
+        {
             <a asp-action="Create" class="btnCreate">
                 <img class="imgAdd" src="~/images/iconAdd.png" alt="">
-                Boka kontor ( tillgängligt)
+                Boka kontor (@available tillgängligt)
             </a>
+        }
     </div>
 </div>
 

@@ -11,7 +11,7 @@ using ReceProject.Data;
 namespace ReceProject.Migrations
 {
     [DbContext(typeof(ModelsContext))]
-    [Migration("20220319151931_ModelsMigration")]
+    [Migration("20220319160432_ModelsMigration")]
     partial class ModelsMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -72,7 +72,6 @@ namespace ReceProject.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("RentedByEmployee")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<int>("RoomId")

@@ -55,7 +55,7 @@ namespace ReceProject.Migrations
                     Phone = table.Column<string>(type: "TEXT", nullable: false),
                     RoomId = table.Column<int>(type: "INTEGER", nullable: false),
                     Note = table.Column<string>(type: "TEXT", maxLength: 244, nullable: true),
-                    RentedByEmployee = table.Column<string>(type: "TEXT", nullable: false),
+                    RentedByEmployee = table.Column<string>(type: "TEXT", nullable: true),
                     TimeRentedSince = table.Column<DateTime>(type: "TEXT", nullable: false)
                 },
                 constraints: table =>

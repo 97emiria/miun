@@ -666,6 +666,10 @@ form input:focus, .formDesign input:focus {
           box-shadow: 0 0 2.5px 0 #eee;
 }
 
+form select, .formDesign select {
+  margin-bottom: 3em;
+}
+
 form ::-webkit-input-placeholder, .formDesign ::-webkit-input-placeholder {
   font-style: italic;
   color: #999;

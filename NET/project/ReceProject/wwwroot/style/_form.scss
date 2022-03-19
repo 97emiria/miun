@@ -22,6 +22,10 @@ form, .formDesign {
 
     }
 
+    select {
+        margin-bottom: 3em;
+    }
+
     ::placeholder {
         font-style: italic;
         color: $grey;

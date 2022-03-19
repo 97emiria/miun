@@ -70,7 +70,6 @@ namespace ReceProject.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("RentedByEmployee")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<int>("RoomId")

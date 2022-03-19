@@ -49,7 +49,7 @@ namespace ReceProject.Controllers_Admin
         // GET: Rent/Create
         public IActionResult Create()
         {
-            ViewData["RoomId"] = new SelectList(_context.Rooms, "Id", "Description");
+            ViewData["RoomId"] = new SelectList(_context.Rooms, "Id", "Name");
             return View();
         }
 
@@ -62,11 +62,12 @@ namespace ReceProject.Controllers_Admin
         {
             if (ModelState.IsValid)
             {
+                rent.RentedByEmployee = User.Identity.Name;
                 _context.Add(rent);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["RoomId"] = new SelectList(_context.Rooms, "Id", "Description", rent.RoomId);
+            ViewData["RoomId"] = new SelectList(_context.Rooms, "Id", "Name", rent.RoomId);
             return View(rent);
         }
 
@@ -83,7 +84,7 @@ namespace ReceProject.Controllers_Admin
             {
                 return NotFound();
             }
-            ViewData["RoomId"] = new SelectList(_context.Rooms, "Id", "Description", rent.RoomId);
+            ViewData["RoomId"] = new SelectList(_context.Rooms, "Id", "Name", rent.RoomId);
             return View(rent);
         }
 
@@ -92,7 +93,7 @@ namespace ReceProject.Controllers_Admin
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Phone,RoomId,Note,RentedByEmployee,TimeRentedSince")] Rent rent)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Phone,RoomId,Note")] Rent rent)
         {
             if (id != rent.Id)
             {
@@ -119,7 +120,7 @@ namespace ReceProject.Controllers_Admin
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["RoomId"] = new SelectList(_context.Rooms, "Id", "Description", rent.RoomId);
+            ViewData["RoomId"] = new SelectList(_context.Rooms, "Id", "Name", rent.RoomId);
             return View(rent);
         }
 

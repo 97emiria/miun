@@ -29,7 +29,6 @@ public class Rent {
 
 
     [Display(Name = "Bokades av")]
-    [Required(ErrorMessage = "Kan inte lämnas tomt")]
     public string? RentedByEmployee { get; set; }
 
 

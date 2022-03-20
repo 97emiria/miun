@@ -21,7 +21,7 @@ namespace ReceProject.Controllers_Admin
             _context = context;
         }
 
-        // GET: Rent
+        // GET: Rent   
         [Authorize]
         [HttpGet("/Bokningar")]
         public async Task<IActionResult> Index(string searchString)
@@ -49,9 +49,7 @@ namespace ReceProject.Controllers_Admin
 
             return View(await modelsContext.ToListAsync());
         }
-
         // GET: Rent/Details/5
-        //[HttpGet("/Bokningar/Detaljer")]
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -99,11 +97,10 @@ namespace ReceProject.Controllers_Admin
             }
 
             ViewData["RoomId"] = new SelectList(AvailableRooms, "Id", "Name");
-
-            //Get numbers to compare 
+            //Get numbers to compare in index
             ViewData["AllRooms"] = _context.Rooms.ToList().Count().ToString();
             ViewData["AllRents"] = _context.Rents.ToList().Count().ToString();
-            
+
             return View();
         }
 
@@ -112,11 +109,13 @@ namespace ReceProject.Controllers_Admin
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name,Phone,RoomId,Note,TimeRentedSince")] Rent rent)
+        public async Task<IActionResult> Create([Bind("Id,Name,Phone,RoomId,Note,RentedByEmployee,TimeRentedSince")] Rent rent)
         {
             if (ModelState.IsValid)
             {
+                rent.TimeRentedSince = DateTime.Now.ToString("HH:mm");
                 rent.RentedByEmployee = User.Identity.Name;
+
                 _context.Add(rent);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -126,7 +125,6 @@ namespace ReceProject.Controllers_Admin
         }
 
         // GET: Rent/Edit/5
-        [Authorize]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -139,9 +137,7 @@ namespace ReceProject.Controllers_Admin
             {
                 return NotFound();
             }
-            
             ViewData["RoomId"] = new SelectList(_context.Rooms, "Id", "Name", rent.RoomId);
-            
             return View(rent);
         }
 
@@ -150,7 +146,7 @@ namespace ReceProject.Controllers_Admin
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Phone,RoomId,Note,TimeRentedSince")] Rent rent)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Phone,RoomId,Note,RentedByEmployee,TimeRentedSince")] Rent rent)
         {
             if (id != rent.Id)
             {
@@ -182,8 +178,6 @@ namespace ReceProject.Controllers_Admin
         }
 
         // GET: Rent/Delete/5
-        [Authorize]
-        //[HttpGet("/Bokningar/Ta-bort")]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)

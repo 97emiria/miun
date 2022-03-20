@@ -26,6 +26,21 @@
             <span asp-validation-for="Hashtags" class="text-danger"></span>
         </div>
         <div class="formMargin">
+            <label asp-for="Author" class="control-label"></label>
+            <input asp-for="Author" class="form-control" readonly />
+            <span asp-validation-for="Author" class="text-danger"></span>
+        </div>
+        <div class="formMargin">
+            <label asp-for="Publish" class="control-label"></label>
+            <input asp-for="Publish" class="form-control" readonly />
+            <span asp-validation-for="Publish" class="text-danger"></span>
+        </div>
+        <div class="formMargin">
+            <label asp-for="ImageName" class="control-label"></label>
+            <input asp-for="ImageName" class="form-control" readonly />
+            <span asp-validation-for="ImageName" class="text-danger"></span>
+        </div>
+                <div class="formMargin">
             <label asp-for="ImageFile" class="control-label"></label>
             <input asp-for="ImageFile" class="form-control" />
             <span asp-validation-for="ImageFile" class="text-danger"></span>

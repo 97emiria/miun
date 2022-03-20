@@ -879,6 +879,19 @@ form .formMargin,
   margin-bottom: 3em;
 }
 
+form .notToChange,
+.formDesign .notToChange {
+  cursor: not-allowed;
+}
+
+form .notToChange input,
+form .notToChange select,
+.formDesign .notToChange input,
+.formDesign .notToChange select {
+  background-color: #eee;
+  pointer-events: none;
+}
+
 form ::-webkit-input-placeholder,
 .formDesign ::-webkit-input-placeholder {
   font-style: italic;
@@ -995,7 +1008,7 @@ form .textareaBigger,
   max-width: none;
 }
 
-.deleteFrom input[type=submit] {
+.deleteFrom input[type="submit"] {
   border-radius: none;
   cursor: pointer;
   display: block;
@@ -1006,7 +1019,7 @@ form .textareaBigger,
   border-bottom: 5px solid #b40000;
 }
 
-.deleteFrom input[type=submit]:hover {
+.deleteFrom input[type="submit"]:hover {
   background-color: #b40000;
   -webkit-transition: 0.2s;
   transition: 0.2s;

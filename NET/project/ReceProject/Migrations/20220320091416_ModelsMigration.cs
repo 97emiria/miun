@@ -20,7 +20,7 @@ namespace ReceProject.Migrations
                     Hashtags = table.Column<string>(type: "TEXT", nullable: true),
                     Author = table.Column<string>(type: "TEXT", nullable: true),
                     ImageName = table.Column<string>(type: "TEXT", nullable: true),
-                    Publish = table.Column<DateTime>(type: "TEXT", nullable: false),
+                    Publish = table.Column<string>(type: "TEXT", rowVersion: true, nullable: true),
                     LastUpdated = table.Column<DateTime>(type: "TEXT", nullable: false)
                 },
                 constraints: table =>
@@ -56,7 +56,7 @@ namespace ReceProject.Migrations
                     RoomId = table.Column<int>(type: "INTEGER", nullable: false),
                     Note = table.Column<string>(type: "TEXT", maxLength: 244, nullable: true),
                     RentedByEmployee = table.Column<string>(type: "TEXT", nullable: true),
-                    TimeRentedSince = table.Column<DateTime>(type: "TEXT", nullable: false)
+                    TimeRentedSince = table.Column<DateTime>(type: "TEXT", rowVersion: true, nullable: false)
                 },
                 constraints: table =>
                 {

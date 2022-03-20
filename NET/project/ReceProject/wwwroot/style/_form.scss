@@ -25,6 +25,16 @@ form,
         margin-bottom: 3em;
     }
 
+    .notToChange {
+        cursor: not-allowed;
+
+        input,
+        select {
+            background-color: #eee;
+            pointer-events: none;
+        }
+    }
+
     ::placeholder {
         font-style: italic;
         color: $grey;
@@ -110,7 +120,7 @@ form,
     width: 100%;
     max-width: none;
 
-    input[type=submit] {
+    input[type="submit"] {
         border-radius: none;
         cursor: pointer;
         display: block;

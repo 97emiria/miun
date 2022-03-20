@@ -34,7 +34,7 @@ public class Rent {
 
     //Timestamp
     [Display(Name = "Uthyrd")]
-    public DateTime TimeRentedSince { get; set; } = DateTime.Now;
+    public string? TimeRentedSince { get; set; }
 
 }
 

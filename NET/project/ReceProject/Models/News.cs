@@ -36,7 +36,8 @@ public class News {
 
     //Timestamps
     [Display(Name = "Publicerades")]
-    public DateTime Publish { get; set; } = DateTime.Now;
+    public string? Publish { get; set; }
+    
 
     [Display(Name = "Ändrades senast")]
     public DateTime LastUpdated { get; set; } = DateTime.Now;

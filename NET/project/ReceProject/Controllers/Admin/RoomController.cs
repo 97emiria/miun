@@ -192,7 +192,7 @@ namespace ReceProject.Controllers_Admin
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Price,Description,ImageFile,LastUpdated")] Room room)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Price,Description,ImageName, ImageFile,LastUpdated")] Room room)
         {
             if (id != room.Id)
             {
@@ -202,35 +202,15 @@ namespace ReceProject.Controllers_Admin
             //Strings
             string wwwRootPath = _hostEnvironment.WebRootPath;                              //String to wwwroot folder / file path
 
-            //Get old data
-            var roomResult = from m in _context.Rooms where m.Id == room.Id select m.ImageName;
-
-            string hej = roomResult.ToString();
-
-            System.IO.File.Delete(wwwRootPath + "/uploadsRooms/big_" + hej);
-            System.IO.File.Delete(wwwRootPath + "/uploadsRooms/small_" + hej);
-
-
-
             if (ModelState.IsValid)
             {
-
-
-                //Remove old image first
-                string file_name = wwwRootPath + "/uploadsRooms/" + room.ImageName;
-
-                var dataResult = from m in _context.Rooms where m.Id == room.Id select m.ImageName;
-
-                if (System.IO.File.Exists(wwwRootPath + "/uploadsRooms/" + dataResult))
-                {
-                    System.IO.File.Delete(wwwRootPath + "/uploadsRooms/" + dataResult);
-                    System.IO.File.Delete(wwwRootPath + "/uploadsRooms/smallRatio_" + dataResult);
-                    System.IO.File.Delete(wwwRootPath + "/uploadsRooms/square_" + dataResult);
-                }
 
                 //Upload image 
                 if (room.ImageFile != null)
                 {
+                    //Remove old image
+                    System.IO.File.Delete(wwwRootPath + "/uploadsRooms/big_" + room.ImageName);
+                    System.IO.File.Delete(wwwRootPath + "/uploadsRooms/small_" + room.ImageName);
 
                     //Add file to model / Save filename to database
                     string fileName = Path.GetFileNameWithoutExtension(room.ImageFile.FileName);    //File name without 
@@ -253,9 +233,6 @@ namespace ReceProject.Controllers_Admin
                     ResizeImage(room.ImageName);
 
                 }
-
-
-
 
 
                 try
@@ -305,6 +282,12 @@ namespace ReceProject.Controllers_Admin
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var room = await _context.Rooms.FindAsync(id);
+
+            //Remove old image
+            string wwwRootPath = _hostEnvironment.WebRootPath;                              //String to wwwroot folder / file path
+            System.IO.File.Delete(wwwRootPath + "/uploadsRooms/big_" + room.ImageName);
+            System.IO.File.Delete(wwwRootPath + "/uploadsRooms/small_" + room.ImageName);
+
             _context.Rooms.Remove(room);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));

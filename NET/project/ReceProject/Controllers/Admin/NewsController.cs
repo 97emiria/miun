@@ -112,9 +112,11 @@ namespace ReceProject.Controllers_Admin
 
                     //Resize images
                     ResizeImage(news.ImageName);
+
                 }
 
-
+                //Add timestamp
+                news.Publish = DateTime.Now.ToString("yyyy/MM/dd");
 
                 news.Author = User.Identity.Name;
                 _context.Add(news);
@@ -164,7 +166,7 @@ namespace ReceProject.Controllers_Admin
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Header,Text,Hashtags,Author,ImageFile,LastUpdated")] News news)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Header,Text,Hashtags,Author,ImageName,ImageFile,Publish,LastUpdated")] News news)
         {
             if (id != news.Id)
             {
@@ -179,6 +181,11 @@ namespace ReceProject.Controllers_Admin
 
                     //Strings
                     string wwwRootPath = _hostEnvironment.WebRootPath;                  //String to wwwroot folder / file path
+
+                    //Remove old image
+                    System.IO.File.Delete(wwwRootPath + "/uploadsNews/big_" + news.ImageName);
+                    System.IO.File.Delete(wwwRootPath + "/uploadsNews/small_" + news.ImageName);
+
 
                     //Add file to model / Save filename to database
                     //string fileName = Path.GetFileName(news.ImageFile.FileName);                  //Filename
@@ -212,10 +219,7 @@ namespace ReceProject.Controllers_Admin
 
                 try
                 {
-                    //Things dont update 
-                    //Publish
-
-                    _context.Update(news);
+                     _context.Update(news);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
@@ -259,7 +263,15 @@ namespace ReceProject.Controllers_Admin
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
+            //Get the room
             var news = await _context.News.FindAsync(id);
+
+            //Remove old image
+            string wwwRootPath = _hostEnvironment.WebRootPath;                              //String to wwwroot folder / file path
+            System.IO.File.Delete(wwwRootPath + "/uploadsNews/big_" + news.ImageName);
+            System.IO.File.Delete(wwwRootPath + "/uploadsNews/small_" + news.ImageName);
+
+
             _context.News.Remove(news);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));

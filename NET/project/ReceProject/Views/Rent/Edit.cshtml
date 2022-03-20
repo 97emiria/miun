@@ -1,13 +1,10 @@
 @model ReceProject.Models.Rent
 
 @{
-    ViewData["Title"] = "Ändra bokning";
-
-
-    // asp-for="Phone"
+    ViewData["Title"] = "Edit";
 }
 
-<h1>Ändra bokning</h1>
+<h1>Edit</h1>
 
 <form asp-action="Edit">
     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
@@ -22,23 +19,33 @@
         <input asp-for="Phone" class="form-control" />
         <span asp-validation-for="Phone" class="text-danger"></span>
     </div>
-
     <div class="formMargin">
         <label asp-for="Note" class="control-label"></label>
         <textarea asp-for="Note" class="form-control"></textarea>
         <span asp-validation-for="Note" class="text-danger"></span>
     </div>
-
-    <div class="formMargin">
+    <div class="formMargin notToChange">
         <label asp-for="RoomId" class="control-label"></label>
-        <select asp-for="RoomId"class="form-control" asp-items="ViewBag.RoomID" disabled="true" ></select>
+        <select asp-for="RoomId" class="form-control" asp-items="ViewBag.RoomId" ></select>
         <span asp-validation-for="RoomId" class="text-danger"></span>
+    </div>
+    <div class="formMargin notToChange">
+        <label asp-for="RentedByEmployee" class="control-label"></label>
+        <input asp-for="RentedByEmployee" class="form-control" />
+        <span asp-validation-for="RentedByEmployee" class="text-danger"></span>
+    </div>
+
+        <div class="formMargin notToChange">
+        <label asp-for="TimeRentedSince" class="control-label"></label>
+        <input asp-for="TimeRentedSince" class="form-control" />
+        <span asp-validation-for="TimeRentedSince" class="text-danger"></span>
     </div>
 
     <div class="formMargin">
         <input type="submit" value="Save" class="btn btn-primary" />
     </div>
 </form>
+
 
 @section Scripts {
 @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

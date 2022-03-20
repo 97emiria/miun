@@ -69,8 +69,6 @@ namespace ReceProject.Controllers_Admin
         }
 
         // POST: News/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("id,Header,Text,Hashtags,Author,ImageFile,Publish,LastUpdated")] News news)
@@ -188,7 +186,6 @@ namespace ReceProject.Controllers_Admin
 
 
                     //Add file to model / Save filename to database
-                    //string fileName = Path.GetFileName(news.ImageFile.FileName);                  //Filename
                     string fileName = Path.GetFileNameWithoutExtension(news.ImageFile.FileName);    //File name without 
                     string extension = Path.GetExtension(news.ImageFile.FileName);                  //Filhändelse / datatyp
                     if (fileName.Length > 10)
@@ -268,6 +265,7 @@ namespace ReceProject.Controllers_Admin
 
             //Remove old image
             string wwwRootPath = _hostEnvironment.WebRootPath;                              //String to wwwroot folder / file path
+
             System.IO.File.Delete(wwwRootPath + "/uploadsNews/big_" + news.ImageName);
             System.IO.File.Delete(wwwRootPath + "/uploadsNews/small_" + news.ImageName);
 

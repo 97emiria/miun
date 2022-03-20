@@ -3,12 +3,6 @@
 @{
     ViewData["Title"] = "Bokningar";
 
-    List<string> TotaltRentedRooms = new List<string>();
-    foreach (var item in Model)
-    {
-        TotaltRentedRooms.Add(item.Room.Name.ToString());
-    }
-
     int allRents = Int32.Parse(@ViewData["AllRents"].ToString());
     int allRooms = Int32.Parse(@ViewData["AllRooms"].ToString());
     int available = allRooms-allRents;

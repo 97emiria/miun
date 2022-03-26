@@ -20,7 +20,7 @@ let getCourses = () => {
                 coursesList.innerHTML += 
                 `
                     <li> 
-                        ${data.namn} 
+                        ${data.name} 
                         <button onclick="deleteCourse(${data.id})">
                             <img src="images/iconDelete.png" alt="">
                         </button> 

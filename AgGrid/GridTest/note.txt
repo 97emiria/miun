@@ -1,0 +1,2 @@
+//Old Necessary JavaScript for AG-Grid 
+<script src="https://unpkg.com/ag-grid-community/dist/ag-grid-community.min.noStyle.js"></script>

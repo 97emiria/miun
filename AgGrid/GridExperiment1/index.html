@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AG-Grid test</title>
+
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- AG-Grid -->
+    
+    <!-- Necessary JavaScript for AG-Grid -->
+    <script src="https://unpkg.com/ag-grid-enterprise/dist/ag-grid-enterprise.min.noStyle.js"></script>
+    
+    <!-- Structural -->
+    <link rel="stylesheet" href="https://unpkg.com/ag-grid-community/dist/styles/ag-grid.css">
+    
+    <!-- Theme -->
+    <link rel="stylesheet" href="https://unpkg.com/ag-grid-community/dist/styles/ag-theme-alpine.css">
+
+</head>
+<body>
+    <h1>Grid test</h1>
+
+    <button onclick="getSelectedRows()">Get selected</button>
+
+    <div id="myGrid" style="height: 600px; " class="ag-theme-alpine">
+
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>

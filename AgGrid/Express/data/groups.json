@@ -1,0 +1,110 @@
+[
+  {
+    "id": "1",
+    "groupName": "Food store",
+    "country": "Sweden",
+    "company": "Ica",
+    "date": "2022-03-30",
+    "description": "Detta är en kortare beskrivning om återförsäljaren",
+    "status": 1
+  },
+  {
+    "id": "2",
+    "groupName": "Food store",
+    "country": "Finland",
+    "company": "Konsum",
+    "date": "2022-03-30",
+    "description": "Detta är en kortare beskrivning om återförsäljaren",
+    "status": 1
+  },
+  {
+    "id": "3",
+    "groupName": "Food store",
+    "country": "Sweden",
+    "company": "Willys",
+    "date": "2022-03-30",
+    "description": "Detta är en kortare beskrivning om återförsäljaren",
+    "status": 1
+  },
+  {
+    "id": "4",
+    "groupName": "Café",
+    "country": "Sweden",
+    "company": "Holgers Café",
+    "date": "2022-03-30",
+    "description": "Detta är en kortare beskrivning om återförsäljaren",
+    "status": 1
+  },
+  {
+    "id": "5",
+    "groupName": "Food store",
+    "country": "Denmark",
+    "company": "Lidl",
+    "date": "2022-03-30",
+    "description": "Detta är en kortare beskrivning om återförsäljaren",
+    "status": 0
+  },
+  {
+    "id": "6",
+    "groupName": "Food store",
+    "country": "Denmark",
+    "company": "Neto",
+    "date": "2022-03-30",
+    "description": "Detta är en kortare beskrivning om återförsäljaren",
+    "status": 1
+  },
+  {
+    "id": "7",
+    "groupName": "Food store",
+    "country": "Sweden",
+    "company": "Euro Cash",
+    "date": "2022-02-30",
+    "description": "Detta är en kortare beskrivning om återförsäljaren",
+    "status": 1
+  },
+  {
+    "id": "8",
+    "groupName": "Food store",
+    "country": "Denmark",
+    "company": "City Gross",
+    "date": "2022-03-30",
+    "description": "Detta är en kortare beskrivning om återförsäljaren",
+    "status": 1
+  },
+  {
+    "id": "9",
+    "groupName": "Food store",
+    "country": "Denmark",
+    "company": "Ica",
+    "date": "2022-03-30",
+    "description": "Detta är en kortare beskrivning om återförsäljaren",
+    "status": 0
+  },
+  {
+    "id": "10",
+    "groupName": "Café",
+    "country": "Finland",
+    "company": "Expresso House",
+    "date": "2022-03-30",
+    "description": "Detta är en kortare beskrivning om återförsäljaren",
+    "status": 1
+  },
+  {
+    "id": "11",
+    "groupName": "Food store",
+    "country": "Finland",
+    "company": "Ica",
+    "date": "2022-02-30",
+    "description": "Detta är en kortare beskrivning om återförsäljaren",
+    "status": 1
+  },
+  {
+    "id": "12",
+    "groupName": "Café",
+    "country": "Denmark",
+    "company": "Expresso House",
+    "date": "2022-02-30",
+    "description": "Detta är en kortare beskrivning om återförsäljaren",
+    "status": 1
+  }
+]

@@ -5,7 +5,7 @@ const express = require('express');
 let cors = require('cors');
 
 //File way in varibale so only one needed to be change
-const dataPathName = './data/courses.json';
+const dataPathName = './data/groups.json';
 //Get Json data, throu file-varibale
 const data = require(dataPathName);
 
@@ -22,7 +22,7 @@ app.use(express.static("public"));
 
 
 //Server CRUDs
-app.get('/courses', (req, res) => {
+app.get('/groups', (req, res) => {
 
     //Sending json data
     res.status(200).json(courseData);
@@ -30,7 +30,7 @@ app.get('/courses', (req, res) => {
 });
 
 //Show one course
-app.get('/courses/:id', (req, res) => {
+app.get('/groups/:id', (req, res) => {
 
    let result = courseData.find( item => item.id == req.params.id ) 
 
@@ -45,7 +45,7 @@ app.get('/courses/:id', (req, res) => {
 });
 
 //Delete a course
-app.delete('/courses/:id', (req, res) => {
+app.delete('/groups/:id', (req, res) => {
     
     let result = courseData.find( item => item.id == req.params.id ) 
 

@@ -1,0 +1,20 @@
+//Theme Colors
+$darkGrey: #333;
+$lightGrey: #ddd;
+$lightGreyTwo: #eee;
+$mediumGrey: #999;
+
+//Message colors
+$message: #64a8f5;
+$error: #e25353;
+$success: #78f17e;
+$warning: #f5f574;
+
+$messageDark: darken($message, 50%);
+$errorDark: darken($error, 25%);
+$successDark: darken($success, 25%);
+$warningDark: darken($warning, 40%);
+ 
+//Font
+$headerFont: 'Poiret One', Georgia, 'Times New Roman', Times, serif;
+$bodyFont: 'Open Sans', sans-serif;

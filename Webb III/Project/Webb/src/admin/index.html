@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Moment 5 | Emilia Holmström </title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="../style/main.css">
+
+    <!-- Favicon -->
+    <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="../images/favicon.png" type="image/x-icon">
+
+    <!-- Google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet"> 
+
+
+
+</head>
+<body class="themeDark">
+
+    <header>
+        <div class="header_left" id="header_left">
+            <a href="../">Emilia Holmström</a>
+        </div>
+        <div class="header_right">
+            <button id="menuBtn" class="menuBtn">
+              <img src="../images/iconMenuLight.png" alt="">
+            </button>
+            <nav>
+                <ul id="menuList">
+                    <li><a href="../index.html">Huvudsidan</a></li>
+                    <li><img class="admin_logout" src="../images/iconLogout.png" alt="Log out icon" id="signOut" onclick="signOut()"> </li>
+                </ul>
+            </nav>
+        </div>
+        <div>
+          
+        </div>
+    </header>
+
+    <main class="frame">
+                
+        <h1 style="text-align:center;">Adminsidan</h1>
+
+        <section class="adminSections" id="webbpage">
+            <button type="button" class="admin_collapsibleBtn">Webbsidor</button>
+            
+            <div class="admin_collapsibleContent">
+
+                <button class="imgBtn floatRigtht" onclick='prepareToAddWebbapge()'>
+                    <img src="../images/iconAdd.png" alt="">
+                </button>
+    
+            
+                <div class="adminLists">
+                    <p>Tillgängliga alternativ: </p>
+                    <ul class="adminLists" id="webbpageList"></ul>
+                </div>
+
+                <p id="webbpageMessage"></p>  
+
+                <div class="textFrom_imgDiv" id="webbpageFrom_imgDiv"></div>
+
+                <form id="webbpageForm">
+    
+                    <label for="titleWebbpage">Title: </label>
+                    <input type="text" id="titleWebbpage" name="titleWebbpage">
+
+                    <label for="linkWebbpage">Länk: </label> <a id="webbpageLinkLink" target="_blank" href=""></a> 
+                    <input type="text" id="linkWebbpage" name="linkWebbpage">
+                    
+
+                    <label for="descriptionWebbpage">Beskrivning: </label>
+                    <textarea name="descriptionWebbpage" id="descriptionWebbpage"></textarea>
+
+                    <br><br>
+
+                    <label for="imageWebbpage">Bild: </label>
+                    <input type="file" name="imageWebbpage" id="imageWebbpage">
+
+                    <button type="submit" class="submitBtn" id="editWebbpageBtn">Ändra</button>
+                    <button class="deleteBtn" id="deleteWebbpageBtn">Radera</button>
+                    <button class="addBtn" id="addWebbpageBtn">Lägg till</button>
+                </form>
+
+            </div>       
+        </section>
+
+        <section class="adminSections" id="education"> 
+            <button type="button" class="admin_collapsibleBtn">Utbildning</button>
+
+            <div class="admin_collapsibleContent" id="eduFromDiv">
+            
+                <button class="imgBtn floatRigtht" onclick='prepareToAddEducation()'>
+                    <img src="../images/iconAdd.png" alt="">
+                </button>
+    
+                <div class="adminLists">
+                    <p>Tillgängliga alternativ: </p>
+                    <ul id="eduListAdmin"></ul>
+                </div>
+    
+    
+                <p id="educationMessage"></p>
+    
+                <form id="eduForm">
+    
+                    <label for="titleEdu">Kursnamn: </label>
+                    <input type="text" id="titleEdu" name="titleEdu">
+    
+                    <label for="school">Lärosätte: </label>
+                    <input type="text" id="school" name="school" >
+    
+                    <label for="semester">Termin: </label>
+                    <input type="text" id="semester" name="semester" placeholder="HT / VT / ST">
+
+                    <label for="dateEdu">Datum: </label>
+                    <input type="text" id="dateEdu" name="dateEdu" placeholder="Månad, år ex: Aug, 2021">
+    
+                    <label for="statusEdu">Status: </label>
+                    <input type="text" id="statusEdu" name="statusEdu" placeholder="0=pågående & 1=avslutad">
+    
+                    <label for="commentEdu">Beskrivning: </label>
+                    <textarea name="commentEdu" id="commentEdu"></textarea>
+    
+                    <button type="submit" class="submitBtn" id="editEduBtn">Ändra</button>
+                    <button class="deleteBtn" id="deleteEduBtn">Radera</button>
+                    <button class="addBtn" id="addEduBtn">Lägg till</button>
+    
+                </form>
+        
+            </div>
+        </section>
+
+       <section class="adminSections" id="work">
+            <button type="button" class="admin_collapsibleBtn">Arbetserfarenheter</button>
+            <div class="admin_collapsibleContent" id="workFromDiv" >
+
+            <!--Buttons, come from js file-->
+            <button class="imgBtn floatRigtht" onclick='prepareToAddWork()'>
+                <img src="../images/iconAdd.png" alt="">
+            </button>
+
+            <div class="adminLists">
+                <p>Tillgängliga alternativ: </p>
+                <ul id="workListAdmin"></ul>
+            </div>
+
+
+            <p id="workMessage"></p>
+
+                <form id="workForm">
+
+                    <label for="titleWork">Title </label>
+                    <input type="text" id="titleWork" name="titleWork" placeholder="exempel@emiria.se">
+
+                    <label for="workplace">Arbetsplats </label>
+                    <input type="text" id="workplace" name="workplace" placeholder="exempel@emiria.se">
+
+                    <label for="dateWork">Datum</label>
+                    <input type="text" id="dateWork" name="dateWork" placeholder="exempel@emiria.se">
+
+                    <label for="commentWork">Beskrivning: </label>
+                    <textarea name="commentWork" id="commentWork"></textarea>
+
+                    <button type="submit" class="submitBtn" id="editWorkBtn">Ändra</button>
+                    <button class="deleteBtn" id="deleteWorkBtn">Radera</button>
+                    <button class="addBtn" id="addWorkBtn">Lägg till</button>
+
+                </form>
+    
+            </div>
+       </section>
+       
+        
+        <section class="adminSections" id="texts">
+            <button type="button" class="admin_collapsibleBtn">Texter</button>
+            
+            <div class="admin_collapsibleContent" >
+            
+                <div class="adminLists">
+                    <p>Tillgängliga alternativ: </p>
+                    <ul class="adminLists" id="adminListsText"> </ul>
+                </div>
+
+                <p id="textMessage"></p>  
+
+                <div class="textFrom_imgDiv" id="textFrom_imgDiv"></div>
+
+                <form id="textFrom">
+                    
+                    <label for="textTitle">Title </label>
+                    <input type="text" id="textTitle" name="textTitle" class="inputLocked" readonly >
+                    
+                    <label for="textTextarea">Texten </label>
+                    <textarea name="comment" id="textTextarea"></textarea>
+
+                    <input type="file" id="textImage">
+
+                    <button type="submit" class="submitBtn" id="adminTextSubmit">Ändra</button>
+
+
+                </form>
+
+            </div>       
+        </section>
+          
+        <section class="adminSections" id="password">
+            <button type="button" class="admin_collapsibleBtn">Ändra lösenord</button>
+            
+            <div class="admin_collapsibleContent">
+
+                <p id="passwordMessage"></p>  
+
+                <form id="passwordForm">
+                    
+                    <label for="emailPassword">E-post: </label>
+                    <input type="text" id="emailPassword" name="emailPassword" placeholder="exempel@emiria.se">
+        
+                    <label for="passwordPassword">Lösenord:</label>
+                    <input type="password" id="passwordPassword" name="passwordPassword" placeholder="Ditt lösenord">
+
+                    <button type="submit" class="submitBtn" id="adminPasswordSubmit" onclick="changePassword(event)">Ändra lösenord</button>
+                </form>
+
+            </div>       
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="top">
+            <a href="../">
+                <img src="../images/footerImgDark.png" alt="">
+            </a>
+        </div>
+
+        <div class="bottom">
+           <p> 
+               Emiria.se &copy; | Emilia holmström | <a href="mailto:hi@emiria">hi@emiria</a> 
+            </p>
+        </div>
+    </footer>
+
+    <script src="../javascript/main.js"></script>
+    
+
+
+    <script>
+            checkAdmin()
+            getWebbpageListAdmin();
+            getEducationListAdmin();
+            getTextListAdmin();
+            getWorkListAdmin()
+
+    </script>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Utbidlning | Emilia Holmström </title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="../style/main.css">
+
+    <!-- Favicon -->
+    <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="../images/favicon.png" type="image/x-icon">
+
+    <!-- Google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet"> 
+</head>
+<body>
+
+    <header>
+        <div class="header_left" id="header_left">
+            <a href="../">Emilia Holmström</a>
+        </div>
+        <div class="header_right">
+            <button id="menuBtn" class="menuBtn">
+                <img src="../images/iconMenu.png" alt="">
+            </button>
+            <nav>
+                <ul id="menuList">
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="work.html">Erfarenhet</a></li>
+                    <li><a href="education.html" id="active">Utbildning</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+ 
+    <main class="frame"> 
+
+        <h1>Utbildning</h1>
+
+        <div id="educationText"></div> 
+ 
+        <table>
+            <thead>
+                <tr>
+                    <th>Kursnamn</th>
+                    <th>Kommentar</th>
+                    <th>Datum</th>
+                    <th>Status</th>  
+                </tr>
+            </thead>
+       
+            <tbody id="courseListTable">
+
+            </tbody>
+
+        </table>
+
+        <h2>Tidigare kurser</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Kursnamn</th>
+                    <th>Kommentar</th>
+                    <th>Datum</th>
+                </tr>
+            </thead>
+       
+            <tbody id="courseOldListTable">
+
+            </tbody>
+
+        </table>
+
+    </main>
+
+    <footer>
+        <div class="top">
+            <a href="../">
+                <img src="../images/footerImgLight.png" alt="">
+            </a>
+        </div>
+
+        <div class="bottom">
+           <p> 
+               Emiria.se &copy; | Emilia holmström | <a href="mailto:hi@emiria">hi@emiria</a> 
+            </p>
+        </div>
+    </footer>
+
+    <script src="../javascript/main.js"></script>
+    <script>
+        getTextsEducation();
+        getEducationList();
+    </script>
+
+    <!--Call a function with Fetch to get content-->
+    <script> </script> 
+</body>
+</html>

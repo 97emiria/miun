@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "outDir": "pub/javascript",
+    "target": "es2015",
+    "module": "es2015",
+    "lib": [
+      "es2015",
+      "es2020",
+      "dom"
+    ],
+    "paths": {
+      "style/*": [ "./src/style/*.scss" ],
+    }
+  },
+  "include": [
+    "src/typescript/*.ts"
+  ]
+}

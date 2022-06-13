@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Startsida | Emilia Holmström </title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="style/main.css">
+
+    <!-- Favicon -->
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
+
+
+    <!-- Google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet"> 
+</head>
+<body>
+
+    <header>
+        <div class="header_left" id="header_left">
+            <a href="./">Emilia Holmström</a>
+        </div>
+        <div class="header_right">
+            <button id="menuBtn" class="menuBtn">
+                <img src="images/iconMenu.png" alt="">
+            </button>
+            <nav>
+                <ul id="menuList">
+                    <li><a href="pages/portfolio.html">Portfolio</a></li>
+                    <li><a href="pages/work.html">Erfarenhet</a></li>
+                    <li><a href="pages/education.html">Utbildning</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+
+        <section id="welcome" class="frame">
+            <h1>Hej,</h1>          
+            <p id="indexText"></p> 
+        </section>
+
+
+
+        <!--JavaScript/TypeScript content-->
+
+        <section id="aboutMe" class="index_aboutSection">
+
+            <div class="frame index_aboutDiv" id="index_aboutDiv">
+
+                <div>
+                    <h2 id="aboutTitle">Vem är jag?</h2>
+                    <p id="aboutText"> </p>
+                </div> 
+
+                <div id="aboutImg"> </div>
+
+            </div>
+
+        </section>
+
+        <section id="contact" class="frame">
+            <h2>Kontakt</h2>
+
+            <div class="index_iconDiv">
+                <img src="images/iconPhone.png" alt="">
+                <p id="contact_mobile"></p>
+            </div>
+
+            <div class="index_iconDiv">
+                <img src="images/iconMail.png" alt="">
+                <p id="contact_mail"></p>
+            </div>
+
+            <div class="index_iconDiv">
+                <img src="images/iconGithub.png" alt="">
+                <p id="contact_github"></p>
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="top">
+            <a href="./">
+                <img src="images/footerImgLight.png" alt="">
+            </a>
+        </div>
+
+        <div class="bottom">
+           <p> 
+               Emiria.se &copy; | Emilia holmström | <a href="mailto:hi@emiria">hi@emiria</a> 
+            </p>
+        </div>
+
+    </footer>
+
+
+
+    <script src="javascript/main.js"></script>
+    <script>
+        getTextsForIndex();
+    </script>
+
+</body>
+</html>

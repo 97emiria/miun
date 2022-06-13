@@ -1,0 +1,31 @@
+{
+  "name": "webb",
+  "version": "1.0.0",
+  "description": "Webb III projekt - webbsidan",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Emm",
+  "license": "ISC",
+  "dependencies": {
+    "browser-sync": "^2.27.5",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^8.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-cssnano": "^2.1.3",
+    "gulp-imagemin": "^7.1.0",
+    "gulp-sass": "^5.0.0",
+    "gulp-sourcemaps": "^3.0.0",
+    "gulp-terser": "^2.0.1",
+    "gulp-typescript": "^6.0.0-alpha.1",
+    "sass": "^1.42.0",
+    "tsproject": "^4.1.0-dev.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.15.5",
+    "@babel/preset-env": "^7.15.6",
+    "gulp-babel": "^8.0.0",
+    "typescript": "^4.4.3"
+  }
+}

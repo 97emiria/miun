@@ -1,0 +1,67 @@
+body {
+    padding: 2em 3em;
+}
+
+h1 {
+    font-family: "Poiret One", "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+    font-size: 5em;
+}
+
+button {
+    border: none;
+    background-color: #eee;
+    padding: 1em;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    font-family: "Calibri", "Gill Sans", "Gill Sans MT", "Trebuchet MS", sans-serif;
+    font-size: 1em;
+    margin: 0.5em 0;
+}
+
+button:hover {
+    transform: scale(0.95);
+}
+
+.ag-theme-alpine .ag-header, .ag-header-cell-text {
+    background-color: #57b2c5 !important;
+    color: white !important;
+}
+
+
+
+.inactive {
+    color: #ddd !important;
+}
+
+
+.columnBtn {
+    padding: 0;
+    width: 25;
+    height: 25;
+    background-color: hsla(0, 0%, 100%, 0);
+}
+
+.formTest {
+    margin: 1em 0;
+    padding: 0.5em;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 1em;
+    border-radius: 0.2rem;
+    border: 2px solid #ddd;
+}
+
+::placeholder {
+    font-style: italic;
+    color: #999;
+}
+
+.boxTest {
+    display: flex;
+    justify-content: space-between;
+    margin: 1em 0;
+}
+
+.boxTest div:first-child {
+    width: 90%;
+}

@@ -23,20 +23,20 @@ router.patch('/:id', getUserById, async (req, res) => {
 
     const userResult = await userModel.findOne({ _id: req.params.id })
 
-    // bcrypt.compare(oldPassword, userResult.password, async function (err, result) {
-    //     if (err) {
-    //         console.log(err)
-    //     }
+    bcrypt.compare(oldPassword, userResult.password, async function (err, result) {
+        if (err) {
+            console.log(err)
+        }
 
-        // if (!result) {
-        //     //400 Users sending wrong/bad data 
-        //     return res.status(400).send({ message: "Old password wrong" })
+        if (!result) {
+            //400 Users sending wrong/bad data 
+            return res.status(400).send({ message: "Old password wrong" })
 
-        // } else {
+        } else {
             await userModel.findByIdAndUpdate({ _id: req.params.id }, { password: hashedPassword })
             res.status(200).json({ message: 'Success' })
-        // }
-    // })
+        }
+    })
 
 });
 

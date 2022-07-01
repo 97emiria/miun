@@ -1,0 +1,60 @@
+h1 {
+    text-align: center;
+    font-family: $headerFont;
+    margin-bottom: 2em;
+}
+
+h2,
+h3 {
+    font-family: $headerFont;
+    margin: 1em 0;
+}
+
+h4,
+h5,
+h6,
+p,
+li,
+a,
+dl {
+    font-family: $bodyFont;
+    color: $textColor;
+}
+
+a {
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+p {
+    max-width: 65ch;
+    word-break: break-word;
+}
+
+section {
+    margin: 2em 0;
+}
+
+.spaceDivider {
+    height: 100px;
+}
+
+// body {background-color: $light;}
+
+.maxWidthAndCenter {
+    max-width: $widthSize;
+    width: 90%;
+    box-sizing: border-box;
+    padding-bottom: 8em;
+    margin: 0 auto;
+    box-sizing: border-box;
+
+    background-color: white;
+    border-radius: 20px;
+}
+
+.error {
+    margin: 1em 0;
+    color: $error;
+}
+

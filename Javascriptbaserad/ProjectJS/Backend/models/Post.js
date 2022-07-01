@@ -1,5 +1,10 @@
 const mongoose = require('mongoose');
 
+var current = new Date();
+const timeStamp = new Date(Date.UTC(current.getFullYear(), 
+current.getMonth(),current.getDate(),current.getHours(), 
+current.getMinutes(),current.getSeconds(), current.getMilliseconds()));
+
 const PostSchema = new mongoose.Schema({
     userID: {
         type: String,
@@ -26,7 +31,7 @@ const PostSchema = new mongoose.Schema({
     },
     timestamp: {
         type: Date,
-        default: new Date(),
+        default: timeStamp,
         require: true,
         lowercase: true
     }

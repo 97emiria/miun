@@ -24,23 +24,23 @@ router.post('/', async (req, res) => {
         await userModel.findOne({ $or: [{ email: email }] })
             .then(user => {
                 if (user) {
-                    res.status(400).send({ message: "Epostadressen finnns redan" })
+                    res.status(400).send({ message: "Email already exist" })
                     die()
                 }
             })
         await userModel.findOne({ $or: [{ username: username }] })
             .then(user => {
                 if (user) {
-                    res.status(400).send({ message: "Användarnamnet finnns redan" })
+                    res.status(400).send({ message: "Username already exist" })
                     die()
 
                 }
             })
 
 
-        if (req.body.email == null) return res.status(400).send({ message: "Måste lämna en e-postadress" })
-        if (req.body.username == null) return res.status(400).send({ message: "Måste lämna ett användarnamn" })
-        if (req.body.password == null || req.body.password.length < 5) return res.status(400).send({ message: "Måste lämna en lösenord" })
+        if (req.body.email == null) return res.status(400).send({ message: "An email is required" })
+        if (req.body.username == null) return res.status(400).send({ message: "An username is required" })
+        if (req.body.password == null || req.body.password.length < 5) return res.status(400).send({ message: "A password is required" })
 
         //Hash password
         const hashedPassword = await bcrypt.hash(req.body.password, bcrypt.genSaltSync(10));
@@ -53,7 +53,7 @@ router.post('/', async (req, res) => {
         })
 
         const newUser = await user.save()
-        return res.status(200).send({ message: "Du är nu registerad" })
+        return res.status(200).send({ message: "You are now registered" })
 
     } catch (err) {
         res.status(500).send()

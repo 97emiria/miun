@@ -7,8 +7,11 @@ const mongoose = require('mongoose')
 let cors = require('cors');
 var bodyParser = require('body-parser')
 
+//Heroku
+// const cool = require('cool-ascii-faces');
+
 //Run express
-const app = express();
+const app = express()
 
 //Connect db
 mongoose.connect(process.env.DATABASE_URL, {
@@ -43,6 +46,11 @@ app.use('/registera', registeraRouter)
 const postsRouter = require('./routes/posts')
 app.use('/posts', postsRouter)
 
+// //Heroku
+// app.get('/cool', (req, res) => res.send(cool()))
+// app.set('views', path.join(__dirname, 'views'))
+// app.set('view engine', 'ejs')
+// app.use(express.static(path.join(__dirname, 'public')))
 
 //Run app
-app.listen(3000, () => console.log("Server started :)"))
+app.listen(process.env.PORT || 5000, () => console.log("Server started :)"))

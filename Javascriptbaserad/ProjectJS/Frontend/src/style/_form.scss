@@ -1,0 +1,116 @@
+form {
+    max-width: $widthSize;
+    box-sizing: border-box;
+    padding-bottom: 4em;
+    font-family: $bodyFont;
+
+    input {
+        display: inline-block;
+        width: 100%;
+        padding: 0.5em;
+        font-size: 1em;
+        margin-bottom: 2em;
+
+        border: 1px solid $grey;
+        border-radius: $br;
+        font-family: $bodyFont;
+
+        &:focus {
+            background-color: #eee;
+            outline: none;
+            box-shadow: 0 0 2.5px 0 #eee;
+        }
+    }
+
+    ::placeholder {
+        font-style: italic;
+        color: $grey;
+        font-size: 0.9em;
+    }
+
+    label {
+        color: #999;
+        font-size: 0.9em;
+    }
+
+    input[type="submit"] {
+        background: $light;
+        color: $dark;
+        border: none;
+        border-radius: $br;
+        cursor: pointer;
+
+        font-family: $bodyFont;
+        width: 100%;
+        max-width: 200px;
+        float: right;
+        display: block;
+
+        &:hover {
+            color: white;
+            background-color: darken($light, 20%);
+        }
+    }
+
+    textarea {
+        width: 100%;
+        height: 150px;
+        padding: 0.5em 0.2em;
+        box-sizing: border-box;
+        border: 2px solid $grey;
+        border-radius: $br;
+        resize: none;
+        font-family: $bodyFont;
+        font-size: 1em;
+        margin-bottom: 2.2em;
+    }
+
+    select {
+        display: inline-block;
+        width: 50%;
+        padding: 0.5em;
+        font-size: 1em;
+        margin-bottom: 1em;
+
+        border: 1px solid $grey;
+        border-radius: $br;
+    }
+
+    .terms {
+        display: flex;
+
+        input {
+            width: 20px;
+            height: 20px;
+            margin-right: 7.4px;
+        }
+    }
+
+    .hashtag {
+        margin-top: -1em;
+        p {
+            display: inline-block;
+            margin-right: 8.3px;
+            font-style: italic;
+            background-color: $light;
+            padding: 6.4px;
+            border-radius: $br;
+            cursor: pointer;
+
+            &:hover {
+                text-decoration: line-through;
+            }
+        }
+    }
+
+}
+
+
+.error {
+    color: black;
+    // margin: 1em 0;
+    background-color: $error;
+    padding: 1em;
+    border-radius: $br;
+    text-align: center;
+}

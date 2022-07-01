@@ -1,3 +1,3 @@
 ## Projektarbete för JavascriptBaserad Webbutveckling
-Backend med Express & MongoDB <br>
-Frontend med Vue
+App -> frontend med Vue
+Express -> backend med Express, Mongoose och MongoDB <br>

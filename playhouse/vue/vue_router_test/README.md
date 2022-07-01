@@ -1,4 +1,4 @@
-# vue-crash
+# vue_router_test
 
 ## Project setup
 ```
